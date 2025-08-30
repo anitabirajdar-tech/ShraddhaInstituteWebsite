@@ -94,70 +94,60 @@ const FranchiseBusinessSchool = () => {
       </Helmet>
 
       <div className="franchise-business-page">
-        {/* Animated Marquee */}
+        {/* Announcement Bar - Marquee */}
         <div className="announcement-bar bg-orange text-white py-2">
-  <Container>
-    <div className="announcement-scroll d-flex align-items-center">
-      <span className="badge bg-white text-orange me-2 flex-shrink-0">⏳ Limited Time</span>
-      <div className="announcement-marquee flex-grow-1">
-        <div className="announcement-track">
-          <span className="announcement-text me-5">
-            Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
-          </span>
-          {/* Duplicate text for continuous scrolling */}
-          <span className="announcement-text me-5">
-            Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
-          </span>
-        </div>
-      </div>
-    </div>
-  </Container>
-</div>
-
-
-        {/* Hero Section */}
-        <section className="hero-section py-5 position-relative">
-          {/* Very subtle orange wash */}
-          <div className="position-absolute top-0 start-0 w-100 h-100" style={{
-            background: 'linear-gradient(135deg, rgba(255,237,222,0.2) 0%, rgba(255,255,255,1) 70%)',
-            zIndex: -1
-          }}></div>
-
-          <Container className="text-center">
-            <div className="mx-auto" style={{ maxWidth: '800px' }}>
-              <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-4">
-                <FaSchool className="me-2" /> For Educational Institutions
-              </span>
-              
-              <h1 className="display-3 fw-bold mb-4">
-                Transform Your School with <span className="text-white">Our Math Programs</span>
-              </h1>
-              
-              <p className="lead mb-4 text-muted mx-auto">
-                Partner with India's leading Abacus & Vedic Math institution to enhance 
-                student outcomes with our proven curriculum and teacher training system.
-              </p>
-              
-              <div className="d-flex flex-wrap gap-3 justify-content-center mb-5">
-                <Button 
-                  variant="orange" 
-                  size="lg" 
-                  className="rounded-pill px-4 fw-semibold d-flex align-items-center mx-2 mb-2"
-                >
-                  Partner With Us <IoIosArrowForward className="ms-2" />
-                </Button>
-                
-                <Button 
-                  variant="outline-secondary" 
-                  size="lg" 
-                  className="rounded-pill px-4 fw-semibold mx-2 mb-2"
-                >
-                  Learn More
-                </Button>
+        <Container>
+          <div className="announcement-scroll d-flex align-items-center">
+            <span className="badge bg-white text-orange me-2 flex-shrink-0">⏳ Limited Time</span>
+            <div className="announcement-marquee flex-grow-1">
+              <div className="announcement-track" style={{ display: 'flex', whiteSpace: 'nowrap', overflow: 'visible', position: 'relative' }}>
+                <span className="announcement-text me-5" style={{ display: 'inline-block', position: 'static', opacity: 1 }}>
+                  Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
+                </span>
+                {/* Duplicate text for continuous scrolling */}
+                <span className="announcement-text me-5" style={{ display: 'inline-block', position: 'static', opacity: 1 }}>
+                  Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
+                </span>
               </div>
             </div>
-          </Container>
-        </section>
+          </div>
+        </Container>
+      </div>
+
+        {/* Enhanced Hero Section */}
+        <section 
+        className="hero-section position-relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #ea580c 0%, #f97316 50%, #dc2626 100%)',
+          color: 'white',
+          minHeight: '85vh'
+        }}
+      >
+        <div className="hero-overlay"></div>
+        <Container className="position-relative" style={{ zIndex: 2 }}>
+          <Row className="align-items-center justify-content-center min-vh-75 text-center">
+            <Col lg={8} xl={7} className="mx-auto">
+              {/* Badge */}
+              <div className="mb-4">
+                <span className="hero-badge">
+                  {/* You can use an icon here if needed */}
+                  Perfect for Business Schools
+                </span>
+              </div>
+              {/* Main Heading */}
+              <h1 className="hero-title mb-4">
+                Premium School Franchise Opportunity
+              </h1>
+              <p className="hero-subtitle lead mb-4">
+                Partner with Shraddha Institute to launch or expand your education business. Complete training, branding, and ongoing support.
+              </p>
+              <Button variant="light" size="lg" className="fw-bold text-orange px-4 py-2 mt-2">
+                Get Started
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
         {/* Benefits Section */}
         <section className="benefits-section py-5 bg-light">

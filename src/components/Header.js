@@ -53,16 +53,16 @@ const Header = () => {
           </div>
 
           <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1FXuy9uHEW/" target="_blank" rel="noreferrer" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/shraddhainstitute?igsh=a2sxY2M3bTRqNWx5" target="_blank" rel="noreferrer" aria-label="Instagram">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+            <a href="https://www.youtube.com/@ShraddhaInstitute" target="_blank" rel="noreferrer" aria-label="YouTube">
               <i className="fab fa-youtube"></i>
             </a>
-            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/919168756060" target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <i className="fab fa-whatsapp"></i>
             </a>
           </div>
@@ -101,37 +101,12 @@ const Header = () => {
               </li>
 
               {/* About Us Dropdown */}
-              <li 
-                className="nav-item dropdown"
-                onMouseEnter={() => setHoveredDropdown('about')}
-                onMouseLeave={() => setHoveredDropdown(null)}
-              >
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="aboutDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded={hoveredDropdown === 'about'}
-                >
-                  About Us <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
-                </a>
-                <ul 
-                  className={`dropdown-menu ${hoveredDropdown === 'about' ? 'show' : ''}`}
-                  aria-labelledby="aboutDropdown"
-                >
-                  <li>
-                    <Link to="/about/founder" className="dropdown-item" onClick={closeMenu}>
-                      Founder & Our Journey
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/about/about-franchise" className="dropdown-item" onClick={closeMenu}>
-                      Franchise & Business Model
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+              <li className="nav-item">
+  <Link to="/about" className="nav-link" onClick={closeMenu}>
+    About Us
+  </Link>
+</li>
+
 
               {/* Programs Mega Menu */}
               <li 
@@ -161,7 +136,7 @@ const Header = () => {
                           <Link to="/programs/abacus" className="dropdown-item program-item" onClick={closeMenu}>
                             <FontAwesomeIcon icon={faCalculator} className="me-2 text-orange" />
                             <div>
-                              <div className="program-title">Abacus Training</div>
+                              <div className="program-title">Abacus</div>
                               <div className="program-desc">Ages 5-15 • Mental Math Mastery</div>
                             </div>
                           </Link>
@@ -239,11 +214,7 @@ const Header = () => {
                   className={`dropdown-menu ${hoveredDropdown === 'franchise' ? 'show' : ''}`}
                   aria-labelledby="franchiseDropdown"
                 >
-                  <li>
-                    <Link to="/franchise" className="dropdown-item" onClick={closeMenu}>
-                      Overview
-                    </Link>
-                  </li>
+                 
                   <li>
                     <Link to="/franchise/teacher-parent" className="dropdown-item" onClick={closeMenu}>
                       <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2" />
@@ -294,9 +265,7 @@ const Header = () => {
                 </ul>
               </li>
 
-              <li className="nav-item">
-                <Link to="/blog" className="nav-link" onClick={closeMenu}>Blog</Link>
-              </li>
+             
               <li className="nav-item">
                 <Link to="/gallery" className="nav-link" onClick={closeMenu}>Gallery</Link>
               </li>
@@ -306,7 +275,7 @@ const Header = () => {
             </ul>
 
             <div className="d-none d-lg-flex ms-lg-3">
-              <Link to="/join-now" className="btn btn-primary btn-sm px-3">Join Now</Link>
+              <Link to="/contact" className="btn btn-primary btn-join-now btn-sm px-2 py-1">Join Now</Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Chatbox.css";
+import logo from "../assets/backgrounds/logo3.png";
 
 const Chatbox = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,9 @@ const Chatbox = () => {
   ];
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.parentNode.scrollTop = messagesEndRef.current.parentNode.scrollHeight;
+    }
   };
 
   useEffect(() => {
@@ -99,7 +102,6 @@ const Chatbox = () => {
         sender: "received",
         time: getCurrentTime(),
       };
-
       setMessages((prev) => [...prev, replyMessage]);
       setIsTyping(false);
     }, 1200);
@@ -107,7 +109,7 @@ const Chatbox = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      handleSendMessage();
+                    <img src={require("../assets/backgrounds/logo3.png")} alt="Bot" className="avatar bot-avatar" />
     }
   };
 
@@ -121,7 +123,7 @@ const Chatbox = () => {
     setIsOpen(!isOpen);
   };
 
-  // 🔹 Quick reply buttons
+                  <img src={require("../assets/backgrounds/logo3.png")} alt="Bot" className="avatar bot-avatar" />
   const quickReplies = ["Fees", "Timings", "Demo", "Location", "Brochure"];
 
   return (
@@ -129,22 +131,42 @@ const Chatbox = () => {
       {/* Chat window */}
       <div className={`chatbox ${isOpen ? "active" : ""}`}>
         <div className="chat-header">
-          Shraddha Institute
+          <img src="/logo192.png" alt="Shraddha Logo" className="chat-logo" />
+          <div className="chat-title-group">
+            <span className="chat-title">Shraddha Institute</span>
+            <span className="chat-status online">Online</span>
+          </div>
           <button className="close" onClick={toggleChat}>
             <i className="fas fa-times"></i>
           </button>
         </div>
 
-        <div className="chat-messages">
+        <div className="chat-messages" style={{ maxHeight: '300px', overflowY: 'auto' }}>
           {messages.map((msg, index) => (
-            <div key={index} className={`message ${msg.sender}`}>
-              <p>{msg.text}</p>
-              <div className="timestamp">{msg.time}</div>
+            <div key={index} className={`message ${msg.sender}`}> 
+              {msg.sender === "received" ? (
+                <img src="/logo192.png" alt="Bot" className="avatar bot-avatar" />
+              ) : (
+                <img src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff" alt="User" className="avatar user-avatar" />
+              )}
+              <div className="bubble-group">
+                <div className="bubble">
+                  <p>{msg.text}</p>
+                </div>
+                <div className="timestamp">{msg.time}</div>
+              </div>
             </div>
           ))}
           {isTyping && (
             <div className="message received typing">
-              <p>Typing...</p>
+              <img src="/logo192.png" alt="Bot" className="avatar bot-avatar" />
+              <div className="bubble-group">
+                <div className="bubble typing-indicator">
+                  <span className="dot"></span>
+                  <span className="dot"></span>
+                  <span className="dot"></span>
+                </div>
+              </div>
             </div>
           )}
           <div ref={messagesEndRef} />
@@ -158,7 +180,7 @@ const Chatbox = () => {
               className="quick-btn"
               onClick={() => handleSendMessage(reply)}
             >
-              {reply}
+              <i className="fas fa-bolt"></i> {reply}
             </button>
           ))}
         </div>

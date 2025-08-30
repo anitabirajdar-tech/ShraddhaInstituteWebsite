@@ -10,7 +10,8 @@
 .marquee {
   display: flex;
   gap: 30px;
-  animation: marquee 20s linear infinite;
+  flex-direction: row-reverse;
+  animation: marquee-ltr 20s linear infinite;
 }
 
 .testimonial-card {
@@ -38,12 +39,12 @@
 }
 
 /* Animation keyframes */
-@keyframes marquee {
+@keyframes marquee-ltr {
   0% {
-    transform: translateX(0%);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0%);
   }
 }
 

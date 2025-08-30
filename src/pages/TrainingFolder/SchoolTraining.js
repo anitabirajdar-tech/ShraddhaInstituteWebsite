@@ -178,52 +178,7 @@ const SchoolTraining = () => {
       </Container>
 
       {/* Stats & CTA Section */}
-      <Container className="my-5">
-        <Row className="justify-content-center">
-          <Col lg={10}>
-            <Card className="border-0 shadow-sm overflow-hidden">
-              <Row className="g-0">
-                <Col lg={6} className="bg-orange-soft d-flex align-items-center">
-                  <div className="p-4 p-lg-5">
-                    <h2 className="h3 fw-bold text-dark mb-4">
-                      Join Our Network of <span className="text-orange">Partner Schools</span>
-                    </h2>
-                    <p className="text-muted mb-4">
-                      Enhance your math curriculum with our proven programs and join India's leading schools in math education innovation.
-                    </p>
-                    <div className="d-flex flex-wrap gap-3 mb-4">
-                      {schoolTraining.stats.map((stat, index) => (
-                        <div key={index} className="bg-white rounded-3 p-3 shadow-xs text-center" style={{ minWidth: '120px' }}>
-                          <div className="h3 fw-bold text-orange mb-1">{stat.value}</div>
-                          <div className="text-muted small">{stat.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                    <Button 
-                      variant="orange" 
-                      size="lg" 
-                      className="rounded-pill px-4 fw-semibold mt-2"
-                    >
-                      <FaHandshake className="me-2" />
-                      Become a Partner
-                    </Button>
-                  </div>
-                </Col>
-                <Col lg={6} className="d-none d-lg-block">
-                  <div 
-                    className="h-100" 
-                    style={{
-                      backgroundImage: 'url(https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                  ></div>
-                </Col>
-              </Row>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+      
     </Container>
   );
 };

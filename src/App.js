@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import WelcomeScreen from "./components/WelcomeScreen";
+import Chatbox from "./components/Chatbox";
 
-// Main Page Components
+// Main Page Sections
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Programs from "./components/Programs";
@@ -18,32 +22,31 @@ import DemoAndContact from "./components/DemoAndContact";
 import AboutUs from "./pages/AboutUs";
 import ProgramsPage from "./pages/ProgramsPage";
 import GalleryPage from "./pages/GalleryPage";
+import BookDemoPage from "./pages/BookDemoPage";
 
 // Program Subpages
 import AbacusPage from "./pages/programs/AbacusPage";
 import VedicMathPage from "./pages/programs/VedicMathPage";
 import DMITPage from "./pages/programs/DMITPage";
-import TeacherTrainingPage from './pages/programs/TeacherTrainingPage';
-import FTrainingPage from './pages/programs/FTrainingPage';
+import TeacherTrainingPage from "./pages/programs/TeacherTrainingPage";
+import FTrainingPage from "./pages/programs/FTrainingPage";
 
 // Franchise & About Subpages
-import FranchiseMainPage from './pages/FranchisePage';
-import FounderPage from './pages/Aboutusprograms/FounderPage';
-import AboutFranchisePage from './pages/Aboutusprograms/AboutFranchisePage';
-import FranchiseTeacherParent from './pages/FranchiseFolder/FranchiseTeacherParent';
-import FranchiseBusinessSchool from './pages/FranchiseFolder/FranchiseBusinessSchool';
+import FranchiseMainPage from "./pages/FranchisePage";
+import AboutFranchisePage from "./pages/Aboutusprograms/AboutFranchisePage";
 
+// Franchise Folder
+import FranchiseTeacherParent from "./pages/FranchiseFolder/FranchiseTeacherParent";
+import FranchiseBusinessSchool from "./pages/FranchiseFolder/FranchiseBusinessSchool";
+
+// Training Folder
 import TeacherTraining from "./pages/TrainingFolder/TeacherTraining";
 import SchoolTraining from "./pages/TrainingFolder/SchoolTraining";
 
+// Blog
+import BlogPage from "./pages/blog/BlogPage";
+import BlogPost from "./pages/blog/BlogPost";
 
-import BlogPage from "./pages/blog/BlogPage"; // Add this import
-import BlogPost from "./pages/blog/BlogPost"; // Add this for individual blog posts
-
-import Chatbox from "./components/Chatbox";
-
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'aos/dist/aos.css';
 
 function App() {
@@ -62,24 +65,26 @@ function App() {
         <Header />
         <Routes>
           {/* Home Page */}
-          <Route path="/" element={
-            <>
-              <Hero />
-              <About />
-              <Programs />
-              <Franchise />
-              <Training />
-              <Gallery />
-              <DemoAndContact />
-              <Footer />
-              <WhatsAppButton />
-            </>
-          } />
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <About />
+                <Programs />
+                <Franchise />
+                <Training />
+                <Gallery />
+                <DemoAndContact />
+                <Footer />
+                <WhatsAppButton />
+              </>
+            }
+          />
 
-          {/* About & Subpages */}
+          {/* About Pages */}
           <Route path="/about-us" element={<><AboutUs /><Footer /><WhatsAppButton /></>} />
-          <Route path="/about/founder" element={<><FounderPage /><Footer /><WhatsAppButton /></>} />
-          <Route path="/about/about-franchise" element={<><AboutFranchisePage /><Footer /><WhatsAppButton /></>} />
+          <Route path="/about" element={<><AboutFranchisePage /><Footer /><WhatsAppButton /></>} />
 
           {/* Program Pages */}
           <Route path="/programs" element={<><ProgramsPage /><Footer /><WhatsAppButton /></>} />
@@ -87,34 +92,29 @@ function App() {
           <Route path="/programs/vedic-math" element={<><VedicMathPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/brain-development" element={<><DMITPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/teacher-training" element={<><TeacherTrainingPage /><Footer /><WhatsAppButton /></>} />
-        <Route path="/programs/franchise-training" element={<><FTrainingPage /><Footer /><WhatsAppButton /></>} />
+          <Route path="/programs/franchise-training" element={<><FTrainingPage /><Footer /><WhatsAppButton /></>} />
 
+          {/* Franchise Pages */}
+          <Route path="/franchise" element={<><FranchiseMainPage /><Footer /><WhatsAppButton /></>} />
+          <Route path="/franchise/teacher-parent" element={<><FranchiseTeacherParent /><Footer /><WhatsAppButton /></>} />
+          <Route path="/franchise/business-school" element={<><FranchiseBusinessSchool /><Footer /><WhatsAppButton /></>} />
 
-
-          {/* Franchise Main */}
-          {/* Franchise Main */}
-<Route path="/franchise" element={<><FranchiseMainPage /><Footer /><WhatsAppButton /></>} />
-<Route path="/franchise/teacher-parent" element={<><FranchiseTeacherParent /><Footer /><WhatsAppButton /></>} />
-<Route path="/franchise/business-school" element={<><FranchiseBusinessSchool /><Footer /><WhatsAppButton /></>} />
-
-{/* Training */}
+          {/* Training Pages */}
           <Route path="/training/teacher-training" element={<><TeacherTraining /><Footer /><WhatsAppButton /></>} />
-<Route path="/training/school-training" element={<><SchoolTraining /><Footer /><WhatsAppButton /></>} />
-
+          <Route path="/training/school-training" element={<><SchoolTraining /><Footer /><WhatsAppButton /></>} />
 
           {/* Gallery & Contact */}
           <Route path="/gallery" element={<><GalleryPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/contact" element={<><DemoAndContact /><Footer /><WhatsAppButton /></>} />
 
-            {/* Blog Routes */}
+          {/* Blog */}
           <Route path="/blog" element={<><BlogPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/blog/:id" element={<><BlogPost /><Footer /><WhatsAppButton /></>} />
 
-
-
-
+          {/* Book Demo Page Route */}
+          <Route path="/book-demo" element={<><BookDemoPage /><Footer /><WhatsAppButton /></>} />
         </Routes>
-        <Chatbox /> {/* Add this line */}
+        <Chatbox />
       </div>
     </Router>
   );

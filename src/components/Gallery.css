@@ -1,56 +1,144 @@
+/* Gallery Container */
 .gallery-container {
-  padding: 60px 20px;
   text-align: center;
+  padding: 40px 20px;
   background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
 }
 
+/* Title */
 .gallery-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 40px;
-  color: #333;
+  margin-bottom: 20px;
+  color: #ff6600;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
+/* Marquee Container */
 .marquee-container {
   overflow: hidden;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
+/* Marquee Track */
 .marquee {
   display: flex;
-  width: calc(250px * 10); /* Adjust based on item width * number */
-  animation: marquee 30s linear infinite;
+  width: max-content;
+  animation: scroll 25s linear infinite;
 }
 
+/* Seamless Loop: Duplicate the images */
+.marquee::after {
+  content: "";
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Marquee Item */
 .marquee-item {
   flex: 0 0 auto;
-  width: 350px;
-  height: 250px;
   margin: 0 15px;
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .marquee-item img {
-  width: 350%;
-  height: 250px;
+  height: 500px;
+  width: auto;
+  border-radius: 12px;
   object-fit: cover;
-  display: block;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
+/* Hover Effect */
 .marquee-item:hover {
   transform: scale(1.08);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-@keyframes marquee {
+/* Infinite Loop Keyframes */
+@keyframes scroll {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* Gallery Container */
+.gallery-container {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Title */
+.gallery-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ff6600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Marquee Container */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Marquee Track */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+/* Seamless Loop: Duplicate the images */
+.marquee::after {
+  content: "";
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Marquee Item */
+.marquee-item {
+  flex: 0 0 auto;
+  margin: 0 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.marquee-item img {
+  height: 350px;
+  width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Hover Effect */
+.marquee-item:hover {
+  transform: scale(1.08);
+}
+
+/* Infinite Loop Keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);

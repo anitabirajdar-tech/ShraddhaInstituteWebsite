@@ -1,100 +1,239 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import BlogCard from './BlogCard';
-import './BlogPage.css';
-import blogImage1 from '../../assets/blog/vedicmaths.png';
-import blogImage2 from '../../assets/blog/blog2.jpg';
-import blogImage3 from '../../assets/blog/vedicmaths.png';
+import React, { useState, useEffect } from "react";
+import { db, storage } from "../../firebase";
+
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { Link } from "react-router-dom";
+import "./BlogPage.css";
 
 const BlogPage = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [blogs, setBlogs] = useState([]);
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [content, setContent] = useState("");
+  const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState("");
+  const [uploading, setUploading] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
-  const blogPosts = [
-    { id: 1, title: "5 Fun Ways to Make Math Enjoyable for Kids", excerpt: "Discover creative techniques...", category: 'learning-tips', date: 'May 15, 2023', readTime: '4 min read', image: blogImage1, featured: true },
-    { id: 2, title: "The Amazing Benefits of Abacus Training", excerpt: "How abacus training enhances...", category: 'abacus', date: 'April 28, 2023', readTime: '6 min read', image: blogImage2 },
-    { id: 3, title: "How Abacus Boosts Memory and Concentration", excerpt: "Abacus learning is not just about numbers...", category: 'abacus', date: 'June 5, 2023', readTime: '5 min read', image: blogImage1 },
-    { id: 4, title: "Top 7 Abacus Games to Play at Home", excerpt: "Engaging games parents can try...", category: 'abacus', date: 'July 20, 2023', readTime: '7 min read', image: blogImage3 },
-    { id: 5, title: "Vedic Math Tricks Every Parent Should Know", excerpt: "Ancient calculation techniques...", category: 'vedic-math', date: 'April 10, 2023', readTime: '5 min read', image: blogImage3 },
-    { id: 6, title: "10 Fast Calculation Tricks from Vedic Maths", excerpt: "From multiplication shortcuts...", category: 'vedic-math', date: 'June 18, 2023', readTime: '6 min read', image: blogImage2 },
-    { id: 7, title: "Why Vedic Math is the Future of Learning", excerpt: "A modern approach to teaching mathematics...", category: 'vedic-math', date: 'August 1, 2023', readTime: '5 min read', image: blogImage1 },
-  ];
+  // Fetch blogs
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const querySnapshot = await getDocs(collection(db, "blogs"));
+      const blogsData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setBlogs(blogsData);
+    };
 
-  const categories = [
-    { id: 'all', name: 'All Topics' },
-    { id: 'learning-tips', name: 'Learning Tips' },
-    { id: 'abacus', name: 'Abacus' },
-    { id: 'vedic-math', name: 'Vedic Math' },
-    
-  ];
+    fetchBlogs();
+  }, []);
 
-  const filteredPosts = activeCategory === 'all' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === activeCategory);
+  // Handle image selection
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      
+      // Create preview
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Remove selected image
+  const removeImage = () => {
+    setImage(null);
+    setImagePreview("");
+  };
+
+  // Add new blog
+  const handleAddBlog = async (e) => {
+    e.preventDefault();
+    if (!title || !date || !content) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    setUploading(true);
+    let imageUrl = "";
+
+    try {
+      // Upload image if selected
+      if (image) {
+        const imageRef = ref(storage, `blog-images/${Date.now()}_${image.name}`);
+        const snapshot = await uploadBytes(imageRef, image);
+        imageUrl = await getDownloadURL(snapshot.ref);
+      }
+
+      // Add blog to Firestore
+      await addDoc(collection(db, "blogs"), {
+        title,
+        date,
+        content,
+        imageUrl,
+        createdAt: new Date().toISOString()
+      });
+
+      alert("Blog Added ✅");
+
+      // Reset form
+      setTitle("");
+      setDate("");
+      setContent("");
+      setImage(null);
+      setImagePreview("");
+      setShowForm(false);
+      
+      // Refresh blogs list
+      const querySnapshot = await getDocs(collection(db, "blogs"));
+      const blogsData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setBlogs(blogsData);
+    } catch (error) {
+      console.error("Error adding blog: ", error);
+      alert("Error adding blog. Please try again.");
+    } finally {
+      setUploading(false);
+    }
+  };
 
   return (
-    <section className="blog-page">
-      {/* Hero Section */}
-      <div className="blog-hero text-center text-white py-5" style={{background: 'linear-gradient(135deg, rgba(255,107,29,0.85), rgba(255,107,29,0.95))'}}>
-        <Container>
-          <h1 className="display-4 fw-bold mb-3">Shraddha Institute Blog</h1>
-          <p className="lead mb-0">Expert insights on Abacus, Vedic Math, and child cognitive development</p>
-        </Container>
+    <div className="blog-container">
+      {/* Header Section */}
+      <header className="blog-header">
+        <h1>Our Blog</h1>
+        <p>Discover the latest insights and updates</p>
+      </header>
+
+      {/* Add Blog Button */}
+      <div className="add-blog-btn-container">
+        <button
+          onClick={() => setShowForm(!showForm)}
+          className="add-blog-btn"
+          disabled={uploading}
+        >
+          {showForm ? "Cancel" : "➕ Add New Blog"}
+        </button>
       </div>
 
-      {/* Categories Filter */}
-      <Container className="py-5">
-        <div className="d-flex flex-wrap justify-content-center gap-2 mb-5">
-          {categories.map(cat => (
-            <Button
-              key={cat.id}
-              variant={activeCategory === cat.id ? 'warning' : 'outline-warning'}
-              className="rounded-pill px-4 py-2 fw-semibold"
-              onClick={() => setActiveCategory(cat.id)}
-            >
-              {cat.name}
-            </Button>
-          ))}
-        </div>
+      {/* Blog Form */}
+      {showForm && (
+        <form
+          onSubmit={handleAddBlog}
+          className="blog-form"
+        >
+          <h2 className="form-title">Create New Blog Post</h2>
+          
+          <div className="form-grid">
+            <input
+              type="text"
+              placeholder="Blog Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="form-input"
+              required
+            />
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="form-input"
+              required
+            />
+          </div>
+          
+          {/* Image Upload */}
+          <div className="image-upload-section">
+            <label className="image-upload-label">
+              {imagePreview ? "Change Image" : "Upload Featured Image"}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="image-upload-input"
+              />
+            </label>
+            
+            {imagePreview && (
+              <div className="image-preview-container">
+                <img src={imagePreview} alt="Preview" className="image-preview" />
+                <button type="button" onClick={removeImage} className="remove-image-btn">
+                  ×
+                </button>
+              </div>
+            )}
+          </div>
+          
+          <textarea
+            placeholder="Blog Content (Supports HTML formatting)"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            className="form-textarea"
+            rows="6"
+            required
+          ></textarea>
+          
+          <button
+            type="submit"
+            className="submit-btn"
+            disabled={uploading}
+          >
+            {uploading ? "Publishing..." : "Publish Blog"}
+          </button>
+        </form>
+      )}
 
-        {/* Featured Post */}
-        {filteredPosts.some(p => p.featured) && (
-          <div className="featured-post mb-5">
-            <h2 className="section-title text-center mb-4">Featured Article</h2>
-            <BlogCard {...filteredPosts.find(p => p.featured)} featured={true} />
+      {/* Blog List */}
+      <section className="blog-list-section">
+        <h2 className="section-title">All Blog Posts</h2>
+        
+        {blogs.length > 0 ? (
+          <div className="blog-grid">
+            {blogs.map((blog) => (
+              <article
+                key={blog.id}
+                className="blog-card"
+              >
+                {blog.imageUrl && (
+                  <div className="blog-image-container">
+                    <img src={blog.imageUrl} alt={blog.title} className="blog-image" />
+                  </div>
+                )}
+                <div className="card-content">
+                  <div className="card-header">
+                    <h3 className="blog-title">{blog.title}</h3>
+                    <span className="blog-date">{blog.date}</span>
+                  </div>
+                  <div 
+                    className="blog-preview" 
+                    dangerouslySetInnerHTML={{ __html: blog.content.substring(0, 120) + "..." }}
+                  ></div>
+                  <Link
+                    to={`/blog/${blog.id}`}
+                    className="read-more-link"
+                  >
+                    Continue Reading →
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="empty-state">
+            <div className="empty-icon">📝</div>
+            <h3>No blog posts yet</h3>
+            <p>Be the first to share your thoughts and insights!</p>
           </div>
         )}
-
-        {/* All Posts */}
-        <div className="all-posts">
-          <h2 className="section-title mb-4 text-center">
-            {activeCategory === 'all' ? 'Latest Articles' : `${categories.find(c => c.id === activeCategory).name} Articles`}
-          </h2>
-          <Row className="g-4">
-            {filteredPosts.filter(p => !p.featured).map(post => (
-              <Col key={post.id} lg={4} md={6}>
-                <BlogCard {...post} />
-              </Col>
-            ))}
-          </Row>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="newsletter-section mt-5 p-4 p-lg-5 rounded-3 text-white" style={{background: 'linear-gradient(135deg, rgba(255,107,29,0.85), rgba(255,107,29,0.95))'}}>
-          <Row className="align-items-center">
-            <Col lg={6} className="mb-3 mb-lg-0">
-              <h3 className="fw-bold">Stay Updated with Our Latest Posts</h3>
-              <p className="mb-0">Subscribe to receive educational tips and updates directly in your inbox</p>
-            </Col>
-            <Col lg={6}>
-              <div className="d-flex gap-2">
-                <input type="email" className="form-control rounded-pill" placeholder="Your email address" />
-                <Button variant="light" className="px-4 rounded-pill fw-bold text-orange">Subscribe</Button>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </Container>
-    </section>
+      </section>
+    </div>
   );
 };
 

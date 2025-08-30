@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { Link } from 'react-router-dom';
 import './DemoAndContact.css';
 import studentImg from '../assets/student.png';
 
@@ -118,10 +119,10 @@ const DemoAndContact = () => {
             <p className="demo-text">
               Experience our unique teaching methodology first-hand. Book a no-obligation demo session today!
             </p>
-            <button className="demo-btn">
-              Book Your Free Session
-              <span className="btn-arrow">→</span>
-            </button>
+            {/* Book Your Free Session button connects to contact form */}
+<Link to="/contact" className="btn btn-primary">
+  Book Your Free Session
+</Link>
           </div>
           <div className="demo-image">
             <img src={studentImg} alt="Happy students learning" />

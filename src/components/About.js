@@ -39,7 +39,6 @@ const About = () => {
           <h2 className="section-title2 animate-fade-in" itemProp="name">
             About Shraddha Institute
           </h2>
-         
         </header>
 
         <div className="about-row">
@@ -51,12 +50,13 @@ const About = () => {
             }`}
           >
             
+            <h3 className="impact-title">Mission & Vision</h3>
             <ul className="mission-vision-list">
               {missionVisionLines.map((line, i) => (
                 <li
                   key={i}
                   className="mission-vision-line"
-                  style={{ transitionDelay: `${i * 0.15}s` }}
+                  style={{ transitionDelay: `${i * 0.15 + 0.3}s` }}
                 >
                   <FaCheckCircle className="check-icon" aria-hidden="true" />
                   <span>{line}</span>
@@ -87,6 +87,9 @@ const About = () => {
             </ul>
           </div>
         </div>
+
+        {/* YouTube Video Section */}
+        
 
         {/* Schema extra (social links) */}
         <meta itemProp="url" content="https://shraddhainstitute.netlify.app/" />

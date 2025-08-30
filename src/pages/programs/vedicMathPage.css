@@ -11,11 +11,8 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  background: linear-gradient(
-    rgba(255, 107, 29, 0.3),  /* lighter/fainter start */
-    rgba(255, 107, 29, 0.4)   /* lighter/fainter end */
-  );
-  color: white;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);
+  color: #333;
   padding: 5rem 0;
   overflow: hidden;
 }
@@ -48,6 +45,17 @@
   background: #fff;
   color: #f97316;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Hero Section Button Styles */
+.hero-section .btn {
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+.hero-section .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
 }
 
 /* ================== */
@@ -224,6 +232,19 @@
   .section-title { font-size: 1.6rem; }
   .hero-section h1 { font-size: 2rem; }
   .card-image-container { height: 160px; }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .btn-orange,
+  .btn-outline-orange {
+    width: 100%;
+    padding: 12px 20px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -235,8 +256,362 @@
     transform: translateX(50%);
     bottom: -20px;
   }
+  
+  .btn-lg {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
 }
 
 .text-orange {
   color: #f97316 !important;
+}
+
+/* Success Stories Section */
+.success-stories-section {
+  background: linear-gradient(135deg, rgba(255, 237, 213, 0.7) 0%, rgba(255, 247, 237, 0.9) 100%);
+}
+
+.success-story-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 149, 0, 0.1);
+}
+
+.success-story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 149, 0, 0.15);
+}
+
+.achievement-badge {
+  background: linear-gradient(135deg, #fff2e0 0%, #ffe4c8 100%);
+  border: 1px dashed #ffa94d;
+  display: inline-block;
+}
+
+.bg-orange-light {
+  background-color: #fff2e0 !important;
+}
+
+.text-orange-dark {
+  color: #cc5500 !important;
+}
+
+/* ================== */
+/* BUTTON STYLES */
+/* ================== */
+
+/* Standard Orange Button */
+.btn-orange {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.btn-orange:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+}
+
+/* Outline Orange Button */
+.btn-outline-orange {
+  color: #ea580c;
+  border: 2px solid #ea580c;
+  background: transparent;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.btn-outline-orange:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
+}
+
+/* Primary Button (Hero style) */
+.btn-primary {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+  border: none;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  font-weight: 600;
+  border-radius: 60px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3), 
+              0 4px 15px rgba(249, 115, 22, 0.2);
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.5), 
+              0 6px 20px rgba(249, 115, 22, 0.3);
+  color: white;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: rgba(234, 88, 12, 0.1);
+  border: 2px solid #ea580c;
+  color: #ea580c;
+  padding: 1.2rem 2.5rem;
+  font-weight: 600;
+  border-radius: 60px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  text-transform: none;
+}
+
+.btn-secondary:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
+}
+
+/* CTA Button (for course cards) */
+.cta-button {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.95rem;
+  text-transform: none;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(234, 88, 12, 0.3);
+  text-decoration: none;
+}
+
+/* Button Sizes */
+.btn-lg {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 60px;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 30px;
+}
+
+/* Button Arrow */
+.btn-arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Rating stars */
+.text-orange {
+  color: #ea580c !important;
+}
+
+/* Background colors */
+.bg-light-orange {
+  background-color: #fff7ed !important;
+}
+
+/* ================== */
+/* Continuous Testimonial Carousel Styles */
+.continuous-testimonial-container {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #fff9f5 0%, #fff3e6 100%);
+  border-radius: 20px;
+}
+
+/* Desktop Horizontal Scroll */
+.testimonial-track {
+  width: max-content;
+  will-change: transform;
+}
+
+.testimonial-slide {
+  flex: 0 0 320px;
+  height: 280px;
+}
+
+.testimonial-slide .success-story-card {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 107, 29, 0.1);
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+}
+
+.testimonial-slide .success-story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 107, 29, 0.15) !important;
+  border-color: rgba(255, 107, 29, 0.3);
+}
+
+/* Mobile Vertical Scroll */
+.mobile-testimonial-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+.mobile-testimonial-track {
+  will-change: transform;
+}
+
+.mobile-testimonial-slide {
+  height: 250px;
+  flex-shrink: 0;
+}
+
+.mobile-testimonial-slide .success-story-card {
+  height: 100%;
+  border: 1px solid rgba(255, 107, 29, 0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+}
+
+/* Rotation Status Indicator */
+.rotation-status {
+  z-index: 10;
+  opacity: 0.8;
+}
+
+.rotation-status .badge {
+  font-size: 0.7rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+}
+
+/* Smooth hover effects */
+.continuous-testimonial-container:hover .testimonial-slide .success-story-card {
+  animation-play-state: paused;
+}
+
+/* Pause animation on hover */
+.continuous-testimonial-container:hover .testimonial-track,
+.continuous-testimonial-container:hover .mobile-testimonial-track {
+  animation-play-state: paused;
+}
+
+/* Language Selector */
+.language-selector {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.language-selector .btn {
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.language-selector .btn-orange {
+  background: #ff6b1d;
+  border-color: #ff6b1d;
+  color: white;
+  transform: scale(1.05);
+}
+
+.language-selector .btn-outline-secondary {
+  border-color: #ddd;
+  color: #666;
+}
+
+.language-selector .btn-outline-secondary:hover {
+  border-color: #ff6b1d;
+  color: #ff6b1d;
+  transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .continuous-testimonial-container {
+    padding: 1rem;
+  }
+  
+  .mobile-testimonial-slide {
+    height: 220px;
+  }
+  
+  .testimonial-slide {
+    flex: 0 0 280px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-testimonial-slide {
+    height: 200px;
+  }
+  
+  .testimonial-slide {
+    flex: 0 0 260px;
+    height: 230px;
+  }
+  
+  .rotation-status {
+    padding: 0.5rem;
+  }
+  
+  .rotation-status .badge {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.6rem;
+  }
 }

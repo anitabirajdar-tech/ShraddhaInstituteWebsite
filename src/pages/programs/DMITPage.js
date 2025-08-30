@@ -9,23 +9,20 @@ import dmitImg3 from '../../assets/programs/dmit3.png';
 const DMITPage = () => {
   return (
     <Container className="program-page dmit-page">  {/* Added dmit-page class here */}
-      {/* Header Section */}
-      <Row className="header-section py-5 align-items-center">
-        <Col lg={6}>
-          <h1 className="display-4 fw-bold dmit-heading">DMIT Brain Development</h1>
-          <p className="lead">
-            Discover your child’s unique strengths and learning style through a scientific fingerprint analysis. Tailored for parents, students, and educators.
-          </p>
-          <button className="btn btn-orange btn-lg mt-3">Book a Consultation</button>
-        </Col>
-        <Col lg={6}>
-          <img 
-            src={dmitImg} 
-            alt="DMIT brain test" 
-            className="img-fluid rounded shadow"
-          />
-        </Col>
-      </Row>
+      {/* Hero Section for DMIT Class */}
+      <section className="dmit-hero-section" style={{ background: 'linear-gradient(135deg, #ff9f43 0%, #fd7e14 100%)', color: 'white', padding: '80px 0' }}>
+        <div className="container">
+          <div className="row justify-content-center align-items-center" style={{ minHeight: '300px' }}>
+            <div className="col-lg-10 text-center mx-auto">
+              <h1 className="display-4 fw-bold mb-3 text-white">DMIT Brain Development</h1>
+              <p className="lead mb-4 text-white">
+                Discover your child’s unique strengths and learning style through a scientific fingerprint analysis. Tailored for parents, students, and educators.
+              </p>
+              <button className="btn btn-orange btn-lg mt-3">Book a Consultation</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Benefits Section */}
      

@@ -2,20 +2,65 @@
 /* ================= HERO SECTION ================= */
 /* Franchise Hero Section */
 .franchise-hero-section {
-  background: linear-gradient(135deg, #ff6a00, #ff9a44);
-  padding: 100px 0;
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #dc2626 100%);
+  padding: 120px 0;
   position: relative;
   color: white;
+  overflow: hidden;
+}
+
+/* Add animated background elements */
+.franchise-hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  z-index: 1;
+}
+
+.franchise-hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  animation: rotate 25s linear infinite reverse;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.franchise-hero-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .franchise-hero-section h1 {
-  font-size: 2.8rem;
-  line-height: 1.3;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.franchise-hero-section .text-warning {
+  color: #fbbf24 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .franchise-hero-section p {
-  font-size: 1.2rem;
-  color: #f8f9fa;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .franchise-hero-img-container {
@@ -25,26 +70,192 @@
 
 .franchise-main-img {
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.franchise-main-img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
 }
 
 .floating-badge {
   position: absolute;
   bottom: -20px;
   right: -20px;
-  background: #fff;
-  color: #ff6a00;
+  background: rgba(255, 255, 255, 0.95);
+  color: #ea580c;
   font-weight: bold;
-  padding: 12px 20px;
+  padding: 15px 25px;
   border-radius: 30px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Hero Statistics Styling */
+.franchise-hero-section .vr {
+  opacity: 0.5;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.franchise-hero-section .text-warning {
+  color: #fbbf24 !important;
+}
+
+/* Enhanced Button Styling for Hero */
+.franchise-hero-section .btn-light {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  color: #ea580c;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.franchise-hero-section .btn-light:hover {
+  background: white;
+  color: #c2410c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.franchise-hero-section .btn-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.franchise-hero-section .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
+  transform: translateY(-2px);
 }
 
 .btn.text-orange {
-  color: #ff6a00 !important;
+  color: #ea580c !important;
+}
+
+/* ================== */
+/* BUTTON STYLES */
+/* ================== */
+
+/* Standard Orange Button */
+.btn-orange {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.btn-orange:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+}
+
+/* Outline Orange Button */
+.btn-outline-orange {
+  color: #ea580c;
+  border: 2px solid #ea580c;
+  background: transparent;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.btn-outline-orange:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
+}
+
+/* Primary Button (Hero style) */
+.btn-primary {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+  border: none;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  font-weight: 600;
+  border-radius: 60px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3), 
+              0 4px 15px rgba(249, 115, 22, 0.2);
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.5), 
+              0 6px 20px rgba(249, 115, 22, 0.3);
+  color: white;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+}
+
+/* CTA Button (for course cards) */
+.cta-button {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.95rem;
+  text-transform: none;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(234, 88, 12, 0.3);
+  text-decoration: none;
 }
 
 
@@ -229,5 +440,85 @@
   font-style: italic;
   color: #444;
   line-height: 1.6;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 992px) {
+  .franchise-hero-section {
+    padding: 80px 0;
+  }
+  
+  .franchise-hero-section h1 {
+    font-size: 2.8rem;
+  }
+  
+  .franchise-hero-section p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .franchise-hero-section {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .franchise-hero-section h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .franchise-hero-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .franchise-hero-section .d-flex.gap-3 {
+    flex-direction: column;
+    gap: 1rem !important;
+  }
+  
+  .franchise-hero-section .btn {
+    width: 100%;
+    padding: 15px 20px;
+  }
+  
+  .franchise-hero-section .d-flex.align-items-center.gap-4 {
+    flex-direction: column;
+    gap: 1rem !important;
+    margin-top: 2rem;
+  }
+  
+  .franchise-hero-section .vr {
+    display: none;
+  }
+  
+  .franchise-main-img {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .franchise-hero-section {
+    padding: 40px 0;
+  }
+  
+  .franchise-hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .franchise-hero-section p {
+    font-size: 1rem;
+  }
+  
+  .floating-badge {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 1rem auto 0;
+    display: inline-flex;
+  }
 }
 

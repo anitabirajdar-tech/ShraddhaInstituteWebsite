@@ -12,8 +12,7 @@
 /* Hero Section */
 /* Hero Section - Light Orange Version */
 .hero-section.bg-light-orange {
-  background-color: #FFF3EB; /* Very light orange */
-  background-image: linear-gradient(135deg, rgba(255, 235, 224, 0.8) 0%, rgba(255, 248, 240, 0.9) 100%);
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);
 }
 
 .btn-outline-orange {
@@ -139,19 +138,113 @@
   color: var(--orange-light);
 }
 
-/* Buttons */
+/* ================== */
+/* BUTTON STYLES */
+/* ================== */
+
+/* Standard Orange Button */
 .btn-orange {
-  background-color: var(--orange);
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
   color: white;
   border: none;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
   transition: all 0.3s ease;
+  text-transform: none;
+  font-size: 1rem;
 }
 
 .btn-orange:hover {
-  background-color: var(--orange-dark);
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+}
+
+/* Outline Orange Button */
+.btn-outline-orange {
+  color: #ea580c;
+  border: 2px solid #ea580c;
+  background: transparent;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.btn-outline-orange:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
+}
+
+/* Primary Button (Hero style) */
+.btn-primary {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+  border: none;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  font-weight: 600;
+  border-radius: 60px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3), 
+              0 4px 15px rgba(249, 115, 22, 0.2);
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.5), 
+              0 6px 20px rgba(249, 115, 22, 0.3);
+  color: white;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+}
+
+/* CTA Button (for course cards) */
+.cta-button {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.95rem;
+  text-transform: none;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(234, 88, 12, 0.3);
+  text-decoration: none;
 }
 
 .btn-outline-light:hover {
@@ -186,11 +279,85 @@
   .d-flex.gap-5 {
     gap: 2rem !important;
   }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .btn-orange,
+  .btn-outline-orange {
+    width: 100%;
+    padding: 12px 20px;
+  }
 }
 
 @media (max-width: 576px) {
   .marquee-item {
     width: 240px;
   }
+  
+  .btn-lg {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
 }
 
+/* Language Toggle Styles */
+.language-toggle {
+  display: flex;
+  justify-content: center;
+}
+
+.language-toggle .btn-group {
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(253, 126, 20, 0.3);
+}
+
+.language-toggle .btn {
+  border: 2px solid var(--primary);
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.language-toggle .btn-orange {
+  background-color: var(--primary);
+  color: white;
+}
+
+.language-toggle .btn-outline-orange {
+  background-color: white;
+  color: var(--primary);
+}
+
+.language-toggle .btn-outline-orange:hover {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+/* Marathi text specific styles */
+.marathi-text {
+  font-family: 'Noto Sans Devanagari', 'Mukta', 'Tiro Devanagari Marathi', sans-serif;
+  line-height: 1.6;
+}
+
+/* Ensure proper rendering of Devanagari script */
+.testimonial-card {
+  font-family: inherit;
+}
+
+.testimonial-card h4,
+.testimonial-card p {
+  font-family: inherit;
+}

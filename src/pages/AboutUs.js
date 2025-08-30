@@ -11,6 +11,19 @@ const AboutUs = () => {
     <div className="about-page">
       {/* Hero Section */}
       <section className="hero-section">
+        {/* YouTube Video Background */}
+        <div className="video-background">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&loop=1&mute=1&playlist=YOUR_VIDEO_ID&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+            title="Shraddha Institute Background Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="hero-video"
+          ></iframe>
+          <div className="video-overlay"></div>
+        </div>
+        
         <div className="hero-content">
           <h1 className="hero-title">Our Story & Business Opportunity</h1>
           <p className="hero-subtitle">

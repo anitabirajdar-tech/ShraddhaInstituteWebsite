@@ -1,8 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import './FranchiseTrainingPage.css';
-import franchiseHero from '../../assets/programs/vedic1.jpg';
-import supportImg from '../../assets/programs/vedic1.jpg';
 
 const FTrainingPage = () => {
   const franchiseBenefits = [
@@ -61,21 +59,24 @@ const FTrainingPage = () => {
   return (
     <Container fluid className="franchise-training-page p-0">
       {/* HERO SECTION */}
-      <section className="franchise-hero-section position-relative overflow-hidden">
+      <section className="franchise-hero-section position-relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%)', color: 'white', padding: '80px 0' }}>
         <div className="container">
-          <Row className="align-items-center">
-            {/* LEFT CONTENT */}
-            <Col lg={6} className="mb-4 mb-lg-0">
+          <Row className="align-items-center justify-content-center" style={{ minHeight: '350px' }}>
+            <Col lg={8} className="text-center mx-auto">
+              <div className="mb-3">
+                <span className="badge bg-light text-orange fs-6 px-3 py-2 rounded-pill">
+                  <i className="bi bi-trophy-fill me-2"></i>
+                  #1 Franchise Opportunity 2024
+                </span>
+              </div>
               <h1 className="display-3 fw-bold mb-4 text-white animate__animated animate__fadeInDown">
                 Start Your Own <span className="text-warning">Shraddha Institute</span> Franchise
               </h1>
-
               <p className="lead text-light mb-4 animate__animated animate__fadeInUp">
                 Join India’s fastest growing network in Abacus & Vedic Maths education.  
                 Low investment, high returns, and full support from our expert team.
               </p>
-
-              <div className="d-flex gap-3 mb-4">
+              <div className="d-flex gap-3 mb-4 justify-content-center">
                 <button className="btn btn-light btn-lg px-4 py-2 fw-bold text-orange animate__animated animate__pulse animate__infinite">
                   <i className="bi bi-building me-2"></i> Apply for Franchise
                 </button>
@@ -83,29 +84,16 @@ const FTrainingPage = () => {
                   <i className="bi bi-info-circle me-2"></i> Learn More
                 </button>
               </div>
-
-              <div className="d-flex align-items-center gap-4 text-white">
-                <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center gap-4 text-white mt-4 justify-content-center">
+                <div className="d-flex align-items-center bg-white bg-opacity-10 rounded-pill px-3 py-2">
                   <i className="bi bi-cash-coin text-warning me-2 fs-5"></i>
-                  <span>Low Investment, High Returns</span>
+                  <span className="fw-semibold">Low Investment, High Returns</span>
                 </div>
                 <div className="vr"></div>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center bg-white bg-opacity-10 rounded-pill px-3 py-2">
                   <i className="bi bi-people-fill text-white me-2 fs-5"></i>
-                  <span>450+ Active Franchisees</span>
+                  <span className="fw-semibold">10+ Active Franchisees</span>
                 </div>
-              </div>
-            </Col>
-
-            {/* RIGHT IMAGE */}
-            <Col lg={6} className="position-relative">
-              <div className="position-relative franchise-hero-img-container animate__animated animate__fadeInRight">
-                <img
-                  src={franchiseHero}
-                  alt="Franchise Partner"
-                  className="img-fluid rounded-3 shadow-lg franchise-main-img"
-                />
-                
               </div>
             </Col>
           </Row>
@@ -226,17 +214,10 @@ const FTrainingPage = () => {
       {/* SUPPORT SECTION */}
       <section className="support-section py-5 bg-light">
         <Container>
-          <Row className="align-items-center">
-            <Col lg={6} className="mb-4 mb-lg-0">
-              <img 
-                src={supportImg} 
-                alt="Franchise support" 
-                className="img-fluid rounded shadow"
-              />
-            </Col>
-            <Col lg={6} className="ps-lg-5">
+          <Row className="justify-content-center">
+            <Col lg={8} className="ps-lg-5 text-center mx-auto">
               <h2 className="mb-4">Ongoing Franchise Support</h2>
-              <Accordion defaultActiveKey="0">
+              <Accordion defaultActiveKey="0" className="text-start">
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>Marketing Assistance</Accordion.Header>
                   <Accordion.Body>

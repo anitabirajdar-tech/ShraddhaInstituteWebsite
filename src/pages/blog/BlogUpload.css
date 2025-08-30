@@ -1,0 +1,71 @@
+.blog-upload {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.blog-upload h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.blog-title-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.blog-title-input:focus {
+  border-color: #4CAF50;
+}
+
+.blog-editor {
+  min-height: 250px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.ql-container {
+  border-radius: 8px !important;
+}
+
+.ql-toolbar {
+  border-radius: 8px 8px 0 0 !important;
+  background: #f8f9fa;
+}
+
+.ql-editor {
+  min-height: 200px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #4CAF50, #2e7d32);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #43a047, #1b5e20);
+}

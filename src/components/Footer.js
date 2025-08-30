@@ -6,7 +6,8 @@ import {
   FaEnvelope,
   FaFacebookF,
   FaInstagram,
-  FaWhatsapp
+  FaWhatsapp,
+   FaYoutube 
 } from 'react-icons/fa';
 import { FiClock } from 'react-icons/fi';
 import { motion } from 'framer-motion';
@@ -63,8 +64,7 @@ const Footer = () => {
           <div className="footer-contact-item">
             <span className="footer-icon"><FaMapMarkerAlt /></span>
             <div>
-              <p>Hall No. 2, Padmashree Apartment-Commercial Complex</p>
-              <p>Near Pune Naka, Avanti Nagar, Murarji Peth, Solapur</p>
+              <p>Hall No. 2, Padmashree Apartment-Commercial Complex,Near Pune Naka, Avanti Nagar, Murarji Peth, Solapur</p>
               <p>Maharashtra – 413002</p>
             </div>
           </div>
@@ -73,7 +73,7 @@ const Footer = () => {
             <span className="footer-icon"><FiClock /></span>
             <div>
               <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
-              <p>wednesday: Closed</p>
+              <p>Wednesday: Closed</p>
             </div>
           </div>
         </motion.div>
@@ -96,6 +96,7 @@ const Footer = () => {
           <div className="footer-contact-item">
             <span className="footer-icon"><FaPhoneAlt /></span>
             <div>
+              <a href="tel:+919168756060">+91 91687 56060</a>
               <a href="tel:+918446889966">+91 84468 89966</a>
               <a href="tel:+919405361630">+91 94053 61630</a>
             </div>
@@ -112,7 +113,7 @@ const Footer = () => {
           <h4>Connect With Us</h4>
           <div className="social-icons">
             <motion.a 
-              href="https://facebook.com" 
+              href="https://www.facebook.com/share/1FXuy9uHEW/" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Facebook"
@@ -121,7 +122,7 @@ const Footer = () => {
               <FaFacebookF />
             </motion.a>
             <motion.a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/shraddhainstitute?igsh=a2sxY2M3bTRqNWx5" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Instagram"
@@ -130,7 +131,7 @@ const Footer = () => {
               <FaInstagram />
             </motion.a>
             <motion.a 
-              href="https://wa.me/918446889966" 
+              href="https://wa.me/919168756060" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="WhatsApp"
@@ -138,6 +139,16 @@ const Footer = () => {
             >
               <FaWhatsapp />
             </motion.a>
+
+            <motion.a 
+      href="https://www.youtube.com/@ShraddhaInstitute" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      aria-label="YouTube"
+      whileHover={{ y: -3 }}
+    >
+      <FaYoutube />
+    </motion.a>
           </div>
         </motion.div>
       </motion.div>

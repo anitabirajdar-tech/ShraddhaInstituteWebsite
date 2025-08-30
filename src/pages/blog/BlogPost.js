@@ -1,30 +1,23 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import './BlogPost.css';
+import React from "react";
+import "./blogStyles.css";
 
-const BlogPost = () => {
-  const { id } = useParams();
-  
-  // In a real app, you would fetch the post data based on the ID
-  // This is just a placeholder structure
+const BlogPost = ({ blog }) => {
   return (
-    <div className="blog-post-container">
-      <article className="blog-post">
-        <h1>Blog Post Title {id}</h1>
-        <div className="post-meta">
-          <span>Published on: June 15, 2023</span>
-          <span>Category: Learning Tips</span>
-        </div>
-        <img 
-          src="/path/to/blog/image.jpg" 
-          alt="Blog post visual"
-          className="post-image"
+    <div className="blog-card">
+      {blog.imageUrl && (
+        <img src={blog.imageUrl} alt={blog.title} className="blog-image" />
+      )}
+      <div className="blog-content">
+        <h3>{blog.title}</h3>
+        
+        {/* ✅ Render content as HTML */}
+        <div
+          className="blog-text"
+          dangerouslySetInnerHTML={{ __html: blog.content }}
         />
-        <div className="post-content">
-          {/* Your blog content would go here */}
-          <p>This is the full content of blog post {id}...</p>
-        </div>
-      </article>
+        
+        <button className="read-more">Read More</button>
+      </div>
     </div>
   );
 };

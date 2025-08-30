@@ -1,3 +1,20 @@
+/* Override Bootstrap .btn-primary for demo button */
+.btn.btn-primary {
+  background: linear-gradient(90deg, #ea580c, #f97316) !important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.12);
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  background: linear-gradient(90deg, #f97316, #ea580c) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.18);
+}
 /* DemoAndContact.css */
 .demo-contact-section {
   display: grid;
@@ -10,7 +27,7 @@
 }
 
 .highlight {
-  background: linear-gradient(90deg, #ff6b00, #ff9e00);
+  background: linear-gradient(90deg, #ea580c, #f97316);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -22,7 +39,7 @@
   background: white;
   padding: 3rem;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(255, 107, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(234, 88, 12, 0.1);
 }
 
 .contact-header {
@@ -68,7 +85,7 @@
   top: -0.6rem;
   left: 0.8rem;
   font-size: 0.8rem;
-  color: #ff6b00;
+  color: #ea580c;
 }
 
 
@@ -77,7 +94,7 @@
   top: -0.6rem;
   left: 0.8rem;
   font-size: 0.8rem;
-  color: #ff6b00;
+  color: #ea580c;
 }
 
 .form-control {
@@ -90,8 +107,8 @@
 }
 
 .form-control:focus {
-  border-color: #ff6b00;
-  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+  border-color: #ea580c;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2);
   outline: none;
 }
 
@@ -112,12 +129,12 @@ textarea.form-control {
 }
 
 .submit-btn {
-  background: linear-gradient(90deg, #ff6b00, #ff9e00);
-  color: white;
+  background: linear-gradient(90deg, #ea580c, #f97316) !important;
+  color: #fff !important;
   border: none;
-  padding: 1rem;
+  padding: 1rem 2rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -125,16 +142,21 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.12);
+  outline: none;
 }
 
 .submit-btn:hover {
-  background: linear-gradient(90deg, #e55b00, #e58d00);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+  background: linear-gradient(90deg, #f97316, #ea580c);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.18);
 }
 
 .submit-btn.success {
-  background: #4caf50;
+  background: #ea580c;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.18);
 }
 
 .checkmark {
@@ -207,7 +229,7 @@ textarea.form-control {
 
 .emoji {
   font-size: 1.8rem;
-  color: #e55b00;
+  color: #ea580c;
 }
 
 .demo-text {
@@ -237,7 +259,7 @@ textarea.form-control {
 }
 
 .demo-btn {
-  background: #ff6b00;
+  background: #ea580c;
   color: white;
   border: none;
   padding: 1rem 1.1rem;
@@ -253,7 +275,7 @@ textarea.form-control {
 }
 
 .demo-btn:hover {
-  background: #ff6b00;
+  background: #c2410c;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -324,5 +346,5 @@ textarea.form-control {
 }
 
 .orange-text {
-  color: #ff6b00;
+  color: #ea580c;
 }

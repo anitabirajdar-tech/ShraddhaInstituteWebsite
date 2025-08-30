@@ -8,7 +8,7 @@
 
 .contact-header h2 {
   font-size: 2.3rem;
-  color: #ff6b00;
+  color: #ea580c;
   margin-bottom: 0.5rem;
   font-family: 'Poppins', sans-serif;
 }
@@ -43,12 +43,12 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #ff6b00;
-  box-shadow: 0 0 5px rgba(255, 107, 0, 0.2);
+  border-color: #ea580c;
+  box-shadow: 0 0 5px rgba(234, 88, 12, 0.2);
 }
 
 .contact-form button {
-  background-color: #ff6b00;
+  background-color: #ea580c;
   color: white;
   padding: 0.9rem 1rem;
   border: none;
@@ -60,5 +60,5 @@
 }
 
 .contact-form button:hover {
-  background-color: #e55b00;
+  background-color: #c2410c;
 }

@@ -1,25 +1,21 @@
-// src/firebase.js
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage"; // ✅ add this
 
-// Your Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyBRvO08wwUsIQ3tlNcX4CCkme9DSthXDe8",
-  authDomain: "shraddhainstitute-3737b.firebaseapp.com",
-  projectId: "shraddhainstitute-3737b",
-  storageBucket: "shraddhainstitute-3737b.appspot.com", // ✅ FIXED (.app → .app**spot.com**)
-  messagingSenderId: "98430574285",
-  appId: "1:98430574285:web:e3b606f5f61abccb7a1384",
-  measurementId: "G-9HCTYVWN4H"
+  apiKey: "AIzaSyB8HRNZcbUx8l8LI_I0NLv0SA6M18zTt_A",
+  authDomain: "shraddhainstitute-8a3e2.firebaseapp.com",
+  projectId: "shraddhainstitute-8a3e2",
+  storageBucket: "shraddhainstitute-8a3e2.firebasestorage.app",
+  messagingSenderId: "593017943268",
+  appId: "1:593017943268:web:ca3f1e412c630137ec28f1",
+  measurementId: "G-3Q0ZNMQJY8"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-// ✅ Initialize Firebase Storage
-const storage = getStorage(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app); // ✅ export storage
 
-// ✅ Export storage so you can use in Gallery.js
-export { storage };
+
+

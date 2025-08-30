@@ -14,17 +14,18 @@
 
 /* Hero Section */
 .programs-hero {
-  background: linear-gradient(rgba(247,107,28,0.8), rgba(247,107,28,0.9));
-  color: white;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);
+  color: #333;
   text-align: center;
   padding: 80px 20px;
-    background-image: url('../assets/abacus.webp'); /* Add your image path */
-
+  position: relative;
+  overflow: hidden;
 }
 
 .programs-hero h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
+  color: #ea580c;
 }
 
 .programs-hero p {
