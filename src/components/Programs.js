@@ -61,7 +61,10 @@ const Programs = () => {
       <div className="container">
         {/* Section Header */}
         <header className="text-center mb-5">
-          <h2 className="section-title1" itemProp="name">🎓 Our Programs</h2>
+          <h2 className="section-title1" itemProp="name">
+            <span className="programs-title-mobile">Programs</span>
+            <span className="programs-title-desktop">🎓 Our Programs</span>
+          </h2>
           <p className="section-subtitle" itemProp="description">
             Explore learning paths designed to spark joy and confidence in math!
           </p>

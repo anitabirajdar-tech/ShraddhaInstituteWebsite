@@ -1,3 +1,51 @@
+@media (max-width: 576px) {
+  .section-title2 .institute-name {
+    display: none !important;
+  }
+}
+/* Mobile-only responsive overrides */
+@media (max-width: 576px) {
+  .about-section-bg {
+    padding: 1.2rem 0.5rem;
+  }
+  .about-wrapper {
+    padding: 0.5rem;
+  }
+  .section-title2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .about-row {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .about-col {
+    padding: 0 !important;
+    min-width: 0;
+  }
+  .impact-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+  }
+  .mission-vision-list, .impact-list {
+    gap: 0.5rem;
+  }
+  .mission-vision-line, .impact-line {
+    font-size: 1.08rem;
+    margin-bottom: 1.1rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    line-height: 1.7;
+  }
+  .check-icon {
+    font-size: 1rem;
+    margin-right: 8px;
+    margin-top: 0;
+  }
+}
 /* Background */
 .about-section-bg {
   background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);

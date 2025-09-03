@@ -1,3 +1,25 @@
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+    width: 100% !important;
+    margin-bottom: 1.2rem !important;
+    flex-wrap: nowrap !important;
+  }
+  .hero-buttons .btn {
+    min-width: 120px;
+    max-width: 160px;
+    width: auto;
+    font-size: 0.95rem;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+  }
+/* Mobile-only responsive overrides */
+
 /* Hero.css */
 .hero-section {
   position: relative;
@@ -66,9 +88,14 @@
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
-  margin: 0 auto 3rem;
+  margin-bottom: 2rem;
+  justify-content: center;
   line-height: 1.6;
 }
+
+
+
+
 
 /* Buttons */
 .btn-orange {
@@ -139,41 +166,49 @@
   font-size: 1.1rem;
 }
 
-/* Responsive */
-@media (max-width: 1199px) {
-  .hero-title { font-size: 3rem; }
-}
 
-@media (max-width: 991px) {
-  .hero-section { padding: 60px 0; min-height: 80vh; }
-  .hero-title { font-size: 2.5rem; }
-  .hero-subtitle { font-size: 1.3rem; }
-}
-
+/* 🔹 Mobile Fixes for Buttons & Badges */
 @media (max-width: 767px) {
-  .hero-section { padding: 50px 0; min-height: 70vh; }
-  .hero-title { font-size: 2.2rem; }
-  .hero-subtitle { font-size: 1.2rem; }
-  .btn-orange, .btn-outline-white { padding: 12px 25px; }
-}
-
-@media (max-width: 575px) {
-  .hero-title { font-size: 1.8rem; }
-  .hero-subtitle { font-size: 1.1rem; }
-  .trust-badges .d-flex {
-    flex-direction: column;
-    gap: 1rem !important;
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;       /* take full width on mobile */
+    margin: 15px auto; /* center align */
+    gap: 10px;
+    padding: 0 10px;
   }
-}
 
-@media (max-width: 400px) {
-  .hero-title { font-size: 1.6rem; }
-  .btn-orange, .btn-outline-white { 
-    padding: 10px 20px;
+  .hero-buttons .btn {
+    flex: 1;
+    min-width: 120px;
     font-size: 0.9rem;
-    width: 100%;
+    padding: 10px 16px;
+    white-space: nowrap;
+  }
+
+  /* Trust badges mobile layout */
+  .trust-badges .d-flex {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.7rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+  .trust-badges .d-flex > .d-flex {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .trust-badges .text-light {
+    font-size: 0.95rem;
+    text-align: center;
   }
 }
+
+
 
 /* Add to your Hero.css for better SEO elements */
 .hero-section [itemprop] {
@@ -198,3 +233,49 @@
   border-width: 0;
   margin-top: 2.5rem;
 }
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin: 30px auto 0 auto; /* center align */
+  width: 40%; /* let it take full row */
+}
+
+.hero-buttons .btn {
+  flex: 1;                /* each button equal */
+  min-width: 120px;       /* don’t shrink too small */
+  text-align: center;     
+  white-space: nowrap;    
+}
+
+@media (max-width: 767px) {
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100% !important;
+    margin: 15px auto 0 auto !important;
+    padding: 0 10px;
+    flex-wrap: nowrap;
+  }
+
+
+    .hero-buttons .btn {
+      flex: 1;                /* each button equal */
+      min-width: 120px;       /* don’t shrink too small */
+      text-align: center;     
+      white-space: nowrap;    
+    }
+}
+    .hero-buttons .btn:first-child {
+      flex: 0 0 auto;   /* allow to grow */
+    }
+
+    .hero-buttons .btn:last-child {
+      flex: 0 0 auto;   /* allow to grow */
+    }

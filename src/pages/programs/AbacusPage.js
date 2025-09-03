@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './AbacusPage.css';
@@ -11,10 +11,16 @@ const testimonials = [
     id: 1,
     name: "मनीषा सोनटके",
     nameEn: "Manisha Sontake",
+    nameHi: "मनीषा सोनटके",
+    nameKn: "ಮನಿಷಾ ಸೊಂಟಕೆ",
     role: "पालक",
     roleEn: "Parent",
+    roleHi: "अभिभावक",
+    roleKn: "ಪಾಲಕರು",
     content: "माझ्या मुलीची गणिताची कौशल्ये फक्त ३ महिन्यांत नाट्यमयरित्या सुधारली. आता ती माझ्यापेक्षा वेगाने गणना करू शकते!",
     contentEn: "My daughter's math skills improved dramatically within just 3 months. She can now do calculations faster than me!",
+    contentHi: "मेरी बेटी के गणित कौशल में सिर्फ 3 महीनों में जबरदस्त सुधार हुआ। अब वह मुझसे भी तेज गणना कर सकती है!",
+    contentKn: "ನನ್ನ ಮಗಳ ಗಣಿತದ ಕೌಶಲ್ಯಗಳು ಕೇವಲ 3 ತಿಂಗಳಲ್ಲಿ劇ವಾಗಿ ಸುಧಾರಿಸಿವೆ. ಈಗ ಅವಳು ನನ್ನಿಗಿಂತ ವೇಗವಾಗಿ ಲೆಕ್ಕಾಚಾರ ಮಾಡಬಹುದು!",
     rating: 5,
     image: "https://randomuser.me/api/portraits/women/45.jpg",
     language: "marathi"
@@ -23,10 +29,16 @@ const testimonials = [
     id: 2,
     name: "पूजा जाधव",
     nameEn: "Pooja Jadhav",
+    nameHi: "पूजा जाधव",
+    nameKn: "ಪೂಜಾ ಜಾಧವ್",
     role: "शिक्षक",
     roleEn: "Teacher",
+    roleHi: "शिक्षक",
+    roleKn: "ಶಿಕ್ಷಕಿ",
     content: "शिक्षक प्रशिक्षण कार्यक्रम सखोल आणि व्यावहारिक होता. मी या तंत्रांचा यशस्वीरित्या माझ्या शाळेत अंमलबजावणी केली आहे.",
     contentEn: "The teacher training program was comprehensive and practical. I've successfully implemented these techniques in my school.",
+    contentHi: "शिक्षक प्रशिक्षण कार्यक्रम गहन और व्यावहारिक था। मैंने इन तकनीकों को अपनी स्कूल में सफलतापूर्वक लागू किया है।",
+    contentKn: "ಶಿಕ್ಷಕ ತರಬೇತಿ ಕಾರ್ಯಕ್ರಮ ಆಳವಾದ ಮತ್ತು ಪ್ರಾಯೋಗಿಕವಾಗಿತ್ತು. ನಾನು ಈ ತಂತ್ರಗಳನ್ನು ನನ್ನ ಶಾಲೆಯಲ್ಲಿ ಯಶಸ್ವಿಯಾಗಿ ಜಾರಿಗೆ ತಂದಿದ್ದೇನೆ.",
     rating: 5,
     image: "https://randomuser.me/api/portraits/women/32.jpg",
     language: "marathi"
@@ -35,10 +47,16 @@ const testimonials = [
     id: 3,
     name: "अश्विनी अवतडे",
     nameEn: "Ashawini Awatade",
+    nameHi: "अश्विनी अवतडे",
+    nameKn: "ಅಶ್ವಿನಿ ಅವತಡೆ",
     role: "पालक",
     roleEn: "Parent",
+    roleHi: "अभिभावक",
+    roleKn: "ಪಾಲಕರು",
     content: "अबॅकस प्रोग्राम सुरू केल्यापासून माझ्या मुलाची एकाग्रता खूप सुधारली आहे. त्याचे एकूण गुण देखील वाढले आहेत!",
     contentEn: "My son's concentration has improved so much since starting the abacus program. His overall grades have gone up too!",
+    contentHi: "अबैकस प्रोग्राम शुरू करने के बाद से मेरे बेटे की एकाग्रता बहुत बढ़ गई है। उसके कुल अंक भी बढ़ गए हैं!",
+    contentKn: "ಅಬಾಕಸ್ ಕಾರ್ಯಕ್ರಮ ಆರಂಭಿಸಿದ ನಂತರ ನನ್ನ ಮಗನ ಏಕಾಗ್ರತೆ ಬಹಳಷ್ಟು ಸುಧಾರಿಸಿದೆ. ಅವನ ಒಟ್ಟು ಅಂಕಗಳು ಕೂಡ ಹೆಚ್ಚಿವೆ!",
     rating: 5,
     image: "https://randomuser.me/api/portraits/women/68.jpg",
     language: "marathi"
@@ -64,7 +82,7 @@ const testimonials = [
 ];
 
 const AbacusPage = () => {
-  const [showMarathi, setShowMarathi] = React.useState(true);
+  const [selectedLanguage, setSelectedLanguage] = useState('english');
 
   return (
     <div className="abacus-page">
@@ -192,22 +210,33 @@ const AbacusPage = () => {
             Trusted by parents, teachers, and schools across India
           </p>
           
-          {/* Language Toggle Button */}
-          <div className="language-toggle mb-4">
-            <div className="btn-group" role="group">
+          {/* Language Selector - Attractive Modern Style */}
+          <div className="language-selector mb-4">
+            <span className="me-3 text-muted small" style={{fontWeight: '600', fontSize: '1.08rem', letterSpacing: '0.5px'}}>🌐 Select Language:</span>
+            <div className="language-btn-group">
               <button 
-                type="button" 
-                className={`btn ${showMarathi ? 'btn-orange' : 'btn-outline-orange'}`}
-                onClick={() => setShowMarathi(true)}
+                className={`lang-btn ${selectedLanguage === 'english' ? 'active' : ''}`}
+                onClick={() => setSelectedLanguage('english')}
               >
-                मराठी
+               English
               </button>
               <button 
-                type="button" 
-                className={`btn ${!showMarathi ? 'btn-orange' : 'btn-outline-orange'}`}
-                onClick={() => setShowMarathi(false)}
+                className={`lang-btn ${selectedLanguage === 'hindi' ? 'active' : ''}`}
+                onClick={() => setSelectedLanguage('hindi')}
               >
-                English
+                 हिंदी
+              </button>
+              <button 
+                className={`lang-btn ${selectedLanguage === 'marathi' ? 'active' : ''}`}
+                onClick={() => setSelectedLanguage('marathi')}
+              >
+                 मराठी
+              </button>
+              <button 
+                className={`lang-btn ${selectedLanguage === 'kannada' ? 'active' : ''}`}
+                onClick={() => setSelectedLanguage('kannada')}
+              >
+                 ಕನ್ನಡ
               </button>
             </div>
           </div>
@@ -221,21 +250,21 @@ const AbacusPage = () => {
                   <div className="mb-3">
                     <img 
                       src={testimonial.image} 
-                      alt={showMarathi ? testimonial.name : testimonial.nameEn || testimonial.name}
+                      alt={selectedLanguage === 'marathi' ? testimonial.name : testimonial.nameEn || testimonial.name}
                       className="rounded-circle img-fluid"
                       style={{width: '80px', height: '80px', objectFit: 'cover'}}
                     />
                   </div>
                   
                   <h4 className="h5 fw-bold mb-2">
-                    {showMarathi ? testimonial.name : testimonial.nameEn || testimonial.name}
+                    {selectedLanguage === 'marathi' ? testimonial.name : selectedLanguage === 'hindi' ? (testimonial.nameHi || testimonial.nameEn || testimonial.name) : selectedLanguage === 'kannada' ? (testimonial.nameKn || testimonial.nameEn || testimonial.name) : testimonial.nameEn || testimonial.name}
                   </h4>
                   <p className="text-muted small mb-3">
-                    {showMarathi ? (testimonial.roleEn ? testimonial.role : testimonial.roleEn) : testimonial.roleEn || testimonial.role}
+                    {selectedLanguage === 'marathi' ? (testimonial.roleEn ? testimonial.role : testimonial.roleEn) : selectedLanguage === 'hindi' ? (testimonial.roleHi || testimonial.roleEn || testimonial.role) : selectedLanguage === 'kannada' ? (testimonial.roleKn || testimonial.roleEn || testimonial.role) : testimonial.roleEn || testimonial.role}
                   </p>
                   
                   <p className="mb-3">
-                    "{showMarathi ? (testimonial.contentEn ? testimonial.content : testimonial.contentEn) : testimonial.contentEn || testimonial.content}"
+                    "{selectedLanguage === 'marathi' ? (testimonial.contentEn ? testimonial.content : testimonial.contentEn) : selectedLanguage === 'hindi' ? (testimonial.contentHi || testimonial.contentEn || testimonial.content) : selectedLanguage === 'kannada' ? (testimonial.contentKn || testimonial.contentEn || testimonial.content) : testimonial.contentEn || testimonial.content}"
                   </p>
                   
                   <div className="text-orange fs-5">

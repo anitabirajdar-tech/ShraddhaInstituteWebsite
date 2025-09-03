@@ -302,31 +302,33 @@ const VedicMathPage = () => {
           <Row className="justify-content-center mb-4">
             <Col lg={6} className="text-center">
               <div className="language-selector">
-                <span className="me-3 text-muted small">Select Language:</span>
-                <button 
-                  className={`btn btn-sm me-2 ${selectedLanguage === 'english' ? 'btn-orange' : 'btn-outline-secondary'}`}
-                  onClick={() => setSelectedLanguage('english')}
-                >
-                  English
-                </button>
-                <button 
-                  className={`btn btn-sm me-2 ${selectedLanguage === 'hindi' ? 'btn-orange' : 'btn-outline-secondary'}`}
-                  onClick={() => setSelectedLanguage('hindi')}
-                >
-                  हिंदी
-                </button>
-                <button 
-                  className={`btn btn-sm me-2 ${selectedLanguage === 'marathi' ? 'btn-orange' : 'btn-outline-secondary'}`}
-                  onClick={() => setSelectedLanguage('marathi')}
-                >
-                  मराठी
-                </button>
-                <button 
-                  className={`btn btn-sm ${selectedLanguage === 'kannada' ? 'btn-orange' : 'btn-outline-secondary'}`}
-                  onClick={() => setSelectedLanguage('kannada')}
-                >
-                  ಕನ್ನಡ
-                </button>
+                <span className="me-3 text-muted small" style={{fontWeight: '600', fontSize: '1.08rem', letterSpacing: '0.5px'}}>🌐 Select Language:</span>
+                <div className="language-btn-group">
+                  <button 
+                    className={`lang-btn ${selectedLanguage === 'english' ? 'active' : ''}`}
+                    onClick={() => setSelectedLanguage('english')}
+                  >
+                    English
+                  </button>
+                  <button 
+                    className={`lang-btn ${selectedLanguage === 'hindi' ? 'active' : ''}`}
+                    onClick={() => setSelectedLanguage('hindi')}
+                  >
+                     हिंदी
+                  </button>
+                  <button 
+                    className={`lang-btn ${selectedLanguage === 'marathi' ? 'active' : ''}`}
+                    onClick={() => setSelectedLanguage('marathi')}
+                  >
+                     मराठी
+                  </button>
+                  <button 
+                    className={`lang-btn ${selectedLanguage === 'kannada' ? 'active' : ''}`}
+                    onClick={() => setSelectedLanguage('kannada')}
+                  >
+                    ಕನ್ನಡ
+                  </button>
+                </div>
               </div>
             </Col>
           </Row>
@@ -373,16 +375,18 @@ const VedicMathPage = () => {
             </div>
             
             {/* Mobile View: Vertical continuous scroll */}
-            <div className="d-lg-none mobile-testimonial-container">
+            <div className="d-lg-none mobile-testimonial-container" style={{overflowX: 'auto', whiteSpace: 'nowrap'}}>
               <div 
                 className="mobile-testimonial-track"
                 style={{
-                  transform: `translateY(${translateX}px)`,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  transform: `translateX(${translateX}px)`,
                   transition: isPaused ? 'transform 0.3s ease' : 'none'
                 }}
               >
                 {getInfiniteTestimonials().map((story, index) => (
-                  <div key={`mobile-${story.id}-${index}`} className="mobile-testimonial-slide mb-4">
+                  <div key={`mobile-${story.id}-${index}`} className="mobile-testimonial-slide mb-4" style={{display: 'inline-block', minWidth: '280px', maxWidth: '90vw', marginRight: '16px', verticalAlign: 'top'}}>
                     <div className="success-story-card bg-white p-4 rounded-4 shadow-sm">
                       <div className="d-flex align-items-start mb-3">
                         <img 
@@ -395,7 +399,6 @@ const VedicMathPage = () => {
                           <h4 className="h5 fw-bold mb-1 text-center">{story.name}</h4>
                         </div>
                       </div>
-                      
                       <p className="mb-3 text-center" style={{fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6'}}>
                         "{story.content[selectedLanguage]}"
                       </p>
@@ -406,19 +409,11 @@ const VedicMathPage = () => {
             </div>
             
             {/* Pause/Play Indicator */}
-            <div className="rotation-status position-absolute top-0 end-0 p-2">
-              <small className={`badge ${isPaused ? 'bg-warning' : 'bg-success'}`}>
-                {isPaused ? '⏸️ Paused' : '▶️ Auto-rotating'}
-              </small>
-            </div>
+            {/* Pause/Play Indicator hidden as requested */}
           </div>
           
           <Row className="mt-5">
-            <Col className="text-center">
-              <button className="btn btn-orange btn-lg px-4 py-2 fw-bold">
-                Read More Success Stories <i className="ms-2 fas fa-arrow-right"></i>
-              </button>
-            </Col>
+            
           </Row>
         </Container>
       </section>

@@ -1,3 +1,27 @@
+@media (max-width: 576px) {
+  .franchise-hero-section .franchise-btn-group {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.7rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 1.2rem !important;
+  flex-wrap: wrap !important;
+  }
+  .franchise-hero-section .franchise-btn-group .btn {
+  flex: 1 1 48%;
+  min-width: 0;
+  font-size: 0.95rem;
+  padding: 10px 8px;
+    white-space: nowrap;
+    margin: 0;
+    text-align: center;
+  }
+  .franchise-hero-section .franchise-btn-group .btn.apply-btn {
+    padding-left: 18px;
+  }
+}
 
 /* ================= HERO SECTION ================= */
 /* Franchise Hero Section */
@@ -7,6 +31,17 @@
   position: relative;
   color: white;
   overflow: hidden;
+}
+
+.franchise-hero-section .franchise-btn-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  flex-wrap: nowrap;
 }
 
 /* Add animated background elements */

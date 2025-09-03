@@ -66,25 +66,22 @@ const Hero = () => {
               through our prestigious training program
             </p>
 
-            {/* Spacer to separate buttons from subtitle */}
-            <div style={{ height: '32px' }}></div>
-
-            <div className="d-flex gap-3 flex-wrap justify-content-center mb-5">
-              <a
-                href="#teacher-training"
-                className="btn btn-orange"
-                aria-label="Enroll in teacher training program"
-              >
-                Enroll Now <span aria-hidden="true">→</span>
-              </a>
-              <a
-                href="#demo"
-                className="btn btn-orange"
-                aria-label="Sign up for free demo class"
-              >
-                Free Demo
-              </a>
-            </div>
+           <div className="hero-buttons d-flex justify-content-center gap-3 mb-5">
+  <a
+    href="#teacher-training"
+    className="btn btn-orange btn-lg flex-fill"
+    aria-label="Enroll in teacher training program"
+  >
+    Enroll Now <span aria-hidden="true">→</span>
+  </a>
+  <a
+    href="#demo"
+    className="btn btn-outline-white btn-lg flex-fill"
+    aria-label="Sign up for free demo class"
+  >
+    Free Demo
+  </a>
+</div>
 
             {/* Trust badges */}
             <div

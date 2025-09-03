@@ -38,7 +38,10 @@ const Franchise = () => {
       <div className="container">
         {/* Section Heading */}
         <header className="text-center mb-5">
-          <h2 className="heading" itemProp="name">🚀 Start Your Franchise Journey</h2>
+          <h2 className="heading" itemProp="name">
+            <span className="franchise-title-mobile">Franchise Journey</span>
+            <span className="franchise-title-desktop">🚀 Start Your Franchise Journey</span>
+          </h2>
           <p className="subheading" itemProp="description">
             Join Shraddha Institute and become a successful entrepreneur in the field of Abacus & Vedic Maths.
           </p>

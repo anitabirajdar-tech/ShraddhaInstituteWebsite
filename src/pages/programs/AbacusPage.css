@@ -1,3 +1,41 @@
+.language-btn-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.lang-btn {
+  background: linear-gradient(90deg, #fff8f0 0%, #ffe4c8 100%);
+  color: #ea580c;
+  border: 2px solid #ffd699;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 8px 18px;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(255, 149, 0, 0.08);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+.lang-btn.active {
+  background: linear-gradient(90deg, #ffb347 0%, #ff6600 100%);
+  color: #fff;
+  border: 2px solid #ff6600;
+  box-shadow: 0 4px 16px rgba(255, 149, 0, 0.18);
+}
+@media (max-width: 576px) {
+  .language-btn-group {
+    gap: 0.3rem;
+  }
+  .lang-btn {
+    font-size: 0.88rem;
+    padding: 7px 12px;
+  }
+}
 /* Color Variables */
 :root {
   --orange: #FF6B35;

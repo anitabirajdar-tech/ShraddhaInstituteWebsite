@@ -37,7 +37,7 @@ const About = () => {
         {/* Section Title */}
         <header>
           <h2 className="section-title2 animate-fade-in" itemProp="name">
-            About Shraddha Institute
+            About <span className="institute-name">Shraddha Institute</span>
           </h2>
         </header>
 
