@@ -235,9 +235,11 @@
 @media (max-width: 767px) {
   .training-page .floating-badge {
     border-style: solid;
-    position: relative;
-    margin: 1.5rem auto;
-    animation: none;
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    margin: 0;
+    animation: floatBounce 3s ease-in-out infinite;
   }
 }
 

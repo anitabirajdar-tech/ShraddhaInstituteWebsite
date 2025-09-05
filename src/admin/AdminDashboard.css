@@ -1,0 +1,44 @@
+.admin-login, .admin-dashboard {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.admin-login h2, .admin-dashboard h2 {
+  text-align: center;
+  color: #ea580c;
+  margin-bottom: 24px;
+}
+.admin-login input, .admin-dashboard input, .admin-dashboard textarea {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+.admin-dashboard button {
+  background: #ea580c;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+.admin-dashboard button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.content-editor, .image-uploader {
+  margin-bottom: 32px;
+}
+.image-uploader img {
+  display: block;
+  margin-top: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}

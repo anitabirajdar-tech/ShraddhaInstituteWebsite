@@ -1,41 +1,70 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
-import heroBg from "../assets/gallery1.jpg"; // fallback image
-import { db } from "../firebase"; 
+
+import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 const Hero = () => {
-  const [imageUrl, setImageUrl] = useState("");
+  const [images, setImages] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // 🔹 Fetch Firestore images
   useEffect(() => {
-    const fetchImage = async () => {
+    const fetchImages = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, "headerimage"));
+        console.log("Raw Firestore docs:", querySnapshot.docs.map(doc => doc.data()));
         if (!querySnapshot.empty) {
-          // just grab the first doc
-          const doc = querySnapshot.docs[0].data();
-          console.log("✅ Firestore doc:", doc);
-          setImageUrl(doc.url); // field must be `url` in Firestore
+          const urls = querySnapshot.docs
+            .map((doc) => doc.data().url)
+            .filter((url) => url && typeof url === 'string' && url.trim() !== '');
+          console.log("✅ Firestore images (filtered):", urls);
+          setImages(urls);
         } else {
           console.log("⚠️ No header image found in Firestore.");
+          setImages([]);
         }
       } catch (error) {
-        console.error("🔥 Error fetching header image:", error);
+        console.error("🔥 Error fetching header images:", error);
       }
     };
 
-    fetchImage();
+    fetchImages();
   }, []);
+
+  // 🔹 Preload images
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [images]);
+
+  // 🔹 Auto slider
+  useEffect(() => {
+    if (images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, 4000); // change every 4s
+      return () => clearInterval(interval);
+    }
+  }, [images]);
 
   return (
     <header className="hero-section" id="hero" role="banner">
-      {/* Dynamic or fallback Background Image */}
-      <div
-        className="hero-bg"
-        style={{ backgroundImage: `url(${imageUrl || heroBg})` }}
-        aria-hidden="true"
-      ></div>
+      {/* Background Slider */}
+      <div className="hero-slider">
+        {images.map((img, idx) => (
+          <div
+            key={`${idx}-${img}`}
+            className={`hero-bg-slide ${idx === currentIndex ? "active" : ""}`}
+            style={{ backgroundImage: `url(${img})` }}
+            aria-hidden="true"
+          ></div>
+        ))}
+      </div>
 
+     
       {/* Gradient Overlay */}
       <div className="hero-gradient-overlay" aria-hidden="true"></div>
 
@@ -66,22 +95,22 @@ const Hero = () => {
               through our prestigious training program
             </p>
 
-           <div className="hero-buttons d-flex justify-content-center gap-3 mb-5">
-  <a
-    href="#teacher-training"
-    className="btn btn-orange btn-lg flex-fill"
-    aria-label="Enroll in teacher training program"
-  >
-    Enroll Now <span aria-hidden="true">→</span>
-  </a>
-  <a
-    href="#demo"
-    className="btn btn-outline-white btn-lg flex-fill"
-    aria-label="Sign up for free demo class"
-  >
-    Free Demo
-  </a>
-</div>
+            <div className="hero-buttons d-flex justify-content-center gap-3 mb-5">
+              <a
+                href="#teacher-training"
+                className="btn btn-orange btn-lg flex-fill"
+                aria-label="Enroll in teacher training program"
+              >
+                Enroll Now <span aria-hidden="true">→</span>
+              </a>
+              <a
+                href="#demo"
+                className="btn btn-orange btn-lg flex-fill"
+                aria-label="Sign up for free demo class"
+              >
+                Free Demo
+              </a>
+            </div>
 
             {/* Trust badges */}
             <div
@@ -153,7 +182,7 @@ const Hero = () => {
                       <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"></path>
                     </svg>
                   </div>
-                  <span className="text-light">10+ Cities</span>
+                  <span className="text-light">60+ Cities</span>
                 </div>
               </div>
             </div>

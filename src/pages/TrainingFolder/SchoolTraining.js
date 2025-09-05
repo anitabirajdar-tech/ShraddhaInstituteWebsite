@@ -97,7 +97,7 @@ const SchoolTraining = () => {
               <Card className="h-100 border-0 shadow-xs-hover shadow-sm transition-all">
                 <Card.Body className="p-4">
                   <div className="d-flex">
-                    <div className="bg-orange-soft rounded-circle p-3 me-4 flex-shrink-0">
+                    <div className="bg-orange-soft rounded-circle p-3 me-4 flex-shrink-0" style={{ width: '48px', height: '48px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <span className="text-orange-dark" style={{ fontSize: '1.25rem' }}>
                         {benefit.icon}
                       </span>

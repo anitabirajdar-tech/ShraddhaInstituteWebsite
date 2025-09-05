@@ -6,7 +6,7 @@ import { collection, doc, getDocs, getDoc } from "firebase/firestore";
 import "./GalleryPage.css";
 
 // ...existing code...
-import bannerImage from "../assets/gallery10.JPG";
+
 
 const categories = [
   { id: "Awards", label: " Awards Gallery", icon: "🏆" },

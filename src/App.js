@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import WelcomeScreen from "./components/WelcomeScreen";
-import Chatbox from "./components/Chatbox";
+
 
 // Main Page Sections
 import Hero from "./components/Hero";
@@ -19,8 +19,8 @@ import Gallery from "./components/Gallery";
 import DemoAndContact from "./components/DemoAndContact";
 
 // Pages
-import AboutUs from "./pages/AboutUs";
-import ProgramsPage from "./pages/ProgramsPage";
+
+//import ProgramsPage from "./pages/ProgramsPage";
 import GalleryPage from "./pages/GalleryPage";
 import BookDemoPage from "./pages/BookDemoPage";
 
@@ -32,7 +32,7 @@ import TeacherTrainingPage from "./pages/programs/TeacherTrainingPage";
 import FTrainingPage from "./pages/programs/FTrainingPage";
 
 // Franchise & About Subpages
-import FranchiseMainPage from "./pages/FranchisePage";
+
 import AboutFranchisePage from "./pages/Aboutusprograms/AboutFranchisePage";
 
 // Franchise Folder
@@ -46,6 +46,10 @@ import SchoolTraining from "./pages/TrainingFolder/SchoolTraining";
 // Blog
 import BlogPage from "./pages/blog/BlogPage";
 import BlogPost from "./pages/blog/BlogPost";
+
+// Admin
+import AdminDashboard from './admin/AdminDashboard';
+import './admin/AdminDashboard.css';
 
 import 'aos/dist/aos.css';
 
@@ -83,19 +87,19 @@ function App() {
           />
 
           {/* About Pages */}
-          <Route path="/about-us" element={<><AboutUs /><Footer /><WhatsAppButton /></>} />
+          
           <Route path="/about" element={<><AboutFranchisePage /><Footer /><WhatsAppButton /></>} />
 
           {/* Program Pages */}
-          <Route path="/programs" element={<><ProgramsPage /><Footer /><WhatsAppButton /></>} />
-          <Route path="/programs/abacus" element={<><AbacusPage /><Footer /><WhatsAppButton /></>} />
+        
+          //<Route path="/programs/abacus" element={<><AbacusPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/vedic-math" element={<><VedicMathPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/brain-development" element={<><DMITPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/teacher-training" element={<><TeacherTrainingPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/franchise-training" element={<><FTrainingPage /><Footer /><WhatsAppButton /></>} />
 
           {/* Franchise Pages */}
-          <Route path="/franchise" element={<><FranchiseMainPage /><Footer /><WhatsAppButton /></>} />
+         
           <Route path="/franchise/teacher-parent" element={<><FranchiseTeacherParent /><Footer /><WhatsAppButton /></>} />
           <Route path="/franchise/business-school" element={<><FranchiseBusinessSchool /><Footer /><WhatsAppButton /></>} />
 
@@ -113,8 +117,11 @@ function App() {
 
           {/* Book Demo Page Route */}
           <Route path="/book-demo" element={<><BookDemoPage /><Footer /><WhatsAppButton /></>} />
+
+          {/* Admin Dashboard Route */}
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
-        <Chatbox />
+        
       </div>
     </Router>
   );

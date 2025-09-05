@@ -1,10 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Accordion } from 'react-bootstrap';
 import './DMITPage.css';
-import dmitImg from '../../assets/dmit.jpg';
-import dmitImg1 from '../../assets/programs/dmit1.jpeg';
-import dmitImg2 from '../../assets/programs/dmit2.jpg';
-import dmitImg3 from '../../assets/programs/dmit3.png';
+
 
 const DMITPage = () => {
   return (

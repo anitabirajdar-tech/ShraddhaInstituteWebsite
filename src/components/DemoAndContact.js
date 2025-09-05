@@ -1,15 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Link } from 'react-router-dom';
 import './DemoAndContact.css';
-import studentImg from '../assets/student.png';
+import { db } from '../firebase'; 
+import { doc, getDoc } from 'firebase/firestore';
 
 const DemoAndContact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [activeField, setActiveField] = useState(null);
+  const [studentImg, setStudentImg] = useState(null);
+
 
   // Replace "xldlawgo" with your actual Formspree form ID
   const [state, handleSubmit] = useForm("xldlawgo");
+
+  // 🔹 Fetch image URL from Firestore
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const docRef = doc(db, "demoAssets", "studentImage");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setStudentImg(docSnap.data().url);
+        }
+      } catch (error) {
+        console.error("Error fetching student image:", error);
+      }
+    };
+    fetchImage();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -124,8 +143,12 @@ const DemoAndContact = () => {
   Book Your Free Session
 </Link>
           </div>
-          <div className="demo-image">
-            <img src={studentImg} alt="Happy students learning" />
+         <div className="demo-image">
+            {studentImg ? (
+              <img src={studentImg} alt="Happy students learning" />
+            ) : (
+              <p>Loading image...</p>
+            )}
           </div>
         </div>
       </div>

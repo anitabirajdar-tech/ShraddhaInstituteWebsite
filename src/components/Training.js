@@ -1,9 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Training.css';
-import trainingIllustration from '../assets/training-illustration.svg';
+import { db } from '../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 const Training = () => {
+  const [svgCode, setSvgCode] = useState(null);
+
   useEffect(() => {
+    // ✅ Fetch SVG from Firestore
+    const fetchSvg = async () => {
+      try {
+        const docRef = doc(db, "trainingAssets", "illustration"); // collection & document
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setSvgCode(docSnap.data().svgCode);
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error fetching SVG:", error);
+      }
+    };
+
+    fetchSvg();
+
+    // ✅ Animations
     const animateElements = [
       { selector: '.title-section', animation: 'fadeInDown' },
       { selector: '.section-label', animation: 'fadeInLeft' },
@@ -56,7 +78,6 @@ const Training = () => {
               {/* Benefits - 2x2 Grid */}
               <div className="benefits-grid">
                 {[
-                  
                   { icon: '🧮', title: 'Abacus Training', desc: 'Master all 8 levels of abacus techniques' },
                   { icon: '🔢', title: 'Vedic Math', desc: 'Learn 16 core sutras & applications' },
                   { icon: '👩‍🏫', title: 'Teaching Methods', desc: 'Proven pedagogical approaches' },
@@ -73,11 +94,14 @@ const Training = () => {
             
             {/* Illustration */}
             <div className="training-illustration">
-              <img 
-                src={trainingIllustration} 
-                alt="Abacus and Vedic Math Training Illustration"
-                className="illustration-img"
-              />
+              {svgCode ? (
+                <div 
+                  className="illustration-img"
+                  dangerouslySetInnerHTML={{ __html: svgCode }}
+                />
+              ) : (
+                <p>Loading illustration...</p>
+              )}
               <div className="floating-badge">
                 <span className="badge-number">600+</span>
                 <span className="badge-text">Certified Instructors</span>

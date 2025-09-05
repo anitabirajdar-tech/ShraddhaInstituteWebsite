@@ -40,8 +40,9 @@
   color: #fff;
 }
 .legacy-orange {
-  color: #fd7e14;
+  color: white; /* slightly transparent orange */
   font-weight: 700;
+  margin-top: 23rem;
 }
 .gallery-hero {
   height: 80vh;                        /* Full hero height */

@@ -137,16 +137,18 @@ const FranchiseTeacherParent = () => {
                 {/* CTA Buttons */}
                 <div className="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center mb-4">
                   <Button 
-                    className="btn-primary"
+                    className="btn btn-primary"
                   >
                     <FaClipboardCheck className="me-2" />
-                    Book Free Consultation
+                    <span className="d-none d-sm-inline">Book Free Consultation</span>
+                    <span className="d-inline d-sm-none">Book Free<br />Consultation</span>
                   </Button>
                   <Button 
-                    className="btn-secondary"
+                    className="btn btn-primary"
                   >
                     <FaBookOpen className="me-2" />
-                    Download Brochure
+                    <span className="d-none d-sm-inline">Download Brochure</span>
+                    <span className="d-inline d-sm-none">Download<br />Brochure</span>
                   </Button>
                 </div>
                 

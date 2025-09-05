@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Accordion, Card, Badge } from "react-bootstrap";
 import { ClockFill, LightningFill, AwardFill, GraphUp, StarFill, ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 import "./TeacherTrainingPage.css";
-import trainingHero from "../../assets/gallery2.jpg";
+import { app } from "../../firebase"; // make sure firebase.js exports initialized app
+
 
 const TeacherTrainingPage = () => {
   // Continuous testimonial carousel state
@@ -34,9 +35,9 @@ const TeacherTrainingPage = () => {
   ];
 
   const benefits = [
-    { icon: "📜", title: "Recognized Certification", text: "Globally accepted with lifetime validity" },
-    { icon: "👩‍🏫", title: "Practical Training", text: "120+ hours of hands-on instruction" },
-    { icon: "💼", title: "Career Support", text: "Placement and franchise opportunities" },
+    { icon: <AwardFill color="white" size={32} />, title: "Recognized Certification", text: "Globally accepted with lifetime validity" },
+      { icon: <ClockFill color="white" size={32} />, title: "Practical Training", text: "120+ hours of hands-on instruction" },
+      { icon: <GraphUp color="white" size={32} />, title: "Career Support", text: "Placement and franchise opportunities" },
   ];
 
   const curriculum = [
@@ -161,11 +162,11 @@ const TeacherTrainingPage = () => {
               </p>
               
               <div className="d-flex flex-wrap gap-3 justify-content-center">
-                <button className="btn btn-primary btn-lg px-4 py-3 fw-bold">
+                <button className="btn btn-orange btn-lg px-4 py-3 fw-bold">
                   <LightningFill className="me-2" />
                   Enroll Now
                 </button>
-                <button className="btn btn-outline-primary btn-lg px-4 py-3">
+                <button className="btn btn-orange btn-lg px-4 py-3 fw-bold">
                   Free Demo Class
                 </button>
               </div>
@@ -229,13 +230,10 @@ const TeacherTrainingPage = () => {
 
       {/* ================= Curriculum Section ================= */}
       <Container className="curriculum-section py-5">
-        <Row className="align-items-center">
-          <Col lg={6} className="mb-4 mb-lg-0">
-            <img src={trainingHero} alt="Curriculum" className="img-fluid rounded-3 shadow" />
-          </Col>
-          <Col lg={6}>
-            <h2 className="mb-4">Comprehensive Curriculum</h2>
-            <Accordion flush>
+        <Row className="justify-content-center">
+          <Col lg={8} md={10} sm={12} className="d-flex flex-column align-items-center">
+            <h2 className="section-heading mb-4 text-center">Comprehensive Curriculum</h2>
+            <Accordion flush className="w-100">
               {curriculum.map((item, index) => (
                 <Accordion.Item key={index} eventKey={index.toString()} className="mb-2 border">
                   <Accordion.Header className="accordion-orange-header">{item.title}</Accordion.Header>

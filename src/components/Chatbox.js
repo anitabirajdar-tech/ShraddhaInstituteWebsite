@@ -1,8 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Chatbox.css";
-import logo from "../assets/backgrounds/logo3.png";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import firebaseApp from "../firebase";
 
 const Chatbox = () => {
+  const [logoUrl, setLogoUrl] = useState(null);
+
+  useEffect(() => {
+    const fetchLogo = async () => {
+      try {
+        const db = getFirestore(firebaseApp);
+        const docRef = doc(db, "websiteAssets", "header");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setLogoUrl(docSnap.data().logo);
+        } else {
+          console.log("No logo found in Firestore!");
+        }
+      } catch (error) {
+        console.error("Error fetching logo:", error);
+      }
+    };
+    fetchLogo();
+  }, []);
+
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -18,7 +39,6 @@ const Chatbox = () => {
     );
   }
 
-  // Greeting shown when new chat starts
   const defaultGreeting = [
     { text: "Hello there! 👋", sender: "received", time: getCurrentTime() },
     {
@@ -30,7 +50,8 @@ const Chatbox = () => {
 
   const scrollToBottom = () => {
     if (messagesEndRef.current) {
-      messagesEndRef.current.parentNode.scrollTop = messagesEndRef.current.parentNode.scrollHeight;
+      messagesEndRef.current.parentNode.scrollTop =
+        messagesEndRef.current.parentNode.scrollHeight;
     }
   };
 
@@ -38,7 +59,6 @@ const Chatbox = () => {
     scrollToBottom();
   }, [messages]);
 
-  // 🔹 Predefined FAQ responses
   const responses = {
     abacus:
       "We offer professional Abacus training to improve calculation speed and concentration.",
@@ -46,17 +66,13 @@ const Chatbox = () => {
       "Our Vedic Math program helps children solve math faster with ancient techniques.",
     brain:
       "We provide Brain Development courses that boost memory, focus, and creativity.",
-    online:
-      "Yes! We provide both online and offline classes for flexibility.",
-    demo:
-      "Great choice 🎉 We are currently offering a FREE demo class. Would you like me to register you?",
+    online: "Yes! We provide both online and offline classes for flexibility.",
+    demo: "Great choice 🎉 We are currently offering a FREE demo class. Would you like me to register you?",
     age: "We have batches for different age groups. Please share your child’s age to guide you better.",
     brochure:
       "We will send you our brochure via email. Could you please share your email address?",
-    contact:
-      "Our counselor will reach out to you shortly with full details.",
-    counselor:
-      "Our counselor will reach out to you shortly with full details.",
+    contact: "Our counselor will reach out to you shortly with full details.",
+    counselor: "Our counselor will reach out to you shortly with full details.",
     fees:
       "Our course fees vary depending on the program. Would you like me to connect you with our counselor for details?",
     location:
@@ -67,17 +83,13 @@ const Chatbox = () => {
       "🙏 Thank you for connecting with Shraddha Institute. We’ll get back to you soon.",
   };
 
-  // 🔹 Smart reply function
   const getBotReply = (userMessage) => {
     const msg = userMessage.toLowerCase();
-
     for (let key in responses) {
       if (msg.includes(key)) {
         return responses[key];
       }
     }
-
-    // Default fallback
     return "Thank you for your interest! Would you like to know about our Abacus, Vedic Math, or Brain Development courses?";
   };
 
@@ -94,7 +106,6 @@ const Chatbox = () => {
     setMessages((prev) => [...prev, newMessage]);
     if (!text) setInputValue("");
 
-    // Simulate bot reply
     setIsTyping(true);
     setTimeout(() => {
       const replyMessage = {
@@ -109,29 +120,30 @@ const Chatbox = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-                    <img src={require("../assets/backgrounds/logo3.png")} alt="Bot" className="avatar bot-avatar" />
+      handleSendMessage();
     }
   };
 
-  // 🔹 Toggle chatbox → reset on close, greet on open
   const toggleChat = () => {
     if (isOpen) {
-      setMessages([]); // Clear old chat
+      setMessages([]);
     } else {
-      setMessages(defaultGreeting); // Start fresh
+      setMessages(defaultGreeting);
     }
     setIsOpen(!isOpen);
   };
 
-                  <img src={require("../assets/backgrounds/logo3.png")} alt="Bot" className="avatar bot-avatar" />
   const quickReplies = ["Fees", "Timings", "Demo", "Location", "Brochure"];
 
   return (
     <div className="chatbox-container left-side">
-      {/* Chat window */}
       <div className={`chatbox ${isOpen ? "active" : ""}`}>
         <div className="chat-header">
-          <img src="/logo192.png" alt="Shraddha Logo" className="chat-logo" />
+          <img
+            src={logoUrl || "/logo192.png"}
+            alt="Shraddha Logo"
+            className="chat-logo"
+          />
           <div className="chat-title-group">
             <span className="chat-title">Shraddha Institute</span>
             <span className="chat-status online">Online</span>
@@ -141,13 +153,24 @@ const Chatbox = () => {
           </button>
         </div>
 
-        <div className="chat-messages" style={{ maxHeight: '300px', overflowY: 'auto' }}>
+        <div
+          className="chat-messages"
+          style={{ maxHeight: "300px", overflowY: "auto" }}
+        >
           {messages.map((msg, index) => (
-            <div key={index} className={`message ${msg.sender}`}> 
+            <div key={index} className={`message ${msg.sender}`}>
               {msg.sender === "received" ? (
-                <img src="/logo192.png" alt="Bot" className="avatar bot-avatar" />
+                <img
+                  src={logoUrl || "/logo192.png"}
+                  alt="Bot"
+                  className="avatar bot-avatar"
+                />
               ) : (
-                <img src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff" alt="User" className="avatar user-avatar" />
+                <img
+                  src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff"
+                  alt="User"
+                  className="avatar user-avatar"
+                />
               )}
               <div className="bubble-group">
                 <div className="bubble">
@@ -159,7 +182,11 @@ const Chatbox = () => {
           ))}
           {isTyping && (
             <div className="message received typing">
-              <img src="/logo192.png" alt="Bot" className="avatar bot-avatar" />
+              <img
+                src={logoUrl || "/logo192.png"}
+                alt="Bot"
+                className="avatar bot-avatar"
+              />
               <div className="bubble-group">
                 <div className="bubble typing-indicator">
                   <span className="dot"></span>
@@ -172,7 +199,6 @@ const Chatbox = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Quick Replies */}
         <div className="quick-replies">
           {quickReplies.map((reply, index) => (
             <button
@@ -199,7 +225,6 @@ const Chatbox = () => {
         </div>
       </div>
 
-      {/* Floating toggle button */}
       <button className="chat-toggle" onClick={toggleChat}>
         <i className={`fas ${isOpen ? "fa-times" : "fa-comment"}`}></i>
       </button>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './AbacusPage.css';
-import abacusHero from '../../assets/abacus.webp';
+
 import { FaBolt, FaBullseye, FaChartLine, FaSmileBeam } from 'react-icons/fa';
 
 

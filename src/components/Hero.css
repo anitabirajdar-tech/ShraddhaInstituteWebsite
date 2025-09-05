@@ -31,7 +31,20 @@
 }
 
 /* Background Image */
-.hero-bg {
+
+/* Crossfade Slider Background */
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* fallback behind everything */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-bg-slide {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,8 +53,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
   z-index: 0;
-  filter: brightness(0.9);
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+  z-index: 1; /* ensure active slide is always on top */
 }
 
 /* Gradient Overlay */

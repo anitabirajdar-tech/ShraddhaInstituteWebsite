@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './Header.css';
-import logo from '../assets/backgrounds/logo3.png';
+// ✅ Firestore imports
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import firebaseApp from "../firebase"; // your firebase.js config
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faCalculator, 
@@ -21,12 +23,31 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredDropdown, setHoveredDropdown] = useState(null);
+  const [logoUrl, setLogoUrl] = useState(null); // ✅ state for logo
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', onScroll);
+
+    // Fetch logo from Firestore
+    const fetchLogo = async () => {
+      try {
+        const db = getFirestore(firebaseApp);
+        const docRef = doc(db, "websiteAssets", "header"); // adjust collection/doc name
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setLogoUrl(docSnap.data().logo);
+        } else {
+          console.log("No logo found in Firestore!");
+        }
+      } catch (error) {
+        console.error("Error fetching logo:", error);
+      }
+    };
+    fetchLogo();
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -74,7 +95,11 @@ const Header = () => {
         <div className="container">
           <Link to="/" className="navbar-brand" onClick={closeMenu}>
             <div className="logo-container d-flex align-items-center">
-              <img src={logo} alt="Shraddha Institute Logo" className="main-logo" />
+              <img 
+                src={logoUrl || "https://via.placeholder.com/150"} 
+                alt="Shraddha Institute Logo" 
+                className="main-logo" 
+              />
             </div>
           </Link>
 

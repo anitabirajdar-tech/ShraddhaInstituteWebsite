@@ -1,3 +1,30 @@
+.section-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ea580c;
+  margin-bottom: 1.2rem;
+  text-shadow: none;
+  letter-spacing: 0.5px;
+}
+/* Outline Orange Button Style from FranchiseTrainingPage */
+.btn-outline-orange {
+  color: white;
+
+  background: transparent;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-size: 1rem;
+}
+.btn-outline-orange:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+  color: orangered;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
+}
 :root {
   --orange: #FF6B35;
   --orange-light: #FFD166;
@@ -204,24 +231,45 @@ html, body {
 /* Curriculum Section */
 .curriculum-section {
   background-color: var(--white);
+  color: #333;
 }
+
+.curriculum-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+    color: #ea580c !important;
+  margin-bottom: 1.2rem;
+  text-shadow: none;
+  letter-spacing: 0.5px;
+}
+.curriculum-section .accordion-header {
+  color: #ea580c !important;
+  font-weight: 700;
+  text-shadow: none !important;
+}
+.curriculum-section .accordion-body {
+  color: #333 !important;
+  font-weight: 700;
+  text-shadow: none !important;
+}
+
 
 /* CTA Section */
 .teacher-cta-section {
   background-color: var(--orange);
   color: white;
   border-radius: 0.5rem;
-}
-
-/* ================== */
-/* CONTINUOUS TESTIMONIAL CAROUSEL STYLES */
-/* ================== */
-.continuous-testimonial-container {
-  position: relative;
-  overflow: hidden;
-  padding: 2rem 0;
-  background: linear-gradient(135deg, #fff9f5 0%, #fff3e6 100%);
-  border-radius: 20px;
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--orange-light);
+    color: #fff;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.10);
 }
 
 /* Desktop Horizontal Scroll */
