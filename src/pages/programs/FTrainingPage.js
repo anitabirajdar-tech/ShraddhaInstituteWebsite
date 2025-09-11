@@ -77,14 +77,7 @@ const FTrainingPage = () => {
                 Low investment, high returns, and full support from our expert team.
               </p>
               <div className="d-flex gap-3 mb-4 justify-content-center">
-                <div className="franchise-btn-group">
-                  <button className="btn btn-light btn-lg px-4 py-2 fw-bold text-orange animate__animated animate__pulse animate__infinite">
-                      <i className="bi bi-building me-2"></i> <span className="apply-btn">Apply for Franchise</span>
-                  </button>
-                  <button className="btn btn-outline-light btn-lg px-4 py-2">
-                    <i className="bi bi-info-circle me-2"></i> Learn More
-                  </button>
-                </div>
+                
               </div>
               <div className="d-flex align-items-center gap-4 text-white mt-4 justify-content-center">
                 <div className="d-flex align-items-center bg-white bg-opacity-10 rounded-pill px-3 py-2">
@@ -251,18 +244,7 @@ const FTrainingPage = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="cta-section py-5 text-center">
-        <Container>
-          <Row>
-            <Col>
-              <h2 className="mb-3">Ready to Start Your Education Business?</h2>
-              <p className="lead mb-4">Limited franchise territories available</p>
-              <button className="btn btn-primary btn-lg me-3">Apply Now</button>
-              <button className="btn btn-outline-secondary btn-lg">Download Franchise Kit</button>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      
     </Container>
   );
 };

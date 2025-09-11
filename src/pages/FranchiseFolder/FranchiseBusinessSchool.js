@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { FaSchool, FaChartLine, FaHandsHelping, FaChalkboardTeacher, FaAward, FaUsers } from 'react-icons/fa';
 import { IoIosArrowForward, IoMdSchool, IoIosAlert } from 'react-icons/io';
 import './FranchiseBusinessSchool.css';
 
-import BusinessSchoolTestimonials from "./BusinessSchoolTestimonials";
 
 const FranchiseBusinessSchool = () => {
   const benefits = [
@@ -141,9 +141,13 @@ const FranchiseBusinessSchool = () => {
               <p className="hero-subtitle lead mb-4">
                 Partner with Shraddha Institute to launch or expand your education business. Complete training, branding, and ongoing support.
               </p>
-              <Button variant="light" size="lg" className="fw-bold text-orange px-4 py-2 mt-2">
+              <Link
+                to="/contact"
+                className="btn btn-light fw-bold text-orange px-4 py-2 mt-2"
+                style={{ fontSize: '1.25rem' }}
+              >
                 Get Started
-              </Button>
+              </Link>
             </Col>
           </Row>
         </Container>
@@ -224,60 +228,10 @@ const FranchiseBusinessSchool = () => {
           </Container>
         </section>
 
-        <BusinessSchoolTestimonials />
+    
 
         {/* Final CTA */}
-        <section className="final-cta py-5 position-relative overflow-hidden">
-          <div className="position-absolute top-0 start-0 w-100 h-100 bg-orange-gradient" style={{
-            zIndex: -2
-          }}></div>
-          
-          <div className="position-absolute bottom-0 end-0" style={{
-            width: '300px',
-            height: '300px',
-            background: 'rgba(255, 255, 255, 0.1)',
-            borderRadius: '50%',
-            transform: 'translate(30%, 30%)',
-            zIndex: -1
-          }}></div>
-
-          <Container className="text-center position-relative py-5">
-            <h2 className="display-4 fw-bold text-white mb-4">
-              Ready to Elevate Your Institution?
-            </h2>
-            
-            <p className="cta-subtitle text-white-80 lead mb-5 mx-auto" style={{ maxWidth: '600px' }}>
-              Limited franchise territories available. Apply today to secure your exclusive partnership.
-            </p>
-            
-            <div className="d-flex justify-content-center flex-wrap gap-3">
-              <Button 
-                variant="light" 
-                size="lg" 
-                className="rounded-pill px-4 fw-semibold d-flex align-items-center shadow"
-              >
-                Get Franchise Details <IoIosArrowForward className="ms-2" />
-              </Button>
-              
-              <Button 
-                variant="outline-light" 
-                size="lg" 
-                className="rounded-pill px-4 fw-semibold"
-              >
-                <FaChalkboardTeacher className="me-2" /> Schedule Call
-              </Button>
-            </div>
-            
-            <div className="mt-5 pt-3">
-              <div className="d-inline-flex align-items-center bg-white bg-opacity-10 px-3 py-2 rounded-pill">
-                <FaAward className="text-orange-light me-2" />
-                <span className="text-white fw-medium">
-                  Recognized as "Best Education Franchise 2023"
-                </span>
-              </div>
-            </div>
-          </Container>
-        </section>
+        
       </div>
     </>
   );

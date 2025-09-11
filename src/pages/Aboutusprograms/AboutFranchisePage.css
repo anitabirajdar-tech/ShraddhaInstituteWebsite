@@ -1,4 +1,9 @@
 @media (max-width: 600px) {
+  .timeline-video {
+    display: none !important;
+  }
+}
+@media (max-width: 600px) {
   .timeline-row {
     flex-direction: column;
     gap: 1.2rem;
@@ -27,6 +32,13 @@
     color: #4b2e0e;
     word-break: break-word;
     margin-bottom: 1rem;
+    width: 98vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.10);
   }
   .timeline-video {
     background: #fff8f2;
@@ -37,10 +49,10 @@
     margin-bottom: 1rem;
   }
   .timeline-video iframe {
-    height: 180px;
+    height: 110px;
     min-width: 0;
-    max-width: 100%;
-    width: 100%;
+    max-width: 100vw;
+    width: 98vw;
     border-radius: 10px;
     margin: 0 auto;
     display: block;

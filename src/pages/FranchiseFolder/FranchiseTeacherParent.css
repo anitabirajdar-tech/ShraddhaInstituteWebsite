@@ -1,13 +1,19 @@
-/* CSS Variables for Consistency */
-:root {
-  --orange: #ea580c;
-  --orange-light: #f97316;
-  --orange-dark: #c2410c;
-  --orange-faint: rgba(234, 88, 12, 0.1);
-  --orange-gradient: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-  --white: #FFFFFF;
-  --off-white: #F8F9FA;
-  --light-orange: #fff8f0;
+.text-highlight {
+  background: linear-gradient(90deg, #fff 0%, #fd7e14 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+.gold-gradient-text {
+  background: linear-gradient(90deg, #fff 0%, orange 60%, #fffbe6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+ 
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 /* Base Styles */

@@ -1,3 +1,25 @@
+.success-story-card p,
+.success-story-card h4,
+.success-story-card {
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+  white-space: normal !important;
+}
+/* Make success story images larger and more attractive */
+.success-story-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff3e6;
+  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.15);
+  margin-bottom: 1rem;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.success-story-card:hover img {
+  transform: scale(1.08) rotate(-2deg);
+  border-color: #f97316;
+}
 .language-btn-group {
   display: flex;
   gap: 0.5rem;
@@ -38,17 +60,15 @@
 }
 @media (max-width: 576px) {
   .success-stories-section {
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    display: block;
+    overflow-x: visible;
+    white-space: normal;
   }
   .success-story-card {
-    display: inline-block;
-    min-width: 260px;
-    max-width: 90vw;
-    margin-right: 12px;
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 0 18px 0;
     vertical-align: top;
     transform: none !important;
     box-sizing: border-box;
@@ -338,9 +358,24 @@
   background: linear-gradient(135deg, rgba(255, 237, 213, 0.7) 0%, rgba(255, 247, 237, 0.9) 100%);
 }
 
+
 .success-story-card {
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 149, 0, 0.1);
+  max-width: 340px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  background: #fff;
+  position: relative;
 }
 
 .success-story-card:hover {

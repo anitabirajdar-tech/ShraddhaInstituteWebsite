@@ -9,8 +9,8 @@ const TeacherTraining = () => {
     title: "Teacher Training & Certification Program",
     description: "Transform your career with our comprehensive Abacus & Vedic Math instructor certification",
     benefits: [
-      { text: "certification", icon: <FaCheck /> },
-      { text: "training", icon: <IoTimeOutline /> },
+      { text: "Certification", icon: <FaCheck /> },
+      { text: "Training", icon: <IoTimeOutline /> },
     
       { text: "Franchise opportunities", icon: <FaUsers /> },
       { text: "Ongoing professional development", icon: <FaBookOpen /> },
@@ -139,7 +139,7 @@ const TeacherTraining = () => {
         <Row className="g-4 justify-content-center">
           {teacherTraining.levels.map((level, index) => (
             <Col key={index} lg={4} md={6}>
-              <Card className={`h-100 border-0 overflow-hidden shadow-xs-hover shadow-md transition-all ${index === 1 ? 'border-orange border-2' : ''}`}>
+              <Card className={`h-100 border-0 overflow-hidden shadow-xs-hover shadow-md transition-all certification-card-gradient`}>
                 <Card.Body className="p-0">
                   <div className="p-4 pb-0">
                     <div className="text-center mb-4">
@@ -169,15 +169,7 @@ const TeacherTraining = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-orange-soft px-4 py-3 text-center border-top">
-                    <Button 
-                      variant="orange" 
-                      size="sm" 
-                      className="rounded-pill px-4 fw-semibold"
-                    >
-                      Learn More
-                    </Button>
-                  </div>
+                  
                 </Card.Body>
               </Card>
             </Col>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { 
   FaClipboardCheck, 
   FaUserGraduate, 
@@ -17,7 +18,7 @@ import {
 import { IoIosArrowForward, IoMdTime } from 'react-icons/io';
 import './FranchiseTeacherParent.css';
 
-import FranchiseTeacherParentTestimonials from "./FranchiseTeacherParentTestimonials";
+
 
 const FranchiseTeacherParent = () => {
   const benefits = [
@@ -131,25 +132,29 @@ const FranchiseTeacherParent = () => {
                 {/* Description */}
                 <p className="hero-description mb-5">
                   Turn your passion for teaching into a profitable venture with our proven Abacus & Vedic Math franchise model. 
-                  <span className="fw-bold text-warning"> Start earning ₹15,000-₹20,000/month</span> with minimal investment.
+                  <span className="fw-bold gold-gradient-text"> Start earning ₹15,000-₹20,000/month</span> with minimal investment.
                 </p>
                 
                 {/* CTA Buttons */}
                 <div className="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center mb-4">
-                  <Button 
-                    className="btn btn-primary"
+                  <Link 
+                    to="/contact"
+                    className="btn btn-primary d-flex align-items-center justify-content-center"
+                    style={{ minHeight: '48px' }}
                   >
                     <FaClipboardCheck className="me-2" />
                     <span className="d-none d-sm-inline">Book Free Consultation</span>
                     <span className="d-inline d-sm-none">Book Free<br />Consultation</span>
-                  </Button>
-                  <Button 
-                    className="btn btn-primary"
+                  </Link>
+                  <Link 
+                    to="/contact"
+                    className="btn btn-primary d-flex align-items-center justify-content-center"
+                    style={{ minHeight: '48px' }}
                   >
                     <FaBookOpen className="me-2" />
                     <span className="d-none d-sm-inline">Download Brochure</span>
                     <span className="d-inline d-sm-none">Download<br />Brochure</span>
-                  </Button>
+                  </Link>
                 </div>
                 
               </Col>
@@ -300,29 +305,14 @@ const FranchiseTeacherParent = () => {
                   ))}
                 </ul>
                 
-                <div className="d-flex flex-wrap gap-3">
-                  <Button 
-                    variant="orange" 
-                    size="lg" 
-                    className="rounded-pill px-4 fw-semibold d-flex align-items-center"
-                  >
-                    View Payment Plans <IoIosArrowForward className="ms-2" />
-                  </Button>
-                  <Button 
-                    variant="outline-orange" 
-                    size="lg" 
-                    className="rounded-pill px-4 fw-semibold"
-                  >
-                    Compare Packages
-                  </Button>
-                </div>
+               
               </Col>
             </Row>
           </Container>
         </section>
 
         {/* Testimonials */}
-        <FranchiseTeacherParentTestimonials />
+       
 
        
       </div>

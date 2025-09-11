@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
 import { Link } from 'react-router-dom';
 import './DemoAndContact.css';
-import { db } from '../firebase'; 
+import { db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
 const DemoAndContact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [activeField, setActiveField] = useState(null);
   const [studentImg, setStudentImg] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-
-  // Replace "xldlawgo" with your actual Formspree form ID
-  const [state, handleSubmit] = useForm("xldlawgo");
-
-  // 🔹 Fetch image URL from Firestore
+  // 🔹 Fetch image from Firestore
   useEffect(() => {
     const fetchImage = async () => {
       try {
@@ -33,6 +30,56 @@ const DemoAndContact = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  // 🔹 Submit lead → Catalyst → Zoho CRM
+// 🔹 Submit lead → Catalyst → Zoho CRM
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setIsSuccess(false);
+
+  try {
+    const response = await fetch(
+      "https://reactlead-898747270.development.catalystserverless.com/server/zohoLeadHandler/execute",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    // ✅ Handle non-200 responses (like 500, 403, 404)
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(
+        `Server error (${response.status}): ${text || response.statusText}`
+      );
+    }
+
+    const result = await response.json();
+    console.log("Server response:", result);
+
+    if (result.data && result.data[0].code === "SUCCESS") {
+      setIsSuccess(true);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } else {
+      alert("⚠️ CRM Failed: " + JSON.stringify(result));
+    }
+  } catch (err) {
+    console.error("Submit error:", err);
+
+    // 🔹 More user-friendly error messages
+    if (err.message.includes("Failed to fetch")) {
+      alert("🚫 Network/CORS issue: Could not reach server. Check CORS headers.");
+    } else {
+      alert("⚠️ Error: " + err.message);
+    }
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
 
   return (
     <section className="demo-contact-section" id="contact-demo">
@@ -55,10 +102,9 @@ const DemoAndContact = () => {
               onChange={handleChange}
               onFocus={() => setActiveField('name')}
               onBlur={() => setActiveField(null)}
-              disabled={state.submitting}
+              disabled={isSubmitting}
               required
             />
-            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </div>
 
           <div className={`form-group ${activeField === 'email' ? 'active' : ''}`}>
@@ -72,10 +118,9 @@ const DemoAndContact = () => {
               onChange={handleChange}
               onFocus={() => setActiveField('email')}
               onBlur={() => setActiveField(null)}
-              disabled={state.submitting}
+              disabled={isSubmitting}
               required
             />
-            <ValidationError prefix="Email" field="email" errors={state.errors} />
           </div>
 
           <div className={`form-group ${activeField === 'phone' ? 'active' : ''}`}>
@@ -89,10 +134,9 @@ const DemoAndContact = () => {
               onChange={handleChange}
               onFocus={() => setActiveField('phone')}
               onBlur={() => setActiveField(null)}
-              disabled={state.submitting}
+              disabled={isSubmitting}
               required
             />
-            <ValidationError prefix="Phone" field="phone" errors={state.errors} />
           </div>
 
           <div className={`form-group ${activeField === 'message' ? 'active' : ''}`}>
@@ -106,21 +150,20 @@ const DemoAndContact = () => {
               onChange={handleChange}
               onFocus={() => setActiveField('message')}
               onBlur={() => setActiveField(null)}
-              disabled={state.submitting}
+              disabled={isSubmitting}
               required
             ></textarea>
-            <ValidationError prefix="Message" field="message" errors={state.errors} />
           </div>
 
-          {state.succeeded ? (
+          {isSuccess ? (
             <p className="success-message">✅ Thank you! We'll be in touch soon.</p>
           ) : (
             <button
               type="submit"
-              className={`submit-btn ${state.submitting ? 'submitting' : ''}`}
-              disabled={state.submitting}
+              className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
+              disabled={isSubmitting}
             >
-              {state.submitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           )}
         </form>
@@ -133,17 +176,16 @@ const DemoAndContact = () => {
             <div className="demo-badge"></div>
             <h2>
               <span className="emoji">🎓</span>
-  <span className="orange-text">Free Demo Class</span>
+              <span className="orange-text">Free Demo Class</span>
             </h2>
             <p className="demo-text">
               Experience our unique teaching methodology first-hand. Book a no-obligation demo session today!
             </p>
-            {/* Book Your Free Session button connects to contact form */}
-<Link to="/contact" className="btn btn-primary">
-  Book Your Free Session
-</Link>
+            <Link to="/contact" className="btn btn-primary">
+              Book Your Free Session
+            </Link>
           </div>
-         <div className="demo-image">
+          <div className="demo-image">
             {studentImg ? (
               <img src={studentImg} alt="Happy students learning" />
             ) : (

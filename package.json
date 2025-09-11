@@ -21,6 +21,7 @@
     "framer-motion": "^12.23.12",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.537.0",
+    "node-fetch": "^2.7.0",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
     "react-bootstrap-icons": "^1.11.6",
@@ -59,5 +60,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+
+
+    
   }
+
+
+
+  
 }

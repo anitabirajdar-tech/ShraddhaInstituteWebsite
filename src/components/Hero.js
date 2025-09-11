@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 import { db } from "../firebase";
@@ -7,6 +8,7 @@ import { collection, getDocs } from "firebase/firestore";
 const Hero = () => {
   const [images, setImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [firstImageLoaded, setFirstImageLoaded] = useState(false);
 
   // 🔹 Fetch Firestore images
   useEffect(() => {
@@ -34,9 +36,15 @@ const Hero = () => {
 
   // 🔹 Preload images
   useEffect(() => {
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
+    if (images.length === 0) return;
+    const img = new window.Image();
+    img.onload = () => setFirstImageLoaded(true);
+    img.onerror = () => setFirstImageLoaded(true);
+    img.src = images[0];
+    // Optionally, preload the rest in the background
+    images.slice(1).forEach((src) => {
+      const preloadImg = new window.Image();
+      preloadImg.src = src;
     });
   }, [images]);
 
@@ -64,9 +72,8 @@ const Hero = () => {
         ))}
       </div>
 
-     
-      {/* Gradient Overlay */}
-      <div className="hero-gradient-overlay" aria-hidden="true"></div>
+      {/* Gradient Overlay: only show if first image loaded */}
+      {firstImageLoaded && <div className="hero-gradient-overlay" aria-hidden="true"></div>}
 
       {/* Main Content */}
       <div className="container">
@@ -96,20 +103,20 @@ const Hero = () => {
             </p>
 
             <div className="hero-buttons d-flex justify-content-center gap-3 mb-5">
-              <a
-                href="#teacher-training"
+              <Link
+                to="/contact"
                 className="btn btn-orange btn-lg flex-fill"
                 aria-label="Enroll in teacher training program"
               >
                 Enroll Now <span aria-hidden="true">→</span>
-              </a>
-              <a
-                href="#demo"
+              </Link>
+              <Link
+                to="/contact"
                 className="btn btn-orange btn-lg flex-fill"
                 aria-label="Sign up for free demo class"
               >
                 Free Demo
-              </a>
+              </Link>
             </div>
 
             {/* Trust badges */}

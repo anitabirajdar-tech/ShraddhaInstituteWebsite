@@ -1,0 +1,56 @@
+{
+  "defaults": {
+    "project": 2,
+    "env": 1
+  },
+  "actives": {
+    "project": 2,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "35872000000011042",
+      "name": "Project-Rainfall",
+      "domain": {
+        "id": "10104670669",
+        "name": "project-rainfall-898747270.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "898747270",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    },
+    {
+      "idx": 2,
+      "id": "35872000000017010",
+      "name": "Polls",
+      "domain": {
+        "id": "10104887858",
+        "name": "polls-898747270.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "898747270",
+          "name": "Development",
+          "type": 3,
+          "env_status": "Active",
+          "project_details": {
+            "project_name": "Polls",
+            "id": "35872000000017010",
+            "project_type": "Demo"
+          },
+          "is_default": true,
+          "action_required": false
+        }
+      ]
+    }
+  ]
+}

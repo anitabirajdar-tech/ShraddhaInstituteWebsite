@@ -1,88 +1,31 @@
-import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import './AbacusPage.css';
+import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { db } from "../../firebase";
 
-import { FaBolt, FaBullseye, FaChartLine, FaSmileBeam } from 'react-icons/fa';
+import { collection, getDocs } from "firebase/firestore";
+import "./AbacusPage.css";
 
-
-const testimonials = [
-  {
-    id: 1,
-    name: "मनीषा सोनटके",
-    nameEn: "Manisha Sontake",
-    nameHi: "मनीषा सोनटके",
-    nameKn: "ಮನಿಷಾ ಸೊಂಟಕೆ",
-    role: "पालक",
-    roleEn: "Parent",
-    roleHi: "अभिभावक",
-    roleKn: "ಪಾಲಕರು",
-    content: "माझ्या मुलीची गणिताची कौशल्ये फक्त ३ महिन्यांत नाट्यमयरित्या सुधारली. आता ती माझ्यापेक्षा वेगाने गणना करू शकते!",
-    contentEn: "My daughter's math skills improved dramatically within just 3 months. She can now do calculations faster than me!",
-    contentHi: "मेरी बेटी के गणित कौशल में सिर्फ 3 महीनों में जबरदस्त सुधार हुआ। अब वह मुझसे भी तेज गणना कर सकती है!",
-    contentKn: "ನನ್ನ ಮಗಳ ಗಣಿತದ ಕೌಶಲ್ಯಗಳು ಕೇವಲ 3 ತಿಂಗಳಲ್ಲಿ劇ವಾಗಿ ಸುಧಾರಿಸಿವೆ. ಈಗ ಅವಳು ನನ್ನಿಗಿಂತ ವೇಗವಾಗಿ ಲೆಕ್ಕಾಚಾರ ಮಾಡಬಹುದು!",
-    rating: 5,
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
-    language: "marathi"
-  },
-  {
-    id: 2,
-    name: "पूजा जाधव",
-    nameEn: "Pooja Jadhav",
-    nameHi: "पूजा जाधव",
-    nameKn: "ಪೂಜಾ ಜಾಧವ್",
-    role: "शिक्षक",
-    roleEn: "Teacher",
-    roleHi: "शिक्षक",
-    roleKn: "ಶಿಕ್ಷಕಿ",
-    content: "शिक्षक प्रशिक्षण कार्यक्रम सखोल आणि व्यावहारिक होता. मी या तंत्रांचा यशस्वीरित्या माझ्या शाळेत अंमलबजावणी केली आहे.",
-    contentEn: "The teacher training program was comprehensive and practical. I've successfully implemented these techniques in my school.",
-    contentHi: "शिक्षक प्रशिक्षण कार्यक्रम गहन और व्यावहारिक था। मैंने इन तकनीकों को अपनी स्कूल में सफलतापूर्वक लागू किया है।",
-    contentKn: "ಶಿಕ್ಷಕ ತರಬೇತಿ ಕಾರ್ಯಕ್ರಮ ಆಳವಾದ ಮತ್ತು ಪ್ರಾಯೋಗಿಕವಾಗಿತ್ತು. ನಾನು ಈ ತಂತ್ರಗಳನ್ನು ನನ್ನ ಶಾಲೆಯಲ್ಲಿ ಯಶಸ್ವಿಯಾಗಿ ಜಾರಿಗೆ ತಂದಿದ್ದೇನೆ.",
-    rating: 5,
-    image: "https://randomuser.me/api/portraits/women/32.jpg",
-    language: "marathi"
-  },
-  {
-    id: 3,
-    name: "अश्विनी अवतडे",
-    nameEn: "Ashawini Awatade",
-    nameHi: "अश्विनी अवतडे",
-    nameKn: "ಅಶ್ವಿನಿ ಅವತಡೆ",
-    role: "पालक",
-    roleEn: "Parent",
-    roleHi: "अभिभावक",
-    roleKn: "ಪಾಲಕರು",
-    content: "अबॅकस प्रोग्राम सुरू केल्यापासून माझ्या मुलाची एकाग्रता खूप सुधारली आहे. त्याचे एकूण गुण देखील वाढले आहेत!",
-    contentEn: "My son's concentration has improved so much since starting the abacus program. His overall grades have gone up too!",
-    contentHi: "अबैकस प्रोग्राम शुरू करने के बाद से मेरे बेटे की एकाग्रता बहुत बढ़ गई है। उसके कुल अंक भी बढ़ गए हैं!",
-    contentKn: "ಅಬಾಕಸ್ ಕಾರ್ಯಕ್ರಮ ಆರಂಭಿಸಿದ ನಂತರ ನನ್ನ ಮಗನ ಏಕಾಗ್ರತೆ ಬಹಳಷ್ಟು ಸುಧಾರಿಸಿದೆ. ಅವನ ಒಟ್ಟು ಅಂಕಗಳು ಕೂಡ ಹೆಚ್ಚಿವೆ!",
-    rating: 5,
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
-    language: "marathi"
-  },
-  {
-    id: 4,
-    name: "Pooja Wale",
-    role: "Principal",
-    content: "We implemented this program school-wide and saw a 25% improvement in math scores across all grades.",
-    rating: 5,
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
-    language: "english"
-  },
-  {
-    id: 5,
-    name: "Vaibhav Khandare",
-    role: "Parent",
-    content: "The mental math skills my child developed are incredible. She can solve problems instantly without paper!",
-    rating: 5,
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-    language: "english"
-  }
-];
+import { FaBolt, FaBullseye, FaChartLine, FaSmileBeam } from "react-icons/fa";
 
 const AbacusPage = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('english');
+  const [selectedLanguage, setSelectedLanguage] = useState("english");
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "testimonials"));
+        const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setTestimonials(data);
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
 
   return (
     <div className="abacus-page">
@@ -95,15 +38,12 @@ const AbacusPage = () => {
               <p className="lead mb-4 text-white">
                 Unlock your child’s full potential with our proven Abacus training. Boost calculation speed, concentration, and confidence in a fun, interactive way!
               </p>
-              {/* Optional CTA Button */}
-              {/* <a href="#enroll" className="btn btn-light btn-lg px-4 py-2 fw-bold text-orange mt-2">Book Free Demo</a> */}
-              
-              {/* Enroll Now and Book Demo buttons in AbacusPage hero section */}
-              <div className="d-flex justify-content-center gap-3 mt-4">
-                <Link to="/contact" className="btn btn-primary btn-lg px-4">
+              {/* Enroll Now and Book Demo buttons styled like Hero section */}
+              <div className="hero-buttons d-flex justify-content-center gap-3 mt-4">
+                <Link to="/contact" className="btn btn-orange btn-lg flex-fill">
                   Enroll Now
                 </Link>
-                <Link to="/book-demo" className="btn btn-outline-primary btn-lg px-4">
+                <Link to="/book-demo" className="btn btn-orange btn-lg flex-fill">
                   Book Demo
                 </Link>
               </div>
@@ -202,6 +142,7 @@ const AbacusPage = () => {
         </Container>
       </section>
 
+
       {/* Testimonial Marquee Section */}
       <section className="testimonial-marquee py-5 bg-light-orange">
         <Container className="text-center mb-5">
@@ -209,35 +150,28 @@ const AbacusPage = () => {
           <p className="text-muted fs-5">
             Trusted by parents, teachers, and schools across India
           </p>
-          
-          {/* Language Selector - Attractive Modern Style */}
+
+          {/* Language Selector */}
           <div className="language-selector mb-4">
-            <span className="me-3 text-muted small" style={{fontWeight: '600', fontSize: '1.08rem', letterSpacing: '0.5px'}}>🌐 Select Language:</span>
+            <span className="me-3 text-muted small" style={{fontWeight: '600'}}>
+              🌐 Select Language:
+            </span>
             <div className="language-btn-group">
-              <button 
-                className={`lang-btn ${selectedLanguage === 'english' ? 'active' : ''}`}
-                onClick={() => setSelectedLanguage('english')}
-              >
-               English
-              </button>
-              <button 
-                className={`lang-btn ${selectedLanguage === 'hindi' ? 'active' : ''}`}
-                onClick={() => setSelectedLanguage('hindi')}
-              >
-                 हिंदी
-              </button>
-              <button 
-                className={`lang-btn ${selectedLanguage === 'marathi' ? 'active' : ''}`}
-                onClick={() => setSelectedLanguage('marathi')}
-              >
-                 मराठी
-              </button>
-              <button 
-                className={`lang-btn ${selectedLanguage === 'kannada' ? 'active' : ''}`}
-                onClick={() => setSelectedLanguage('kannada')}
-              >
-                 ಕನ್ನಡ
-              </button>
+              {["english", "hindi", "marathi", "kannada"].map((lang) => (
+                <button
+                  key={lang}
+                  className={`lang-btn ${selectedLanguage === lang ? "active" : ""}`}
+                  onClick={() => setSelectedLanguage(lang)}
+                >
+                  {lang === "english"
+                    ? "English"
+                    : lang === "hindi"
+                    ? "हिंदी"
+                    : lang === "marathi"
+                    ? "मराठी"
+                    : "ಕನ್ನಡ"}
+                </button>
+              ))}
             </div>
           </div>
         </Container>
@@ -248,56 +182,53 @@ const AbacusPage = () => {
               <div key={`${testimonial.id}-${index}`} className="marquee-slide">
                 <div className="testimonial-card bg-white p-4 rounded-3 shadow-sm h-100 text-center mx-2">
                   <div className="mb-3">
-                    <img 
-                      src={testimonial.image} 
-                      alt={selectedLanguage === 'marathi' ? testimonial.name : testimonial.nameEn || testimonial.name}
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.nameEn || testimonial.name}
                       className="rounded-circle img-fluid"
-                      style={{width: '80px', height: '80px', objectFit: 'cover'}}
+                      style={{ width: "80px", height: "80px", objectFit: "cover" }}
                     />
                   </div>
-                  
+
                   <h4 className="h5 fw-bold mb-2">
-                    {selectedLanguage === 'marathi' ? testimonial.name : selectedLanguage === 'hindi' ? (testimonial.nameHi || testimonial.nameEn || testimonial.name) : selectedLanguage === 'kannada' ? (testimonial.nameKn || testimonial.nameEn || testimonial.name) : testimonial.nameEn || testimonial.name}
+                    {selectedLanguage === "marathi"
+                      ? testimonial.name
+                      : selectedLanguage === "hindi"
+                      ? testimonial.nameHi || testimonial.nameEn
+                      : selectedLanguage === "kannada"
+                      ? testimonial.nameKn || testimonial.nameEn
+                      : testimonial.nameEn || testimonial.name}
                   </h4>
                   <p className="text-muted small mb-3">
-                    {selectedLanguage === 'marathi' ? (testimonial.roleEn ? testimonial.role : testimonial.roleEn) : selectedLanguage === 'hindi' ? (testimonial.roleHi || testimonial.roleEn || testimonial.role) : selectedLanguage === 'kannada' ? (testimonial.roleKn || testimonial.roleEn || testimonial.role) : testimonial.roleEn || testimonial.role}
+                    {selectedLanguage === "marathi"
+                      ? testimonial.role
+                      : selectedLanguage === "hindi"
+                      ? testimonial.roleHi || testimonial.roleEn
+                      : selectedLanguage === "kannada"
+                      ? testimonial.roleKn || testimonial.roleEn
+                      : testimonial.roleEn || testimonial.role}
                   </p>
-                  
+
                   <p className="mb-3">
-                    "{selectedLanguage === 'marathi' ? (testimonial.contentEn ? testimonial.content : testimonial.contentEn) : selectedLanguage === 'hindi' ? (testimonial.contentHi || testimonial.contentEn || testimonial.content) : selectedLanguage === 'kannada' ? (testimonial.contentKn || testimonial.contentEn || testimonial.content) : testimonial.contentEn || testimonial.content}"
+                    "
+                    {selectedLanguage === "marathi"
+                      ? testimonial.content
+                      : selectedLanguage === "hindi"
+                      ? testimonial.contentHi || testimonial.contentEn
+                      : selectedLanguage === "kannada"
+                      ? testimonial.contentKn || testimonial.contentEn
+                      : testimonial.contentEn || testimonial.content}
+                    "
                   </p>
-                  
+
                   <div className="text-orange fs-5">
-                    {'★'.repeat(testimonial.rating)}
+                    {"★".repeat(testimonial.rating || 5)}
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta-section py-5 bg-orange text-white">
-        <Container className="text-center">
-          <h2 className="display-5 fw-bold mb-4">Ready to Transform Your Child's Math Skills?</h2>
-          <p className="cta-subtitle fs-5 mb-5">
-            Limited seats available for our next batch starting soon
-          </p>
-          <div className="d-flex justify-content-center gap-3">
-            <button className="btn btn-light btn-lg px-4 py-2 fw-bold text-orange">
-              Enroll Now
-            </button>
-            <button className="btn btn-outline-light btn-lg px-4 py-2 fw-bold">
-              Book Demo
-            </button>
-          </div>
-          <div className="mt-4">
-            <p className="small mb-0">
-              <i className="bi bi-shield-check me-2"></i> 7-day money back guarantee
-            </p>
-          </div>
-        </Container>
       </section>
     </div>
   );
