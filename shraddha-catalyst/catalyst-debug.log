@@ -1,0 +1,608 @@
+[debug] [2025-09-11T11:00:02.079Z] : 
+[debug] [2025-09-11T11:00:02.082Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T11:00:02.082Z] : Command:      C:\Program Files\nodejs\node.exe E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js serve
+[debug] [2025-09-11T11:00:02.082Z] : CLI Version:  1.20.2
+[debug] [2025-09-11T11:00:02.083Z] : Platform:     win32
+[debug] [2025-09-11T11:00:02.083Z] : Node Version: v22.17.1
+[debug] [2025-09-11T11:00:02.083Z] : Time:         Thu Sep 11 2025 16:30:02 GMT+0530 (India Standard Time)
+[debug] [2025-09-11T11:00:02.083Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T11:00:02.083Z] : 
+[debug] [2025-09-11T11:00:02.831Z] : > authorizing via signed-in user option
+[debug] [2025-09-11T11:00:02.831Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.dataverse.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-09-11T11:00:02.855Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128 
+
+[debug] [2025-09-11T11:00:03.823Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 11:00:03 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T11:00:03.828Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/environment 
+
+[debug] [2025-09-11T11:00:04.149Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 11:00:03 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T11:00:04.862Z] : Build folder already exists, starting cleanup
+[debug] [2025-09-11T11:00:04.927Z] : http port : '3000' is not available. Hence port '3001' will be used instead.
+[debug] [2025-09-11T11:00:04.946Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-09-11T11:00:05.303Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 11:00:04 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T11:00:05.305Z] : unknown eol undefined hence skipping check
+[info] [2025-09-11T11:00:06.745Z] : 
+[info] [2025-09-11T11:00:06.746Z] :  >>>>>>>>>>>>>> BasicIO <<<<<<<<<<<<<< 
+[info] [2025-09-11T11:00:06.746Z] : i reactlead_function: http://localhost:3001/server/reactlead_function/execute
+[info] [2025-09-11T11:00:06.747Z] : 
+[debug] [2025-09-11T11:06:30.762Z] : > refreshing access token <
+[debug] [2025-09-11T11:06:30.765Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.com/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-09-11T11:06:31.740Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 11:06:31 GMT","content-type":"application/json;charset=UTF-8","content-length":"2362","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-09-11T11:06:32.070Z] : TypeError: Cannot read properties of undefined (reading 'method')
+    at module.exports (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:5:23)
+    at file:///E:/npm-global/node_modules/zcatalyst-cli/lib/shell/dependencies/invoker/bio/node.mjs:106:18
+[info] [2025-09-11T11:06:51.619Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T11:06:53.476Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T11:06:53.476Z] : i functions(reactlead_function): URL => http://localhost:3001/server/reactlead_function/execute
+[info] [2025-09-11T12:09:01.619Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T12:09:03.047Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T12:09:03.048Z] : i functions(reactlead_function): URL => http://localhost:3001/server/reactlead_function/execute
+[debug] [2025-09-11T12:10:05.498Z] : 
+[debug] [2025-09-11T12:10:05.500Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T12:10:05.500Z] : Command:      C:\Program Files\nodejs\node.exe E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js serve
+[debug] [2025-09-11T12:10:05.501Z] : CLI Version:  1.20.2
+[debug] [2025-09-11T12:10:05.501Z] : Platform:     win32
+[debug] [2025-09-11T12:10:05.501Z] : Node Version: v22.17.1
+[debug] [2025-09-11T12:10:05.501Z] : Time:         Thu Sep 11 2025 17:40:05 GMT+0530 (India Standard Time)
+[debug] [2025-09-11T12:10:05.501Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T12:10:05.501Z] : 
+[debug] [2025-09-11T12:10:06.383Z] : > authorizing via signed-in user option
+[debug] [2025-09-11T12:10:06.384Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.dataverse.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-09-11T12:10:06.409Z] : > refreshing access token <
+[debug] [2025-09-11T12:10:06.411Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.com/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-09-11T12:10:07.728Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 12:10:07 GMT","content-type":"application/json;charset=UTF-8","content-length":"2362","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T12:10:07.754Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128 
+
+[debug] [2025-09-11T12:10:08.789Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 12:10:08 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T12:10:08.796Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/environment 
+
+[debug] [2025-09-11T12:10:09.108Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 12:10:08 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T12:10:09.584Z] : Build folder already exists, starting cleanup
+[debug] [2025-09-11T12:10:09.639Z] : http port : '3000' is not available. Hence port '3002' will be used instead.
+[debug] [2025-09-11T12:10:09.655Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-09-11T12:10:09.985Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 12:10:09 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T12:10:09.994Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-11T12:10:11.410Z] : http port : '4200' is not available. Hence port '4201' will be used instead.
+[info] [2025-09-11T12:10:11.444Z] : 
+[info] [2025-09-11T12:10:11.444Z] :  >>>>>>>>>>>>>> BasicIO <<<<<<<<<<<<<< 
+[info] [2025-09-11T12:10:11.445Z] : i reactlead_function: http://localhost:3002/server/reactlead_function/execute
+[info] [2025-09-11T12:10:11.445Z] : 
+[info] [2025-09-11T12:10:26.368Z] : Received form data: {}
+
+[info] [2025-09-11T12:10:27.349Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55
+      context.setHeader("Access-Control-Allow-Origin", "*");
+              ^
+
+TypeError: context.setHeader is not a function
+    at setCORS (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55:15)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:64:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[info] [2025-09-11T12:10:27.350Z] : Node.js v22.17.1
+[debug] [2025-09-11T12:10:27.374Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T12:10:27.376Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T12:11:33.079Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T12:11:33.080Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[error] [2025-09-11T12:11:33.270Z] : × An unexpected error has occurred.
+[debug] [2025-09-11T12:11:33.271Z] : Error Stack: CatalystError: An unexpected error has occurred.
+    at exports.default (E:\npm-global\node_modules\zcatalyst-cli\lib\errorOut.js:12:17)
+    at process.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js:90:28)
+    at process.emit (node:events:518:28)
+    at process.processEmit [as emit] (E:\npm-global\node_modules\zcatalyst-cli\node_modules\signal-exit\index.js:199:34)
+    at emitUnhandledRejection (node:internal/process/promises:252:13)
+    at throwUnhandledRejectionsMode (node:internal/process/promises:388:19)
+    at processPromiseRejections (node:internal/process/promises:475:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:106:32)
+[debug] [2025-09-11T12:11:33.271Z] : Original Error: Error: [Error: ENOTEMPTY: directory not empty, rmdir 'E:\shraddha\shraddha-institute\shraddha-catalyst\.build\functions\reactlead_function\node_modules\zcatalyst-sdk-node\lib'] {
+  errno: -4051,
+  code: 'ENOTEMPTY',
+  syscall: 'rmdir',
+  path: 'E:\\shraddha\\shraddha-institute\\shraddha-catalyst\\.build\\functions\\reactlead_function\\node_modules\\zcatalyst-sdk-node\\lib'
+}
+    at exports.default (E:\npm-global\node_modules\zcatalyst-cli\lib\errorOut.js:14:23)
+    at process.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js:90:28)
+    at process.emit (node:events:518:28)
+    at process.processEmit [as emit] (E:\npm-global\node_modules\zcatalyst-cli\node_modules\signal-exit\index.js:199:34)
+    at emitUnhandledRejection (node:internal/process/promises:252:13)
+    at throwUnhandledRejectionsMode (node:internal/process/promises:388:19)
+    at processPromiseRejections (node:internal/process/promises:475:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:106:32)
+[debug] [2025-09-11T12:11:33.271Z] : Error Status: 500
+[info] [2025-09-11T12:11:33.278Z] : Kindly contact Catalyst support [support@zohocatalyst.com] if you need any further assistance
+[info] [2025-09-11T12:11:35.243Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T12:11:35.243Z] : i functions(reactlead_function): URL => http://localhost:3001/server/reactlead_function/execute
+[info] [2025-09-11T12:12:01.429Z] : [DEBUG] Function invoked
+
+[info] [2025-09-11T12:12:01.430Z] : [DEBUG] Error parsing input: TypeError: basicIO.getInput is not a function
+    at module.exports (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:21:33)
+    at file:///E:/npm-global/node_modules/zcatalyst-cli/lib/shell/dependencies/invoker/bio/node.mjs:106:18
+[info] [2025-09-11T12:12:01.430Z] : [DEBUG] Received form data: {}
+
+[info] [2025-09-11T12:12:02.383Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:58
+      context.setHeader("Access-Control-Allow-Origin", "*");
+              ^
+
+TypeError: context.setHeader is not a function
+    at setCORS (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:58:15)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:67:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T12:12:02.397Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T12:12:02.397Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T12:12:53.439Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T12:12:55.088Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T12:12:55.089Z] : i functions(reactlead_function): URL => http://localhost:3001/server/reactlead_function/execute
+[debug] [2025-09-11T12:48:50.108Z] : > refreshing access token <
+[debug] [2025-09-11T12:48:50.112Z] : >>>> HTTP REQUEST : POST https://accounts.zoho.com/oauth/v2/token 
+<request body omitted>
+
+[debug] [2025-09-11T12:48:51.022Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 12:48:50 GMT","content-type":"application/json;charset=UTF-8","content-length":"2362","connection":"keep-alive","cache-control":"no-store","x-content-type-options":"nosniff","pragma":"no-cache","x-frame-options":"SAMEORIGIN","vary":"accept-encoding","content-language":"en-US","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[info] [2025-09-11T12:48:51.264Z] : Received form data: {}
+
+[info] [2025-09-11T12:48:52.247Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55
+      context.setHeader("Access-Control-Allow-Origin", "*");
+              ^
+
+TypeError: context.setHeader is not a function
+    at setCORS (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55:15)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:64:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T12:48:52.266Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T12:48:52.266Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T12:49:24.348Z] : Received form data: {}
+
+[info] [2025-09-11T12:49:25.318Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55
+      context.setHeader("Access-Control-Allow-Origin", "*");
+              ^
+
+TypeError: context.setHeader is not a function
+    at setCORS (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55:15)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:64:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T12:49:25.335Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T12:49:25.335Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T12:52:58.374Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T12:53:00.125Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T12:53:00.126Z] : i functions(reactlead_function): URL => http://localhost:3001/server/reactlead_function/execute
+[info] [2025-09-11T12:53:18.356Z] : Received form data: {}
+
+[info] [2025-09-11T12:53:19.342Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:53
+      context.response.setHeader("Access-Control-Allow-Origin", "*");
+                       ^
+
+TypeError: Cannot read properties of undefined (reading 'setHeader')
+    at setCORS (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:53:24)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:62:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[info] [2025-09-11T12:53:19.344Z] : Node.js v22.17.1
+[debug] [2025-09-11T12:53:19.371Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T12:53:19.371Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T12:54:18.575Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T12:54:19.982Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T12:54:19.983Z] : i functions(reactlead_function): URL => http://localhost:3001/server/reactlead_function/execute
+[debug] [2025-09-11T12:54:53.673Z] : 
+[debug] [2025-09-11T12:54:53.679Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T12:54:53.679Z] : Command:      C:\Program Files\nodejs\node.exe E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js serve
+[debug] [2025-09-11T12:54:53.679Z] : CLI Version:  1.20.2
+[debug] [2025-09-11T12:54:53.680Z] : Platform:     win32
+[debug] [2025-09-11T12:54:53.680Z] : Node Version: v22.17.1
+[debug] [2025-09-11T12:54:53.680Z] : Time:         Thu Sep 11 2025 18:24:53 GMT+0530 (India Standard Time)
+[debug] [2025-09-11T12:54:53.680Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T12:54:53.680Z] : 
+[debug] [2025-09-11T12:54:54.615Z] : > authorizing via signed-in user option
+[debug] [2025-09-11T12:54:54.615Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.dataverse.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-09-11T12:54:54.638Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128 
+
+[debug] [2025-09-11T12:54:55.666Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 12:54:55 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T12:54:55.670Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/environment 
+
+[debug] [2025-09-11T12:54:55.992Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 12:54:55 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T12:54:56.574Z] : Build folder already exists, starting cleanup
+[debug] [2025-09-11T12:54:56.630Z] : http port : '3000' is not available. Hence port '3003' will be used instead.
+[debug] [2025-09-11T12:54:56.647Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-09-11T12:54:56.975Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 12:54:56 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T12:54:56.977Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-11T12:54:58.362Z] : http port : '4200' is not available. Hence port '4202' will be used instead.
+[info] [2025-09-11T12:54:58.399Z] : 
+[info] [2025-09-11T12:54:58.399Z] :  >>>>>>>>>>>>>> BasicIO <<<<<<<<<<<<<< 
+[info] [2025-09-11T12:54:58.400Z] : i reactlead_function: http://localhost:3003/server/reactlead_function/execute
+[info] [2025-09-11T12:54:58.400Z] : 
+[info] [2025-09-11T12:55:10.966Z] : Received form data: {}
+
+[info] [2025-09-11T12:55:12.953Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:53
+      context.response.setHeader("Access-Control-Allow-Origin", "*");
+                       ^
+
+TypeError: Cannot read properties of undefined (reading 'setHeader')
+    at setCORS (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:53:24)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:62:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T12:55:12.970Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T12:55:12.971Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T12:55:17.424Z] : Received form data: {}
+
+[info] [2025-09-11T12:55:18.398Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:53
+      context.response.setHeader("Access-Control-Allow-Origin", "*");
+                       ^
+
+TypeError: Cannot read properties of undefined (reading 'setHeader')
+    at setCORS (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:53:24)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:62:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T12:55:18.411Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T12:55:18.411Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[debug] [2025-09-11T13:01:10.156Z] : 
+[debug] [2025-09-11T13:01:10.158Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T13:01:10.159Z] : Command:      C:\Program Files\nodejs\node.exe E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js serve
+[debug] [2025-09-11T13:01:10.159Z] : CLI Version:  1.20.2
+[debug] [2025-09-11T13:01:10.159Z] : Platform:     win32
+[debug] [2025-09-11T13:01:10.160Z] : Node Version: v22.17.1
+[debug] [2025-09-11T13:01:10.160Z] : Time:         Thu Sep 11 2025 18:31:10 GMT+0530 (India Standard Time)
+[debug] [2025-09-11T13:01:10.160Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T13:01:10.160Z] : 
+[debug] [2025-09-11T13:01:11.094Z] : > authorizing via signed-in user option
+[debug] [2025-09-11T13:01:11.095Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.dataverse.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-09-11T13:01:11.125Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128 
+
+[debug] [2025-09-11T13:01:12.112Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:01:11 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:01:12.122Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/environment 
+
+[debug] [2025-09-11T13:01:12.460Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:01:11 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:01:13.166Z] : Build folder already exists, starting cleanup
+[debug] [2025-09-11T13:01:13.226Z] : http port : '3000' is not available. Hence port '3001' will be used instead.
+[debug] [2025-09-11T13:01:13.245Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-09-11T13:01:13.554Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:01:12 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:01:13.558Z] : unknown eol undefined hence skipping check
+[info] [2025-09-11T13:01:15.097Z] : 
+[info] [2025-09-11T13:01:15.097Z] :  >>>>>>>>>>>>>> BasicIO <<<<<<<<<<<<<< 
+[info] [2025-09-11T13:01:15.098Z] : i reactlead_function: http://localhost:3001/server/reactlead_function/execute
+[info] [2025-09-11T13:01:15.098Z] : 
+[info] [2025-09-11T13:01:23.871Z] : Received form data: {}
+
+[info] [2025-09-11T13:01:24.855Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:53
+      context.response.setHeader("Access-Control-Allow-Origin", "*");
+                       ^
+
+TypeError: Cannot read properties of undefined (reading 'setHeader')
+    at setCORS (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:53:24)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:62:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[info] [2025-09-11T13:01:24.858Z] : Node.js v22.17.1
+[debug] [2025-09-11T13:01:24.883Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T13:01:24.885Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T13:03:11.912Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T13:03:13.643Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T13:03:13.644Z] : i functions(reactlead_function): URL => http://localhost:3001/server/reactlead_function/execute
+[debug] [2025-09-11T13:04:41.262Z] : 
+[debug] [2025-09-11T13:04:41.265Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T13:04:41.265Z] : Command:      C:\Program Files\nodejs\node.exe E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js serve
+[debug] [2025-09-11T13:04:41.265Z] : CLI Version:  1.20.2
+[debug] [2025-09-11T13:04:41.266Z] : Platform:     win32
+[debug] [2025-09-11T13:04:41.266Z] : Node Version: v22.17.1
+[debug] [2025-09-11T13:04:41.266Z] : Time:         Thu Sep 11 2025 18:34:41 GMT+0530 (India Standard Time)
+[debug] [2025-09-11T13:04:41.266Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T13:04:41.266Z] : 
+[debug] [2025-09-11T13:04:42.004Z] : > authorizing via signed-in user option
+[debug] [2025-09-11T13:04:42.004Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.dataverse.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-09-11T13:04:42.024Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128 
+
+[debug] [2025-09-11T13:04:42.983Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:04:42 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:04:42.996Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/environment 
+
+[debug] [2025-09-11T13:04:43.293Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:04:42 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:04:43.773Z] : Build folder already exists, starting cleanup
+[debug] [2025-09-11T13:04:43.825Z] : http port : '3000' is not available. Hence port '3002' will be used instead.
+[debug] [2025-09-11T13:04:43.841Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-09-11T13:04:44.157Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:04:43 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:04:44.166Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-11T13:04:45.583Z] : http port : '4200' is not available. Hence port '4201' will be used instead.
+[info] [2025-09-11T13:04:45.617Z] : 
+[info] [2025-09-11T13:04:45.617Z] :  >>>>>>>>>>>>>> BasicIO <<<<<<<<<<<<<< 
+[info] [2025-09-11T13:04:45.618Z] : i reactlead_function: http://localhost:3002/server/reactlead_function/execute
+[info] [2025-09-11T13:04:45.618Z] : 
+[info] [2025-09-11T13:04:59.523Z] : Received form data: {}
+
+[info] [2025-09-11T13:05:00.521Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4
+  context.setHeader("Access-Control-Allow-Origin", "*");
+          ^
+
+TypeError: context.setHeader is not a function
+    at setCORSHeaders (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4:11)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:60:9)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T13:05:00.549Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T13:05:00.550Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T13:06:03.570Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T13:06:03.634Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T13:06:06.626Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T13:06:06.626Z] : i functions(reactlead_function): URL => http://localhost:3001/server/reactlead_function/execute
+[info] [2025-09-11T13:06:06.662Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T13:06:06.662Z] : i functions(reactlead_function): URL => http://localhost:3002/server/reactlead_function/execute
+[info] [2025-09-11T13:14:29.225Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T13:14:29.242Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[error] [2025-09-11T13:14:30.216Z] : × An unexpected error has occurred.
+[debug] [2025-09-11T13:14:30.216Z] : Error Stack: CatalystError: An unexpected error has occurred.
+    at exports.default (E:\npm-global\node_modules\zcatalyst-cli\lib\errorOut.js:12:17)
+    at process.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js:90:28)
+    at process.emit (node:events:518:28)
+    at process.processEmit [as emit] (E:\npm-global\node_modules\zcatalyst-cli\node_modules\signal-exit\index.js:199:34)
+    at emitUnhandledRejection (node:internal/process/promises:252:13)
+    at throwUnhandledRejectionsMode (node:internal/process/promises:388:19)
+    at processPromiseRejections (node:internal/process/promises:475:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:106:32)
+[debug] [2025-09-11T13:14:30.216Z] : Original Error: Error: [Error: ENOENT: no such file or directory, chmod 'E:\shraddha\shraddha-institute\shraddha-catalyst\.build\functions\reactlead_function\node_modules\zcatalyst-sdk-node\lib\stratus\object.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'chmod',
+  path: 'E:\\shraddha\\shraddha-institute\\shraddha-catalyst\\.build\\functions\\reactlead_function\\node_modules\\zcatalyst-sdk-node\\lib\\stratus\\object.js'
+}
+    at exports.default (E:\npm-global\node_modules\zcatalyst-cli\lib\errorOut.js:14:23)
+    at process.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js:90:28)
+    at process.emit (node:events:518:28)
+    at process.processEmit [as emit] (E:\npm-global\node_modules\zcatalyst-cli\node_modules\signal-exit\index.js:199:34)
+    at emitUnhandledRejection (node:internal/process/promises:252:13)
+    at throwUnhandledRejectionsMode (node:internal/process/promises:388:19)
+    at processPromiseRejections (node:internal/process/promises:475:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:106:32)
+[debug] [2025-09-11T13:14:30.216Z] : Error Status: 500
+[info] [2025-09-11T13:14:30.217Z] : Kindly contact Catalyst support [support@zohocatalyst.com] if you need any further assistance
+[info] [2025-09-11T13:14:31.285Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T13:14:31.285Z] : i functions(reactlead_function): URL => http://localhost:3002/server/reactlead_function/execute
+[info] [2025-09-11T13:14:57.160Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T13:14:58.770Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T13:14:58.770Z] : i functions(reactlead_function): URL => http://localhost:3002/server/reactlead_function/execute
+[info] [2025-09-11T13:16:38.744Z] : 
+change of index.js in reactlead_function detected. Preparing your function, please wait...
+[info] [2025-09-11T13:16:40.338Z] : i functions[reactlead_function]: ready!
+[info] [2025-09-11T13:16:40.340Z] : i functions(reactlead_function): URL => http://localhost:3002/server/reactlead_function/execute
+[info] [2025-09-11T13:17:16.407Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4
+  res.writeHead(statusCode, {
+      ^
+
+TypeError: Cannot read properties of undefined (reading 'writeHead')
+    at sendResponse (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4:7)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T13:17:16.422Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T13:17:16.422Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[debug] [2025-09-11T13:23:42.325Z] : 
+[debug] [2025-09-11T13:23:42.327Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T13:23:42.328Z] : Command:      C:\Program Files\nodejs\node.exe E:\npm-global\node_modules\zcatalyst-cli\lib\bin\catalyst.js serve
+[debug] [2025-09-11T13:23:42.328Z] : CLI Version:  1.20.2
+[debug] [2025-09-11T13:23:42.328Z] : Platform:     win32
+[debug] [2025-09-11T13:23:42.329Z] : Node Version: v22.17.1
+[debug] [2025-09-11T13:23:42.329Z] : Time:         Thu Sep 11 2025 18:53:42 GMT+0530 (India Standard Time)
+[debug] [2025-09-11T13:23:42.329Z] : ----------------------------------------------------------------------
+[debug] [2025-09-11T13:23:42.329Z] : 
+[debug] [2025-09-11T13:23:43.092Z] : > authorizing via signed-in user option
+[debug] [2025-09-11T13:23:43.093Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.apigateway.apis.READ","ZohoCatalyst.apigateway.READ","ZohoCatalyst.segments.ALL","ZohoCatalyst.cache.READ","ZohoCatalyst.cache.CREATE","ZohoCatalyst.cache.DELETE","ZohoCatalyst.projects.ALL","ZohoCatalyst.cron.ALL","ZohoCatalyst.zcql.CREATE","ZohoCatalyst.projects.users.READ","ZohoCatalyst.projects.users.CREATE","ZohoCatalyst.projects.users.DELETE","ZohoCatalyst.projects.users.UPDATE","ZohoCatalyst.authentication.CREATE","ZohoCatalyst.email.CREATE","ZohoCatalyst.tables.ALL","ZohoCatalyst.tables.rows.ALL","ZohoCatalyst.tables.columns.ALL","ZohoCatalyst.tables.bulk.CREATE","ZohoCatalyst.tables.bulk.READ","ZohoCatalyst.folders.ALL","ZohoCatalyst.files.CREATE","ZohoCatalyst.files.READ","ZohoCatalyst.files.DELETE","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.eventlistners.ALL","ZohoCatalyst.eventlisteners.produce","ZohoCatalyst.security.rules.Read","ZohoCatalyst.security.rules.Update","ZohoCatalyst.notifications.mobile","ZohoCatalyst.notifications.web","ZohoCatalyst.search.READ","ZohoCatalyst.mlkit.READ","QuickML.deployment.READ","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.dataverse.execute","ZohoCatalyst.circuits.execution.DELETE","ZohoCatalyst.circuits.execution.READ","ZohoCatalyst.circuits.execute","ZohoCatalyst.appsail.Read","ZohoCatalyst.jobpool.READ","ZohoCatalyst.job.ALL","ZohoCatalyst.nosql.READ","ZohoCatalyst.nosql.rows.ALL"]
+[debug] [2025-09-11T13:23:43.113Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128 
+
+[debug] [2025-09-11T13:23:44.138Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:23:43 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:23:44.154Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/environment 
+
+[debug] [2025-09-11T13:23:44.470Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:23:43 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:23:44.922Z] : Build folder already exists, starting cleanup
+[debug] [2025-09-11T13:23:44.978Z] : http port : '3000' is not available. Hence port '3003' will be used instead.
+[debug] [2025-09-11T13:23:44.994Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.com/baas/v1/project/35872000000017128/function 
+Query params: {"type":"basicio,event,cron,applogic,integration,browser_logic,job"}
+
+[debug] [2025-09-11T13:23:45.313Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 11 Sep 2025 13:23:44 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","x-content-type-options":"nosniff","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=64072000; includeSubDomains; preload"}
+
+[debug] [2025-09-11T13:23:45.316Z] : unknown eol undefined hence skipping check
+[debug] [2025-09-11T13:23:46.692Z] : http port : '4200' is not available. Hence port '4202' will be used instead.
+[info] [2025-09-11T13:23:46.732Z] : 
+[info] [2025-09-11T13:23:46.732Z] :  >>>>>>>>>>>>>> BasicIO <<<<<<<<<<<<<< 
+[info] [2025-09-11T13:23:46.733Z] : i reactlead_function: http://localhost:3003/server/reactlead_function/execute
+[info] [2025-09-11T13:23:46.733Z] : 
+[info] [2025-09-11T13:24:04.834Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4
+  res.writeHead(statusCode, {
+      ^
+
+TypeError: Cannot read properties of undefined (reading 'writeHead')
+    at sendResponse (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4:7)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T13:24:04.847Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T13:24:04.848Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T13:24:09.013Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4
+  res.writeHead(statusCode, {
+      ^
+
+TypeError: Cannot read properties of undefined (reading 'writeHead')
+    at sendResponse (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4:7)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T13:24:09.027Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T13:24:09.027Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T13:24:26.514Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4
+  res.writeHead(statusCode, {
+      ^
+
+TypeError: Cannot read properties of undefined (reading 'writeHead')
+    at sendResponse (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4:7)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T13:24:26.535Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T13:24:26.535Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[info] [2025-09-11T13:24:36.673Z] : E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4
+  res.writeHead(statusCode, {
+      ^
+
+TypeError: Cannot read properties of undefined (reading 'writeHead')
+    at sendResponse (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:4:7)
+    at IncomingMessage.<anonymous> (E:\shraddha\shraddha-institute\shraddha-catalyst\functions\reactlead_function\index.js:55:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+Node.js v22.17.1
+[debug] [2025-09-11T13:24:36.699Z] : Unable to serve the function: reactlead_function
+[debug] [2025-09-11T13:24:36.699Z] : Error: 1
+    at ChildProcess.<anonymous> (E:\npm-global\node_modules\zcatalyst-cli\lib\shell\dependencies\http-functions.js:156:28)
+    at ChildProcess.emit (node:events:518:28)
+    at cp.emit (E:\npm-global\node_modules\zcatalyst-cli\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)

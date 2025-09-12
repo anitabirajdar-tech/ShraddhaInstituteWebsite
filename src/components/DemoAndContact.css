@@ -348,3 +348,29 @@ textarea.form-control {
 .orange-text {
   color: #ea580c;
 }
+
+
+
+/* Make Zoho form responsive */
+.zoho-form-container {
+  position: relative;
+  width: 100%;
+  padding-top: 140%; /* Adjust aspect ratio */
+  overflow: hidden;
+}
+
+.zoho-form-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* On desktop give more height */
+@media (min-width: 768px) {
+  .zoho-form-container {
+    padding-top: 700px; /* taller on larger screens */
+  }
+}

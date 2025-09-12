@@ -1,0 +1,9 @@
+{
+	"name": "reactlead_function",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "anitabirajdar@shraddhainstitute.in",
+	"dependencies": {
+		"zcatalyst-sdk-node": "latest"
+	}
+}
