@@ -118,6 +118,7 @@ const Footer = () => {
               rel="noopener noreferrer" 
               aria-label="Facebook"
               whileHover={{ y: -3 }}
+              style={{ color: "#1877f3" }} // Facebook blue
             >
               <FaFacebookF />
             </motion.a>
@@ -127,6 +128,7 @@ const Footer = () => {
               rel="noopener noreferrer" 
               aria-label="Instagram"
               whileHover={{ y: -3 }}
+              style={{ color: "#E4405F" }} // Instagram pink
             >
               <FaInstagram />
             </motion.a>
@@ -136,19 +138,21 @@ const Footer = () => {
               rel="noopener noreferrer" 
               aria-label="WhatsApp"
               whileHover={{ y: -3 }}
+              style={{ color: "#25D366" }} // WhatsApp green
             >
               <FaWhatsapp />
             </motion.a>
 
             <motion.a 
-      href="https://www.youtube.com/@ShraddhaInstitute" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      aria-label="YouTube"
-      whileHover={{ y: -3 }}
-    >
-      <FaYoutube />
-    </motion.a>
+              href="https://www.youtube.com/@ShraddhaInstitute" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="YouTube"
+              whileHover={{ y: -3 }}
+              style={{ color: "#FF0000" }} // YouTube red
+            >
+              <FaYoutube />
+            </motion.a>
           </div>
         </motion.div>
       </motion.div>

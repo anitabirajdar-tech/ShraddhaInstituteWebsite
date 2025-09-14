@@ -22,7 +22,7 @@ const FTrainingPage = () => {
     {
       title: "Territorial Rights",
       description: "Exclusive operation in your designated area",
-      icon: "fas fa-map-marked-alt"
+      icon: "fas fa-sync-alt"
     }
   ];
 

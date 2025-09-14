@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -6,6 +6,7 @@ import "./DemoAndContact.css";
 
 const DemoAndContact = () => {
   const [studentImg, setStudentImg] = useState(null);
+  const formRef = useRef(null);
 
   // 🔹 Fetch student image from Firestore
   useEffect(() => {
@@ -47,6 +48,32 @@ const DemoAndContact = () => {
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
+  // Reduce Zoho iframe scroll effect by delaying iframe render until after initial page load
+  const [showIframe, setShowIframe] = useState(false);
+  // const formRef = useRef(null); // Removed duplicate declaration
+
+  useEffect(() => {
+    // Delay rendering the iframe to let the rest of the page load and scroll position settle
+    const timeout = setTimeout(() => setShowIframe(true), 700);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  // --- Strongest workaround: forcibly scroll to top after iframe loads ---
+  useEffect(() => {
+    if (!showIframe) return;
+    const iframe = formRef.current;
+    if (!iframe) return;
+    const handleIframeLoad = () => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      }, 100);
+    };
+    iframe.addEventListener("load", handleIframeLoad);
+    return () => {
+      iframe.removeEventListener("load", handleIframeLoad);
+    };
+  }, [showIframe]);
+
   return (
     <section className="demo-contact-section" id="contact-demo">
       {/* Contact Form (Left) */}
@@ -60,8 +87,18 @@ const DemoAndContact = () => {
           </p>
         </div>
 
-        {/* 🔹 Zoho iframe form */}
-        <iframe height='485px' width='100%' frameborder='0' allowTransparency='true' scrolling='auto' src='https://creatorapp.zohopublic.com/shraddha_institute/testing-app/form-embed/Contact_Us/CyTAXzPxdC1SJEGp2eCp7dvDW2m1YHt1JwPFV5n2NrUSgj0JKNdOTCsqDUSZrn2mHsZYRDv61w57k8DZkwXn3gONRXttjFfmKzaW'></iframe>
+        {/* Zoho iframe form (delayed render) */}
+        {showIframe && (
+          <iframe
+            ref={formRef}
+            height='485px'
+            width='100%'
+            frameBorder='0'
+            allowTransparency='true'
+             scrolling='no'
+            src='https://creatorapp.zohopublic.com/shraddha_institute/testing-app/form-embed/Contact_Us/CyTAXzPxdC1SJEGp2eCp7dvDW2m1YHt1JwPFV5n2NrUSgj0JKNdOTCsqDUSZrn2mHsZYRDv61w57k8DZkwXn3gONRXttjFfmKzaW'
+          ></iframe>
+        )}
       </div>
 
       {/* Free Demo (Right) */}

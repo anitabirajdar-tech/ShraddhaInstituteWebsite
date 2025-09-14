@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { FaCheck, FaSchool, FaChalkboardTeacher, FaBookOpen, FaUsers, FaChartLine, FaHandshake } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const SchoolTraining = () => {
   const schoolTraining = {
@@ -163,6 +164,8 @@ const SchoolTraining = () => {
                   </div>
                   <div className="bg-orange-soft px-4 py-3 text-center border-top">
                     <Button 
+                      as={Link}
+                      to="/contact"
                       variant="orange" 
                       size="sm" 
                       className="rounded-pill px-4 fw-semibold"

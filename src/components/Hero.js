@@ -148,7 +148,7 @@ const Hero = () => {
                       <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
                   </div>
-                  <span className="text-light">600+ Certified Instructors</span>
+                  <span className="text-light">600+ Instructors</span>
                 </div>
                 <div className="d-flex align-items-center gap-2">
                   <div className="trust-icon">

@@ -25,22 +25,7 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
 }
-:root {
-  --orange: #FF6B35;
-  --orange-light: #FFD166;
-  --orange-dark: #E05D2E;
-  --orange-faint: rgba(255, 107, 53, 0.1);
-  --orange-gradient: linear-gradient(135deg, rgba(255, 107, 53, 0.8) 0%, rgba(255, 158, 53, 0.8) 100%);
-  --white: #FFFFFF;
-  --off-white: #F8F9FA;
-  --light-orange: #FFF3EB;
-}
 
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Hero Section */
 .hero-section {
@@ -709,6 +694,32 @@ html, body {
   .rotation-status .badge {
     font-size: 0.65rem;
     padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Ensure hero section buttons are in a row on mobile */
+@media (max-width: 768px) {
+  .hero-buttons-row,
+  .hero-section .hero-buttons-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    width: 100%;
+  }
+  .hero-buttons-row > .btn,
+  .hero-section .hero-buttons-row > .btn {
+    width: 48% !important;
+    min-width: 120px !important;
+    max-width: 100% !important;
+    flex: 1 1 48% !important;
+    margin-bottom: 0 !important;
+    white-space: normal !important;
+    padding: 12px 10px !important;
+    font-size: 1rem !important;
+    box-sizing: border-box;
   }
 }
 

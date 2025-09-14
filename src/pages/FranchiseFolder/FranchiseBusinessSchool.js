@@ -10,25 +10,25 @@ import './FranchiseBusinessSchool.css';
 const FranchiseBusinessSchool = () => {
   const benefits = [
     {
-      icon: <FaSchool size={42} className="text-orange mobile-icon" />,
+      icon: <FaSchool size={42} className="text-orange" />,
       title: 'Brand Power',
       text: 'Recognized leader in Abacus & Vedic Math with a trusted business model.',
       stat: '100+ Partner Schools'
     },
     {
-      icon: <FaChartLine size={42} className="text-orange mobile-icon" />,
+      icon: <FaChartLine size={42} className="text-orange" />,
       title: 'School Integration',
       text: 'Bring our programs into your school to boost admissions and results.',
       stat: '40%+ Math Improvement'
     },
     {
-      icon: <FaHandsHelping size={42} className="text-orange mobile-icon" />,
+      icon: <FaHandsHelping size={42} className="text-orange" />,
       title: 'Setup Support',
       text: 'From infrastructure to marketing — we guide your entire journey.',
       stat: '95% Success Rate'
     },
     {
-      icon: <FaChalkboardTeacher size={42} className="text-orange mobile-icon" />,
+      icon: <FaChalkboardTeacher size={42} className="text-orange" />,
       title: 'Expert Training',
       text: 'We train your teachers with structured, professional modules.',
       stat: '500+ Teachers Certified'
@@ -38,19 +38,19 @@ const FranchiseBusinessSchool = () => {
   const steps = [
     {
       number: '1',
-      icon: <FaUsers size={28} className="text-orange mobile-icon" />,
+      icon: <FaUsers size={28} className="text-orange" />,
       title: 'Connect with Us',
       text: 'Fill out the form or call us to schedule your consultation.'
     },
     {
       number: '2',
-      icon: <IoMdSchool size={28} className="text-orange mobile-icon" />,
+      icon: <IoMdSchool size={28} className="text-orange" />,
       title: 'Attend Orientation',
       text: 'Understand our model, investment, and profit potential.'
     },
     {
       number: '3',
-      icon: <FaAward size={28} className="text-orange mobile-icon" />,
+      icon: <FaAward size={28} className="text-orange" />,
       title: 'Launch Successfully',
       text: 'Open your center or school program with our full support.'
     }
@@ -58,8 +58,7 @@ const FranchiseBusinessSchool = () => {
 
   // Marquee announcement state
   const [currentAnnouncement, setCurrentAnnouncement] = useState(0);
-  const [fade, setFade] = useState(true);
-
+  
   const announcements = [
     "Limited Time Offer: 20% Off Franchise Fee",
     "Exclusive Territory Protection Available",
@@ -69,11 +68,7 @@ const FranchiseBusinessSchool = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false); // start fade out
-      setTimeout(() => {
-        setCurrentAnnouncement((prev) => (prev + 1) % announcements.length);
-        setFade(true); // fade in new announcement
-      }, 400); // fade out duration
+      setCurrentAnnouncement((prev) => (prev + 1) % announcements.length);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -99,7 +94,6 @@ const FranchiseBusinessSchool = () => {
       </Helmet>
 
       <div className="franchise-business-page">
-        {/* Announcement Bar - Marquee */}
         
 
         {/* Enhanced Hero Section */}
@@ -112,7 +106,10 @@ const FranchiseBusinessSchool = () => {
         }}
       >
         <div className="hero-overlay"></div>
-        <Container className="position-relative" style={{ zIndex: 2 }}>
+        <Container
+          className="position-relative hero-container-responsive"
+          style={{ zIndex: 2 }}
+        >
           <Row className="align-items-center justify-content-center min-vh-75 text-center">
             <Col lg={8} xl={7} className="mx-auto">
               {/* Badge */}
@@ -143,7 +140,7 @@ const FranchiseBusinessSchool = () => {
 
         {/* Benefits Section */}
         <section className="benefits-section py-5 bg-light">
-          <Container>
+          <Container className="benefits-container-responsive">
             <div className="text-center mb-5">
               <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-3">
                 Our Advantages
@@ -158,8 +155,17 @@ const FranchiseBusinessSchool = () => {
               {benefits.map((benefit, index) => (
                 <Col xl={3} lg={6} key={index}>
                   <div className="benefit-card h-100 p-4 rounded-4 shadow-sm-hover transition-all">
-                    <div className="benefit-icon-wrapper mb-4">
-                      {benefit.icon}
+                    <div
+                      className="benefit-icon-wrapper mb-4"
+                      style={{
+                        // Make icon bigger on mobile
+                        fontSize: '2.625rem', // 42px default
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <span className="benefit-icon-responsive">{benefit.icon}</span>
                     </div>
                     <h3 className="h4 fw-bold mb-3 responsive-heading">{benefit.title}</h3>
                     <p className="text-muted mb-4">{benefit.text}</p>
@@ -180,7 +186,7 @@ const FranchiseBusinessSchool = () => {
             zIndex: 0
           }}></div>
           
-          <Container className="position-relative" style={{ zIndex: 1 }}>
+          <Container className="steps-container-responsive position-relative" style={{ zIndex: 1 }}>
             <div className="text-center mb-5">
               <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-3">
                 Simple Process

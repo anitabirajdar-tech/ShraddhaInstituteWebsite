@@ -73,7 +73,7 @@ const Header = () => {
             <span className="sparkle">✨</span>
           </div>
 
-          <div className="social-icons">
+          <div className="social-icons no-circle">
             <a href="https://www.facebook.com/share/1FXuy9uHEW/" target="_blank" rel="noreferrer" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
             </a>

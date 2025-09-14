@@ -228,7 +228,34 @@
   }
 }
 
-
+/* Trust badges: keep badges in one line, but allow text to wrap under icon on mobile */
+@media (max-width: 600px) {
+  .trust-badges .d-flex.align-items-center.justify-content-center.gap-4.flex-wrap {
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 0.7rem !important;
+  }
+  .trust-badges .d-flex.align-items-center.gap-2 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.2rem !important;
+    white-space: normal !important;
+    min-width: 90px;
+    max-width: 120px;
+  }
+  .trust-badges .trust-icon {
+    margin-bottom: 0.1rem !important;
+  }
+  .trust-badges .text-light {
+    font-size: 0.97rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    display: block !important;
+    line-height: 1.2 !important;
+  }
+}
 
 /* Add to your Hero.css for better SEO elements */
 .hero-section [itemprop] {
@@ -299,3 +326,24 @@
     .hero-buttons .btn:last-child {
       flex: 0 0 auto;   /* allow to grow */
     }
+/* Force trust badges (text-light) to be in one line, even on mobile */
+.hero-section .trust-badges .d-flex.align-items-center.justify-content-center.gap-4.flex-wrap {
+  flex-wrap: nowrap !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.2rem !important;
+}
+
+.hero-section .trust-badges .d-flex.align-items-center.gap-2 {
+  flex-direction: row !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  gap: 0.5rem !important;
+}
+
+.hero-section .trust-badges .text-light {
+  white-space: nowrap !important;
+  display: inline !important;
+  font-size: 1rem !important;
+}

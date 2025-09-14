@@ -25,19 +25,6 @@
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 8px 28px rgba(255, 107, 53, 0.35);
 }
-:root {
-  --primary: #fd7e14; /* Orange */
-  --primary-light: #ff9838;
-  --primary-dark: #e67300;
-  --secondary: #ffffff; /* White */
-  --secondary-light: #f8f9fa;
-  --secondary-dark: #e9ecef;
-  --accent: #ff9f43;
-  --light: #f8f9fa;
-  --dark: #212529;
-  --white: #ffffff;
-  --gray: #6c757d;
-}
 
 /* ================== */
 /* ANNOUNCEMENT BAR */
@@ -77,6 +64,43 @@
   padding: 4px 12px;
   border-radius: 20px;
   animation: pulse 2s infinite;
+}
+
+/* Remove circle, border, and background from announcement bar social icons */
+.announcement-bar .social-icons a i,
+.announcement-bar .social-icons a {
+  border-radius: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Announcement bar social icons: increase size and add spacing */
+.announcement-bar .social-icons a i {
+  font-size: 1.5rem !important;
+  margin: 0 0.5rem !important;
+  vertical-align: middle;
+  border-radius: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* If you use FontAwesome SVG, also reset background for svg */
+.announcement-bar .social-icons svg {
+  border-radius: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 /* Mobile responsiveness */
@@ -473,7 +497,7 @@
   height: 45px;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 20%;
   font-size: 20px;
   text-decoration: none;
 }
@@ -483,3 +507,4 @@
 .social-icons a .fa-instagram { color: #E4405F; }
 .social-icons a .fa-youtube   { color: #FF0000; }
 .social-icons a .fa-whatsapp  { color: #25D366; }
+

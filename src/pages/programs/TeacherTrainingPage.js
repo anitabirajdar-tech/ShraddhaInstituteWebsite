@@ -78,13 +78,14 @@ const TeacherTrainingPage = () => {
                 Unlock your potential with our hands-on Abacus & Vedic Math training. Get certified, start your own classes, and join a community of passionate educators!
               </p>
               
-              <div className="d-flex flex-wrap gap-3 justify-content-center">
+              {/* Replace the button container div below */}
+              <div className="d-flex flex-wrap gap-3 justify-content-center hero-buttons-row">
                 <Link to="/contact" className="btn btn-orange btn-lg px-4 py-3 fw-bold">
                   <LightningFill className="me-2" />
                   Enroll Now
                 </Link>
                 <Link to="/contact" className="btn btn-orange btn-lg px-4 py-3 fw-bold">
-                  Free Demo Class
+                  Free Demo Class 
                 </Link>
               </div>
             </Col>

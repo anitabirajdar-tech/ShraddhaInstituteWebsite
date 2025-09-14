@@ -600,7 +600,6 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #222 !important;
 }
 
 .step-arrow {
@@ -885,6 +884,269 @@
   }
 }
 
+/* Mobile view: add spacing and padding for benefit cards */
+@media (max-width: 600px) {
+  .benefits-section .row,
+  .benefits-section .g-3,
+  .benefits-section .g-md-4 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .benefits-section .col,
+  .benefits-section .col-xs-12,
+  .benefits-section .col-sm-6,
+  .benefits-section .col-lg-3 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .benefit-card-vertical {
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
+    padding: 1.2rem 0.7rem !important;
+    margin-bottom: 0.7rem !important;
+    background: #fff !important;
+  }
+  .benefit-icon-wrapper {
+    padding: 1.2rem !important;
+    border-radius: 14px !important;
+    margin-bottom: 0.7rem !important;
+  }
+  .benefit-content h3 {
+    font-size: 1.08rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .benefit-content p {
+    font-size: 0.97rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+}
+
+/* Mobile view: add side padding to prevent cards from merging with screen edge */
+@media (max-width: 600px) {
+  .benefits-section {
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+  }
+  .benefits-section .row,
+  .benefits-section .g-3,
+  .benefits-section .g-md-4 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .benefits-section .col,
+  .benefits-section .col-xs-12,
+  .benefits-section .col-sm-6,
+  .benefits-section .col-lg-3 {
+    max-width: 90% !important;
+    flex: 0 0 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .benefit-card-vertical {
+    width: 100%;
+    max-width: 220px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Also add padding for the section itself for extra safety */
+@media (max-width: 600px) {
+  .franchise-teacher-parent-page .benefits-section,
+  .franchise-teacher-parent-page .steps-section,
+  .franchise-teacher-parent-page .investment-section {
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+  }
+}
+
+/* --- Mobile view: Fix benefit and step cards for "Our Advantages" and "Simple Process" sections --- */
+@media (max-width: 600px) {
+  /* Add padding to the section so cards don't touch the screen edge */
+  .benefits-section,
+  .steps-section {
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+  }
+
+  /* Make columns full width and center cards */
+  .benefits-section .col,
+  .benefits-section .col-xs-12,
+  .benefits-section .col-sm-6,
+  .benefits-section .col-lg-3,
+  .steps-section .col,
+  .steps-section .col-xs-12,
+  .steps-section .col-sm-6,
+  .steps-section .col-lg-4 {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Benefit card vertical: smaller, centered, with margin */
+  .benefit-card-vertical {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0.7rem auto 1rem auto !important;
+    padding: 1.1rem 0.7rem !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
+    background: #fff !important;
+  }
+  .benefit-icon-wrapper {
+    width: 56px !important;
+    height: 56px !important;
+    padding: 1.1rem !important;
+    margin-bottom: 0.7rem !important;
+    border-radius: 14px !important;
+  }
+  .benefit-icon-wrapper svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .benefit-content h3 {
+    font-size: 1.08rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .benefit-content p {
+    font-size: 0.97rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  /* Step cards: full width, spacing, and padding */
+  .steps-section .step-card {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0.7rem auto 1rem auto !important;
+    padding: 1.1rem 0.7rem !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
+    background: #fff !important;
+  }
+  .steps-section .step-number {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1rem !important;
+    margin-bottom: 0.7rem !important;
+  }
+  .steps-section .step-icon {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .steps-section .h4,
+  .steps-section h3 {
+    font-size: 1.08rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .steps-section p {
+    font-size: 0.97rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+}
+
+/* --- Mobile view: Make "Our Advantages" cards match the style of the other benefit cards --- */
+@media (max-width: 600px) {
+  .benefits-section .benefit-card-vertical {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0.7rem auto 1rem auto !important;
+    padding: 1.1rem 0.7rem !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
+    background: #fff !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .benefits-section .benefit-icon-wrapper {
+    width: 56px !important;
+    height: 56px !important;
+    padding: 1.1rem !important;
+    margin-bottom: 0.7rem !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  .benefits-section .benefit-icon-wrapper svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .benefits-section .benefit-content h3 {
+    font-size: 1.08rem !important;
+    margin-bottom: 0.4rem !important;
+    color: #ea580c !important;
+    font-weight: 700 !important;
+  }
+  .benefits-section .benefit-content p {
+    font-size: 0.97rem !important;
+    margin-bottom: 0.2rem !important;
+    color: #444 !important;
+  }
+}
+
+/* --- Mobile view: Make "Brand Power", "School Integration", "Setup Support", "Expert Training" cards match other benefit cards --- */
+@media (max-width: 600px) {
+  /* Target all benefit cards in the section, not just .benefit-card-vertical */
+  .benefits-section .benefit-card,
+  .benefits-section .benefit-card-vertical {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0.7rem auto 1rem auto !important;
+    padding: 1.1rem 0.7rem !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
+    background: #fff !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .benefits-section .benefit-icon-wrapper {
+    width: 56px !important;
+    height: 56px !important;
+    padding: 1.1rem !important;
+    margin-bottom: 0.7rem !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  .benefits-section .benefit-icon-wrapper svg,
+  .benefits-section .benefit-icon-responsive svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .benefits-section .benefit-content h3,
+  .benefits-section .responsive-heading {
+    font-size: 1.08rem !important;
+    margin-bottom: 0.4rem !important;
+    color: #ea580c !important;
+    font-weight: 700 !important;
+  }
+  .benefits-section .benefit-content p,
+  .benefits-section .text-muted {
+    font-size: 0.97rem !important;
+    margin-bottom: 0.2rem !important;
+    color: #444 !important;
+  }
+}
+
 /* ================== */
 /* UTILITY CLASSES */
 /* ================== */
@@ -917,16 +1179,6 @@
 .franchise-teacher-parent-page .benefit-content h3,
 .franchise-teacher-parent-page .step-card h3 {
   color: var(--orange, #ea580c) !important;
-}
-
-/* Remove orange color from all h3 inside .franchise-teacher-parent-page, then set specific black for benefit and step titles */
-.franchise-teacher-parent-page h3 {
-  color: inherit !important;
-}
-
-.franchise-teacher-parent-page .benefit-card-vertical .benefit-content h3,
-.franchise-teacher-parent-page .step-card h3 {
-  color: #222 !important;
 }
 
 

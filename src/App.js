@@ -31,6 +31,7 @@ import VedicMathPage from "./pages/programs/VedicMathPage";
 import DMITPage from "./pages/programs/DMITPage";
 import TeacherTrainingPage from "./pages/programs/TeacherTrainingPage";
 import FTrainingPage from "./pages/programs/FTrainingPage";
+import WorkshopsPage from "./pages/programs/WorkshopsPage";
 
 // Franchise & About Subpages
 
@@ -61,6 +62,11 @@ function App() {
     const timer = setTimeout(() => setShowWelcome(false), 4000);
     return () => clearTimeout(timer);
   }, []);
+
+  // Remove or comment out this line if you have it anywhere:
+  // window.scrollTo(0, document.body.scrollHeight);
+
+  // If you have a custom ScrollToTop component, ensure it only scrolls to top on route change, not on initial load after WelcomeScreen.
 
   if (showWelcome) return <WelcomeScreen onSkip={() => setShowWelcome(false)} />;
 
@@ -94,11 +100,12 @@ function App() {
 
           {/* Program Pages */}
         
-          //<Route path="/programs/abacus" element={<><AbacusPage /><Footer /><WhatsAppButton /></>} />
+          <Route path="/programs/abacus" element={<><AbacusPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/vedic-math" element={<><VedicMathPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/brain-development" element={<><DMITPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/teacher-training" element={<><TeacherTrainingPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/franchise-training" element={<><FTrainingPage /><Footer /><WhatsAppButton /></>} />
+          <Route path="/programs/workshops" element={<><WorkshopsPage /><Footer /><WhatsAppButton /></>} />
 
           {/* Franchise Pages */}
          

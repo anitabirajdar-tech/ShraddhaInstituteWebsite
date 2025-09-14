@@ -821,3 +821,168 @@
     padding: 1.2rem;
   }
 }
+/* --- Improved Mobile Timeline & Profile Layout --- */
+@media (max-width: 600px) {
+  .timeline-section {
+    padding: 1rem 0 !important;
+  }
+  .timeline {
+    padding: 0.5rem 0 !important;
+  }
+  .timeline-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    margin-bottom: 1.2rem !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  .timeline-year {
+    position: static !important;
+    display: inline-block !important;
+    margin-bottom: 0.4rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    background: linear-gradient(90deg, #ea580c 60%, #f97316 100%) !important;
+    border-radius: 999px !important;
+    padding: 0.15rem 0.7rem !important;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.10) !important;
+    letter-spacing: 0.5px !important;
+    min-width: 36px;
+    min-height: 20px;
+    z-index: 2;
+    text-align: left !important;
+  }
+  .timeline-year::before {
+    display: none !important;
+  }
+  .timeline-row {
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+    margin-top: 0.7rem !important;
+    margin-bottom: 0.7rem !important;
+    max-width: 100% !important;
+    align-items: stretch !important;
+  }
+  .timeline-content,
+  .timeline-video {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 0.8rem 0.7rem !important;
+    box-sizing: border-box;
+    border-radius: 10px !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.98rem !important;
+    background: #fff !important;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.07) !important;
+  }
+  .timeline-content {
+    background: linear-gradient(90deg, #fff7ed 0%, #fff 100%) !important;
+    border: 1.2px solid #ffd7b5 !important;
+    color: #4b2e0e !important;
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .timeline-content h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.3rem !important;
+    font-weight: 700 !important;
+    color: #ea580c !important;
+    letter-spacing: 0.2px !important;
+    text-align: left !important;
+  }
+  .timeline-content p {
+    font-size: 0.93rem !important;
+    margin-bottom: 0.15rem !important;
+    color: #444 !important;
+    text-align: left !important;
+  }
+  .timeline-video iframe {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 110px !important;
+    border-radius: 7px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .timeline::before {
+    display: none !important;
+  }
+  /* Profile section */
+  .profile-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+    padding: 0.7rem !important;
+    background: #fff !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.07) !important;
+  }
+  .profile-image {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto 0.7rem auto !important;
+  }
+  .profile-image img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.08) !important;
+  }
+  .profile-content {
+    padding: 0.5rem !important;
+    text-align: center !important;
+  }
+  .profile-content h3 {
+    font-size: 1.08rem !important;
+    margin-bottom: 0.4rem !important;
+    color: #ea580c !important;
+    font-weight: 700 !important;
+  }
+  .profile-content p {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.3rem !important;
+    color: #444 !important;
+  }
+  .signature {
+    font-size: 1rem !important;
+    margin-top: 0.2rem !important;
+    color: #c2410c !important;
+  }
+  .quote {
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.8rem !important;
+    border-radius: 7px !important;
+    left: 50% !important;
+    bottom: 10px !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    white-space: normal !important;
+    text-align: center !important;
+    background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.10) !important;
+  }
+}
+
+/* Make timeline year badge exactly same width for all years on mobile */
+@media (max-width: 600px) {
+  .timeline-year {
+    min-width: 60px !important;
+    max-width: 60px !important;
+    width: 60px !important;
+    text-align: center !important;
+    display: inline-block !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* Remove the timeline-content round/circle on desktop and mobile */
+.timeline-content::before {
+  display: none !important;
+}

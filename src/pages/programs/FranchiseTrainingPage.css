@@ -1,4 +1,3 @@
-
 @media (max-width: 576px) {
   .franchise-hero-section .franchise-btn-group {
     display: flex !important;
@@ -343,6 +342,14 @@
   color: #fff;
 }
 
+/* Force franchise benefit icons to white */
+.icon-circle .fas.fa-box-open,
+.icon-circle .fas.fa-bullhorn,
+.icon-circle .fas.fa-sync-alt,
+.icon-circle .fas.fa-map-marked-alt {
+  color: #fff !important;
+}
+
 /* ================= INVESTMENT & RETURNS ================= */
 .investment-card,
 .returns-card {
@@ -543,6 +550,32 @@
   }
 }
 
+/* Ensure hero metrics are in a row on mobile */
+@media (max-width: 768px) {
+  .franchise-hero-section .d-flex.align-items-center.gap-4.text-white.mt-4.justify-content-center {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .franchise-hero-section .d-flex.align-items-center.gap-4.text-white.mt-4.justify-content-center > div {
+    flex: 1 1 45%;
+    min-width: 140px;
+    max-width: 100%;
+    margin-bottom: 0 !important;
+  }
+  .franchise-hero-section .vr {
+    display: none !important;
+  }
+}
+
+/* Force hero metric icons to white */
+.franchise-hero-section .d-flex.align-items-center.gap-4.text-white.mt-4.justify-content-center i.bi-cash-coin,
+.franchise-hero-section .d-flex.align-items-center.gap-4.text-white.mt-4.justify-content-center i.bi-people-fill {
+  color: #fff !important;
+}
+
 @media (max-width: 576px) {
   .franchise-hero-section {
     padding: 40px 0;
@@ -563,5 +596,19 @@
     margin: 1rem auto 0;
     display: inline-flex;
   }
+}
+
+/* Consistent heading font for Franchise Training Page */
+.franchise-training-page h1,
+.franchise-training-page h2,
+.franchise-training-page h3,
+.franchise-training-page h4,
+.franchise-training-page h5,
+.franchise-training-page h6,
+.franchise-training-page .section-title,
+.franchise-training-page .section-subtitle {
+  font-family: 'Montserrat', 'Segoe UI', 'Arial', sans-serif !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 

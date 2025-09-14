@@ -560,6 +560,84 @@
   background-color: #fff7ed !important;
 }
 
+/* ================== */
+/* Continuous Testimonial Carousel Styles */
+.continuous-testimonial-container {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #fff9f5 0%, #fff3e6 100%);
+  border-radius: 20px;
+}
+
+/* Desktop Horizontal Scroll */
+.testimonial-track {
+  width: max-content;
+  will-change: transform;
+}
+
+.testimonial-slide {
+  flex: 0 0 320px;
+  height: 280px;
+}
+
+.testimonial-slide .success-story-card {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 107, 29, 0.1);
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+}
+
+.testimonial-slide .success-story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 107, 29, 0.15) !important;
+  border-color: rgba(255, 107, 29, 0.3);
+}
+
+/* Mobile Vertical Scroll */
+.mobile-testimonial-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+.mobile-testimonial-track {
+  will-change: transform;
+}
+
+.mobile-testimonial-slide {
+  height: 250px;
+  flex-shrink: 0;
+}
+
+.mobile-testimonial-slide .success-story-card {
+  height: 100%;
+  border: 1px solid rgba(255, 107, 29, 0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+}
+
+/* Rotation Status Indicator */
+.rotation-status {
+  z-index: 10;
+  opacity: 0.8;
+}
+
+.rotation-status .badge {
+  font-size: 0.7rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+}
+
+/* Smooth hover effects */
+.continuous-testimonial-container:hover .testimonial-slide .success-story-card {
+  animation-play-state: paused;
+}
+
+/* Pause animation on hover */
+.continuous-testimonial-container:hover .testimonial-track,
+.continuous-testimonial-container:hover .mobile-testimonial-track {
+  animation-play-state: paused;
+}
 
 /* Language Selector */
 .language-selector {
@@ -596,135 +674,38 @@
   transform: scale(1.02);
 }
 
-/* --- Abacus-style testimonial section for "Transforming Lives Through Math" --- */
-.success-stories-section {
-  background: linear-gradient(135deg, #fff7ed 0%, #fff3e6 100%);
-  padding: 4rem 0;
-}
-
-.marquee-wrapper {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  padding: 0.5rem 0;
-}
-
-.marquee-track {
-  display: flex;
-  align-items: stretch;
-  will-change: transform;
-  animation: marquee-scroll 30s linear infinite;
-}
-
-.marquee-slide {
-  flex: 0 0 340px;
-  max-width: 340px;
-  min-width: 300px;
-  margin: 0 10px;
-  display: flex;
-  align-items: stretch;
-}
-
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.success-story-card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-  padding: 2rem 1.5rem;
-  min-height: 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 149, 0, 0.1);
-  max-width: 340px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.success-story-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 149, 0, 0.15);
-}
-
-.success-story-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #fff3e6;
-  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.15);
-  margin-bottom: 1rem;
-  transition: transform 0.3s, border-color 0.3s;
-}
-
-.success-story-card:hover img {
-  transform: scale(1.08) rotate(-2deg);
-  border-color: #f97316;
-}
-
-.success-story-card h4 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #ea580c;
-}
-
-.success-story-card p {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 0.5rem;
-  font-style: italic;
-  line-height: 1.6;
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .marquee-slide {
-    min-width: 260px;
-    max-width: 90vw;
+  .continuous-testimonial-container {
+    padding: 1rem;
   }
-  .marquee-track {
-    gap: 0.5rem;
+  
+  .mobile-testimonial-slide {
+    height: 220px;
   }
-  .success-story-card {
-    padding: 1.2rem 0.7rem;
-    min-height: 200px;
-  }
-  .success-story-card img {
-    width: 60px;
-    height: 60px;
+  
+  .testimonial-slide {
+    flex: 0 0 280px;
+    height: 250px;
   }
 }
 
 @media (max-width: 576px) {
-  .success-stories-section {
-    padding: 2rem 0;
+  .mobile-testimonial-slide {
+    height: 200px;
   }
-  .marquee-slide {
-    min-width: 220px;
-    max-width: 95vw;
+  
+  .testimonial-slide {
+    flex: 0 0 260px;
+    height: 230px;
   }
-  .success-story-card {
-    padding: 1rem 0.5rem;
-    min-height: 160px;
+  
+  .rotation-status {
+    padding: 0.5rem;
   }
-  .success-story-card img {
-    width: 48px;
-    height: 48px;
+  
+  .rotation-status .badge {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.6rem;
   }
 }

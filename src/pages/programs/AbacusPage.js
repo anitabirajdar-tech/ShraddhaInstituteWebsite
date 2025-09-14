@@ -39,7 +39,14 @@ const AbacusPage = () => {
                 Unlock your child’s full potential with our proven Abacus training. Boost calculation speed, concentration, and confidence in a fun, interactive way!
               </p>
               {/* Enroll Now and Book Demo buttons styled like Hero section */}
-              
+              <div className="hero-buttons d-flex justify-content-center gap-3 mt-4">
+                <Link to="/contact" className="btn btn-orange btn-lg flex-fill">
+                  Enroll Now
+                </Link>
+                <Link to="/book-demo" className="btn btn-orange btn-lg flex-fill">
+                  Book Demo
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -169,36 +176,10 @@ const AbacusPage = () => {
           </div>
         </Container>
 
-        {/* Continuous rotating marquee */}
-        <div
-          className="marquee-wrapper"
-          style={{
-            overflow: "hidden",
-            width: "100%",
-            position: "relative",
-            padding: "0.5rem 0"
-          }}
-        >
-          <div
-            className="marquee-track"
-            style={{
-              display: "flex",
-              width: testimonials.length > 0 ? `${testimonials.length * 360 * 2}px` : "100%",
-              animation: testimonials.length > 0 ? "marquee-scroll 30s linear infinite" : "none"
-            }}
-          >
-            {/* Duplicate testimonials for seamless loop */}
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div
-                key={`${testimonial.id}-${index}`}
-                className="marquee-slide"
-                style={{
-                  flex: "0 0 340px",
-                  maxWidth: 340,
-                  minWidth: 300,
-                  margin: "0 10px"
-                }}
-              >
+        <div className="marquee-wrapper">
+          <div className="marquee-track">
+            {testimonials.map((testimonial, index) => (
+              <div key={`${testimonial.id}-${index}`} className="marquee-slide">
                 <div className="testimonial-card bg-white p-4 rounded-3 shadow-sm h-100 text-center mx-2">
                   <div className="mb-3">
                     <img
@@ -208,6 +189,7 @@ const AbacusPage = () => {
                       style={{ width: "80px", height: "80px", objectFit: "cover" }}
                     />
                   </div>
+
                   <h4 className="h5 fw-bold mb-2">
                     {selectedLanguage === "marathi"
                       ? testimonial.name
@@ -226,6 +208,7 @@ const AbacusPage = () => {
                       ? testimonial.roleKn || testimonial.roleEn
                       : testimonial.roleEn || testimonial.role}
                   </p>
+
                   <p className="mb-3">
                     "
                     {selectedLanguage === "marathi"
@@ -237,6 +220,7 @@ const AbacusPage = () => {
                       : testimonial.contentEn || testimonial.content}
                     "
                   </p>
+
                   <div className="text-orange fs-5">
                     {"★".repeat(testimonial.rating || 5)}
                   </div>
