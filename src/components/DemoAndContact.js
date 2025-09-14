@@ -61,14 +61,7 @@ const DemoAndContact = () => {
         </div>
 
         {/* 🔹 Zoho iframe form */}
-        <div className="zoho-form-container">
-          <iframe
-            src="https://crm.zoho.com/crm/WebFormServeServlet?rid=a9763370d7bf0f1e287b2ef5e4459369ed622c233de229febc6b1f916620dcc89fea94d9c69cafe9cf7e241096383bacgidc3e194a6899b3ad30930a3ef1f8bd17486d9128d8b3b09cef409cae8e26e8cbd"
-            title="Zoho WebForm"
-            frameBorder="0"
-            scrolling="no"
-          ></iframe>
-        </div>
+        <iframe height='485px' width='100%' frameborder='0' allowTransparency='true' scrolling='auto' src='https://creatorapp.zohopublic.com/shraddha_institute/testing-app/form-embed/Contact_Us/CyTAXzPxdC1SJEGp2eCp7dvDW2m1YHt1JwPFV5n2NrUSgj0JKNdOTCsqDUSZrn2mHsZYRDv61w57k8DZkwXn3gONRXttjFfmKzaW'></iframe>
       </div>
 
       {/* Free Demo (Right) */}

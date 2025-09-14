@@ -1,3 +1,7 @@
+.franchise-teacher-parent-page .display-5 {
+  font-size: 2.5rem !important;
+}
+
 .text-highlight {
   background: linear-gradient(90deg, #fff 0%, #fd7e14 100%);
   -webkit-background-clip: text;
@@ -596,6 +600,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 15px;
+  color: #222 !important;
 }
 
 .step-arrow {
@@ -880,9 +885,6 @@
   }
 }
 
-
-
-
 /* ================== */
 /* UTILITY CLASSES */
 /* ================== */
@@ -901,6 +903,30 @@
 
 .border-orange {
   border-color: var(--orange) !important;
+}
+
+.franchise-teacher-parent-page h1,
+.franchise-teacher-parent-page h2,
+.franchise-teacher-parent-page h3,
+.franchise-teacher-parent-page h4,
+.franchise-teacher-parent-page h5,
+.franchise-teacher-parent-page h6,
+.franchise-teacher-parent-page .display-4,
+.franchise-teacher-parent-page .display-5,
+.franchise-teacher-parent-page .section-header h2,
+.franchise-teacher-parent-page .benefit-content h3,
+.franchise-teacher-parent-page .step-card h3 {
+  color: var(--orange, #ea580c) !important;
+}
+
+/* Remove orange color from all h3 inside .franchise-teacher-parent-page, then set specific black for benefit and step titles */
+.franchise-teacher-parent-page h3 {
+  color: inherit !important;
+}
+
+.franchise-teacher-parent-page .benefit-card-vertical .benefit-content h3,
+.franchise-teacher-parent-page .step-card h3 {
+  color: #222 !important;
 }
 
 

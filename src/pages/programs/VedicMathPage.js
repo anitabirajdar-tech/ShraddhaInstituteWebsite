@@ -237,33 +237,38 @@ const VedicMathPage = () => {
               </div>
             </Col>
           </Row>
+        </Container>
 
-          {/* Testimonial Carousel */}
-          <div className="continuous-testimonial-container" onMouseEnter={pauseRotation} onMouseLeave={resumeRotation}>
-            {/* Desktop carousel */}
-            <div className="d-none d-lg-block">
-              <div className="testimonial-track" style={{ transform: `translateX(${translateX}px)`, display: 'flex', gap: '2rem', transition: isPaused ? 'transform 0.3s ease' : 'none' }}>
-                {getInfiniteTestimonials().map((story, index) => (
-                  <div key={`${story.id}-${index}`} className="testimonial-slide">
-                    <div className="success-story-card bg-white p-4 rounded-4 shadow-sm">
-                      <div className="d-flex justify-content-center mb-3">
-                        <img src={story.image} alt={story.name} className="rounded-circle" />
-                      </div>
-                      <div className="mb-2">
-                        <h4 className="h5 fw-bold mb-2 text-center">{story.name}</h4>
-                      </div>
-                      <p className="mb-3 text-center" style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                        "{story.content?.[selectedLanguage]}"
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Mobile vertical list */}
-            <div className="d-block d-lg-none">
-              {successStories.map((story, index) => (
-                <div key={`${story.id}-${index}`} className="success-story-card bg-white p-4 rounded-4 shadow-sm mb-3">
+        {/* Marquee outside Container, like AbacusPage */}
+        <div
+          className="marquee-wrapper"
+          style={{
+            overflow: "hidden",
+            width: "100%",
+            position: "relative",
+            padding: "0.5rem 0"
+          }}
+        >
+          <div
+            className="marquee-track"
+            style={{
+              display: "flex",
+              width: successStories.length > 0 ? `${successStories.length * 360 * 2}px` : "100%",
+              animation: successStories.length > 0 ? "marquee-scroll 30s linear infinite" : "none"
+            }}
+          >
+            {[...successStories, ...successStories].map((story, index) => (
+              <div
+                key={`${story.id}-${index}`}
+                className="marquee-slide"
+                style={{
+                  flex: "0 0 340px",
+                  maxWidth: 340,
+                  minWidth: 300,
+                  margin: "0 10px"
+                }}
+              >
+                <div className="success-story-card bg-white p-4 rounded-4 shadow-sm">
                   <div className="d-flex justify-content-center mb-3">
                     <img src={story.image} alt={story.name} className="rounded-circle" />
                   </div>
@@ -274,10 +279,10 @@ const VedicMathPage = () => {
                     "{story.content?.[selectedLanguage]}"
                   </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </Container>
+        </div>
       </section>
     </div>
   );

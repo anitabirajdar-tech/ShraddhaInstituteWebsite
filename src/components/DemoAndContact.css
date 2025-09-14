@@ -21,8 +21,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   max-width: 1400px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
   align-items: center;
 }
 
@@ -37,9 +37,10 @@
 /* Contact Form Styles */
 .contact-section {
   background: white;
-  padding: 3rem;
+  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(234, 88, 12, 0.1);
+  margin-bottom: 0.5rem;
 }
 
 .contact-header {

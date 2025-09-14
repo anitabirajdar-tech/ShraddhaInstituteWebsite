@@ -84,25 +84,7 @@ const FranchiseTeacherParent = () => {
 
       <div className="franchise-teacher-parent-page">
         {/* Announcement Bar - Marquee */}
-        <div className="announcement-bar bg-orange text-white py-2">
-        <Container>
-          <div className="announcement-scroll d-flex align-items-center">
-            <span className="badge bg-white text-orange me-2 flex-shrink-0">⏳ Limited Time</span>
-            <div className="announcement-marquee flex-grow-1">
-              <div className="announcement-track">
-                <span className="announcement-text me-5">
-                  Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
-                </span>
-                {/* Duplicate text for continuous scrolling */}
-                <span className="announcement-text me-5">
-                  Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
-                </span>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </div>
-
+       
         {/* Enhanced Hero Section */}
         <section 
           className="hero-section position-relative overflow-hidden"
@@ -136,33 +118,12 @@ const FranchiseTeacherParent = () => {
                 </p>
                 
                 {/* CTA Buttons */}
-                <div className="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center mb-4">
-                  <Link 
-                    to="/contact"
-                    className="btn btn-primary d-flex align-items-center justify-content-center"
-                    style={{ minHeight: '48px' }}
-                  >
-                    <FaClipboardCheck className="me-2" />
-                    <span className="d-none d-sm-inline">Book Free Consultation</span>
-                    <span className="d-inline d-sm-none">Book Free<br />Consultation</span>
-                  </Link>
-                  <Link 
-                    to="/contact"
-                    className="btn btn-primary d-flex align-items-center justify-content-center"
-                    style={{ minHeight: '48px' }}
-                  >
-                    <FaBookOpen className="me-2" />
-                    <span className="d-none d-sm-inline">Download Brochure</span>
-                    <span className="d-inline d-sm-none">Download<br />Brochure</span>
-                  </Link>
-                </div>
-                
+               
               </Col>
             </Row>
           </Container>
         </section>
-        {/* Benefits Section */}
-        {/* Benefits Section */}
+        
 {/* Benefits Section */}
 <section className="benefits-section py-5 bg-light">
   <Container>
@@ -180,7 +141,6 @@ const FranchiseTeacherParent = () => {
       {benefits.map((benefit, index) => (
         <Col xs={12} sm={6} lg={3} key={index}>
           <div className="benefit-card-vertical h-100 text-center">
-            
             {/* Icon Container */}
             <div 
               className="benefit-icon-wrapper mx-auto mb-3"
@@ -193,10 +153,9 @@ const FranchiseTeacherParent = () => {
             >
               {benefit.icon}
             </div>
-            
             {/* Content */}
             <div className="benefit-content">
-              <h3 className="h5 fw-bold mb-3 text-dark">{benefit.title}</h3>
+              <h3 className="h5 fw-bold mb-3" style={{ color: "#222 !important" }}>{benefit.title}</h3>
               <p className="mb-0 text-muted">{benefit.desc}</p>
             </div>
           </div>

@@ -10,25 +10,25 @@ import './FranchiseBusinessSchool.css';
 const FranchiseBusinessSchool = () => {
   const benefits = [
     {
-      icon: <FaSchool size={42} className="text-orange" />,
+      icon: <FaSchool size={42} className="text-orange mobile-icon" />,
       title: 'Brand Power',
       text: 'Recognized leader in Abacus & Vedic Math with a trusted business model.',
       stat: '100+ Partner Schools'
     },
     {
-      icon: <FaChartLine size={42} className="text-orange" />,
+      icon: <FaChartLine size={42} className="text-orange mobile-icon" />,
       title: 'School Integration',
       text: 'Bring our programs into your school to boost admissions and results.',
       stat: '40%+ Math Improvement'
     },
     {
-      icon: <FaHandsHelping size={42} className="text-orange" />,
+      icon: <FaHandsHelping size={42} className="text-orange mobile-icon" />,
       title: 'Setup Support',
       text: 'From infrastructure to marketing — we guide your entire journey.',
       stat: '95% Success Rate'
     },
     {
-      icon: <FaChalkboardTeacher size={42} className="text-orange" />,
+      icon: <FaChalkboardTeacher size={42} className="text-orange mobile-icon" />,
       title: 'Expert Training',
       text: 'We train your teachers with structured, professional modules.',
       stat: '500+ Teachers Certified'
@@ -38,19 +38,19 @@ const FranchiseBusinessSchool = () => {
   const steps = [
     {
       number: '1',
-      icon: <FaUsers size={28} className="text-orange" />,
+      icon: <FaUsers size={28} className="text-orange mobile-icon" />,
       title: 'Connect with Us',
       text: 'Fill out the form or call us to schedule your consultation.'
     },
     {
       number: '2',
-      icon: <IoMdSchool size={28} className="text-orange" />,
+      icon: <IoMdSchool size={28} className="text-orange mobile-icon" />,
       title: 'Attend Orientation',
       text: 'Understand our model, investment, and profit potential.'
     },
     {
       number: '3',
-      icon: <FaAward size={28} className="text-orange" />,
+      icon: <FaAward size={28} className="text-orange mobile-icon" />,
       title: 'Launch Successfully',
       text: 'Open your center or school program with our full support.'
     }
@@ -58,7 +58,8 @@ const FranchiseBusinessSchool = () => {
 
   // Marquee announcement state
   const [currentAnnouncement, setCurrentAnnouncement] = useState(0);
-  
+  const [fade, setFade] = useState(true);
+
   const announcements = [
     "Limited Time Offer: 20% Off Franchise Fee",
     "Exclusive Territory Protection Available",
@@ -68,7 +69,11 @@ const FranchiseBusinessSchool = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentAnnouncement((prev) => (prev + 1) % announcements.length);
+      setFade(false); // start fade out
+      setTimeout(() => {
+        setCurrentAnnouncement((prev) => (prev + 1) % announcements.length);
+        setFade(true); // fade in new announcement
+      }, 400); // fade out duration
     }, 4000);
 
     return () => clearInterval(interval);
@@ -95,24 +100,7 @@ const FranchiseBusinessSchool = () => {
 
       <div className="franchise-business-page">
         {/* Announcement Bar - Marquee */}
-        <div className="announcement-bar bg-orange text-white py-2">
-        <Container>
-          <div className="announcement-scroll d-flex align-items-center">
-            <span className="badge bg-white text-orange me-2 flex-shrink-0">⏳ Limited Time</span>
-            <div className="announcement-marquee flex-grow-1">
-              <div className="announcement-track" style={{ display: 'flex', whiteSpace: 'nowrap', overflow: 'visible', position: 'relative' }}>
-                <span className="announcement-text me-5" style={{ display: 'inline-block', position: 'static', opacity: 1 }}>
-                  Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
-                </span>
-                {/* Duplicate text for continuous scrolling */}
-                <span className="announcement-text me-5" style={{ display: 'inline-block', position: 'static', opacity: 1 }}>
-                  Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
-                </span>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </div>
+        
 
         {/* Enhanced Hero Section */}
         <section 

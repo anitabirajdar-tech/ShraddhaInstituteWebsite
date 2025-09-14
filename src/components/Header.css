@@ -1,21 +1,22 @@
+/* Reverted to previous Header.css styles before font/color standardization. */
+/* ...existing code before the last patch... */
 /* Match Join Now button to hero section style */
 .btn-join-now {
   background: linear-gradient(90deg, #ff6b35 0%, #f97316 100%) !important;
   color: #fff !important;
   border-radius: 999px !important;
-  font-weight: 700 !important;
+  font-weight: 700;
   border: none !important;
-  box-shadow: 0 4px 18px rgba(255, 107, 53, 0.25) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
-  font-size: 0.95rem !important;
+  box-shadow: 0 4px 18px rgba(255, 107, 53, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
   padding: 10px 24px !important;
-  transition: all 0.3s cubic-bezier(.4,0,.2,1) !important;
-  outline: none !important;
-  position: relative !important;
-  overflow: hidden !important;
-  z-index: 1 !important;
-  border-color: transparent !important;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .btn-join-now:hover {
@@ -148,22 +149,6 @@
   color: var(--primary);
 }
 
-.nav-item .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 1rem;
-  right: 1rem;
-  background-color: var(--primary);
-  transition: width 0.3s ease;
-}
-
-.nav-item .nav-link:hover::after,
-.nav-item .nav-link:focus::after {
-  width: calc(100% - 2rem);
-}
 
 /* ================== */
 /* DROPDOWN MENU - FIXED POSITIONING */

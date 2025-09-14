@@ -1,3 +1,10 @@
+.franchise-business-page .display-4 {
+  font-size: 1.5rem !important;
+  color: var(--orange, #ea580c) !important;
+}
+.franchise-business-page .display-4 {
+  font-size: 2.5rem !important;
+}
 /* FranchiseBusinessSchool.css - Specific to this component only */
 
 /* Component-specific selector to avoid affecting other pages */
@@ -224,6 +231,18 @@
   .franchise-business-page .steps-section h2 {
     font-size: 1.75rem;
   }
+  .franchise-business-page .benefit-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+  .franchise-business-page .benefit-icon-wrapper svg {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .franchise-business-page .step-icon svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
 }
 
 /* Animation for the hero section text */
@@ -319,4 +338,26 @@
 .franchise-business-page .btn-orange:hover {
   background-color: #e05a2b;
   border-color: #e05a2b;
+}
+
+.franchise-business-page .announcement-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.franchise-business-page .announcement-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
