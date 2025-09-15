@@ -102,17 +102,17 @@ const Hero = () => {
               through our prestigious training program
             </p>
 
-            <div className="hero-buttons d-flex justify-content-center gap-3 mb-5">
+            <div className="hero-buttons">
               <Link
                 to="/contact"
-                className="btn btn-orange btn-lg flex-fill"
+                className="btn btn-orange btn-lg"
                 aria-label="Enroll in teacher training program"
               >
                 Enroll Now <span aria-hidden="true">→</span>
               </Link>
               <Link
                 to="/contact"
-                className="btn btn-orange btn-lg flex-fill"
+                className="btn btn-orange btn-lg"
                 aria-label="Sign up for free demo class"
               >
                 Free Demo

@@ -133,9 +133,9 @@ const FranchiseTeacherParent = () => {
                 </h1>
                 
                 {/* Description */}
-                <p className="hero-description mb-5">
-                  Turn your passion for teaching into a profitable venture with our proven Abacus & Vedic Math franchise model. 
-                  <span className="fw-bold gold-gradient-text"> Start earning ₹15,000-₹20,000/month</span> with minimal investment.
+                <p className="hero-description mb-5" style={{ fontWeight: 600 }}>
+                  Turn your passion for teaching into a profitable venture with our proven Abacus & Vedic Math franchise model. Start earning
+                  <span className="fw-bold text-white"> ₹15,000-₹20,000/month</span> with minimal investment.
                 </p>
                 
                 {/* CTA Buttons */}

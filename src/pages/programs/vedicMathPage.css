@@ -709,3 +709,44 @@
     padding: 0.3rem 0.6rem;
   }
 }
+
+/* Mobile: Force horizontal marquee for success stories */
+@media (max-width: 576px) {
+  .continuous-testimonial-container {
+    overflow-x: auto;
+    padding: 1rem 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);
+    position: relative;
+    /* Enable horizontal scroll if animation fails */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .testimonial-track {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 1rem !important;
+    width: max-content !important;
+    animation: scroll 90s linear infinite; /* Slower marquee speed */
+    will-change: transform;
+  }
+  .testimonial-slide {
+    flex: 0 0 260px !important;
+    width: 260px !important;
+    min-width: 220px !important;
+    max-width: 90vw !important;
+    margin: 0 !important;
+    height: auto !important;
+    box-sizing: border-box;
+    display: inline-block !important; /* Force horizontal stacking */
+    vertical-align: top;
+  }
+  .success-story-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1.2rem 0.7rem !important;
+    height: auto !important;
+    display: block;
+  }
+}

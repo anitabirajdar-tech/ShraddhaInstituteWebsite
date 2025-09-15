@@ -18,6 +18,7 @@ import Franchise from "./components/Franchise";
 import Training from "./components/Training";
 import Gallery from "./components/Gallery";
 import DemoAndContact from "./components/DemoAndContact";
+import GetInTouch from "./components/GetInTouch";
 
 // Pages
 
@@ -87,7 +88,7 @@ function App() {
                 <Franchise />
                 <Training />
                 <Gallery />
-                <DemoAndContact />
+                <GetInTouch /> {/* Call GetInTouch instead of DemoAndContact */}
                 <Footer />
                 <WhatsAppButton />
               </>

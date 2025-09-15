@@ -55,8 +55,7 @@ const WorkshopsPage = () => (
 		<section
 			className="hero-section position-relative overflow-hidden"
 			style={{
-				background:
-					"linear-gradient(135deg, #ea580c 0%, #f97316 50%, #dc2626 100%)",
+				background: "linear-gradient(135deg, #ff9f43 0%, #fd7e14 100%)", // Match AbacusPage.js hero color
 				color: "white",
 				minHeight: "60vh",
 				padding: "80px 0",
@@ -112,20 +111,13 @@ const WorkshopsPage = () => (
 								fontSize: "1.2rem",
 								maxWidth: 700,
 								margin: "0 auto",
+								fontWeight : 500
 							}}
 						>
 							Boost your math skills or teaching expertise with our focused,
 							high-impact workshops for students and educators.
 						</p>
-						<Button
-							as={Link}
-							to="/contact"
-							variant="light"
-							className="fw-bold text-orange px-4 py-2 mt-2"
-							style={{ fontSize: "1.1rem" }}
-						>
-							Request a Workshop
-						</Button>
+						
 					</Col>
 				</Row>
 			</Container>
@@ -139,7 +131,7 @@ const WorkshopsPage = () => (
 						Special Programs
 					</span>
 					<h1 className="display-5 fw-bold mb-3">
-						<span className="workshops-orange">Workshops</span>
+						<span className="workshops-orange" style={{ color: "#ff9f43" }}>Workshops</span>
 					</h1>
 					<p className="lead text-muted mx-auto" style={{ maxWidth: 700 }}>
 						Short-term, high-impact learning experiences for students and
@@ -152,7 +144,7 @@ const WorkshopsPage = () => (
 							<Card className="h-100 border-0 shadow-sm transition-all">
 								<Card.Body className="p-4 d-flex flex-column align-items-center text-center">
 									<div className="mb-3">{w.icon}</div>
-									<h3 className="h5 fw-bold mb-2">{w.title}</h3>
+									<h3 className="h5 fw-bold mb-2"  style={{ color: "#ff9f43" }}>{w.title}</h3>
 									<p className="text-muted mb-3">{w.desc}</p>
 									<ul className="list-unstyled mb-4">
 										{w.details.map((d, i) => (
@@ -162,14 +154,7 @@ const WorkshopsPage = () => (
 											</li>
 										))}
 									</ul>
-									<Button
-										as={Link}
-										to="/contact"
-										variant="orange"
-										className="rounded-pill px-4 fw-semibold mt-auto"
-									>
-										Request Workshop
-									</Button>
+									
 								</Card.Body>
 							</Card>
 						</Col>
@@ -182,4 +167,5 @@ const WorkshopsPage = () => (
 
 export default WorkshopsPage;
 // No changes needed here for header connection.
+// The <Link to="/programs/workshops" ... /> in Header.js will route to this component.
 // The <Link to="/programs/workshops" ... /> in Header.js will route to this component.

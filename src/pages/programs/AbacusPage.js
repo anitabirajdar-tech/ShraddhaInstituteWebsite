@@ -40,12 +40,7 @@ const AbacusPage = () => {
               </p>
               {/* Enroll Now and Book Demo buttons styled like Hero section */}
               <div className="hero-buttons d-flex justify-content-center gap-3 mt-4">
-                <Link to="/contact" className="btn btn-orange btn-lg flex-fill">
-                  Enroll Now
-                </Link>
-                <Link to="/book-demo" className="btn btn-orange btn-lg flex-fill">
-                  Book Demo
-                </Link>
+                
               </div>
             </div>
           </div>
@@ -56,7 +51,10 @@ const AbacusPage = () => {
       <section className="benefits-section py-5 bg-white">
         <Container>
           <div className="section-header text-center mb-5">
-            <h2 className="section-title fw-bold display-5 mb-3 text-orange">
+            <h2
+              className="section-title fw-bold display-5 mb-3 text-orange"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Benefits of Abacus Learning
             </h2>
             <p className="section-subtitle text-muted fs-5">

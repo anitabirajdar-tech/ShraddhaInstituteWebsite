@@ -1,25 +1,76 @@
-/* Simple spinner for Hero image loading */
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.8rem;
+  width: 100%;
+  margin: 15px auto 2rem auto;
+  padding: 0 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.hero-buttons .btn {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 160px;
+  width: 100%;
+  font-size: 1rem;
+  padding: 8px 0;
+  border-radius: 999px;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  height: 58px;
+  font-weight: 800;
+}
+
+/* Extra: if you need a specific tweak for mobile only */
+
+/* --- FORCE HERO BUTTONS IN ONE LINE ON MOBILE, OVERRIDE ALL --- */
+@media (max-width: 576px) {
   .hero-buttons {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0.8rem !important;
-    width: 100% !important;
-    margin-bottom: 1.2rem !important;
     flex-wrap: nowrap !important;
+    justify-content: stretch !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    margin: 0 auto 2rem auto !important;
+    padding: 0 0.5rem !important;
   }
-  .hero-buttons .btn {
-    min-width: 120px;
-    max-width: 160px;
-    width: auto;
-    font-size: 0.95rem;
-    margin: 0;
-    display: inline-block;
-    text-align: center;
-    white-space: nowrap;
+  .hero-buttons > * {
+    /* Only direct children, prevents nested divs from breaking layout */
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-/* Mobile-only responsive overrides */
+  .hero-buttons .btn,
+  .hero-buttons .btn-lg {
+    font-size: 0.85rem !important;
+    
+    border-radius: 999px !important;
+    height: 32px !important;
+    white-space: nowrap !important;
+   
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
 
 /* Hero.css */
 .hero-section {
@@ -113,10 +164,6 @@
   line-height: 1.6;
 }
 
-
-
-
-
 /* Buttons */
 .btn-orange {
   background: linear-gradient(90deg, #ff6b35 0%, #f97316 100%);
@@ -189,25 +236,7 @@
 
 /* 🔹 Mobile Fixes for Buttons & Badges */
 @media (max-width: 767px) {
-  .hero-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 100%;       /* take full width on mobile */
-    margin: 15px auto; /* center align */
-    gap: 10px;
-    padding: 0 10px;
-  }
-
-  .hero-buttons .btn {
-    flex: 1;
-    min-width: 120px;
-    font-size: 0.9rem;
-    padding: 10px 16px;
-    white-space: nowrap;
-  }
-
+  
   /* Trust badges mobile layout */
   .trust-badges .d-flex {
     flex-direction: row !important;
@@ -298,34 +327,7 @@
   white-space: nowrap;    
 }
 
-@media (max-width: 767px) {
-  .hero-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100% !important;
-    margin: 15px auto 0 auto !important;
-    padding: 0 10px;
-    flex-wrap: nowrap;
-  }
 
-
-    .hero-buttons .btn {
-      flex: 1;                /* each button equal */
-      min-width: 120px;       /* don’t shrink too small */
-      text-align: center;     
-      white-space: nowrap;    
-    }
-}
-    .hero-buttons .btn:first-child {
-      flex: 0 0 auto;   /* allow to grow */
-    }
-
-    .hero-buttons .btn:last-child {
-      flex: 0 0 auto;   /* allow to grow */
-    }
 /* Force trust badges (text-light) to be in one line, even on mobile */
 .hero-section .trust-badges .d-flex.align-items-center.justify-content-center.gap-4.flex-wrap {
   flex-wrap: nowrap !important;
@@ -347,3 +349,4 @@
   display: inline !important;
   font-size: 1rem !important;
 }
+

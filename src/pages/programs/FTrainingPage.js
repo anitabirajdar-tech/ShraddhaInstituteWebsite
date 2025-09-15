@@ -66,15 +66,15 @@ const FTrainingPage = () => {
               <div className="mb-3">
                 <span className="badge bg-light text-orange fs-6 px-3 py-2 rounded-pill">
                   <i className="bi bi-trophy-fill me-2"></i>
-                  #1 Franchise Opportunity 2024
+                  #1 Franchise Opportunity 2025
                 </span>
               </div>
               <h1 className="display-3 fw-bold mb-4 text-white animate__animated animate__fadeInDown">
                 Start Your Own <span className="text-warning">Shraddha Institute</span> Franchise
               </h1>
               <p className="lead text-light mb-4 animate__animated animate__fadeInUp">
-                Join India’s fastest growing network in Abacus & Vedic Maths education.  
-                Low investment, high returns, and full support from our expert team.
+                Join India’s fastest growing network in <strong>Abacus & Vedic Maths education</strong>.  
+                <strong>Low investment</strong>, <strong>high returns</strong>, and <strong>full support</strong> from our expert team.
               </p>
               <div className="d-flex gap-3 mb-4 justify-content-center">
                 

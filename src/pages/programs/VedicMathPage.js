@@ -70,7 +70,7 @@ const VedicMathPage = () => {
     { value: "900+", label: "Happy Students", icon: <LightningFill size={32} /> }
   ];
 
-  // ✅ Continuous auto-scroll
+  // ✅ Continuous auto-scroll (marquee effect for both desktop and mobile)
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -81,7 +81,8 @@ const VedicMathPage = () => {
 
   // ✅ Reset after full cycle
   useEffect(() => {
-    const testimonialWidth = 350;
+    // Marquee width logic for both desktop and mobile
+    const testimonialWidth = window.innerWidth <= 576 ? 260 : 350;
     const totalWidth = testimonialWidth * successStories.length;
     if (Math.abs(translateX) >= totalWidth) {
       setTranslateX(0);
@@ -240,9 +241,18 @@ const VedicMathPage = () => {
 
           {/* Testimonial Carousel */}
           <div className="continuous-testimonial-container" onMouseEnter={pauseRotation} onMouseLeave={resumeRotation}>
-            {/* Desktop carousel */}
-            <div className="d-none d-lg-block">
-              <div className="testimonial-track" style={{ transform: `translateX(${translateX}px)`, display: 'flex', gap: '2rem', transition: isPaused ? 'transform 0.3s ease' : 'none' }}>
+            {/* Desktop & Mobile marquee carousel */}
+            <div>
+              <div
+                className="testimonial-track"
+                style={{
+                  transform: `translateX(${translateX}px)`,
+                  display: 'flex',
+                  gap: window.innerWidth <= 576 ? '1rem' : '2rem',
+                  transition: isPaused ? 'transform 0.3s ease' : 'none',
+                  width: 'max-content'
+                }}
+              >
                 {getInfiniteTestimonials().map((story, index) => (
                   <div key={`${story.id}-${index}`} className="testimonial-slide">
                     <div className="success-story-card bg-white p-4 rounded-4 shadow-sm">
@@ -260,22 +270,6 @@ const VedicMathPage = () => {
                 ))}
               </div>
             </div>
-            {/* Mobile vertical list */}
-            <div className="d-block d-lg-none">
-              {successStories.map((story, index) => (
-                <div key={`${story.id}-${index}`} className="success-story-card bg-white p-4 rounded-4 shadow-sm mb-3">
-                  <div className="d-flex justify-content-center mb-3">
-                    <img src={story.image} alt={story.name} className="rounded-circle" />
-                  </div>
-                  <div className="mb-2">
-                    <h4 className="h5 fw-bold mb-2 text-center">{story.name}</h4>
-                  </div>
-                  <p className="mb-3 text-center" style={{ fontStyle: 'italic', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                    "{story.content?.[selectedLanguage]}"
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </Container>
       </section>
@@ -284,3 +278,4 @@ const VedicMathPage = () => {
 };
 
 export default VedicMathPage;
+    
