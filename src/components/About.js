@@ -21,7 +21,7 @@ const About = () => {
   ];
 
   const infoLines = [
-    "Proud Partners with 50+ Schools across India",
+    "Proud Partners with 60+ Schools across India",
     "Facilitated 500+ Abacus & Vedic Maths Workshops across 20+ Cities",
     "Empowered 15,000+ Students through Transformative Educational Programs",
   ];

@@ -351,3 +351,63 @@
                 font-size: 0.88rem;
             }
         }
+
+
+        /* filepath: e:\shraddha\shraddha-institute\src\components\Franchise.css */
+.franchise-grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 600px) {
+  .franchise-grid-responsive {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .franchise-grid-responsive {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card-icon {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #ff9f43;
+}
+
+/* IMPROVED RESPONSIVE GRID FOR FRANCHISE CARDS */
+.franchise .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .franchise .grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto 30px;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .franchise .grid {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+}

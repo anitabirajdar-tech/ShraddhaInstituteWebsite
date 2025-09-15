@@ -107,9 +107,9 @@ const FranchiseTeacherParent = () => {
         <section 
           className="hero-section position-relative overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #ea580c 0%, #f97316 50%, #dc2626 100%)',
+            background: '#ff9f43',
             color: 'white',
-            minHeight: '85vh'
+            padding: '80px 0'
           }}
         >
           <div className="hero-overlay"></div>

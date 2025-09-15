@@ -82,10 +82,28 @@ useEffect(() => {
   return (
     <div className="founder-page">
       {/* Hero Section */}
-      <section className="founder-hero">
+      <section
+        className="founder-hero"
+        style={{
+          background: 'linear-gradient(135deg, #ff9f43 0%, #fd7e14 100%)',
+          color: 'white',
+          padding: '80px 0',
+          textAlign: 'center'
+        }}
+      >
         <div className="hero-content">
-          <h1>Our Journey</h1>
-          <p>How it all started in 2013 and scaled across India</p>
+          <h1 style={{
+            fontSize: '3rem',
+            fontWeight: 700,
+            marginBottom: '1rem',
+            textShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            fontFamily: 'Montserrat, sans-serif'
+          }}>
+            Our Journey
+          </h1>
+          <p style={{ fontSize: '1.25rem', fontWeight: 400, marginBottom: 0 }}>
+            How it all started in 2013 and scaled across India
+          </p>
         </div>
       </section>
 
@@ -175,7 +193,6 @@ useEffect(() => {
                 bring joy back into learning. Today, with over 600 teachers and 50,000+ students,
                 our mission continues.
               </p>
-          
               <div className="signature">- Mrs. Swati Shah</div>
             </div>
           </div>

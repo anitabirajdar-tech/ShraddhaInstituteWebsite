@@ -104,7 +104,7 @@ const Header = () => {
           </Link>
 
           <button
-            className="navbar-toggler"
+            className={`navbar-toggler${isOpen ? ' d-none' : ''}`}
             type="button"
             onClick={toggleMenu}
             aria-expanded={isOpen}
