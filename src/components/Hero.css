@@ -1,74 +1,67 @@
 .hero-buttons {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: stretch;
-  gap: 0.8rem;
-  width: 100%;
-  margin: 15px auto 2rem auto;
-  padding: 0 0.5rem;
+  align-items: center;
   flex-wrap: nowrap;
+  gap: 20px;
+  margin: 30px auto 0 auto;
+  max-width: 350px;
+  /* width and max-width removed for desktop */
+  margin-bottom: 1.5rem;
 }
 
 .hero-buttons .btn {
-  flex: 1 1 0;
+  flex: 1;
   min-width: 0;
-  max-width: 160px;
-  width: 100%;
-  font-size: 1rem;
-  padding: 8px 0;
-  border-radius: 999px;
-  margin: 0;
   text-align: center;
+  white-space: nowrap;
+  font-weight: 800;
+  height: 58px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
-  box-sizing: border-box;
-  height: 58px;
-  font-weight: 800;
+  /* REMOVE width: 40%; */
+  /* REMOVE width for desktop, let flexbox handle sizing */
 }
 
-/* Extra: if you need a specific tweak for mobile only */
-
-/* --- FORCE HERO BUTTONS IN ONE LINE ON MOBILE, OVERRIDE ALL --- */
+/* --- FINAL, FORCEFUL MOBILE FIX: HERO BUTTONS IN ONE LINE --- */
 @media (max-width: 576px) {
   .hero-buttons {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
-    justify-content: stretch !important;
+    justify-content: center !important;
     align-items: stretch !important;
     gap: 0.5rem !important;
-    width: 100% !important;
-    margin: 0 auto 2rem auto !important;
-    padding: 0 0.5rem !important;
-  }
-  .hero-buttons > * {
-    /* Only direct children, prevents nested divs from breaking layout */
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
+    width: 80vw !important;
+    max-width: 100vw !important;
     margin: 0 !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    position: relative !important;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1.5rem !important; /* Add space above buttons for mobile */
+
+    
   }
   .hero-buttons .btn,
   .hero-buttons .btn-lg {
-    font-size: 0.85rem !important;
-    
-    border-radius: 999px !important;
-    height: 32px !important;
-    white-space: nowrap !important;
-   
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: 1px !important; /* force flex to distribute space equally */
+    max-width: none !important;
     margin: 0 !important;
     box-sizing: border-box !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    font-size: 0.95rem !important;
+    border-radius: 999px !important;
+    height: 42px !important;
+    white-space: nowrap !important;
+    padding: 6px 0 !important;
   }
 }
 
@@ -83,15 +76,12 @@
 }
 
 /* Background Image */
-
-/* Crossfade Slider Background */
 .hero-slider {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: #000; fallback removed for transparent background until image loads */
   overflow: hidden;
   z-index: 0;
 }
@@ -112,7 +102,7 @@
 
 .hero-bg-slide.active {
   opacity: 1;
-  z-index: 1; /* ensure active slide is always on top */
+  z-index: 1;
 }
 
 /* Gradient Overlay */
@@ -169,7 +159,7 @@
   background: linear-gradient(90deg, #ff6b35 0%, #f97316 100%);
   color: #fff;
   padding: 10px 24px;
-    border-radius: 999px !important;
+  border-radius: 999px !important;
   font-weight: 700;
   border: none;
   transition: all 0.3s cubic-bezier(.4,0,.2,1);
@@ -194,7 +184,7 @@
   background: rgba(255,255,255,0.08);
   color: #fff;
   padding: 10px 24px;
-    border-radius: 999px !important;
+  border-radius: 999px !important;
   font-weight: 700;
   border: 2px solid #fff;
   transition: all 0.3s cubic-bezier(.4,0,.2,1);
@@ -233,11 +223,8 @@
   font-size: 1.1rem;
 }
 
-
-/* 🔹 Mobile Fixes for Buttons & Badges */
+/* Mobile Trust Badges */
 @media (max-width: 767px) {
-  
-  /* Trust badges mobile layout */
   .trust-badges .d-flex {
     flex-direction: row !important;
     align-items: center !important;
@@ -250,14 +237,13 @@
     align-items: center !important;
     gap: 0.5rem !important;
   }
-
   .trust-badges .text-light {
     font-size: 0.95rem;
     text-align: center;
   }
 }
 
-/* Trust badges: keep badges in one line, but allow text to wrap under icon on mobile */
+/* Trust badges: keep inline */
 @media (max-width: 600px) {
   .trust-badges .d-flex.align-items-center.justify-content-center.gap-4.flex-wrap {
     flex-wrap: nowrap !important;
@@ -286,49 +272,7 @@
   }
 }
 
-/* Add to your Hero.css for better SEO elements */
-.hero-section [itemprop] {
-  display: inline;
-}
-
-/* Hide schema markup from visual display */
-[itemprop][hidden] {
-  display: none;
-}
-
-/* Ensure text remains readable for SEO while being visually hidden */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-  margin-top: 2.5rem;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  margin: 30px auto 0 auto; /* center align */
-  width: 40%; /* let it take full row */
-}
-
-.hero-buttons .btn {
-  flex: 1;                /* each button equal */
-  min-width: 120px;       /* don’t shrink too small */
-  text-align: center;     
-  white-space: nowrap;    
-}
-
-
-/* Force trust badges (text-light) to be in one line, even on mobile */
+/* Force trust badges inline on hero */
 .hero-section .trust-badges .d-flex.align-items-center.justify-content-center.gap-4.flex-wrap {
   flex-wrap: nowrap !important;
   flex-direction: row !important;
@@ -350,3 +294,24 @@
   font-size: 1rem !important;
 }
 
+/* SEO helpers */
+.hero-section [itemprop] {
+  display: inline;
+}
+
+[itemprop][hidden] {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+  margin-top: 2.5rem;
+}

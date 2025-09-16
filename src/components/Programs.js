@@ -40,7 +40,7 @@ const Programs = () => {
       name: "Teacher Training",
       description: "Fun, interactive program to train educators in Abacus & Vedic Math.",
       features: [
-        "Certified in 40 Hours",
+        "Certified in 3 months",
         "Teaching Kits Included",
         "Practice Sheets Provided",
         "Lifetime Support"

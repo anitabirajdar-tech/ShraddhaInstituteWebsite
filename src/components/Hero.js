@@ -102,6 +102,7 @@ const Hero = () => {
               through our prestigious training program
             </p>
 
+            {/* Add hero buttons above trust badges */}
             <div className="hero-buttons">
               <Link
                 to="/contact"
@@ -118,7 +119,6 @@ const Hero = () => {
                 Free Demo
               </Link>
             </div>
-
             {/* Trust badges */}
             <div
               className="trust-badges"

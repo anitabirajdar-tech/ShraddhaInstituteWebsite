@@ -14,7 +14,7 @@ const Franchise = () => {
     {
       icon: <Shield className="icon" aria-hidden="true" />,
       title: "Trusted Brand",
-      desc: "Work with Shraddha Institute, trusted by 450+ teachers nationwide.",
+      desc: "Work with Shraddha Institute, trusted by 600+ teachers nationwide.",
     },
     {
       icon: <Award className="icon" aria-hidden="true" />,
