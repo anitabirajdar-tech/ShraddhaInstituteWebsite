@@ -25,6 +25,9 @@ const Header = () => {
   const [hoveredDropdown, setHoveredDropdown] = useState(null);
   const [logoUrl, setLogoUrl] = useState(null); // ✅ state for logo
 
+  // Track which dropdown is open (for mobile/touch)
+  const [openDropdown, setOpenDropdown] = useState(null);
+
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -51,13 +54,24 @@ const Header = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Update toggleMenu to close dropdowns on mobile
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setOpenDropdown(null); // Close any open dropdown when toggling menu
   };
 
+  // Close all dropdowns
   const closeMenu = () => {
     setIsOpen(false);
     setHoveredDropdown(null);
+    setOpenDropdown(null);
+  };
+
+  // Handle dropdown click for mobile
+  const handleDropdownClick = (dropdownName) => {
+    if (window.innerWidth <= 991) {
+      setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
+    }
   };
 
   return (
@@ -138,6 +152,7 @@ const Header = () => {
                 className="nav-item dropdown mega-menu"
                 onMouseEnter={() => setHoveredDropdown('programs')}
                 onMouseLeave={() => setHoveredDropdown(null)}
+                onClick={() => handleDropdownClick('programs')}
               >
                 <a
                   className="nav-link dropdown-toggle"
@@ -145,12 +160,12 @@ const Header = () => {
                   id="programsDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded={hoveredDropdown === 'programs'}
+                  aria-expanded={hoveredDropdown === 'programs' || openDropdown === 'programs'}
                 >
-                  Programs <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
+                  Courses <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
                 </a>
                 <div 
-                  className={`dropdown-menu mega-dropdown p-4 ${hoveredDropdown === 'programs' ? 'show' : ''}`}
+                  className={`dropdown-menu mega-dropdown p-4 ${(hoveredDropdown === 'programs' || openDropdown === 'programs') ? 'show' : ''}`}
                   aria-labelledby="programsDropdown"
                 >
                   <div className="row">
@@ -172,13 +187,7 @@ const Header = () => {
                               <div className="program-desc">Ancient Techniques • Faster Calculations</div>
                             </div>
                           </Link>
-                          <Link to="/programs/brain-development" className="dropdown-item program-item" onClick={closeMenu}>
-                            <FontAwesomeIcon icon={faBrain} className="me-2 text-purple" />
-                            <div>
-                              <div className="program-title">DMIT Program</div>
-                              <div className="program-desc">Brain Mapping • Career Guidance</div>
-                            </div>
-                          </Link>
+                          
                         </div>
                       </div>
                     </div>
@@ -224,6 +233,7 @@ const Header = () => {
                 className="nav-item dropdown"
                 onMouseEnter={() => setHoveredDropdown('franchise')}
                 onMouseLeave={() => setHoveredDropdown(null)}
+                onClick={() => handleDropdownClick('franchise')}
               >
                 <a
                   className="nav-link dropdown-toggle"
@@ -231,12 +241,12 @@ const Header = () => {
                   id="franchiseDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded={hoveredDropdown === 'franchise'}
+                  aria-expanded={hoveredDropdown === 'franchise' || openDropdown === 'franchise'}
                 >
                   Franchise <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
                 </a>
                 <ul 
-                  className={`dropdown-menu ${hoveredDropdown === 'franchise' ? 'show' : ''}`}
+                  className={`dropdown-menu ${(hoveredDropdown === 'franchise' || openDropdown === 'franchise') ? 'show' : ''}`}
                   aria-labelledby="franchiseDropdown"
                 >
                  
@@ -260,6 +270,7 @@ const Header = () => {
                 className="nav-item dropdown"
                 onMouseEnter={() => setHoveredDropdown('training')}
                 onMouseLeave={() => setHoveredDropdown(null)}
+                onClick={() => handleDropdownClick('training')}
               >
                 <a
                   className="nav-link dropdown-toggle"
@@ -267,12 +278,12 @@ const Header = () => {
                   id="trainingDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded={hoveredDropdown === 'training'}
+                  aria-expanded={hoveredDropdown === 'training' || openDropdown === 'training'}
                 >
                   Training <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
                 </a>
                 <ul 
-                  className={`dropdown-menu ${hoveredDropdown === 'training' ? 'show' : ''}`}
+                  className={`dropdown-menu ${(hoveredDropdown === 'training' || openDropdown === 'training') ? 'show' : ''}`}
                   aria-labelledby="trainingDropdown"
                 >
                   <li>

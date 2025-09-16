@@ -72,7 +72,7 @@ const Footer = () => {
           <div className="footer-contact-item">
             <span className="footer-icon"><FiClock /></span>
             <div>
-              <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+              <p>Monday - Sunday: 10:00 AM - 7:00 PM</p>
               <p>Wednesday: Closed</p>
             </div>
           </div>
