@@ -228,78 +228,126 @@ const Header = () => {
                 </div>
               </li>
 
-              {/* Franchise Dropdown */}
-              <li 
-                className="nav-item dropdown"
-                onMouseEnter={() => setHoveredDropdown('franchise')}
-                onMouseLeave={() => setHoveredDropdown(null)}
-                onClick={() => handleDropdownClick('franchise')}
-              >
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="franchiseDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded={hoveredDropdown === 'franchise' || openDropdown === 'franchise'}
-                >
-                  Franchise <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
-                </a>
-                <ul 
-                  className={`dropdown-menu ${(hoveredDropdown === 'franchise' || openDropdown === 'franchise') ? 'show' : ''}`}
-                  aria-labelledby="franchiseDropdown"
-                >
-                 
-                  <li>
-                    <Link to="/franchise/teacher-parent" className="dropdown-item" onClick={closeMenu}>
-                      <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2" />
-                      For Teachers & Parents
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/franchise/business-school" className="dropdown-item" onClick={closeMenu}>
-                      <FontAwesomeIcon icon={faStore} className="me-2" />
-                      For Schools & Business Owners
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+             {/* Franchise Dropdown */}
+<li 
+  className="nav-item dropdown"
+  onMouseEnter={() => setHoveredDropdown('franchise')}
+  onMouseLeave={() => setHoveredDropdown(null)}
+  onClick={() => handleDropdownClick('franchise')}
+>
+  <a
+    className="nav-link dropdown-toggle"
+    href="#"
+    id="franchiseDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded={hoveredDropdown === 'franchise' || openDropdown === 'franchise'}
+  >
+    Franchise <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
+  </a>
+  <ul 
+    className={`dropdown-menu ${(hoveredDropdown === 'franchise' || openDropdown === 'franchise') ? 'show' : ''}`}
+    aria-labelledby="franchiseDropdown"
+  >
+    <li>
+      <Link to="/franchise/teacher-parent" className="dropdown-item" onClick={closeMenu}>
+        <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2" />
+        For Teachers & Parents
+      </Link>
+    </li>
+    <li>
+      <Link to="/franchise/business-school" className="dropdown-item" onClick={closeMenu}>
+        <FontAwesomeIcon icon={faStore} className="me-2" />
+        For Schools & Business Owners
+      </Link>
+    </li>
+    <li>
+      <Link to="/programs/franchise-training" className="dropdown-item" onClick={closeMenu}>
+        <FontAwesomeIcon icon={faStore} className="me-2 text-red" />
+        Franchise Training
+      </Link>
+    </li>
+  </ul>
+</li>
 
-              {/* Training Dropdown */}
-              <li 
-                className="nav-item dropdown"
-                onMouseEnter={() => setHoveredDropdown('training')}
-                onMouseLeave={() => setHoveredDropdown(null)}
-                onClick={() => handleDropdownClick('training')}
-              >
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="trainingDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded={hoveredDropdown === 'training' || openDropdown === 'training'}
-                >
-                  Training <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
-                </a>
-                <ul 
-                  className={`dropdown-menu ${(hoveredDropdown === 'training' || openDropdown === 'training') ? 'show' : ''}`}
-                  aria-labelledby="trainingDropdown"
-                >
-                  <li>
-                    <Link to="/training/teacher-training" className="dropdown-item" onClick={closeMenu}>
-                      <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2" />
-                      For Teachers & Individuals
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/training/school-training" className="dropdown-item" onClick={closeMenu}>
-                      <FontAwesomeIcon icon={faSchool} className="me-2" />
-                      For Schools & Institutions
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+
+              {/* Events Dropdown */}
+<li
+  className="nav-item dropdown"
+  onMouseEnter={() => setHoveredDropdown('events')}
+  onMouseLeave={() => setHoveredDropdown(null)}
+  onClick={() => handleDropdownClick('events')}
+>
+  <a
+    className="nav-link dropdown-toggle"
+    href="#"
+    id="eventsDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded={hoveredDropdown === 'events' || openDropdown === 'events'}
+  >
+    Events <FontAwesomeIcon icon={faChevronDown} className="ms-1" />
+  </a>
+  <ul
+    className={`dropdown-menu ${(hoveredDropdown === 'events' || openDropdown === 'events') ? 'show' : ''}`}
+    aria-labelledby="eventsDropdown"
+  >
+    {[
+      { year: 2022, events: ["State Level Competition", "National Level Competition"] },
+      { year: 2023, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
+      { year: 2024, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
+      { year: 2025, events: ["State Level Competition", "National Level Competition", "Annual Meet"] }
+    ].map((yearData, index, arr) => (
+      <React.Fragment key={yearData.year}>
+        {yearData.year === 2022 ? (
+          <li>
+            <Link
+              to="/gallery/2022"
+              className="dropdown-header fw-bold text-orange"
+              onClick={closeMenu}
+              style={{ textDecoration: "underline", cursor: "pointer" }}
+            >
+              {yearData.year}
+            </Link>
+          </li>
+        ) : yearData.year === 2023 ? (
+          <li>
+            <Link
+              to="/gallery/2023"
+              className="dropdown-header fw-bold text-orange"
+              onClick={closeMenu}
+              style={{ textDecoration: "underline", cursor: "pointer" }}
+            >
+              {yearData.year}
+            </Link>
+          </li>
+        ) : (
+          <li className="dropdown-header fw-bold text-orange">{yearData.year}</li>
+        )}
+        {yearData.events.map((eventName) => (
+          <li key={eventName}>
+            <Link
+              to={
+                yearData.year === 2022
+                  ? `/gallery/2022/${eventName.toLowerCase().replace(/\s+/g, "-")}`
+                  : yearData.year === 2023
+                  ? `/gallery/2023/${eventName.toLowerCase().replace(/\s+/g, "-")}`
+                  : `/events/${yearData.year}/${eventName.toLowerCase().replace(/\s+/g, "-")}`
+              }
+              className="dropdown-item"
+              onClick={closeMenu}
+            >
+              {eventName}
+            </Link>
+          </li>
+        ))}
+        {index < arr.length - 1 && <li><hr className="dropdown-divider" /></li>}
+      </React.Fragment>
+    ))}
+  </ul>
+</li>
+
+
 
              
               <li className="nav-item">

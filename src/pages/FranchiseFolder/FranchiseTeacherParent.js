@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -17,7 +17,8 @@ import {
 } from 'react-icons/fa';
 import { IoIosArrowForward, IoMdTime } from 'react-icons/io';
 import './FranchiseTeacherParent.css';
-
+import { db } from "../../firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 
 const FranchiseTeacherParent = () => {
@@ -68,6 +69,27 @@ const FranchiseTeacherParent = () => {
       desc: "Launch your center with our ongoing support." 
     }
   ];
+  const [heroImage, setHeroImage] = useState("");
+  useEffect(() => {
+    const fetchHeroImage = async () => {
+      try {
+        const docRef = doc(db, "franchiseHero", "heroImage");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          const url = data.url;
+          if (url && typeof url === "string" && url.startsWith("http")) {
+            setHeroImage(url);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching hero image:", error);
+      }
+    };
+
+    fetchHeroImage();
+  }, []);
 
   return (
     <>
@@ -105,46 +127,51 @@ const FranchiseTeacherParent = () => {
 
         {/* Enhanced Hero Section */}
         <section 
-          className="hero-section position-relative overflow-hidden"
-          style={{
-            background: '#ff9f43',
-            color: 'white',
-            padding: '80px 0'
-          }}
+         className="hero-section position-relative overflow-hidden"
+         style={{
+           backgroundImage: `url(${heroImage})`,
+           backgroundSize: "cover",
+           backgroundPosition: "center",
+           backgroundRepeat: "no-repeat",
+           color: "#ea580c",
+           padding: "0",
+           minHeight: "70vh",
+           backgroundColor: "transparent"
+         }}
         >
-          <div className="hero-overlay"></div>
+          <div className="hero-overlay" style={{
+            position: "absolute",
+            top: 0, left: 0, width: "100%", height: "100%",
+            background: "rgba(0,0,0,0.08)",
+            zIndex: 1
+          }}></div>
           <Container className="position-relative" style={{ zIndex: 2 }}>
-            <Row className="align-items-center justify-content-center min-vh-75 text-center">
+            <Row className="align-items-center justify-content-center text-center min-vh-75">
               <Col lg={8} xl={7} className="mx-auto">
                 {/* Badge */}
                 <div className="mb-4">
-                  <span className="hero-badge">
+                  <span className="hero-badge text-white">
                     <FaShieldAlt className="me-2" />
-                    Perfect for Teachers & Parents
+                    For Passionate Educators & Parents
                   </span>
                 </div>
-                
                 {/* Main Heading */}
-                <h1
-                  className="hero-title mb-4 text-white"
-                  style={{ color: "#fff", WebkitTextFillColor: "#fff" }}
-                >
-                  Build a Rewarding <span style={{ color: "#fff", WebkitTextFillColor: "#fff" }}>Education Business</span> from Home
+                <h1 className="hero-title mb-4 text-orange" >
+                  Launch Your Own <span className="text-orange" >Learning Center</span>
                 </h1>
-                
                 {/* Description */}
-                <p className="hero-description mb-5" style={{ fontWeight: 600 }}>
-                  Turn your passion for teaching into a profitable venture with our proven Abacus & Vedic Math franchise model. Start earning
-                  <span className="fw-bold text-white"> ₹15,000-₹20,000/month</span> with minimal investment.
+                <p className="hero-description mb-5 text-white" >
+                  Transform your love for teaching into a thriving business.<br />
+                  Start an Abacus & Vedic Math center from home, earn ₹15,000–₹50,000/month, and inspire young minds with our proven system.
                 </p>
-                
                 {/* CTA Buttons */}
                
               </Col>
             </Row>
           </Container>
         </section>
-        
+
+                
 {/* Benefits Section */}
 <section className="benefits-section py-5 bg-light">
   <Container>
@@ -303,3 +330,6 @@ const FranchiseTeacherParent = () => {
 };
 
 export default FranchiseTeacherParent;
+
+// The hero section background is set from Firestore:
+// If you want a different look, update the Firestore 'url' field with a more detailed image.

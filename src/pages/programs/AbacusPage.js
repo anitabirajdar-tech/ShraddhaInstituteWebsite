@@ -218,7 +218,18 @@ const AbacusPage = () => {
                       : testimonial.contentEn || testimonial.content}
                     "
                   </p>
-
+                  {/* Google Maps Review Link */}
+                  <div className="mb-2">
+                    <a
+                      href="https://maps.app.goo.gl/8PwoeLTMV5KDffWc8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-orange"
+                      style={{ fontWeight: 600, textDecoration: "underline", fontSize: "0.95rem" }}
+                    >
+                      View Google Map Review
+                    </a>
+                  </div>
                   <div className="text-orange fs-5">
                     {"★".repeat(testimonial.rating || 5)}
                   </div>

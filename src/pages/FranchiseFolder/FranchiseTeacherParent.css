@@ -77,14 +77,14 @@
 /* ================== */
 
 .franchise-teacher-parent-page .hero-section {
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #dc2626 100%) !important;
-  color: white !important;
-  padding: 80px 0;
+  color: #ea580c !important;
+  padding: 0;
   position: relative;
   overflow: hidden;
-  min-height: 85vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
+  background-color: transparent;
 }
 
 /* Hero Background Animation */
@@ -123,7 +123,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.08); /* lighter overlay for orange image */
   z-index: 1;
 }
 
@@ -137,18 +137,14 @@
 
 /* Hero Badge */
 .franchise-teacher-parent-page .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  color: white;
-  padding: 12px 24px;
+  color: #ea580c !important;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 1.05rem;
+  padding: 13px 28px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 0.95rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .franchise-teacher-parent-page .hero-badge:hover {
@@ -159,91 +155,39 @@
 
 /* Hero Title */
 .franchise-teacher-parent-page .hero-title {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  line-height: 1.2;
-  color: white;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  line-height: 1.15;
+  color: orange!important;
+  text-shadow: none;
+  margin-bottom: 1.2rem;
 }
-  .franchise-teacher-parent-page .hero-buttons .btn {
-    display: block;
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto 10px auto;
-    padding: 12px 8px;
-    font-size: 0.95rem;
-    box-sizing: border-box;
-    white-space: normal;
-    min-height: 44px;
-    height: auto;
-}
-
+ 
 /* Hero Description */
 .franchise-teacher-parent-page .hero-description {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.25rem;
+  color: or !important;
   line-height: 1.6;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
   margin-bottom: 2rem;
   text-align: center;
-  max-width: 700px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Hero Buttons */
-.franchise-teacher-parent-page .hero-buttons .btn {
-  padding: 15px 28px;
-  font-size: 1.08rem;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border-width: 2px;
-  text-decoration: none;
-    min-width: 250px;
-    white-space: nowrap;
-    font-size: 1rem;
-}
-
-.franchise-teacher-parent-page .hero-buttons .btn-primary {
-  background: white;
-  border-color: white;
-  color: #ea580c;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.franchise-teacher-parent-page .hero-buttons .btn-primary:hover {
-  background: #f97316;
-  border-color: #f97316;
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.franchise-teacher-parent-page .hero-buttons .btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  backdrop-filter: blur(10px);
-}
-
-.franchise-teacher-parent-page .hero-buttons .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
 
 /* Responsive Design for Hero */
 @media (max-width: 768px) {
   .franchise-teacher-parent-page .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
+    margin-bottom: 0.8rem;
   }
   
   .franchise-teacher-parent-page .hero-section {
-    min-height: 70vh;
-    padding: 60px 0;
+    min-height: 55vh;
+    padding: 0;
   }
 
    .franchise-teacher-parent-page .hero-buttons {
@@ -309,89 +253,9 @@
 /* STANDARDIZED BUTTON STYLES */
 /* ================== */
 
-/* Primary Orange Button */
-.btn-orange,
-.btn-primary-orange {
-  background: var(--orange-gradient);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  font-weight: 600;
-    padding: 15px 18px;
-    min-width: 250px;
-  text-transform: none;
-  font-size: 1rem;
-}
-
-.btn-orange:hover,
-.btn-primary-orange:hover {
-  background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
-}
 
 /* Outline Orange Button */
-.btn-outline-orange {
-  color: var(--orange);
-  border: 2px solid var(--orange);
-  background: transparent;
-  padding: 12px 30px;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  text-transform: none;
-  font-size: 1rem;
-}
 
-.btn-outline-orange:hover {
-  background: var(--orange);
-  border-color: var(--orange);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
-}
-
-/* Primary Button (Hero style) */
-.btn-primary {
-  background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 50%, #dc2626 100%);
-  border: none;
-  color: white;
-  padding: 1.2rem 2.5rem;
-  font-weight: 600;
-  border-radius: 60px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3), 
-              0 4px 15px rgba(249, 115, 22, 0.2);
-  font-size: 1.1rem;
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.5px;
-  text-transform: none;
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.btn-primary:hover::before {
-  left: 100%;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.5), 
-              0 6px 20px rgba(249, 115, 22, 0.3);
-  color: white;
-  background: linear-gradient(135deg, #fb923c 0%, var(--orange-light) 50%, var(--orange) 100%);
-}
 
 /* Trust Markers */
 .trust-markers {
@@ -670,26 +534,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.btn-light {
-  background-color: white;
-  color: #532a06;
-  transition: all 0.3s ease;
-}
-
-.btn-light:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3) !important;
-}
-
-.btn-outline-light {
-  transition: all 0.3s ease;
-  background-color: rgba(255,255,255,0.1);
-}
-
-.btn-outline-light:hover {
-  background-color: rgba(255,255,255,0.2);
-  transform: translateY(-2px);
-}
 
 /* ================== */
 /* RESPONSIVE DESIGN - STANDARDIZED */
@@ -819,19 +663,8 @@
     margin: 0 auto 1rem auto;
   }
   
-  .hero-buttons {
-    margin: 0 auto;
-  }
   
-  .hero-buttons .btn-primary {
-    padding: 14px 28px;
-    font-size: 1rem;
-  }
   
-  .hero-buttons .btn-secondary {
-    padding: 12px 26px;
-    font-size: 1rem;
-  }
   
   .text-highlight::after {
     height: 3px;
@@ -1148,9 +981,13 @@
 /* ================== */
 
 .text-orange {
-  color: var(--orange) !important;
+  color: orange !important;
 }
 
+.text-white{
+  color: var(--white) !important;
+
+}
 .bg-orange {
   background-color: var(--orange) !important;
 }
@@ -1197,6 +1034,39 @@
     max-height: 60px !important;
     display: block !important;
     margin: 0 auto !important;
+  }
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .franchise-teacher-parent-page .hero-section {
+    min-height: 55vh;
+    padding: 0;
+  }
+  .franchise-teacher-parent-page .hero-title {
+    font-size: 2.1rem;
+    margin-bottom: 0.8rem;
+  }
+  .franchise-teacher-parent-page .hero-description {
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+    padding: 0 0.5rem;
+  }
+  .franchise-teacher-parent-page .hero-badge {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    margin-bottom: 1rem;
+  }
+  .franchise-teacher-parent-page .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 1rem;
+  }
+  .franchise-teacher-parent-page .btn-orange,
+  .franchise-teacher-parent-page .btn-outline-orange {
+    min-width: 140px;
+    font-size: 0.98rem;
+    padding: 12px 18px;
   }
 }
 

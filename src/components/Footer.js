@@ -98,13 +98,32 @@ const Footer = () => {
             <div>
               <a href="tel:+919168756060">+91 91687 56060</a>
               <a href="tel:+918446889966">+91 84468 89966</a>
-              <a href="tel:+919405361630">+91 94053 61630</a>
+             
             </div>
           </div>
           
           <div className="footer-contact-item">
             <span className="footer-icon"><FaEnvelope /></span>
             <a href="mailto:info@shraddhainstitute.com">info@shraddhainstitute.com</a>
+          </div>
+
+          {/* Place Google Map directly below Contact */}
+          <div className="footer-findus" style={{ marginTop: "2rem", textAlign: "center" }}>
+            <h4 style={{ fontSize: "1.15rem", color: "#f97316", fontWeight: 700, marginBottom: "0.7rem", letterSpacing: "0.5px", borderBottom: "2px solid #f97316", display: "inline-block", paddingBottom: "2px" }}>
+              Find Us
+            </h4>
+            <div style={{ width: "100%", maxWidth: "320px", margin: "0 auto", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 18px rgba(255, 159, 67, 0.10)", background: "#fff" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d399.5659835300481!2d75.89032180808225!3d17.681690120749565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5d1f5118bad33%3A0xf3e09dce9cb64733!2sShraddha%20Institute!5e0!3m2!1sen!2sin!4v1758176751236!5m2!1sen!2sin"
+                width="100%"
+                height="180"
+                style={{ border: 0, borderRadius: "12px" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Shraddha Institute Location"
+              ></iframe>
+            </div>
           </div>
         </motion.div>
 
@@ -161,7 +180,6 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-bottom-container">
           <p>&copy; {currentYear} Shraddha Institute. All rights reserved.</p>
-          
         </div>
       </div>
     </footer>

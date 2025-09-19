@@ -56,6 +56,23 @@ import './admin/AdminDashboard.css';
 
 import 'aos/dist/aos.css';
 
+// Events
+ import Events2019Page from "./pages/events/Events2019Page";
+// import Events2020Page from "./pages/events/Events2020Page";
+// import Events2021Page from "./pages/events/Events2021Page";
+// import Events2022Page from "./pages/events/Events2022Page";
+// import Events2023Page from "./pages/events/Events2023Page";
+// import Events2024Page from "./pages/events/Events2024Page";
+
+// Gallery 2022 Pages
+import StateLevelCompetition2022 from './pages/gallery/StateLevelCompetition2022';
+import NationalLevelCompetition2022 from './pages/gallery/NationalLevelCompetition2022';
+
+// Gallery 2023 Pages
+import NationalLevelCompetition2023 from './pages/gallery/NationalLevelCompetition2023';
+import StateLevelCompetition2023 from './pages/gallery/StateLevelCompetition2023';
+import AnnualMeet2023 from './pages/gallery/AnnualMeet2023';
+
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
@@ -130,6 +147,23 @@ function App() {
 
           {/* Admin Dashboard Route */}
           <Route path="/admin" element={<AdminDashboard />} />
+
+          {/* Events Pages */}
+          <Route path="/events/2019" element={<><Events2019Page /><Footer /><WhatsAppButton /></>} />
+          {/* <Route path="/events/2020" element={<><Events2020Page /><Footer /><WhatsAppButton /></>} /> */}
+          {/* <Route path="/events/2021" element={<><Events2021Page /><Footer /><WhatsAppButton /></>} /> */}
+          {/* <Route path="/events/2022" element={<><Events2022Page /><Footer /><WhatsAppButton /></>} /> */}
+          {/* <Route path="/events/2023" element={<><Events2023Page /><Footer /><WhatsAppButton /></>} /> */}
+          {/* <Route path="/events/2024" element={<><Events2024Page /><Footer /><WhatsAppButton /></>} /> */}
+
+          {/* New Gallery 2022 Pages */}
+          <Route path="/gallery/2022/state-level-competition" element={<StateLevelCompetition2022 />} />
+          <Route path="/gallery/2022/national-level-competition" element={<NationalLevelCompetition2022 />} />
+
+          {/* New Gallery 2023 Pages */}
+          <Route path="/gallery/2023/state-level-competition" element={<StateLevelCompetition2023 />} />
+          <Route path="/gallery/2023/national-level-competition" element={<NationalLevelCompetition2023 />} />
+          <Route path="/gallery/2023/annual-meet" element={<AnnualMeet2023 />} />
         </Routes>
         
       </div>

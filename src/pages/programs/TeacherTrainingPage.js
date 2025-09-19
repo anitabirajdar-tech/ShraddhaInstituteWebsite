@@ -187,7 +187,6 @@ const TeacherTrainingPage = () => {
                 <Card.Body className="p-4">
                   {program.highlight && <span className="badge bg-orange text-white mb-3">Most Profitable</span>}
                   <h4 className="text-center mb-3">{program.title}</h4>
-                  
                   <ul className="list-unstyled mb-4">
                     {program.features.map((feature, i) => (
                       <li key={i} className="mb-2 d-flex align-items-start">
@@ -196,9 +195,11 @@ const TeacherTrainingPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to="/contact" className="btn btn-orange w-100 py-2">
-                    Learn More
-                  </Link>
+                  {/* Direct call button instead of price */}
+                  <a href="tel:+919876543210" className="btn btn-orange w-100 py-2" style={{ fontSize: "1.15rem" }}>
+                    <span role="img" aria-label="call" style={{ fontSize: "1.3em", verticalAlign: "middle" }}>📞</span>
+                    &nbsp; <b>98765 43210</b>
+                  </a>
                 </Card.Body>
               </Card>
             </Col>

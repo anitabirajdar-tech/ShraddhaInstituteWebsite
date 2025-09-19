@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '9168756060'; // Your WhatsApp number without '+' or '00'
+  const phoneNumber = '919168756060'; // Use the same number as Footer
   const message = 'Hello Shraddha Institute, I have a question about...'; // Optional pre-filled message
 
   return (
