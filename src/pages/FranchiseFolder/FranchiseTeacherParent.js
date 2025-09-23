@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { 
   FaClipboardCheck, 
@@ -13,63 +13,136 @@ import {
   FaBookOpen,
   FaLaptopHouse,
   FaHandsHelping,
-  FaChartLine
+  FaChartLine,
+  FaUsers,
+  FaChild,
+  FaClock,
+  FaStar,
+  FaCheckCircle
 } from 'react-icons/fa';
-import { IoIosArrowForward, IoMdTime } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
 import './FranchiseTeacherParent.css';
 import { db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 
-
 const FranchiseTeacherParent = () => {
+  const [heroImage, setHeroImage] = useState("");
+  
+  // Enhanced benefits specifically for teachers and parents
   const benefits = [
     { 
       title: "Work From Home", 
-      desc: "Run your center from home, online, or a small rented space with complete flexibility.",
-      icon: <FaLaptopHouse size={48} className="text-orange" />,
-      bgColor: "rgba(234, 88, 12, 0.1)"
+      desc: "Perfect for parents and teachers. Run your center from home with flexible hours that suit your family schedule.",
+      icon: <FaLaptopHouse className="benefit-icon" />,
+      bgColor: "rgba(234, 88, 12, 0.1)",
+      audience: ["Parents", "Teachers"]
     },
     { 
       title: "No Experience Needed", 
-      desc: "Complete training provided even if you're new to teaching or business.",
-      icon: <FaGraduationCap size={48} className="text-orange" />,
-      bgColor: "rgba(34, 197, 94, 0.1)"
+      desc: "Complete training provided. Perfect for homemakers and educators looking to start their own business.",
+      icon: <FaGraduationCap className="benefit-icon" />,
+      bgColor: "rgba(34, 197, 94, 0.1)",
+      audience: ["Everyone"]
     },
     { 
       title: "Low Investment", 
-      desc: "Start with minimal capital and grow with our proven business system.",
-      icon: <FaDollarSign size={48} className="text-orange" />,
-      bgColor: "rgba(59, 130, 246, 0.1)"
+      desc: "Start with just ₹10,000. Affordable for teachers and parents wanting to build a secure future.",
+      icon: <FaDollarSign className="benefit-icon" />,
+      bgColor: "rgba(59, 130, 246, 0.1)",
+      audience: ["Parents", "Teachers"]
     },
     { 
-      title: "Complete Materials", 
-      desc: "Ready-to-use lesson plans, books, worksheets and certification material.",
-      icon: <FaBookOpen size={48} className="text-orange" />,
-      bgColor: "rgba(168, 85, 247, 0.1)"
+      title: "Complete Support", 
+      desc: "From training to marketing - we provide everything you need to succeed as an education entrepreneur.",
+      icon: <FaHandsHelping className="benefit-icon" />,
+      bgColor: "rgba(168, 85, 247, 0.1)",
+      audience: ["Everyone"]
+    }
+  ];
+
+  // Earning potential examples
+  const earningExamples = [
+    { 
+      level: "Part-time", 
+      hours: "2-3 hours/day", 
+      students: "15-20", 
+      income: "₹15,000-25,000/month",
+      idealFor: "Homemakers, Teachers"
+    },
+    { 
+      level: "Full-time", 
+      hours: "4-6 hours/day", 
+      students: "30-40", 
+      income: "₹30,000-40,000/month",
+      idealFor: "Career-focused Parents"
+    },
+    { 
+      level: "Expanded", 
+      hours: "6-8 hours/day", 
+      students: "50+", 
+      income: "₹40,000-60,000/month",
+      idealFor: "Ambitious Educators"
     }
   ];
 
   const steps = [
     { 
       number: 1, 
-      icon: <FaClipboardCheck size={28} className="text-orange" />, 
-      title: "Apply Online", 
-      desc: "Submit our simple interest form to get started." 
+      icon: <FaClipboardCheck className="step-icon" />, 
+      title: "Apply & Consult", 
+      desc: "Share your background and goals with our advisor",
+      duration: "1-2 days"
     },
     { 
       number: 2, 
-      icon: <FaUserGraduate size={28} className="text-orange" />, 
-      title: "Get Trained", 
-      desc: "Complete our teacher & business training program." 
+      icon: <FaUserGraduate className="step-icon" />, 
+      title: "Complete Training", 
+      desc: "2-week intensive Abacus & Vedic Math certification",
+      duration: "2 weeks"
     },
     { 
       number: 3, 
-      icon: <FaMoneyBillWave size={28} className="text-orange" />, 
+      icon: <FaMoneyBillWave className="step-icon" />, 
       title: "Start Earning", 
-      desc: "Launch your center with our ongoing support." 
+      desc: "Launch your center with our marketing support",
+      duration: "Immediate"
     }
   ];
-  const [heroImage, setHeroImage] = useState("");
+
+  // Why choose for teachers and parents specifically
+  const whyChoose = [
+    {
+      title: "For Teachers",
+      icon: <FaUserGraduate className="why-icon" />,
+      points: [
+        "Supplement your income after school hours",
+        "Use your existing teaching skills",
+        "No additional qualification needed",
+        "Proven curriculum and methodology"
+      ]
+    },
+    {
+      title: "For Parents",
+      icon: <FaChild className="why-icon" />,
+      points: [
+        "Work around your children's schedule",
+        "Be involved in your child's education",
+        "Build a business from home",
+        "Secure financial independence"
+      ]
+    },
+    {
+      title: "Flexible Timing",
+      icon: <FaClock className="why-icon" />,
+      points: [
+        "Choose your working hours",
+        "Weekend batches available",
+        "Online or offline classes",
+        "Scale at your own pace"
+      ]
+    }
+  ];
+
   useEffect(() => {
     const fetchHeroImage = async () => {
       try {
@@ -81,10 +154,14 @@ const FranchiseTeacherParent = () => {
           const url = data.url;
           if (url && typeof url === "string" && url.startsWith("http")) {
             setHeroImage(url);
+          } else {
+            // Fallback hero image
+            setHeroImage("/images/franchise-hero-default.jpg");
           }
         }
       } catch (error) {
         console.error("Error fetching hero image:", error);
+        setHeroImage("/images/franchise-hero-default.jpg");
       }
     };
 
@@ -94,242 +171,244 @@ const FranchiseTeacherParent = () => {
   return (
     <>
       <Helmet>
-        <title>Abacus & Vedic Math Franchise Opportunity for Teachers & Parents</title>
-        <meta name="description" content="Start your own Abacus & Vedic Math learning center with Shraddha Institute's proven franchise model. Low investment, complete training, and earning potential of ₹25,000-₹50,000/month." />
-        <meta name="keywords" content="abacus franchise, vedic math business, teacher franchise, home tuition center, education franchise, low investment business" />
-        <meta property="og:title" content="Abacus & Vedic Math Franchise Opportunity | Shraddha Institute" />
-        <meta property="og:description" content="Start your education business with our proven franchise model. Complete training and support provided." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://shraddhainstitute.com/franchise/teacher-parent" />
-        <link rel="canonical" href="https://shraddhainstitute.com/franchise/teacher-parent" />
+        <title>Abacus & Vedic Math Franchise for Teachers & Parents | Shraddha Institute</title>
+        <meta name="description" content="Perfect work-from-home opportunity for teachers and parents. Start your Abacus & Vedic Math center with ₹10,000 investment. Earn ₹15,000-₹60,000/month." />
+        <meta name="keywords" content="teacher franchise, parent business, home tuition, abacus franchise, vedic math business, work from home, education franchise" />
+        <meta property="og:title" content="Teacher & Parent Franchise Opportunity | Shraddha Institute" />
+        <meta property="og:description" content="Start your education business from home. Perfect for teachers and parents. Complete training and support." />
       </Helmet>
 
       <div className="franchise-teacher-parent-page">
-        {/* Announcement Bar - Marquee */}
-        <div className="announcement-bar bg-orange text-white py-2">
-        <Container>
-          <div className="announcement-scroll d-flex align-items-center">
-            <span className="badge bg-white text-orange me-2 flex-shrink-0">⏳ Limited Time</span>
-            <div className="announcement-marquee flex-grow-1">
-              <div className="announcement-track">
-                <span className="announcement-text me-5">
-                  Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
-                </span>
-                {/* Duplicate text for continuous scrolling */}
-                <span className="announcement-text me-5">
-                  Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
-                </span>
+        {/* Announcement Bar */}
+        <div className="announcement-bar">
+          <Container>
+            <div className="announcement-content">
+              <span className="announcement-badge">Limited Time Offer</span>
+              <div className="announcement-text">
+                Enroll now and get 20% OFF franchise fee! Perfect opportunity for teachers and parents.
               </div>
             </div>
-          </div>
-        </Container>
-      </div>
+          </Container>
+        </div>
 
         {/* Enhanced Hero Section */}
         <section 
-         className="hero-section position-relative overflow-hidden"
-         style={{
-           backgroundImage: `url(${heroImage})`,
-           backgroundSize: "cover",
-           backgroundPosition: "center",
-           backgroundRepeat: "no-repeat",
-           color: "#ea580c",
-           padding: "0",
-           minHeight: "70vh",
-           backgroundColor: "transparent"
-         }}
+          className="hero-section"
+          style={{
+            backgroundImage: heroImage ? `url(${heroImage})` : 'linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%)',
+          }}
         >
-          <div className="hero-overlay" style={{
-            position: "absolute",
-            top: 0, left: 0, width: "100%", height: "100%",
-            background: "rgba(0,0,0,0.08)",
-            zIndex: 1
-          }}></div>
-          <Container className="position-relative" style={{ zIndex: 2 }}>
-            <Row className="align-items-center justify-content-center text-center min-vh-75">
-              <Col lg={8} xl={7} className="mx-auto">
-                {/* Badge */}
-                <div className="mb-4">
-                  <span className="hero-badge text-white">
-                    <FaShieldAlt className="me-2" />
-                    For Passionate Educators & Parents
-                  </span>
-                </div>
-                {/* Main Heading */}
-                <h1 className="hero-title mb-4 text-orange" >
-                  Launch Your Own <span className="text-orange" >Learning Center</span>
+          <div className="hero-overlay"></div>
+          <Container>
+            <Row className="align-items-center justify-content-center text-center">
+              <Col lg={10} className="hero-content">
+                <Badge bg="light" text="dark" className="hero-badge">
+                  <FaShieldAlt className="me-2" />
+                  Perfect for Teachers & Parents
+                </Badge>
+                
+                <h1 className="hero-title">
+                  Start Your Learning Center from <span className="highlight">Home</span>
                 </h1>
-                {/* Description */}
-                <p className="hero-description mb-5 text-white" >
-                  Transform your love for teaching into a thriving business.<br />
-                  Start an Abacus & Vedic Math center from home, earn ₹15,000–₹50,000/month, and inspire young minds with our proven system.
-                </p>
-                {/* CTA Buttons */}
+                
+               
+
+                <div className="hero-stats">
+                  <div className="stat-item">
+                    <div className="stat-number">
+                      Flexible Hours
+                    </div>
+                    <div className="stat-label">Teach when you want, fit your lifestyle</div>
+                  </div>
+                  <div className="stat-item">
+                    <div className="stat-number">
+                      Complete Training
+                    </div>
+                    <div className="stat-label">Get certified & start with confidence</div>
+                  </div>
+                  <div className="stat-item">
+                    <div className="stat-number">
+                      Work From Home
+                     
+                    </div>
+                    <div className="stat-label">No commute, earn from your own space</div>
+                  </div>
+                </div>
+
                
               </Col>
             </Row>
           </Container>
         </section>
 
-                
-{/* Benefits Section */}
-<section className="benefits-section py-5 bg-light">
-  <Container>
-    <div className="text-center mb-5">
-      <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-3 d-inline-block">
-        Why Choose Us
-      </span>
-      <h2 className="h3 h-md-2 fw-bold mb-3">Educator-Focused Franchise Benefits</h2>
-      <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
-        Everything you need to succeed as an education entrepreneur
-      </p>
-    </div>
-
-    <Row className="g-3 g-md-4">
-      {benefits.map((benefit, index) => (
-        <Col xs={12} sm={6} lg={3} key={index}>
-          <div className="benefit-card-vertical h-100 text-center">
-            
-            {/* Icon Container */}
-            <div 
-              className="benefit-icon-wrapper mx-auto mb-3"
-              style={{ 
-                backgroundColor: benefit.bgColor,
-                borderRadius: '20px',
-                padding: '2rem',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              {benefit.icon}
-            </div>
-            
-            {/* Content */}
-            <div className="benefit-content">
-              <h3 className="h5 fw-bold mb-3 text-dark">{benefit.title}</h3>
-              <p className="mb-0 text-muted">{benefit.desc}</p>
-            </div>
-          </div>
-        </Col>
-      ))}
-    </Row>
-  </Container>
-</section>
-
-
-
-        {/* Steps Section */}
-        <section className="steps-section py-5 bg-white">
+        {/* Why Perfect for Teachers & Parents */}
+        <section className="audience-section">
           <Container>
-            <div className="text-center mb-5">
-              <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-3 d-inline-block">
-                Getting Started
-              </span>
-              <h2 className="display-5 fw-bold mb-3">Start Your Center in 3 Simple Steps</h2>
-              <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
-                We guide you through every step of the process
-              </p>
-            </div>
-            <Row className="justify-content-center g-4">
-              {steps.map((step, index) => (
+            <Row className="text-center mb-5">
+              <Col lg={8} className="mx-auto">
+                <h2 className="section-title">Why This Franchise is Perfect For</h2>
+                <p className="section-subtitle">Designed specifically for educators and parents seeking flexible opportunities</p>
+              </Col>
+            </Row>
+            
+            <Row className="g-4">
+              {whyChoose.map((item, index) => (
                 <Col lg={4} md={6} key={index}>
-                  <div className="step-card h-100 p-4 position-relative border-0 shadow-xs-hover transition-all">
-                    <div className="step-number bg-orange text-white rounded-circle d-flex align-items-center justify-content-center">
-                      {step.number}
-                    </div>
-                    <div className="step-icon mb-3 text-orange">
-                      {step.icon}
-                    </div>
-                    <h3 className="h4 mb-3">{step.title}</h3>
-                    <p className="mb-0 text-muted">{step.desc}</p>
-                    {index < steps.length - 1 && (
-                      <div className="step-arrow d-none d-lg-block">
-                        <IoIosArrowForward size={24} className="text-orange" />
+                  <Card className="audience-card h-100 text-center">
+                    <Card.Body className="p-4">
+                      <div className="audience-icon">
+                        {item.icon}
                       </div>
-                    )}
-                  </div>
+                      <h5 className="audience-title">{item.title}</h5>
+                      <ul className="audience-points">
+                        {item.points.map((point, i) => (
+                          <li key={i} className="audience-point">
+                            <FaStar className="text-warning me-2" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </Card.Body>
+                  </Card>
                 </Col>
               ))}
             </Row>
           </Container>
         </section>
 
-        {/* Investment Section */}
-        <section className="investment-section py-5 bg-light">
+        {/* Benefits Section */}
+        <section className="benefits-section">
           <Container>
-            <Row className="align-items-center">
-              <Col lg={5} className="mb-5 mb-lg-0">
-                <div className="pricing-card bg-white rounded-4 shadow-sm p-4 text-center">
-                  <div className="badge bg-orange text-white rounded-pill px-3 py-2 mb-3 d-inline-block">
-                    Special Introductory Offer
-                  </div>
-                  <div className="pricing-amount mb-2">
-                    <span className="currency h5">₹</span>
-                    <span className="amount display-4 fw-bold">10,000</span>
-                    <span className="period h5">+ GST</span>
-                  </div>
-                  <div className="pricing-note text-muted mb-4">
-                    Flexible payment options available
-                  </div>
-                  <div className="value-highlights">
-                    {[
-                      "Lowest entry point",
-                      "No hidden costs",
-                      "Complete starter kit",
-                      "Digital marketing support"
-                    ].map((item, i) => (
-                      <div key={i} className="value-item d-flex align-items-start mb-3">
-                        <div className="me-2 text-orange">✓</div>
-                        <span>{item}</span>
+            <Row className="text-center mb-5">
+              <Col lg={8} className="mx-auto">
+                <h2 className="section-title">Everything You Need to Succeed</h2>
+                <p className="section-subtitle">Complete support system for education entrepreneurs</p>
+              </Col>
+            </Row>
+
+            <Row className="g-4">
+              {benefits.map((benefit, index) => (
+                <Col lg={3} md={6} key={index}>
+                  <Card className="benefit-card h-100 text-center">
+                    <Card.Body className="p-4">
+                      <div className="benefit-icon-container">
+                        {benefit.icon}
                       </div>
-                    ))}
-                  </div>
-                </div>
-              </Col>
-              
-              <Col lg={7}>
-                <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-3 d-inline-block">
-                  Affordable Investment
-                </span>
-                <h2 className="display-5 fw-bold mb-4">
-                  Start for Just <span className="text-orange">₹10,000</span> - Grow at Your Pace
-                </h2>
-                <p className="lead text-muted mb-4">
-                  We've made it easier than ever to begin your education business journey with our 
-                  affordable starter package. Upgrade as your center grows.
-                </p>
-                
-                <ul className="investment-features list-unstyled mb-4">
-                  {[
-                    "Complete teaching materials & curriculum",
-                    "Business operation manual & marketing kit",
-                    "Basic teacher training & certification",
-                    "Ongoing support & guidance",
-                    "Brand recognition benefits",
-                    "Student certification materials"
-                  ].map((item, i) => (
-                    <li key={i} className="d-flex align-items-start mb-2">
-                      <span className="me-2 text-orange">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-               
-              </Col>
+                      <h5 className="benefit-title">{benefit.title}</h5>
+                      <p className="benefit-text">{benefit.desc}</p>
+                      <div className="benefit-audience">
+                        {benefit.audience.map((aud, i) => (
+                          <span key={i} className="audience-tag">{aud}</span>
+                        ))}
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
             </Row>
           </Container>
         </section>
 
-        {/* Testimonials */}
-       
+        {/* Earning Potential */}
+        <section className="earnings-section bg-light">
+          <Container>
+            <Row className="text-center mb-5">
+              <Col lg={8} className="mx-auto">
+                <h2 className="section-title">Your Earning Potential</h2>
+                <p className="section-subtitle">Flexible options based on your time commitment</p>
+              </Col>
+            </Row>
 
-       
+            <Row className="g-4">
+              {earningExamples.map((example, index) => (
+                <Col lg={4} md={6} key={index}>
+                  <Card className="earning-card h-100 text-center">
+                    <Card.Body className="p-4">
+                      <div className="earning-level">{example.level}</div>
+                      <div className="earning-income">{example.income}</div>
+                      <div className="earning-details">
+                        <div className="earning-detail">
+                          <FaClock className="me-2" />
+                          {example.hours}
+                        </div>
+                        <div className="earning-detail">
+                          <FaUsers className="me-2" />
+                          {example.students} students
+                        </div>
+                      </div>
+                      <div className="earning-audience">
+                        Ideal for: {example.idealFor}
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+
+        {/* Steps Section */}
+        <section className="steps-section">
+          <Container>
+            <Row className="text-center mb-5">
+              <Col lg={8} className="mx-auto">
+                <h2 className="section-title">Start in 3 Simple Steps</h2>
+                <p className="section-subtitle">We guide you through the entire process</p>
+              </Col>
+            </Row>
+
+            <Row className="justify-content-center g-4">
+              {steps.map((step, index) => (
+                <Col lg={4} md={6} key={index}>
+                  <Card className="step-card h-100 text-center">
+                    <Card.Body className="p-4">
+                      <div className="step-number">{step.number}</div>
+                      <div className="step-icon-container">
+                        {step.icon}
+                      </div>
+                      <h5 className="step-title">{step.title}</h5>
+                      <p className="step-desc">{step.desc}</p>
+                      <div className="step-duration">
+                        <FaClock className="me-2" />
+                        {step.duration}
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+
+        
+
+        {/* Final CTA */}
+        <section className="cta-section">
+          <Container>
+            <Row className="text-center">
+              <Col lg={8} className="mx-auto">
+                <h2 className="cta-title">Ready to Start Your Teaching Business?</h2>
+                <p className="cta-subtitle">
+                  Join 50+ successful teachers and parents who transformed their careers with our franchise
+                </p>
+                
+                <div className="cta-buttons">
+                  <Link to="/contact" className="btn btn-primary btn-lg px-5">
+                    Start My Franchise Journey
+                  </Link>
+                </div>
+                
+                <div className="cta-guarantee">
+                  <FaShieldAlt className="me-2" />
+                  Complete training • Ongoing support • Proven success
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
       </div>
     </>
   );
 };
 
 export default FranchiseTeacherParent;
-
-// The hero section background is set from Firestore:
-// If you want a different look, update the Firestore 'url' field with a more detailed image.

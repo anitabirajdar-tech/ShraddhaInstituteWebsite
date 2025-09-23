@@ -74,6 +74,13 @@ const Header = () => {
     }
   };
 
+  const eventYears = [
+    { year: 2022, events: ["State Level Competition", "National Level Competition"] },
+    { year: 2023, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
+    { year: 2024, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
+    { year: 2025, events: ["State Level Competition", "National Level Competition", "Annual Meet"] }
+  ];
+
   return (
     <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
       {/* Top Announcement Bar */}
@@ -104,8 +111,27 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Overlay for mobile menu */}
+      {isOpen && (
+        <div
+          className="mobile-menu-overlay"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0,0,0,0.25)",
+            zIndex: 1040
+          }}
+          onClick={closeMenu}
+        />
+      )}
+
       {/* Main Navigation */}
-      <nav className={`navbar navbar-expand-lg ${scrolled ? 'navbar-scrolled shadow-sm' : 'navbar-light bg-white'} py-2 py-lg-1`}>
+      <nav className={`navbar navbar-expand-lg ${scrolled ? 'navbar-scrolled shadow-sm' : 'navbar-light bg-white'} py-2 py-lg-1`}
+        style={isOpen ? { position: "fixed", top: 0, left: 0, width: "100vw", zIndex: 1050 } : {}}
+      >
         <div className="container">
           <Link to="/" className="navbar-brand" onClick={closeMenu}>
             <div className="logo-container d-flex align-items-center">
@@ -195,18 +221,13 @@ const Header = () => {
                       <div className="program-category">
                         <h5 className="category-title">Teacher Programs</h5>
                         <div className="program-list">
-                          <Link to="/programs/teacher-training" className="dropdown-item program-item" onClick={closeMenu}>
-                            <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2 text-green" />
+                         
+                          {/* Add Franchise Teacher Training as a separate item */}
+                          <Link to="/programs/franchise-teacher-training" className="dropdown-item program-item" onClick={closeMenu}>
+                            <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2 text-orange" />
                             <div>
-                              <div className="program-title">Teacher Training</div>
-                              <div className="program-desc">Certification • 120 Hours</div>
-                            </div>
-                          </Link>
-                          <Link to="/programs/franchise-training" className="dropdown-item program-item" onClick={closeMenu}>
-                            <FontAwesomeIcon icon={faStore} className="me-2 text-red" />
-                            <div>
-                              <div className="program-title">Franchise Training</div>
-                              <div className="program-desc">Business Setup • Support</div>
+                              <div className="program-title">Franchise Teacher Training</div>
+                              <div className="program-desc">Specialized Teacher Franchise Program</div>
                             </div>
                           </Link>
                         </div>
@@ -251,20 +272,20 @@ const Header = () => {
   >
     <li>
       <Link to="/franchise/teacher-parent" className="dropdown-item" onClick={closeMenu}>
-        <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2" />
-        For Teachers & Parents
+        <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2 text-orange" />
+        <span className="fw-bold">Teacher/Parent Franchise</span>
       </Link>
     </li>
     <li>
       <Link to="/franchise/business-school" className="dropdown-item" onClick={closeMenu}>
-        <FontAwesomeIcon icon={faStore} className="me-2" />
-        For Schools & Business Owners
+        <FontAwesomeIcon icon={faStore} className="me-2 text-blue" />
+        <span className="fw-bold">School/Business Franchise</span>
       </Link>
     </li>
     <li>
       <Link to="/programs/franchise-training" className="dropdown-item" onClick={closeMenu}>
         <FontAwesomeIcon icon={faStore} className="me-2 text-red" />
-        Franchise Training
+        <span className="fw-bold">Franchise Training</span>
       </Link>
     </li>
   </ul>
@@ -292,48 +313,20 @@ const Header = () => {
     className={`dropdown-menu ${(hoveredDropdown === 'events' || openDropdown === 'events') ? 'show' : ''}`}
     aria-labelledby="eventsDropdown"
   >
-    {[
-      { year: 2022, events: ["State Level Competition", "National Level Competition"] },
-      { year: 2023, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
-      { year: 2024, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
-      { year: 2025, events: ["State Level Competition", "National Level Competition", "Annual Meet"] }
-    ].map((yearData, index, arr) => (
+    {eventYears.map((yearData, index, arr) => (
       <React.Fragment key={yearData.year}>
-        {yearData.year === 2022 ? (
-          <li>
-            <Link
-              to="/gallery/2022"
-              className="dropdown-header fw-bold text-orange"
-              onClick={closeMenu}
-              style={{ textDecoration: "underline", cursor: "pointer" }}
-            >
-              {yearData.year}
-            </Link>
-          </li>
-        ) : yearData.year === 2023 ? (
-          <li>
-            <Link
-              to="/gallery/2023"
-              className="dropdown-header fw-bold text-orange"
-              onClick={closeMenu}
-              style={{ textDecoration: "underline", cursor: "pointer" }}
-            >
-              {yearData.year}
-            </Link>
-          </li>
-        ) : (
-          <li className="dropdown-header fw-bold text-orange">{yearData.year}</li>
-        )}
+        <li>
+          <span
+            className="dropdown-header fw-bold text-orange"
+            style={{ textDecoration: "underline", cursor: "pointer" }}
+          >
+            {yearData.year}
+          </span>
+        </li>
         {yearData.events.map((eventName) => (
           <li key={eventName}>
             <Link
-              to={
-                yearData.year === 2022
-                  ? `/gallery/2022/${eventName.toLowerCase().replace(/\s+/g, "-")}`
-                  : yearData.year === 2023
-                  ? `/gallery/2023/${eventName.toLowerCase().replace(/\s+/g, "-")}`
-                  : `/events/${yearData.year}/${eventName.toLowerCase().replace(/\s+/g, "-")}`
-              }
+              to={`/gallery/${yearData.year}/${eventName.toLowerCase().replace(/\s+/g, "-")}`}
               className="dropdown-item"
               onClick={closeMenu}
             >

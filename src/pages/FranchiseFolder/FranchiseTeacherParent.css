@@ -1,1074 +1,593 @@
-.franchise-teacher-parent-page .display-5 {
-  font-size: 2.5rem !important;
-}
-
-.text-highlight {
-  background: linear-gradient(90deg, #fff 0%, #fd7e14 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  font-weight: bold;
-}
-.gold-gradient-text {
-  background: linear-gradient(90deg, #fff 0%, orange 60%, #fffbe6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
- 
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-
-/* Base Styles */
-.franchise-page {
-  font-family: 'Poppins', sans-serif;
-  color: #2d3748;
-  line-height: 1.6;
-}
+/* FranchiseTeacherParent.css */
 
 /* Announcement Bar */
 .announcement-bar {
-  position: relative;
+  background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+  color: white;
+  padding: 12px 0;
+  font-weight: 600;
 }
 
-.announcement-scroll {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: scrollAnnouncement 12s linear infinite;
-}
-
-.announcement-text {
-  margin-left: 1rem;
-}
-
-/* Keyframes for scrolling */
-@keyframes scrollAnnouncement {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* Responsive: slower on small screens */
-@media (max-width: 768px) {
-  .announcement-scroll {
-  display: block;
-  width: 90vw;
-  max-width: 320px;
-  margin: 0 auto 10px auto;
-  padding: 12px 8px;
-  font-size: 0.95rem;
-  box-sizing: border-box;
-  white-space: normal;
-  margin-bottom: 10px;
-  padding: 10px 6px;
-  font-size: 0.92rem;
-    padding: 12px 8px;
-    min-width: 120px;
-    font-size: 0.95rem;
-  }
-}
-
-/* ================== */
-/* HERO SECTION */
-/* ================== */
-
-.franchise-teacher-parent-page .hero-section {
-  color: #ea580c !important;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-}
-
-/* Hero Background Animation */
-.franchise-teacher-parent-page .hero-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
-  animation: rotate 25s linear infinite;
-  z-index: 1;
-}
-
-.franchise-teacher-parent-page .hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-  animation: rotate 30s linear infinite reverse;
-  z-index: 1;
-}
-
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.franchise-teacher-parent-page .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.08); /* lighter overlay for orange image */
-  z-index: 1;
-}
-
-.franchise-teacher-parent-page .min-vh-75 {
-  min-height: 75vh;
+.announcement-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* Hero Badge */
-.franchise-teacher-parent-page .hero-badge {
-  color: #ea580c !important;
-  background: rgba(255, 255, 255, 0.18);
-  font-size: 1.05rem;
-  padding: 13px 28px;
-  border-radius: 50px;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.franchise-teacher-parent-page .hero-badge:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Hero Title */
-.franchise-teacher-parent-page .hero-title {
-  font-size: 3.2rem;
+.announcement-badge {
+  background: rgba(255, 255, 255, 0.9);
+  color: #fd7e14;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
   font-weight: 700;
-  line-height: 1.15;
-  color: orange!important;
-  text-shadow: none;
-  margin-bottom: 1.2rem;
 }
- 
-/* Hero Description */
-.franchise-teacher-parent-page .hero-description {
-  font-size: 1.25rem;
-  color: or !important;
-  line-height: 1.6;
-  text-shadow: none;
-  margin-bottom: 2rem;
+
+.announcement-text {
+  font-size: 1rem;
+  color: white;
+}
+
+/* Hero Section */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  position: relative;
+  color: white;
   text-align: center;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Hero Buttons */
-
-/* Responsive Design for Hero */
-@media (max-width: 768px) {
-  .franchise-teacher-parent-page .hero-title {
-    font-size: 2.1rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .franchise-teacher-parent-page .hero-section {
-    min-height: 55vh;
-    padding: 0;
-  }
-
-   .franchise-teacher-parent-page .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px; /* spacing between buttons */
-    width: 100%;
-  }
-
-  .franchise-teacher-parent-page .hero-buttons .btn {
-    width: 90%; /* buttons nearly full width */
-    max-width: 180px;
-    margin: 0 auto;
-    text-align: center;
-    white-space: normal; /* allow text wrap */
-  }
-}
-
-
-.franchise-teacher-parent-page .min-vh-75 {
-  min-height: 75vh;
+  min-height: 400px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.franchise-teacher-parent-page .text-highlight {
-  background: linear-gradient(45deg, #ffd700, #ffed4e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  display: inline-block;
-}
-
-.franchise-teacher-parent-page .text-highlight::after {
-  content: '';
+.hero-overlay {
   position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #fbbf24, #f59e0b);
-  border-radius: 2px;
-  animation: highlight-pulse 2s ease-in-out infinite;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
-@keyframes highlight-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-/* ================== */
-/* STANDARDIZED BUTTON STYLES */
-/* ================== */
-
-.franchise-teacher-parent-page .highlight-orange {
-  color: var(--orange);
-  font-weight: 600;
-}
-
-/* ================== */
-/* STANDARDIZED BUTTON STYLES */
-/* ================== */
-
-
-/* Outline Orange Button */
-
-
-/* Trust Markers */
-.trust-markers {
-  margin-top: 1.5rem;
-}
-
-.trust-item {
-  font-size: 0.95rem;
-  color: #4a5568;
+.hero-badge {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #fd7e14 !important;
   padding: 8px 16px;
-  background: var(--orange-faint);
   border-radius: 50px;
-}
-
-.trust-icon {
-  color: var(--orange);
-  font-weight: bold;
-  margin-right: 6px;
-}
-
-/* Stats Card */
-.elegant-stats-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--orange-faint);
-  max-width: 320px;
-  margin-left: auto;
-}
-
-.elegant-orange-text {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: var(--orange-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.divider-line {
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--orange-faint), transparent);
-  margin: 0.5rem 0;
-}
-
-/* Section Headers */
-.section-header {
-  margin-bottom: 50px;
-}
-
-.section-header h2 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  position: relative;
+  font-size: 1rem;
+  margin-bottom: 2rem;
   display: inline-block;
 }
 
-.section-header h2:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--orange-gradient);
-  border-radius: 2px;
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-title .highlight {
+  
+  color: #fd7e14;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  color: white;
+  font-weight: 700;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 24px;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  background: rgba(0,0,0,0.35);
+  border-radius: 18px;
+  padding: 18px 22px;
+  min-width: 160px;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.stat-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-number .text-success {
+  color: #28c76f !important;
+  animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .hero-stats {
+    gap: 12px;
+  }
+  .stat-item {
+    min-width: 140px;
+    padding: 14px 10px;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-stats {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+  .stat-item {
+    min-width: 130px;
+    padding: 12px 8px;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-stats {
+    gap: 8px;
+  }
+  .stat-item {
+    min-width: 120px;
+    padding: 10px 6px;
+    font-size: 0.92rem;
+  }
+}
+
+/* Section Styles */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 .section-subtitle {
-  color: #718096;
-  font-size: 1.125rem;
-  max-width: 700px;
-  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
 }
 
-/* Benefit Cards */
-.benefit-card {
-  border-radius: 0.5rem;
-  overflow: hidden;
-  transition: all 0.3s ease;
+/* Audience Section */
+.audience-section {
+  background: #f8f9fa;
+  margin-bottom: 100px;
+    margin-top: 60px;
+}
+
+.audience-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  height: 100%;
+  background: #fff;
+}
+
+.audience-card:hover {
+  transform: translateY(-5px);
+}
+
+.audience-icon {
+  font-size: 2.5rem;
+  color: #fd7e14;
+  margin-bottom: 1rem;
+}
+
+.audience-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.audience-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.audience-point {
+  padding: 8px 0;
+  color: #666;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.98rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+  background: white;
+  margin-top: 60px;
+  
+}
+
+.benefit-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  height: 100%;
+  background: #fff;
 }
 
 .benefit-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
 }
 
-.benefit-img-container {
-  overflow: hidden;
-}
-
-.benefit-img {
-  transition: transform 0.5s ease;
-  min-height: 150px;
-  display: block;
-  margin: 0 auto; /* ✅ Centered on all screens */
-}
-
-.benefit-card:hover .benefit-img {
-  transform: scale(1.05);
-}
-
-.benefit-content {
-  flex-grow: 1;
-}
-
-/* Vertical Card Layout with Icons */
-.benefit-card-vertical {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.5rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.benefit-card-vertical::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--orange-gradient);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.benefit-card-vertical:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-}
-
-.benefit-card-vertical:hover::before {
-  transform: scaleX(1);
-}
-
-.benefit-icon-wrapper {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.benefit-card-vertical:hover .benefit-icon-wrapper {
-  transform: scale(1.1);
-}
-
-.benefit-icon-wrapper svg {
-  transition: all 0.3s ease;
-}
-
-.benefit-card-vertical:hover .benefit-icon-wrapper svg {
-  transform: rotate(5deg);
-}
-
-/* Step Cards */
-.step-card {
-  background: white;
-  border-radius: 12px;
-  padding: 30px;
-  height: 100%;
-  position: relative;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  border: 1px solid #e2e8f0;
-}
-
-.step-number {
-  width: 40px;
-  height: 40px;
-  background: var(--orange-gradient);
-  color: white;
+.benefit-icon-container {
+  background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  margin: -50px auto 20px;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 1rem;
 }
 
-.step-icon {
-  color: var(--orange);
-  margin-bottom: 15px;
+.benefit-icon {
+  color: white;
   font-size: 1.5rem;
 }
 
-.step-card h3 {
-  font-size: 1.25rem;
+.benefit-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.benefit-text {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
+}
+
+.benefit-audience {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.audience-tag {
+  background: rgba(253, 126, 20, 0.1);
+  color: #fd7e14;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-bottom: 15px;
 }
 
-.step-arrow {
-  position: absolute;
-  right: -30px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #cbd5e0;
-  font-size: 1.5rem;
-  display: none;
+/* Earnings Section */
+.earnings-section {
+  background: #f8f9fa !important;
+  margin-bottom: 100px;
 }
 
-/* Investment Section */
-.investment-section {
-  background-color: #f9f9f9;
+.earning-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  height: 100%;
+  background: #fff;
 }
 
-.pricing-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.05);
-  max-width: 400px;
-  margin: 0 auto;
+.earning-card:hover {
+  transform: translateY(-5px);
 }
 
-.pricing-amount {
-  font-size: 3.5rem;
+.earning-level {
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #2d3748;
-  line-height: 1;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
-.pricing-amount .currency {
-  font-size: 2rem;
-  vertical-align: top;
-  margin-right: 2px;
+.earning-income {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fd7e14;
+  margin-bottom: 1rem;
 }
 
-.pricing-amount .period {
-  font-size: 1rem;
-  color: #718096;
-  margin-left: 5px;
+.earning-details {
+  margin-bottom: 1rem;
 }
 
-.value-highlights {
-  background: rgba(13, 110, 253, 0.05);
+.earning-detail {
+  color: #666;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.earning-audience {
+  background: rgba(253, 126, 20, 0.1);
+  color: #fd7e14;
+  padding: 8px 12px;
   border-radius: 8px;
-  padding: 15px;
-  margin-top: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.investment-features li {
-  padding: 6px 0;
+/* Steps Section */
+.steps-section {
+  background: white;
+  
 }
 
-/* Final CTA */
-.final-cta {
+.step-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  height: 100%;
+  background: #fff;
   position: relative;
-  isolation: isolate;
 }
 
-.text-white-80 {
-  color: rgba(255, 255, 255, 0.8);
+.step-card:hover {
+  transform: translateY(-5px);
 }
 
-.bg-white-10 {
-  background-color: rgba(255, 255, 255, 0.1);
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
 }
 
-
-/* ================== */
-/* RESPONSIVE DESIGN - STANDARDIZED */
-/* ================== */
-
-/* Large Tablets and Small Desktops */
-@media (max-width: 992px) {
-  .hero-section { 
-  display: block;
-  width: 100vw;
-
-  }
-  .franchise-teacher-parent-page .hero-buttons .btn {
-    display: block;
-    width: 90vw;
-    max-width: 320px;
-    margin: 0 auto 10px auto;
-    padding: 12px 8px;
-    font-size: 0.95rem;
-    box-sizing: border-box;
-    white-space: normal;
-    min-height: 48px;
-    height: auto;
-  box-sizing: border-box;
-  white-space: normal;
-  }
-  
-  .hero-description {
-    font-size: 1.2rem;
-    max-width: 700px;
-  }
-  
-  .hero-buttons {
-    justify-content: center;
-  }
+.step-icon-container {
+  font-size: 2rem;
+  color: #fd7e14;
+  margin-bottom: 1rem;
 }
 
-/* Tablets */
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.step-desc {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
+}
+
+.step-duration {
+  color: #fd7e14;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.cta-buttons .btn {
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cta-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-top: 1rem;
+}
+
+/* Section vertical spacing */
+.section,
+.audience-section,
+.benefits-section,
+.earnings-section,
+.steps-section,
+.cta-section {
+  margin-bottom: 60px;
+  /* Ensure consistent spacing */
+}
+
+/* Remove duplicate margin rules */
+.section:last-child,
+.cta-section:last-child,
+.franchise-teacher-parent-page > section:last-child {
+  margin-bottom: 0;
+}
+
+/* Consistent spacing between all sections */
+.franchise-teacher-parent-page > section {
+  margin-bottom: 60px;
+}
+
+/* Card padding for better spacing inside cards */
+.audience-card .card-body,
+.benefit-card .card-body,
+.earning-card .card-body,
+.step-card .card-body {
+  padding: 2rem 1.5rem;
+}
+
+/* Card gap between cards */
+.g-4 > .col-lg-4,
+.g-4 > .col-lg-3,
+.g-4 > .col-md-6 {
+  margin-bottom: 32px;
+}
+
+/* Responsive spacing for mobile */
 @media (max-width: 768px) {
-  .hero-section { 
-    padding: 40px 0;
-    min-height: 60vh;
-    margin: 0;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin: 0 auto 1.25rem auto;
-  }
-  
-  .hero-description {
-    font-size: 1.1rem;
-    padding: 0 1rem;
-    margin: 0 auto 1.5rem auto;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin: 0 auto;
-  }
-  
-  .hero-buttons .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .hero-badge {
-    font-size: 0.9rem;
-    padding: 12px 24px;
-    margin: 0 auto 1.25rem auto;
-  }
-  
-  .benefit-card-vertical { 
-    margin-bottom: 1.5rem;
-    padding: 2rem 1.5rem;
-  }
-  
-  .benefit-icon-wrapper { 
-    width: 100px; 
-    height: 100px;
-    margin-bottom: 1.25rem;
-  }
-  
-  .benefit-icon-wrapper svg {
-    width: 40px !important;
-    height: 40px !important;
-  }
-  
-  .benefit-content h3 { 
-    font-size: 1.1rem; 
-  }
-  
-  .benefit-content p { 
-    font-size: 0.9rem; 
-  }
-  
-  .section-header h2 { 
-    font-size: 1.75rem; 
-  }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-  .hero-section {
-    padding: 30px 0;
-    min-height: 55vh;
-    margin: 0;
-  }
-  
-  .hero-title {
-    font-size: 2rem;
-    margin: 0 auto 1rem auto;
-    line-height: 1.3;
-  }
-  
-  .hero-description {
-    font-size: 1rem;
-    margin: 0 auto 1.25rem auto;
-  }
-  
-  .hero-badge {
-    font-size: 0.85rem;
-    padding: 10px 20px;
-    margin: 0 auto 1rem auto;
-  }
-  
-  
-  
-  
-  .text-highlight::after {
-    height: 3px;
-    bottom: -4px;
-  }
-  
-  .section-header h2 { 
-    font-size: 1.5rem; 
-  }
-  
-  .section-subtitle { 
-    font-size: 1rem; 
-  }
-  
-  /* Button adjustments for mobile */
-  .btn-orange,
-  .btn-primary-orange,
-  .btn-outline-orange {
-    padding: 10px 24px;
-    font-size: 0.9rem;
-  }
-  
-  .btn-primary {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-  
-  /* Benefits section mobile adjustments */
-  .benefit-card-vertical {
-    padding: 1.5rem 1rem;
-  }
-  
-  .benefit-icon-wrapper {
-    width: 80px;
-    height: 80px;
-    padding: 1.5rem !important;
-  }
-  
-  .benefit-icon-wrapper svg {
-    width: 32px !important;
-    height: 32px !important;
-  }
-  
-  .benefit-content h3 {
-    font-size: 1rem;
-  }
-  
-  .benefit-content p {
-    font-size: 0.85rem;
-  }
-}
-
-/* Mobile view: add spacing and padding for benefit cards */
-@media (max-width: 600px) {
-  .benefits-section .row,
-  .benefits-section .g-3,
-  .benefits-section .g-md-4 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .benefits-section .col,
-  .benefits-section .col-xs-12,
-  .benefits-section .col-sm-6,
-  .benefits-section .col-lg-3 {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-    margin-bottom: 1rem !important;
-  }
-  .benefit-card-vertical {
-    border-radius: 14px !important;
-    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
-    padding: 1.2rem 0.7rem !important;
-    margin-bottom: 0.7rem !important;
-    background: #fff !important;
-  }
-  .benefit-icon-wrapper {
-    padding: 1.2rem !important;
-    border-radius: 14px !important;
-    margin-bottom: 0.7rem !important;
-  }
-  .benefit-content h3 {
-    font-size: 1.08rem !important;
-    margin-bottom: 0.4rem !important;
-  }
-  .benefit-content p {
-    font-size: 0.97rem !important;
-    margin-bottom: 0.2rem !important;
-  }
-}
-
-/* Mobile view: add side padding to prevent cards from merging with screen edge */
-@media (max-width: 600px) {
-  .benefits-section {
-    padding-left: 0.7rem !important;
-    padding-right: 0.7rem !important;
-  }
-  .benefits-section .row,
-  .benefits-section .g-3,
-  .benefits-section .g-md-4 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .benefits-section .col,
-  .benefits-section .col-xs-12,
-  .benefits-section .col-sm-6,
-  .benefits-section .col-lg-3 {
-    max-width: 90% !important;
-    flex: 0 0 90% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-  }
-  .benefit-card-vertical {
-    width: 100%;
-    max-width: 220px;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
-/* Also add padding for the section itself for extra safety */
-@media (max-width: 600px) {
-  .franchise-teacher-parent-page .benefits-section,
-  .franchise-teacher-parent-page .steps-section,
-  .franchise-teacher-parent-page .investment-section {
-    padding-left: 0.7rem !important;
-    padding-right: 0.7rem !important;
-  }
-}
-
-/* --- Mobile view: Fix benefit and step cards for "Our Advantages" and "Simple Process" sections --- */
-@media (max-width: 600px) {
-  /* Add padding to the section so cards don't touch the screen edge */
+  .section,
+  .audience-section,
   .benefits-section,
-  .steps-section {
-    padding-left: 0.7rem !important;
-    padding-right: 0.7rem !important;
+  .earnings-section,
+  .steps-section,
+  .cta-section,
+  .franchise-teacher-parent-page > section {
+    margin-bottom: 32px;
   }
-
-  /* Make columns full width and center cards */
-  .benefits-section .col,
-  .benefits-section .col-xs-12,
-  .benefits-section .col-sm-6,
-  .benefits-section .col-lg-3,
-  .steps-section .col,
-  .steps-section .col-xs-12,
-  .steps-section .col-sm-6,
-  .steps-section .col-lg-4 {
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  .hero-section {
+    padding: 60px 0;
+    min-height: 260px;
   }
-
-  /* Benefit card vertical: smaller, centered, with margin */
-  .benefit-card-vertical {
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0.7rem auto 1rem auto !important;
-    padding: 1.1rem 0.7rem !important;
-    border-radius: 14px !important;
-    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
-    background: #fff !important;
+  .hero-title {
+    font-size: 1.8rem;
   }
-  .benefit-icon-wrapper {
-    width: 56px !important;
-    height: 56px !important;
-    padding: 1.1rem !important;
-    margin-bottom: 0.7rem !important;
-    border-radius: 14px !important;
+  .section {
+    padding: 50px 0;
   }
-  .benefit-content h3 {
-    font-size: 1.08rem !important;
-    margin-bottom: 0.4rem !important;
+  .section-title {
+    font-size: 1.6rem;
   }
-  .benefit-content p {
-    font-size: 0.97rem !important;
-    margin-bottom: 0.2rem !important;
-  }
-
-  /* Step cards: full width, spacing, and padding */
-  .steps-section .step-card {
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0.7rem auto 1rem auto !important;
-    padding: 1.1rem 0.7rem !important;
-    border-radius: 12px !important;
-    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
-    background: #fff !important;
-  }
-  .steps-section .step-number {
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 1rem !important;
-    margin-bottom: 0.7rem !important;
-  }
-  .steps-section .step-icon {
-    font-size: 1.3rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  .steps-section .h4,
-  .steps-section h3 {
-    font-size: 1.08rem !important;
-    margin-bottom: 0.4rem !important;
-  }
-  .steps-section p {
-    font-size: 0.97rem !important;
-    margin-bottom: 0.2rem !important;
-  }
-}
-
-/* --- Mobile view: Make "Our Advantages" cards match the style of the other benefit cards --- */
-@media (max-width: 600px) {
-  .benefits-section .benefit-card-vertical {
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0.7rem auto 1rem auto !important;
-    padding: 1.1rem 0.7rem !important;
-    border-radius: 14px !important;
-    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
-    background: #fff !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  .benefits-section .benefit-icon-wrapper {
-    width: 56px !important;
-    height: 56px !important;
-    padding: 1.1rem !important;
-    margin-bottom: 0.7rem !important;
-    border-radius: 14px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: none !important;
-    box-shadow: none !important;
-  }
-  .benefits-section .benefit-icon-wrapper svg {
-    width: 32px !important;
-    height: 32px !important;
-  }
-  .benefits-section .benefit-content h3 {
-    font-size: 1.08rem !important;
-    margin-bottom: 0.4rem !important;
-    color: #ea580c !important;
-    font-weight: 700 !important;
-  }
-  .benefits-section .benefit-content p {
-    font-size: 0.97rem !important;
-    margin-bottom: 0.2rem !important;
-    color: #444 !important;
-  }
-}
-
-/* --- Mobile view: Make "Brand Power", "School Integration", "Setup Support", "Expert Training" cards match other benefit cards --- */
-@media (max-width: 600px) {
-  /* Target all benefit cards in the section, not just .benefit-card-vertical */
-  .benefits-section .benefit-card,
-  .benefits-section .benefit-card-vertical {
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0.7rem auto 1rem auto !important;
-    padding: 1.1rem 0.7rem !important;
-    border-radius: 14px !important;
-    box-shadow: 0 2px 8px rgba(234,88,12,0.07) !important;
-    background: #fff !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  .benefits-section .benefit-icon-wrapper {
-    width: 56px !important;
-    height: 56px !important;
-    padding: 1.1rem !important;
-    margin-bottom: 0.7rem !important;
-    border-radius: 14px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: none !important;
-    box-shadow: none !important;
-  }
-  .benefits-section .benefit-icon-wrapper svg,
-  .benefits-section .benefit-icon-responsive svg {
-    width: 32px !important;
-    height: 32px !important;
-  }
-  .benefits-section .benefit-content h3,
-  .benefits-section .responsive-heading {
-    font-size: 1.08rem !important;
-    margin-bottom: 0.4rem !important;
-    color: #ea580c !important;
-    font-weight: 700 !important;
-  }
-  .benefits-section .benefit-content p,
-  .benefits-section .text-muted {
-    font-size: 0.97rem !important;
-    margin-bottom: 0.2rem !important;
-    color: #444 !important;
-  }
-}
-
-/* ================== */
-/* UTILITY CLASSES */
-/* ================== */
-
-.text-orange {
-  color: orange !important;
-}
-
-.text-white{
-  color: var(--white) !important;
-
-}
-.bg-orange {
-  background-color: var(--orange) !important;
-}
-
-.bg-light-orange {
-  background-color: var(--light-orange) !important;
-}
-
-.border-orange {
-  border-color: var(--orange) !important;
-}
-
-.franchise-teacher-parent-page h1,
-.franchise-teacher-parent-page h2,
-.franchise-teacher-parent-page h3,
-.franchise-teacher-parent-page h4,
-.franchise-teacher-parent-page h5,
-.franchise-teacher-parent-page h6,
-.franchise-teacher-parent-page .display-4,
-.franchise-teacher-parent-page .display-5,
-.franchise-teacher-parent-page .section-header h2,
-.franchise-teacher-parent-page .benefit-content h3,
-.franchise-teacher-parent-page .step-card h3 {
-  color: var(--orange, #ea580c) !important;
-}
-
-/* Make "Why Choose Us" icons a bit smaller but still larger than default on mobile */
-@media (max-width: 600px) {
-  .benefit-icon-wrapper {
-    width: 80px !important;
-    height: 80px !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  .benefit-icon-wrapper svg {
-    width: 60px !important;
-    height: 60px !important;
-    font-size: 3.5rem !important;
-    min-width: 60px !important;
-    min-height: 60px !important;
-    max-width: 60px !important;
-    max-height: 60px !important;
-    display: block !important;
-    margin: 0 auto !important;
-  }
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-  .franchise-teacher-parent-page .hero-section {
-    min-height: 55vh;
-    padding: 0;
-  }
-  .franchise-teacher-parent-page .hero-title {
-    font-size: 2.1rem;
-    margin-bottom: 0.8rem;
-  }
-  .franchise-teacher-parent-page .hero-description {
-    font-size: 1.05rem;
-    margin-bottom: 1.2rem;
-    padding: 0 0.5rem;
-  }
-  .franchise-teacher-parent-page .hero-badge {
-    font-size: 0.95rem;
-    padding: 10px 18px;
-    margin-bottom: 1rem;
-  }
-  .franchise-teacher-parent-page .hero-buttons {
+  .hero-stats {
     flex-direction: column;
-    gap: 12px;
-    margin-top: 1rem;
+    gap: 15px;
   }
-  .franchise-teacher-parent-page .btn-orange,
-  .franchise-teacher-parent-page .btn-outline-orange {
-    min-width: 140px;
-    font-size: 0.98rem;
-    padding: 12px 18px;
+  .stat-item {
+    margin-bottom: 15px;
+  }
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .cta-title {
+    font-size: 1.6rem;
+  }
+  .audience-section {
+    margin-bottom: 48px;
+  }
+  .benefits-section {
+    margin-top: 32px;
+  }
+  .earnings-section {
+    margin-bottom: 48px;
+  }
+  .steps-section {
+    margin-top: 32px;
+  }
+  .g-4 > .col-lg-4,
+  .g-4 > .col-lg-3,
+  .g-4 > .col-md-6 {
+    margin-bottom: 20px;
   }
 }
 
-
-
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.3rem;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+  .announcement-content {
+    flex-direction: column;
+    text-align: center;
+    color: white;
+  }
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .cta-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+}

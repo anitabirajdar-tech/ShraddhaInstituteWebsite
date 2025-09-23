@@ -1,230 +1,348 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaSchool, FaChartLine, FaHandsHelping, FaChalkboardTeacher, FaAward, FaUsers } from 'react-icons/fa';
-import { IoIosArrowForward, IoMdSchool, IoIosAlert } from 'react-icons/io';
+import { 
+  FaSchool, FaChartLine, FaHandsHelping, FaChalkboardTeacher, 
+  FaAward, FaUsers, FaRocket, FaShieldAlt, FaGraduationCap, 
+  FaLightbulb, FaMoneyBillWave, FaClock, FaStar, FaTrophy,
+  FaCheckCircle, FaArrowRight, FaPlayCircle, FaMapMarkerAlt
+} from 'react-icons/fa';
+import { IoIosArrowForward, IoMdSchool, IoIosAlert, IoIosTrendingUp } from 'react-icons/io';
+import { GiAchievement, GiGrowth } from 'react-icons/gi';
 import './FranchiseBusinessSchool.css';
 
-
 const FranchiseBusinessSchool = () => {
-  const benefits = [
-    {
-      icon: <FaSchool size={42} className="text-orange" />,
-      title: 'Brand Power',
-      text: 'Recognized leader in Abacus & Vedic Math with a trusted business model.',
-      stat: '100+ Partner Schools'
-    },
-    {
-      icon: <FaChartLine size={42} className="text-orange" />,
-      title: 'School Integration',
-      text: 'Bring our programs into your school to boost admissions and results.',
-      stat: '40%+ Math Improvement'
-    },
-    {
-      icon: <FaHandsHelping size={42} className="text-orange" />,
-      title: 'Setup Support',
-      text: 'From infrastructure to marketing — we guide your entire journey.',
-      stat: '95% Success Rate'
-    },
-    {
-      icon: <FaChalkboardTeacher size={42} className="text-orange" />,
-      title: 'Expert Training',
-      text: 'We train your teachers with structured, professional modules.',
-      stat: '500+ Teachers Certified'
-    }
-  ];
-
-  const steps = [
-    {
-      number: '1',
-      icon: <FaUsers size={28} className="text-orange" />,
-      title: 'Connect with Us',
-      text: 'Fill out the form or call us to schedule your consultation.'
-    },
-    {
-      number: '2',
-      icon: <IoMdSchool size={28} className="text-orange" />,
-      title: 'Attend Orientation',
-      text: 'Understand our model, investment, and profit potential.'
-    },
-    {
-      number: '3',
-      icon: <FaAward size={28} className="text-orange" />,
-      title: 'Launch Successfully',
-      text: 'Open your center or school program with our full support.'
-    }
-  ];
-
-  // Marquee announcement state
-  const [currentAnnouncement, setCurrentAnnouncement] = useState(0);
-  
-  const announcements = [
-    "Limited Time Offer: 20% Off Franchise Fee",
-    "Exclusive Territory Protection Available",
-    "Free Teacher Training for First 10 Partners",
-    "Complete Marketing Support Included"
-  ];
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    setIsVisible(true);
     const interval = setInterval(() => {
       setCurrentAnnouncement((prev) => (prev + 1) % announcements.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [announcements.length]);
+  }, []);
+
+  const [currentAnnouncement, setCurrentAnnouncement] = useState(0);
+  
+  const announcements = [
+    "🏆 Exclusive Territory Protection - Limited Spots Available!",
+    "💡 Free Teacher Training & Curriculum for First 10 Partners",
+    "🚀 Complete Marketing Suite Included - Zero Extra Cost",
+    "⭐ 95% Success Rate Among Our Education Partners"
+  ];
+
+  // Enhanced benefits with stronger emotional appeal
+  const transformationalBenefits = [
+    {
+      icon: <FaGraduationCap size={48} className="text-orange" />,
+      title: 'Abacus & Vedic Math: Transform Student Performance',
+      text: 'Empower your students with world-class calculation skills, improved concentration, and confidence in mathematics.',
+      stat: '2x Faster Calculations',
+      features: [
+        'Boosts mental math & accuracy',
+        'Enhances memory & focus',
+        'Loved by parents & students'
+      ]
+    },
+    {
+      icon: <FaStar size={48} className="text-orange" />,
+      title: 'Stand Out as a Premium School',
+      text: 'Become the preferred choice for parents by offering India’s most trusted Abacus & Vedic Math curriculum.',
+      stat: 'Preferred by 200+ Schools',
+      features: [
+        'Unique program in your area',
+        'Builds strong school reputation',
+        'Attracts new admissions'
+      ]
+    },
+    {
+      icon: <FaAward size={48} className="text-orange" />,
+      title: 'Certified Franchise & Teacher Training',
+      text: 'Get full certification for your school and teachers, plus ongoing support and curriculum updates.',
+      stat: '100% Certified Teachers',
+      features: [
+        'Free teacher training',
+        'Official franchise certificate',
+        'Continuous support'
+      ]
+    },
+    {
+      icon: <FaChalkboardTeacher size={48} className="text-orange" />,
+      title: 'Zero Extra Infrastructure Needed',
+      text: 'Run Abacus & Vedic Math classes using your existing classrooms and staff—no additional investment required.',
+      stat: 'Zero Setup Cost',
+      features: [
+        'Utilize current resources',
+        'No extra classrooms needed',
+        'Quick launch & easy management'
+      ]
+    }
+  ];
+
+  // Success stories data
+  const successStories = [
+    {
+      name: "St. Mary's Convent School",
+      location: "Delhi",
+      result: "300% enrollment increase in 2 years",
+      before: "Struggling with admissions",
+      after: "Waiting list for admissions"
+    },
+    {
+      name: "Bright Future Academy",
+      location: "Mumbai",
+      result: "₹50L additional annual revenue",
+      before: "Underutilized infrastructure",
+      after: "Fully optimized capacity"
+    },
+    {
+      name: "Global Kids International",
+      location: "Bangalore",
+      result: "National recognition achieved",
+      before: "Local school reputation",
+      after: "Regional educational leader"
+    }
+  ];
+
+  // Enhanced steps with stronger value proposition - FIXED: Replaced FaShield with FaShieldAlt
+  const transformationJourney = [
+    {
+      number: '01',
+      icon: <FaRocket size={32} className="text-orange" />,
+      title: 'Discovery Call - See The Possibilities',
+      text: '15-minute conversation to understand how our partnership can transform your school specifically.',
+      duration: '15 Min Call',
+      outcome: 'Customized Growth Plan'
+    },
+    {
+      number: '02',
+      icon: <FaShieldAlt size={32} className="text-orange" />, // FIXED: Changed FaShield to FaShieldAlt
+      title: 'Exclusive Territory Reservation',
+      text: 'Secure your geographic advantage before competitors. Limited premium territories available.',
+      duration: '24-48 Hours',
+      outcome: 'Market Protection Guaranteed'
+    },
+    {
+      number: '03',
+      icon: <GiAchievement size={32} className="text-orange" />,
+      title: 'Launch with Full Support System',
+      text: 'We handle setup, training, marketing - you focus on what you do best: educating students.',
+      duration: '2-3 Weeks',
+      outcome: 'Revenue Ready Operation'
+    }
+  ];
+
+  // Replace valuePropositions with more targeted messaging
+  const valuePropositions = [
+    {
+      problem: "Want to boost student results in Math?",
+      solution: "Introduce Abacus & Vedic Math for faster, smarter calculations",
+      icon: <FaGraduationCap size={42} className="text-orange" />
+    },
+    {
+      problem: "Looking for a unique program to attract parents?",
+      solution: "Offer India’s most trusted Abacus & Vedic Math curriculum",
+      icon: <FaStar size={42} className="text-orange" />
+    },
+    {
+      problem: "Need to improve your school’s reputation?",
+      solution: "Become a certified Abacus & Vedic Math center",
+      icon: <FaAward size={42} className="text-orange" />
+    },
+    {
+      problem: "Want to empower your teachers with new skills?",
+      solution: "Get free teacher training & certification in Abacus & Vedic Math",
+      icon: <FaChalkboardTeacher size={42} className="text-orange" />
+    }
+  ];
 
   return (
     <>
       <Helmet>
-        <title>Premium School Franchise Opportunity | Shraddha Institute</title>
+        <title>Transform Your School | Premium Education Franchise Partnership</title>
         <meta
           name="description"
-          content="Premium partnership with Shraddha Institute to start a school franchise or expand your education business. Complete training, branding, and ongoing support."
+          content="Partner with Shraddha Institute to transform your school into a center of excellence. Multiple revenue streams, teacher development, and premium branding."
         />
         <meta
           name="keywords"
-          content="premium school franchise, education business, abacus franchise, vedic math franchise, educational partnership"
-        />
-        <meta property="og:image" content="https://yourdomain.com/images/school-franchise-og.jpg" />
-        <link
-          rel="canonical"
-          href="https://yourdomain.com/franchise/business-school"
+          content="school transformation, education franchise, premium partnership, teacher development, multiple revenue streams, school branding"
         />
       </Helmet>
 
-      <div className="franchise-business-page">
+      <div className={`franchise-business-page ${isVisible ? 'page-visible' : ''}`}>
         
-
-        {/* Enhanced Hero Section */}
+        {/* Enhanced Hero Section with Emotional Hook */}
         <section 
-        className="hero-section position-relative overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, #ea580c 0%, #f97316 50%, #dc2626 100%)',
-          color: 'white',
-          minHeight: '85vh'
-        }}
-      >
-        <div className="hero-overlay"></div>
-        <Container
-          className="position-relative hero-container-responsive"
-          style={{ zIndex: 2 }}
+          className="hero-section position-relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #ea580c 0%, #f97316 50%, #dc2626 100%)',
+            color: 'white',
+            minHeight: '90vh',
+            display: 'flex',
+            alignItems: 'center'
+          }}
         >
-          <Row className="align-items-center justify-content-center min-vh-75 text-center">
-            <Col lg={8} xl={7} className="mx-auto">
-              {/* Badge */}
-              <div className="mb-4">
-                <span className="hero-badge">
-                  {/* You can use an icon here if needed */}
-                  Perfect for Business Schools
-                </span>
-              </div>
-              {/* Main Heading */}
-              <h1 className="hero-title mb-4">
-                Premium School Franchise Opportunity
-              </h1>
-              <p className="hero-subtitle lead mb-4">
-                Partner with Shraddha Institute to launch or expand your education business. Complete training, branding, and ongoing support.
-              </p>
-              <Link
-                to="/contact"
-                className="btn btn-light fw-bold text-orange px-4 py-2 mt-2"
-                style={{ fontSize: '1.25rem' }}
-              >
-                Get Started
-              </Link>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-        {/* Benefits Section */}
-        <section className="benefits-section py-5 bg-light">
-          <Container className="benefits-container-responsive">
-            <div className="text-center mb-5">
-              <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-3">
-                Our Advantages
-              </span>
-              <h2 className="display-4 fw-bold mb-3">Why Schools Choose Shraddha Institute</h2>
-              <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
-                Comprehensive support for educational institutions of all sizes
-              </p>
-            </div>
-            
-            <Row className="g-4">
-              {benefits.map((benefit, index) => (
-                <Col xl={3} lg={6} key={index}>
-                  <div className="benefit-card h-100 p-4 rounded-4 shadow-sm-hover transition-all">
-                    <div
-                      className="benefit-icon-wrapper mb-4"
-                      style={{
-                        // Make icon bigger on mobile
-                        fontSize: '2.625rem', // 42px default
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <span className="benefit-icon-responsive">{benefit.icon}</span>
-                    </div>
-                    <h3 className="h4 fw-bold mb-3 responsive-heading">{benefit.title}</h3>
-                    <p className="text-muted mb-4">{benefit.text}</p>
-                    <div className="benefit-stat bg-orange-soft text-orange rounded-pill px-3 py-1 d-inline-block">
-                      {benefit.stat}
-                    </div>
-                  </div>
-                </Col>
-              ))}
-            </Row>
-          </Container>
-        </section>
-
-        {/* Steps Section */}
-        <section className="steps-section py-5 bg-white position-relative overflow-hidden">
-          <div className="position-absolute top-0 start-0 w-100 h-100" style={{
-            background: 'linear-gradient(135deg, rgba(255,248,242,0.5) 0%, rgba(255,239,226,0.3) 100%)',
-            zIndex: 0
+          <div className="hero-overlay" style={{
+            background: 'rgba(0,0,0,0.3)',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
           }}></div>
           
-          <Container className="steps-container-responsive position-relative" style={{ zIndex: 1 }}>
-            <div className="text-center mb-5">
-              <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-3">
-                Simple Process
-              </span>
-              <h2 className="display-4 fw-bold mb-3">Start Your Franchise in 3 Steps</h2>
-              <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
-                Our streamlined onboarding gets you operational quickly
-              </p>
-            </div>
-            
-            <Row className="justify-content-center g-4">
-              {steps.map((step, index) => (
-                <Col lg={4} md={6} key={index}>
-                  <div className="step-card h-100 p-4 rounded-4 bg-white shadow-sm position-relative">
-                    <div className="step-number-circle bg-orange text-white rounded-circle d-flex align-items-center justify-content-center mb-4">
-                      {step.number}
+          <Container className="position-relative" style={{ zIndex: 2 }}>
+            <Row className="align-items-center justify-content-center text-center">
+              <Col lg={10} xl={8} className="mx-auto">
+                {/* Trust Badges */}
+                <div className="mb-4">
+                  <span className="hero-badge me-3">
+                    <FaStar className="me-2" />
+                    Trusted by 200+ Schools
+                  </span>
+                  <span className="hero-badge">
+                    <IoIosTrendingUp className="me-2" />
+                    Since 2013
+                  </span>
+                </div>
+
+                {/* Main Headline with Emotional Hook */}
+                <h1 className="hero-title mb-4 display-3 fw-bold">
+                  Transform Your School Into The{' '}
+                  <span className="text-warning">Most Sought-After</span>{' '}
+                  Educational Institution in Your Area
+                </h1>
+                
+
+                {/* Value Proposition Highlights */}
+                <Row className="g-4 mb-5">
+                  <Col md={4}>
+                    <div className="text-center">
+                      <FaChartLine size={32} className="text-warning mb-2" />
+                      <h5 className="text-white">40%+ Revenue Growth</h5>
+                      <small className="text-white-80">Average partner increase</small>
                     </div>
-                    <div className="step-icon mb-3 text-orange">
-                      {step.icon}
+                  </Col>
+                  <Col md={4}>
+                    <div className="text-center">
+                      <FaUsers size={32} className="text-warning mb-2" />
+                      <h5 className="text-white">300% Enrollment Boost</h5>
+                      <small className="text-white-80">Documented case studies</small>
                     </div>
-                    <h3 className="h4 fw-bold mb-3">{step.title}</h3>
-                    <p className="text-muted mb-0">{step.text}</p>
-                    
-                    {index < steps.length - 1 && (
-                      <div className="step-arrow d-none d-lg-block">
-                        <IoIosArrowForward size={28} className="text-orange" />
-                      </div>
-                    )}
+                  </Col>
+                  <Col md={4}>
+                    <div className="text-center">
+                      <FaAward size={32} className="text-warning mb-2" />
+                      <h5 className="text-white">Zero Risk Model</h5>
+                      <small className="text-white-80">Proven success system</small>
+                    </div>
+                  </Col>
+                </Row>
+
+                
+
+                {/* Social Proof */}
+                <div className="mt-5">
+                  <p className="text-white-80 mb-2">
+                    <strong>Recently transformed schools:</strong>
+                  </p>
+                  <div className="d-flex justify-content-center flex-wrap gap-3">
+                    <span className="text-white">St. Mary's Convent (+300 students)</span>
+                    <span className="text-white">Bright Future Academy (+₹50L revenue)</span>
+                    <span className="text-white">Global Kids (National recognition)</span>
                   </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        {/* Problem-Solution Section */}
+        <section className="py-5 bg-light">
+          <Container>
+            <Row className="text-center mb-5">
+              <Col lg={8} className="mx-auto">
+                <h1 className="fw-bold mb-3   text-orange">
+                  Why Choose Abacus & Vedic Math Franchise for Your School?
+                </h1>
+
+              </Col>
+            </Row>
+
+            <Row className="g-4">
+              {valuePropositions.map((item, index) => (
+                <Col lg={6} key={index}>
+                  <Card className="h-100 border-0 shadow-sm-hover transition-all">
+                    <Card.Body className="p-4">
+                      <div className="d-flex align-items-start">
+                        <div className="flex-shrink-0">
+                          {item.icon}
+                        </div>
+                        <div className="flex-grow-1 ms-3">
+                          <h5 className="text-orange">{item.problem}</h5>
+                          <p className="text-dark fw-bold mb-0">{item.solution}</p>
+                        </div>
+                      </div>
+                    </Card.Body>
+                  </Card>
                 </Col>
               ))}
             </Row>
           </Container>
         </section>
 
-    
+        {/* Transformational Benefits Section */}
+        <section className="benefits-section py-5">
+          <Container>
+            <div className="text-center mb-5">
+              <Badge bg="orange" className="px-3 py-2 mb-3 fs-6">
+                The Shraddha Advantage
+              </Badge>
+              <h1 className="fw-bold mb-3 text-orange">
+                How Abacus & Vedic Math Franchise Transforms Your School
+              </h1>
 
-        {/* Final CTA */}
+            </div>
+            
+            <Row className="g-5">
+              {transformationalBenefits.map((benefit, index) => (
+                <Col lg={6} key={index}>
+                  <Card className="benefit-card h-100 border-0 shadow-lg-hover">
+                    <Card.Body className="p-4">
+                      <div className="text-center mb-4">
+                        {benefit.icon}
+                      </div>
+                      <h4 className="fw-bold mb-3 text-center text-orange">{benefit.title}</h4>
+                      <p className="text-muted mb-4 fs-5">{benefit.text}</p>
+                      
+                      <div className="bg-orange-soft rounded p-3 mb-4">
+                        <div className="text-center">
+                          <strong className="text-orange fs-4">{benefit.stat}</strong>
+                        </div>
+                      </div>
+
+                      <div className="features-list">
+                        {benefit.features.map((feature, idx) => (
+                          <div key={idx} className="d-flex align-items-center mb-2">
+                            <FaCheckCircle className="text-orange me-2" />
+                            <span className="fw-medium">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+
+       
+       
+
         
       </div>
     </>

@@ -82,11 +82,10 @@ const Footer = () => {
         <motion.div className="footer-column" variants={itemVariants}>
           <h4>Quick Links</h4>
           <ul className="footer-links">
-            <li><a href="/about">About Us</a></li>
-           <li><Link to="/programs">Our Programs</Link></li>
-
-            <li><a href="/testimonials">Testimonials</a></li>
-             <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/programs">Our Courses</Link></li>
+            <li><Link to="/testimonials">Testimonials</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </motion.div>
 

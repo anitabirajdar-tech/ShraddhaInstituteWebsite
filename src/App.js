@@ -33,6 +33,7 @@ import DMITPage from "./pages/programs/DMITPage";
 import TeacherTrainingPage from "./pages/programs/TeacherTrainingPage";
 import FTrainingPage from "./pages/programs/FTrainingPage";
 import WorkshopsPage from "./pages/programs/WorkshopsPage";
+import FranchiseTeacherTrainingPage from "./pages/programs/FranchiseTeacherTrainingPage";
 
 // Franchise & About Subpages
 
@@ -72,6 +73,16 @@ import NationalLevelCompetition2022 from './pages/gallery/NationalLevelCompetiti
 import NationalLevelCompetition2023 from './pages/gallery/NationalLevelCompetition2023';
 import StateLevelCompetition2023 from './pages/gallery/StateLevelCompetition2023';
 import AnnualMeet2023 from './pages/gallery/AnnualMeet2023';
+
+// Gallery 2024 Pages
+import AnnualMeet2024 from './pages/gallery/AnnualMeet2024';
+import StateLevelCompetition2024 from './pages/gallery/StateLevelCompetition2024';
+import NationalLevelCompetition2024 from './pages/gallery/NationalLevelCompetition2024';
+
+// Gallery 2025 Pages
+import AnnualMeet2025 from './pages/gallery/AnnualMeet2025';
+import StateLevelCompetition2025 from './pages/gallery/StateLevelCompetition2025';
+import NationalLevelCompetition2025 from './pages/gallery/NationalLevelCompetition2025';
 
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -124,6 +135,7 @@ function App() {
           <Route path="/programs/teacher-training" element={<><TeacherTrainingPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/franchise-training" element={<><FTrainingPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/workshops" element={<><WorkshopsPage /><Footer /><WhatsAppButton /></>} />
+          <Route path="/programs/franchise-teacher-training" element={<><FranchiseTeacherTrainingPage /><Footer /><WhatsAppButton /></>} />
 
           {/* Franchise Pages */}
          
@@ -164,6 +176,16 @@ function App() {
           <Route path="/gallery/2023/state-level-competition" element={<StateLevelCompetition2023 />} />
           <Route path="/gallery/2023/national-level-competition" element={<NationalLevelCompetition2023 />} />
           <Route path="/gallery/2023/annual-meet" element={<AnnualMeet2023 />} />
+
+          {/* Gallery 2024 Pages */}
+          <Route path="/gallery/2024/state-level-competition" element={<StateLevelCompetition2024 />} />
+          <Route path="/gallery/2024/national-level-competition" element={<NationalLevelCompetition2024 />} />
+          <Route path="/gallery/2024/annual-meet" element={<AnnualMeet2024 />} />
+
+          {/* Gallery 2025 Pages */}
+          <Route path="/gallery/2025/state-level-competition" element={<StateLevelCompetition2025 />} />
+          <Route path="/gallery/2025/national-level-competition" element={<NationalLevelCompetition2025 />} />
+          <Route path="/gallery/2025/annual-meet" element={<AnnualMeet2025 />} />
         </Routes>
         
       </div>
