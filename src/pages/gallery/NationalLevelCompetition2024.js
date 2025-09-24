@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
 import { FaTrophy, FaStar, FaHeart } from "react-icons/fa";
@@ -8,7 +7,6 @@ import "./NationalLevelCompetition2022.css"; // Use the same CSS as 2022
 
 const NationalLevelCompetition2024 = () => {
   const [images, setImages] = useState([]);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -21,7 +19,6 @@ const NationalLevelCompetition2024 = () => {
       }
     };
     fetchImages();
-    setTimeout(() => setIsVisible(true), 100);
   }, []);
 
   return (

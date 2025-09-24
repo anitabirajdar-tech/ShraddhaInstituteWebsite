@@ -9,7 +9,6 @@ import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import WelcomeScreen from "./components/WelcomeScreen";
 
-
 // Main Page Sections
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -21,22 +20,18 @@ import DemoAndContact from "./components/DemoAndContact";
 import GetInTouch from "./components/GetInTouch";
 
 // Pages
-
-//import ProgramsPage from "./pages/ProgramsPage";
 import GalleryPage from "./pages/GalleryPage";
 import BookDemoPage from "./pages/BookDemoPage";
 
 // Program Subpages
 import AbacusPage from "./pages/programs/AbacusPage";
 import VedicMathPage from "./pages/programs/VedicMathPage";
-import DMITPage from "./pages/programs/DMITPage";
 import TeacherTrainingPage from "./pages/programs/TeacherTrainingPage";
 import FTrainingPage from "./pages/programs/FTrainingPage";
 import WorkshopsPage from "./pages/programs/WorkshopsPage";
 import FranchiseTeacherTrainingPage from "./pages/programs/FranchiseTeacherTrainingPage";
 
 // Franchise & About Subpages
-
 import AboutFranchisePage from "./pages/Aboutusprograms/AboutFranchisePage";
 
 // Franchise Folder
@@ -47,14 +42,11 @@ import FranchiseBusinessSchool from "./pages/FranchiseFolder/FranchiseBusinessSc
 import TeacherTraining from "./pages/TrainingFolder/TeacherTraining";
 import SchoolTraining from "./pages/TrainingFolder/SchoolTraining";
 
-
-
 // Admin
 import AdminDashboard from './admin/AdminDashboard';
 import './admin/AdminDashboard.css';
 
 import 'aos/dist/aos.css';
-
 
 // Gallery 2022 Pages
 import StateLevelCompetition2022 from './pages/gallery/StateLevelCompetition2022';
@@ -122,7 +114,6 @@ function App() {
         
           <Route path="/programs/abacus" element={<><AbacusPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/vedic-math" element={<><VedicMathPage /><Footer /><WhatsAppButton /></>} />
-          <Route path="/programs/brain-development" element={<><DMITPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/teacher-training" element={<><TeacherTrainingPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/franchise-training" element={<><FTrainingPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/programs/workshops" element={<><WorkshopsPage /><Footer /><WhatsAppButton /></>} />
@@ -175,3 +166,5 @@ function App() {
 }
 
 export default App;
+        
+   
