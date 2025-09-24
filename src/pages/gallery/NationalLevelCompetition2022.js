@@ -51,37 +51,7 @@ const NationalLevelCompetition2022 = () => {
               <span style={{ color: "#fff", fontWeight: 700 }}>Celebrating Excellence & Creating Memories</span>
             </p>
 
-            {/* Stats in Cards - visually enhanced */}
-            <div className="stats-grid" style={{ marginBottom: "2.5rem" }}>
-              <div className="stat-card" style={{ background: "rgba(253,126,20,0.13)" }}>
-                <div className="stat-icon">
-                  <FaUsers />
-                </div>
-                <div className="stat-content">
-                  <div className="stat-number" style={{ color: "#fff" }}>500+</div>
-                  <div className="stat-label" style={{ color: "#fff" }}>Participants</div>
-                </div>
-              </div>
-              <div className="stat-card" style={{ background: "rgba(139,92,246,0.13)" }}>
-                <div className="stat-icon">
-                  <FaAward />
-                </div>
-                <div className="stat-content">
-                  <div className="stat-number" style={{ color: "#fff" }}>50+</div>
-                  <div className="stat-label" style={{ color: "#fff" }}>Schools</div>
-                </div>
-              </div>
-              <div className="stat-card" style={{ background: "rgba(236,72,153,0.13)" }}>
-                <div className="stat-icon">
-                  <FaMedal />
-                </div>
-                <div className="stat-content">
-                  <div className="stat-number" style={{ color: "#fff" }}>500+</div>
-                  <div className="stat-label" style={{ color: "#fff" }}>Awards</div>
-                </div>
-              </div>
-            </div>
-
+          
             {/* CTA Buttons */}
             
           </div>
@@ -141,31 +111,7 @@ const NationalLevelCompetition2022 = () => {
           </Row>
 
           {/* Gallery CTA - Add a vibrant call-to-action */}
-          <div className="cta-section-sophisticated mt-5">
-            <div className="cta-card-sophisticated">
-              <FaRocket className="cta-icon" />
-              <h3>Want to Be Part of Our Next Event?</h3>
-              <p>
-                Join thousands of students in our national competitions and create your own unforgettable memories!
-              </p>
-              <div className="cta-buttons-sophisticated">
-                <Link
-                  to="/contact"
-                  className="cta-btn primary"
-                >
-                  <FaUsers className="me-2" />
-                  Register Now
-                </Link>
-                <a
-                  href="mailto:shraddhainstitute@gmail.com?subject=My%20Competition%20Memory"
-                  className="cta-btn secondary"
-                >
-                  <FaShare className="me-2" />
-                  Share Your Memory
-                </a>
-              </div>
-            </div>
-          </div>
+         
         </Container>
       </section>
     </div>

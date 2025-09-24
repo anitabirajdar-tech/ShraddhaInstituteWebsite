@@ -47,9 +47,7 @@ import FranchiseBusinessSchool from "./pages/FranchiseFolder/FranchiseBusinessSc
 import TeacherTraining from "./pages/TrainingFolder/TeacherTraining";
 import SchoolTraining from "./pages/TrainingFolder/SchoolTraining";
 
-// Blog
-import BlogPage from "./pages/blog/BlogPage";
-import BlogPost from "./pages/blog/BlogPost";
+
 
 // Admin
 import AdminDashboard from './admin/AdminDashboard';
@@ -57,13 +55,6 @@ import './admin/AdminDashboard.css';
 
 import 'aos/dist/aos.css';
 
-// Events
- import Events2019Page from "./pages/events/Events2019Page";
-// import Events2020Page from "./pages/events/Events2020Page";
-// import Events2021Page from "./pages/events/Events2021Page";
-// import Events2022Page from "./pages/events/Events2022Page";
-// import Events2023Page from "./pages/events/Events2023Page";
-// import Events2024Page from "./pages/events/Events2024Page";
 
 // Gallery 2022 Pages
 import StateLevelCompetition2022 from './pages/gallery/StateLevelCompetition2022';
@@ -150,23 +141,13 @@ function App() {
           <Route path="/gallery" element={<><GalleryPage /><Footer /><WhatsAppButton /></>} />
           <Route path="/contact" element={<><DemoAndContact /><Footer /><WhatsAppButton /></>} />
 
-          {/* Blog */}
-          <Route path="/blog" element={<><BlogPage /><Footer /><WhatsAppButton /></>} />
-          <Route path="/blog/:id" element={<><BlogPost /><Footer /><WhatsAppButton /></>} />
-
           {/* Book Demo Page Route */}
           <Route path="/book-demo" element={<><BookDemoPage /><Footer /><WhatsAppButton /></>} />
 
           {/* Admin Dashboard Route */}
           <Route path="/admin" element={<AdminDashboard />} />
 
-          {/* Events Pages */}
-          <Route path="/events/2019" element={<><Events2019Page /><Footer /><WhatsAppButton /></>} />
-          {/* <Route path="/events/2020" element={<><Events2020Page /><Footer /><WhatsAppButton /></>} /> */}
-          {/* <Route path="/events/2021" element={<><Events2021Page /><Footer /><WhatsAppButton /></>} /> */}
-          {/* <Route path="/events/2022" element={<><Events2022Page /><Footer /><WhatsAppButton /></>} /> */}
-          {/* <Route path="/events/2023" element={<><Events2023Page /><Footer /><WhatsAppButton /></>} /> */}
-          {/* <Route path="/events/2024" element={<><Events2024Page /><Footer /><WhatsAppButton /></>} /> */}
+         
 
           {/* New Gallery 2022 Pages */}
           <Route path="/gallery/2022/state-level-competition" element={<StateLevelCompetition2022 />} />

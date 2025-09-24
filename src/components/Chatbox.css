@@ -43,11 +43,7 @@
   border-radius: 8px;
   margin-right: 10px;
 }
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  border-radius: 8px;
-  margin-right: 8px;
+ 
 
 .chat-header i {
   margin-right: 6px;
