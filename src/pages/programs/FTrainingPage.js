@@ -30,30 +30,6 @@ const franchiseBenefits = [
   },
 ];
 
-// Training Modules
-const trainingModules = [
-  {
-    title: "Abacus Teacher Training",
-    icon: <BookFill className="module-icon" />,
-    items: ["Complete Abacus concepts mastery", "Mental math skills development", "Student engagement techniques", "Progress assessment methods"],
-  },
-  {
-    title: "Vedic Maths Training",
-    icon: <GearFill className="module-icon" />,
-    items: ["16 Sutras and 13 Sub-sutras", "Quick calculation techniques", "Teaching methodology", "Practice modules and worksheets"],
-  },
-  {
-    title: "Marketing & Enrollment",
-    icon: <PeopleFill className="module-icon" />,
-    items: ["Student admission strategies", "Local promotion techniques", "Parent orientation sessions", "Digital marketing support"],
-  },
-  {
-    title: "Classroom Management",
-    icon: <AwardFill className="module-icon" />,
-    items: ["Effective student discipline", "Activity planning", "Assessment methods", "Batch management strategies"],
-  },
-];
-
 // Training Audience
 const trainingAudienceStatic = [
   {

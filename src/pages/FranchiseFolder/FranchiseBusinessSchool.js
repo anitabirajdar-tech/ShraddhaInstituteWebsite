@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Container, Row, Col, Button, Card, Badge } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Row, Col,  Card, Badge } from 'react-bootstrap';
+
 import { 
-  FaSchool, FaChartLine, FaHandsHelping, FaChalkboardTeacher, 
+  FaChartLine, FaChalkboardTeacher, 
   FaAward, FaUsers, FaRocket, FaShieldAlt, FaGraduationCap, 
-  FaLightbulb, FaMoneyBillWave, FaClock, FaStar, FaTrophy,
-  FaCheckCircle, FaArrowRight, FaPlayCircle, FaMapMarkerAlt
+   FaStar, 
+  FaCheckCircle, 
 } from 'react-icons/fa';
-import { IoIosArrowForward, IoMdSchool, IoIosAlert, IoIosTrendingUp } from 'react-icons/io';
-import { GiAchievement, GiGrowth } from 'react-icons/gi';
+import {  IoIosTrendingUp } from 'react-icons/io';
+import { GiAchievement } from 'react-icons/gi';
 import './FranchiseBusinessSchool.css';
 
 const FranchiseBusinessSchool = () => {
