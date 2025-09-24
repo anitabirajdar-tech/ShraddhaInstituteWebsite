@@ -1,26 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Container, Row, Col, Button, Card, Badge } from 'react-bootstrap';
+import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { 
   FaClipboardCheck, 
   FaUserGraduate, 
   FaMoneyBillWave, 
   FaShieldAlt,
-  FaHome,
   FaGraduationCap,
   FaDollarSign,
-  FaBookOpen,
   FaLaptopHouse,
   FaHandsHelping,
-  FaChartLine,
   FaUsers,
   FaChild,
   FaClock,
-  FaStar,
-  FaCheckCircle
+  FaStar
 } from 'react-icons/fa';
-import { IoIosArrowForward } from 'react-icons/io';
 import './FranchiseTeacherParent.css';
 import { db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";

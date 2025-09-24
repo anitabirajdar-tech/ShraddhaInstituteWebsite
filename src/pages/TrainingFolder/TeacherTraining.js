@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { FaCheck, FaChalkboardTeacher, FaUserGraduate, FaAward, FaBookOpen, FaUsers, FaHandshake } from 'react-icons/fa';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { FaCheck, FaChalkboardTeacher, FaUserGraduate, FaAward, FaBookOpen, FaUsers } from 'react-icons/fa';
 import { IoTimeOutline } from 'react-icons/io5';
 import "./TeacherTraining.css";
 

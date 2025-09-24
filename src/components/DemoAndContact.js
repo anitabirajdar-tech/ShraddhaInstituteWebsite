@@ -96,6 +96,7 @@ const DemoAndContact = () => {
             frameBorder='0'
             allowTransparency='true'
              scrolling='no'
+            title="DemoAndContact Map" // Add a unique title property
             src='https://creatorapp.zohopublic.com/shraddha_institute/testing-app/form-embed/Contact_Us/CyTAXzPxdC1SJEGp2eCp7dvDW2m1YHt1JwPFV5n2NrUSgj0JKNdOTCsqDUSZrn2mHsZYRDv61w57k8DZkwXn3gONRXttjFfmKzaW'
           ></iframe>
         )}

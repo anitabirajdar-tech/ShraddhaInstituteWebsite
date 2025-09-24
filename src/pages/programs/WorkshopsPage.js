@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card} from "react-bootstrap";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+
 import { FaChalkboardTeacher, FaUsers, FaLightbulb, FaCertificate } from "react-icons/fa";
 
 const workshops = [

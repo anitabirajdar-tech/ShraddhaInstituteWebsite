@@ -1,12 +1,7 @@
-
-
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { collection, doc, getDocs, getDoc } from "firebase/firestore";
 import "./GalleryPage.css";
-
-// ...existing code...
-
 
 const categories = [
   { id: "Awards", label: " Awards Gallery", icon: "🏆" },
@@ -19,9 +14,7 @@ const GalleryPage = () => {
   const [images, setImages] = useState({});
   const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [loadedImages, setLoadedImages] = useState(0);
-   const [heroImage, setHeroImage] = useState(null);
-
+  const [heroImage, setHeroImage] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,7 +56,7 @@ const GalleryPage = () => {
     fetchData();
   }, []);
 
-// ✅ Fetch Hero Image
+  // ✅ Fetch Hero Image
   useEffect(() => {
     const fetchHeroImage = async () => {
       try {
@@ -80,10 +73,6 @@ const GalleryPage = () => {
     fetchHeroImage();
   }, []);
 
-  const handleImageLoad = () => {
-    setLoadedImages(prev => prev + 1);
-  };
-
   return (
     <div className="gallery-page">
       {/* HERO SECTION WITH TABS OVERLAY */}
@@ -97,8 +86,8 @@ const GalleryPage = () => {
           position: "relative",
         }}
       >
-  <h1 className="hero-text legacy-orange">Our Legacy of Excellence</h1>
-  <div className="hero-tabs-overlay" style={{ display: 'flex', justifyContent: 'center', marginTop: '0' }}>
+        <h1 className="hero-text legacy-orange">Our Legacy of Excellence</h1>
+        <div className="hero-tabs-overlay" style={{ display: 'flex', justifyContent: 'center', marginTop: '0' }}>
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -135,7 +124,6 @@ const GalleryPage = () => {
                       <img
                         src={img.url}
                         alt={img.title || "Gallery Image"}
-                        onLoad={handleImageLoad}
                       />
                       <div className="image-overlay">
                         <div className="overlay-content">

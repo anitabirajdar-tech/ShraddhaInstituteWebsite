@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Accordion, Card, Badge } from "react-bootstrap";
+import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
 import { ClockFill, LightningFill, AwardFill, GraphUp, StarFill, ChevronRight } from "react-bootstrap-icons";
 import "./TeacherTrainingPage.css";
 import { Link } from "react-router-dom";

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
-import { FaTrophy, FaUsers, FaStar, FaHeart, FaPlayCircle, FaShare, FaCamera, FaAward, FaMedal, FaSmile, FaRocket } from "react-icons/fa";
+import { FaTrophy, FaStar, FaHeart } from "react-icons/fa";
 import "./NationalLevelCompetition2022.css";
 
 const NationalLevelCompetition2022 = () => {

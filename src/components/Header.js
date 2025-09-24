@@ -9,13 +9,13 @@ import firebaseApp from "../firebase"; // your firebase.js config
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faCalculator, 
-  faBrain, 
+ 
   faSquareRootAlt, 
   faTimes,
   faChalkboardTeacher,
   faStore,
   faUsers,
-  faSchool,
+ 
   faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Accordion, Card, Button, Badge } from "react-bootstrap";
-import { CheckCircleFill, StarFill, PeopleFill, AwardFill, BookFill, GearFill, GraphUp, TelephoneFill } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
+import { Container, Row, Col, Accordion, Card} from "react-bootstrap";
+import { CheckCircleFill,  PeopleFill, AwardFill, BookFill, GearFill, GraphUp } from "react-bootstrap-icons";
+
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import "./FranchiseTrainingPage.css";
