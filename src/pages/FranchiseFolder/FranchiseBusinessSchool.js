@@ -19,12 +19,7 @@ const FranchiseBusinessSchool = () => {
     setIsVisible(true);
   }, []);
 
-  const announcements = [
-    "🏆 Exclusive Territory Protection - Limited Spots Available!",
-    "💡 Free Teacher Training & Curriculum for First 10 Partners",
-    "🚀 Complete Marketing Suite Included - Zero Extra Cost",
-    "⭐ 95% Success Rate Among Our Education Partners"
-  ];
+
 
   // Enhanced benefits with stronger emotional appeal
   const transformationalBenefits = [
@@ -74,33 +69,6 @@ const FranchiseBusinessSchool = () => {
     }
   ];
 
-  // Enhanced steps with stronger value proposition - FIXED: Replaced FaShield with FaShieldAlt
-  const transformationJourney = [
-    {
-      number: '01',
-      icon: <FaRocket size={32} className="text-orange" />,
-      title: 'Discovery Call - See The Possibilities',
-      text: '15-minute conversation to understand how our partnership can transform your school specifically.',
-      duration: '15 Min Call',
-      outcome: 'Customized Growth Plan'
-    },
-    {
-      number: '02',
-      icon: <FaShieldAlt size={32} className="text-orange" />, // FIXED: Changed FaShield to FaShieldAlt
-      title: 'Exclusive Territory Reservation',
-      text: 'Secure your geographic advantage before competitors. Limited premium territories available.',
-      duration: '24-48 Hours',
-      outcome: 'Market Protection Guaranteed'
-    },
-    {
-      number: '03',
-      icon: <GiAchievement size={32} className="text-orange" />,
-      title: 'Launch with Full Support System',
-      text: 'We handle setup, training, marketing - you focus on what you do best: educating students.',
-      duration: '2-3 Weeks',
-      outcome: 'Revenue Ready Operation'
-    }
-  ];
 
   // Replace valuePropositions with more targeted messaging
   const valuePropositions = [

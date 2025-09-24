@@ -182,7 +182,7 @@ const Header = () => {
               >
                 <a
                   className="nav-link dropdown-toggle"
-                  href="#"
+                  href="/programs/abacus"
                   id="programsDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -258,7 +258,7 @@ const Header = () => {
 >
   <a
     className="nav-link dropdown-toggle"
-    href="#"
+    href="/programs/franchise-training"
     id="franchiseDropdown"
     role="button"
     data-bs-toggle="dropdown"
@@ -301,7 +301,7 @@ const Header = () => {
 >
   <a
     className="nav-link dropdown-toggle"
-    href="#"
+    href="/gallery"
     id="eventsDropdown"
     role="button"
     data-bs-toggle="dropdown"
