@@ -17,15 +17,8 @@ const FranchiseBusinessSchool = () => {
 
   useEffect(() => {
     setIsVisible(true);
-    const interval = setInterval(() => {
-      setCurrentAnnouncement((prev) => (prev + 1) % announcements.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
   }, []);
 
-  const [currentAnnouncement, setCurrentAnnouncement] = useState(0);
-  
   const announcements = [
     "🏆 Exclusive Territory Protection - Limited Spots Available!",
     "💡 Free Teacher Training & Curriculum for First 10 Partners",
@@ -78,31 +71,6 @@ const FranchiseBusinessSchool = () => {
         'No extra classrooms needed',
         'Quick launch & easy management'
       ]
-    }
-  ];
-
-  // Success stories data
-  const successStories = [
-    {
-      name: "St. Mary's Convent School",
-      location: "Delhi",
-      result: "300% enrollment increase in 2 years",
-      before: "Struggling with admissions",
-      after: "Waiting list for admissions"
-    },
-    {
-      name: "Bright Future Academy",
-      location: "Mumbai",
-      result: "₹50L additional annual revenue",
-      before: "Underutilized infrastructure",
-      after: "Fully optimized capacity"
-    },
-    {
-      name: "Global Kids International",
-      location: "Bangalore",
-      result: "National recognition achieved",
-      before: "Local school reputation",
-      after: "Regional educational leader"
     }
   ];
 
