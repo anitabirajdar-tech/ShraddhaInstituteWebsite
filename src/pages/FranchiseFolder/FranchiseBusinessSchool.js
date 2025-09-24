@@ -4,12 +4,12 @@ import { Container, Row, Col,  Card, Badge } from 'react-bootstrap';
 
 import { 
   FaChartLine, FaChalkboardTeacher, 
-  FaAward, FaUsers, FaRocket, FaShieldAlt, FaGraduationCap, 
+  FaAward, FaUsers, FaGraduationCap, 
    FaStar, 
   FaCheckCircle, 
 } from 'react-icons/fa';
 import {  IoIosTrendingUp } from 'react-icons/io';
-import { GiAchievement } from 'react-icons/gi';
+
 import './FranchiseBusinessSchool.css';
 
 const FranchiseBusinessSchool = () => {
