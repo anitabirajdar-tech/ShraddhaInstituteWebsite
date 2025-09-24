@@ -173,7 +173,7 @@ const FranchiseTeacherParent = () => {
         <meta property="og:description" content="Start your education business from home. Perfect for teachers and parents. Complete training and support." />
       </Helmet>
 
-      <div className="franchise-teacher-parent-page">
+      <div className="franchise-teacher-parent-page" style={{ fontFamily: 'sans-serif' }}>
         {/* Announcement Bar */}
         <div className="announcement-bar">
           <Container>
@@ -202,7 +202,8 @@ const FranchiseTeacherParent = () => {
                   Perfect for Teachers & Parents
                 </Badge>
                 
-                <h1 className="hero-title">
+                <h1 className="hero-title" style={{ fontFamily: 'sans-serif' }}>
+                  {/* Font type: set in CSS, e.g. font-family: 'Montserrat', Arial, sans-serif; */}
                   Start Your Learning Center from <span className="highlight">Home</span>
                 </h1>
                 
@@ -241,7 +242,10 @@ const FranchiseTeacherParent = () => {
           <Container>
             <Row className="text-center mb-5">
               <Col lg={8} className="mx-auto">
-                <h2 className="section-title">Why This Franchise is Perfect For</h2>
+                <h2 className="section-title" style={{ fontFamily: 'sans-serif' }}>
+                  {/* Font type: set in CSS, e.g. font-family: 'Montserrat', Arial, sans-serif; */}
+                  Why This Franchise is Perfect For
+                </h2>
                 <p className="section-subtitle">Designed specifically for educators and parents seeking flexible opportunities</p>
               </Col>
             </Row>
@@ -254,7 +258,10 @@ const FranchiseTeacherParent = () => {
                       <div className="audience-icon">
                         {item.icon}
                       </div>
-                      <h5 className="audience-title">{item.title}</h5>
+                      <h5 className="audience-title" style={{ fontFamily: 'sans-serif' }}>
+                        {/* Font type: set in CSS, e.g. font-family: 'Montserrat', Arial, sans-serif; */}
+                        {item.title}
+                      </h5>
                       <ul className="audience-points">
                         {item.points.map((point, i) => (
                           <li key={i} className="audience-point">
@@ -289,7 +296,10 @@ const FranchiseTeacherParent = () => {
                       <div className="benefit-icon-container">
                         {benefit.icon}
                       </div>
-                      <h5 className="benefit-title">{benefit.title}</h5>
+                      <h5 className="benefit-title" style={{ fontFamily: 'sans-serif' }}>
+                        {/* Font type: set in CSS, e.g. font-family: 'Montserrat', Arial, sans-serif; */}
+                        {benefit.title}
+                      </h5>
                       <p className="benefit-text">{benefit.desc}</p>
                       <div className="benefit-audience">
                         {benefit.audience.map((aud, i) => (
@@ -319,7 +329,10 @@ const FranchiseTeacherParent = () => {
                 <Col lg={4} md={6} key={index}>
                   <Card className="earning-card h-100 text-center">
                     <Card.Body className="p-4">
-                      <div className="earning-level">{example.level}</div>
+                      <div className="earning-level" style={{ fontFamily: 'sans-serif' }}>
+                        {/* Font type: set in CSS, e.g. font-family: 'Montserrat', Arial, sans-serif; */}
+                        {example.level}
+                      </div>
                       <div className="earning-income">{example.income}</div>
                       <div className="earning-details">
                         <div className="earning-detail">
@@ -361,7 +374,10 @@ const FranchiseTeacherParent = () => {
                       <div className="step-icon-container">
                         {step.icon}
                       </div>
-                      <h5 className="step-title">{step.title}</h5>
+                      <h5 className="step-title" style={{ fontFamily: 'sans-serif' }}>
+                        {/* Font type: set in CSS, e.g. font-family: 'Montserrat', Arial, sans-serif; */}
+                        {step.title}
+                      </h5>
                       <p className="step-desc">{step.desc}</p>
                       <div className="step-duration">
                         <FaClock className="me-2" />
@@ -382,7 +398,10 @@ const FranchiseTeacherParent = () => {
           <Container>
             <Row className="text-center">
               <Col lg={8} className="mx-auto">
-                <h2 className="cta-title">Ready to Start Your Teaching Business?</h2>
+                <h2 className="cta-title" style={{ fontFamily: 'sans-serif' }}>
+                  {/* Font type: set in CSS, e.g. font-family: 'Montserrat', Arial, sans-serif; */}
+                  Ready to Start Your Teaching Business?
+                </h2>
                 <p className="cta-subtitle">
                   Join 50+ successful teachers and parents who transformed their careers with our franchise
                 </p>

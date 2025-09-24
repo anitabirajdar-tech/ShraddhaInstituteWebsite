@@ -1,5 +1,10 @@
 /* FranchiseTeacherParent.css */
 
+/* Global Styles */
+.franchise-teacher-parent-page {
+  font-family: sans-serif;
+}
+
 /* Announcement Bar */
 .announcement-bar {
   background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
