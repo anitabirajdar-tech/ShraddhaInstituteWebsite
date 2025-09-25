@@ -84,16 +84,22 @@ const GalleryPage = () => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           position: "relative",
+          minHeight: "220px"
         }}
       >
-        <h1 className="hero-text legacy-orange">Our Legacy of Excellence</h1>
-        <div className="hero-tabs-overlay" style={{ display: 'flex', justifyContent: 'center', marginTop: '0' }}>
+        <h1
+          className="hero-text legacy-orange"
+        >
+          Our Legacy of Excellence 
+        </h1>
+        <div
+          className="hero-tabs-overlay"
+        >
           {categories.map((cat) => (
             <button
               key={cat.id}
               className={`tab-btn orange-btn ${activeTab === cat.id ? "active" : ""}`}
               onClick={() => setActiveTab(cat.id)}
-              style={{ background: '#fd7e14', color: '#fff', borderRadius: '24px', fontWeight: 700, fontSize: '1.1rem', padding: '0.7rem 1.5rem', border: 'none', margin: '0 0.5rem' }}
             >
               <span className="tab-icon">{cat.icon}</span>
               <span className="tab-label">{cat.label}</span>

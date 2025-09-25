@@ -307,6 +307,7 @@
   transform: rotate(180deg);
 }
 
+
 /* ================== */
 /* MEGA MENU CONTENT */
 /* ================== */
@@ -507,4 +508,9 @@
 .social-icons a .fa-instagram { color: #E4405F; }
 .social-icons a .fa-youtube   { color: #FF0000; }
 .social-icons a .fa-whatsapp  { color: #25D366; }
+
+.dropdown-menu .dropdown-item span {
+  font-weight: 500; /* or normal */
+}
+
 

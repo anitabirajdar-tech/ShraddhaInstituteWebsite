@@ -59,21 +59,21 @@ const FranchiseTeacherParent = () => {
   const earningExamples = [
     { 
       level: "Part-time", 
-      hours: "2-3 hours/day", 
+      hours: "1-2 hours/week", 
       students: "15-20", 
-      income: "₹15,000-25,000/month",
+      income: "₹15,000-20,000/month",
       idealFor: "Homemakers, Teachers"
     },
     { 
       level: "Full-time", 
-      hours: "4-6 hours/day", 
+      hours: "4-6 hours/week", 
       students: "30-40", 
       income: "₹30,000-40,000/month",
       idealFor: "Career-focused Parents"
     },
     { 
       level: "Expanded", 
-      hours: "6-8 hours/day", 
+      hours: "6-8 hours/week", 
       students: "50+", 
       income: "₹40,000-60,000/month",
       idealFor: "Ambitious Educators"
@@ -150,7 +150,6 @@ const FranchiseTeacherParent = () => {
           if (url && typeof url === "string" && url.startsWith("http")) {
             setHeroImage(url);
           } else {
-            // Fallback hero image
             setHeroImage("/images/franchise-hero-default.jpg");
           }
         }
@@ -191,6 +190,9 @@ const FranchiseTeacherParent = () => {
           className="hero-section"
           style={{
             backgroundImage: heroImage ? `url(${heroImage})` : 'linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%)',
+            backgroundRepeat: "no-repeat", // Ensure image does not repeat
+            backgroundSize: "cover",       // Ensure image covers the section
+            backgroundPosition: "center"   // Center the image
           }}
         >
           <div className="hero-overlay"></div>
@@ -209,7 +211,7 @@ const FranchiseTeacherParent = () => {
                 
                
 
-                <div className="hero-stats">
+                <div className="hero-stats hero-stats-sm">
                   <div className="stat-item">
                     <div className="stat-number">
                       Flexible Hours

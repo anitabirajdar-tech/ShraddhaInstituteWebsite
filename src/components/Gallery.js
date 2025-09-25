@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase"; 
 import "./Gallery.css";
+import Confetti from "react-confetti";
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
   const fetchImages = async () => {
@@ -35,13 +37,26 @@ const Gallery = () => {
   fetchImages();
 }, []);
 
+  useEffect(() => {
+    if (!isLoading && images.length > 0) {
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 2500); // Show confetti for 2.5s
+    }
+  }, [isLoading, images]);
+
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div className="gallery-container">
+      {showConfetti && <Confetti numberOfPieces={120} recycle={false} />}
       <h2 className="gallery-title">Our Gallery</h2>
-
+      {/* If you have buttons, add className="gallery-btn" to them for mobile CSS targeting */}
+      {/* Example:
+      <button className="gallery-btn">Awards Gallery</button>
+      <button className="gallery-btn">Celebrations</button>
+      <button className="gallery-btn">Competitions</button>
+      */}
       {images.length === 0 ? (
         <p>No images available 📷</p>
       ) : (

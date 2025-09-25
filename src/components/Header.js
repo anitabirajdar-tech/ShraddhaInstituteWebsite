@@ -75,10 +75,10 @@ const Header = () => {
   };
 
   const eventYears = [
-    { year: 2022, events: ["State Level Competition", "National Level Competition"] },
-    { year: 2023, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
+    { year: 2025, events: ["State Level Competition", "National Level Competition"] },
     { year: 2024, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
-    { year: 2025, events: ["State Level Competition", "National Level Competition", "Annual Meet"] }
+    { year: 2023, events: ["State Level Competition", "National Level Competition", "Annual Meet"] },
+    { year: 2022, events: ["State Level Competition", "National Level Competition"] }
   ];
 
   return (
@@ -273,19 +273,19 @@ const Header = () => {
     <li>
       <Link to="/franchise/teacher-parent" className="dropdown-item" onClick={closeMenu}>
         <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2 text-orange" />
-        <span className="fw-bold">Teacher/Parent Franchise</span>
+        <span>Teacher/Parent Franchise</span>
       </Link>
     </li>
     <li>
       <Link to="/franchise/business-school" className="dropdown-item" onClick={closeMenu}>
         <FontAwesomeIcon icon={faStore} className="me-2 text-blue" />
-        <span className="fw-bold">School/Business Franchise</span>
+        <span>School/Business Franchise</span>
       </Link>
     </li>
     <li>
       <Link to="/programs/franchise-training" className="dropdown-item" onClick={closeMenu}>
         <FontAwesomeIcon icon={faStore} className="me-2 text-red" />
-        <span className="fw-bold">Franchise Training</span>
+        <span>Franchise Training</span>
       </Link>
     </li>
   </ul>
@@ -362,3 +362,4 @@ const Header = () => {
 };
 
 export default Header;
+

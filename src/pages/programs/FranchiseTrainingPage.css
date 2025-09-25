@@ -199,6 +199,101 @@
   border-bottom: none;
 }
 
+/* Comparison Section - Attractive Styles */
+.comparison-section {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #fffbe6 0%, #ffe5d0 100%);
+}
+
+.comparison-card {
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(253, 126, 20, 0.08), 0 2px 8px rgba(0,0,0,0.04);
+  border: none;
+  transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.comparison-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(253, 126, 20, 0.18), 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.comparison-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.comparison-icon {
+  font-size: 2.2rem;
+  border-radius: 50%;
+  padding: 0.4em;
+  background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(253,126,20,0.12);
+}
+
+.comparison-icon.danger {
+  background: linear-gradient(135deg, #dc2626 0%, #fd7e14 100%);
+}
+
+.comparison-icon.success {
+  background: linear-gradient(135deg, #22c55e 0%, #fd7e14 100%);
+}
+
+.comparison-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow: 0 2px 8px #fffbe6;
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-list li {
+  font-size: 1.08rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #444;
+  transition: color 0.2s;
+}
+
+.comparison-card.before-card .comparison-list li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #dc2626;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.comparison-card.after-card .comparison-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.comparison-card.after-card {
+  background: linear-gradient(135deg, #fffbe6 0%, #eafff2 100%);
+}
+
+.comparison-card.before-card {
+  background: linear-gradient(135deg, #fffbe6 0%, #ffe5d0 100%);
+}
+
 /* Training Modules Section */
 .training-module-card {
   border: none;
@@ -394,6 +489,16 @@
   .comparison-header,
   .module-header { flex-direction: column; text-align: center; gap: 10px; }
   .module-icon-container { margin: 0 auto; }
+  .comparison-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .comparison-title {
+    font-size: 1.2rem;
+  }
+  .comparison-card {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (max-width: 576px) {
