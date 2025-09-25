@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
+import { FaTrophy, FaStar, FaHeart } from "react-icons/fa";
+import "./NationalLevelCompetition2022.css"; // Use the same CSS as 2024
 
 const NationalLevelCompetition2025 = () => {
   const [images, setImages] = useState([]);
+  const [heroImages, setHeroImages] = useState([]);
+  const [currentHero, setCurrentHero] = useState(0);
+  const sliderInterval = useRef(null);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -13,6 +17,12 @@ const NationalLevelCompetition2025 = () => {
         const snapshot = await getDocs(collection(db, "gallery2025NationalLevel"));
         const data = snapshot.docs.map(doc => doc.data());
         setImages(data);
+
+        // Select images 1, 17, 22 (indexes 0, 16, 21)
+        const selected = [0, 16, 21]
+          .map(idx => data[idx]?.url)
+          .filter(Boolean);
+        setHeroImages(selected);
       } catch (error) {
         console.error("Error fetching images:", error.message);
       }
@@ -20,31 +30,151 @@ const NationalLevelCompetition2025 = () => {
     fetchImages();
   }, []);
 
+  useEffect(() => {
+    if (heroImages.length > 1) {
+      sliderInterval.current = setInterval(() => {
+        setCurrentHero(prev => (prev + 1) % heroImages.length);
+      }, 3500);
+      return () => clearInterval(sliderInterval.current);
+    }
+  }, [heroImages]);
+
+  const heroBg = heroImages[currentHero] || "";
+
+  // Desktop hero height override
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @media (min-width: 992px) {
+        .sophisticated-hero,
+        .hero-background-gradient {
+          min-height: 680px !important;
+          height: 680px !important;
+          max-height: 680px !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   return (
-    <div style={{ background: "#fff8f0" }}>
-      <Container className="py-5">
-        <h2 className="mb-2 fw-bold text-orange text-center">National Level Competition 2025 Gallery</h2>
-        <Row>
-          {images.map((img, idx) => (
-            <Col key={idx} xs={12} sm={6} md={4} lg={3} className="mb-4">
-              <Card className="shadow-sm border-0 h-100 gallery-card fade-in" style={{ borderRadius: "18px", background: "#fff" }}>
-                <Card.Img
-                  variant="top"
-                  src={img.url}
-                  alt={`National Level Competition ${idx + 1}`}
-                  style={{ borderRadius: "18px 18px 0 0", height: "200px", objectFit: "cover" }}
-                  className="gallery-img"
-                />
-              </Card>
-            </Col>
-          ))}
-        </Row>
-        <div className="text-center mt-4">
-          <Link to="/contact" className="btn btn-outline-orange btn-lg" style={{ borderRadius: 40, fontWeight: 600 }}>
-            Want to Participate? Contact Us!
-          </Link>
+    <div className="competition-page-sophisticated">
+      {/* Sophisticated Hero Section */}
+      <section className="sophisticated-hero" style={{ position: "relative" }}>
+        <div
+          className="hero-background-gradient"
+          style={{
+            background: heroBg
+              ? `linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.65) 100%), url('${heroBg}') center/cover no-repeat`
+              : undefined,
+            transition: "background-image 0.8s cubic-bezier(.4,0,.2,1)"
+          }}
+        >
+          <div className="gradient-overlay"></div>
         </div>
-      </Container>
+        <Container>
+          <div className="hero-content-sophisticated">
+            {/* Elegant Badge */}
+            <div className="elegant-badge pulse">
+              <span className="badge-accent"></span>
+              <FaTrophy className="badge-icon" />
+              <span>National Event 2025</span>
+            </div>
+            {/* Main Title */}
+            <h1 className="sophisticated-title gradient-text" style={{ marginBottom: "1.2rem", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>
+              <span className="title-primary" style={{ fontWeight: 800, letterSpacing: "2px", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>
+                Celebrating Champions
+              </span>
+              <span className="title-accent" style={{ fontWeight: 800, fontSize: "2.4rem", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>
+                & Joyful Moments
+              </span>
+            </h1>
+            {/* Description */}
+            <p className="sophisticated-description" style={{ fontSize: "1.35rem", fontWeight: 500, color: "#fff", textShadow: "0 2px 8px #fd7e14" }}>
+              Honoring our brightest stars – from happy faces to the proud winner of the rewards! <br />
+              <span style={{ color: "#fff", fontWeight: 700 }}>
+                Experience the spirit of achievement and happiness at the National Level Competition 2025.
+              </span>
+            </p>
+          </div>
+        </Container>
+        {/* Slider indicators */}
+        {heroImages.length > 1 && (
+          <div className="hero-slider-indicators" style={{ position: "absolute", bottom: 24, left: "50%", transform: "translateX(-50%)", zIndex: 2 }}>
+            {heroImages.map((_, idx) => (
+              <span
+                key={idx}
+                style={{
+                  display: "inline-block",
+                  width: 12,
+                  height: 12,
+                  margin: "0 6px",
+                  borderRadius: "50%",
+                  background: idx === currentHero ? "#fd7e14" : "#fff",
+                  opacity: idx === currentHero ? 1 : 0.5,
+                  border: "2px solid #fd7e14",
+                  cursor: "pointer"
+                }}
+                onClick={() => setCurrentHero(idx)}
+              />
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="sophisticated-gallery">
+        <Container>
+          <div className="gallery-header-sophisticated">
+            <div className="section-tag">
+              <FaStar className="tag-icon" />
+              Memory Gallery
+            </div>
+            <h2 className="gallery-title-sophisticated">
+              Moments of <span className="text-gradient">Excellence</span>
+            </h2>
+            <p className="gallery-subtitle-sophisticated">
+              Relive the inspiring journey of talent, achievement, and celebration
+            </p>
+          </div>
+          <Row className="gallery-grid-sophisticated">
+            {images.map((img, idx) => (
+              <Col key={idx} xs={12} sm={6} md={4} lg={4} className="gallery-col">
+                <Card className="gallery-card-sophisticated h-100">
+                  <div className="card-image-wrapper">
+                    <Card.Img
+                      variant="top"
+                      src={img.url}
+                      alt={img.caption || `Competition Memory ${idx + 1}`}
+                      className="gallery-image-sophisticated"
+                      style={{
+                        boxShadow: "0 8px 32px rgba(139,92,246,0.10)",
+                        border: "4px solid #f1f5f9",
+                        transition: "transform 0.3s, box-shadow 0.3s"
+                      }}
+                    />
+                    <div className="card-overlay-sophisticated">
+                      <div className="overlay-content-sophisticated">
+                        <FaHeart className="overlay-icon" />
+                        <span className="overlay-text">View Memory</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Hide image caption */}
+                  {/* {img.caption && (
+                    <Card.Body className="card-body-sophisticated">
+                      <p className="caption-text">{img.caption}</p>
+                    </Card.Body>
+                  )} */}
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
     </div>
   );
 };
