@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -7,6 +7,9 @@ import "./NationalLevelCompetition2022.css"; // Use the same CSS as AnnualMeet20
 
 const StateLevelCompetition2025 = () => {
   const [images, setImages] = useState([]);
+  const [heroImages, setHeroImages] = useState([]);
+  const [currentHero, setCurrentHero] = useState(0);
+  const sliderInterval = useRef(null);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -14,6 +17,12 @@ const StateLevelCompetition2025 = () => {
         const snapshot = await getDocs(collection(db, "gallery2025StateLevel"));
         const data = snapshot.docs.map(doc => doc.data());
         setImages(data);
+
+        // Select images 8, 10, 11 (indexes 7, 9, 10)
+        const selected = [7, 9, 10]
+          .map(idx => data[idx]?.url)
+          .filter(Boolean);
+        setHeroImages(selected);
       } catch (error) {
         console.error("Error fetching images:", error.message);
       }
@@ -21,12 +30,50 @@ const StateLevelCompetition2025 = () => {
     fetchImages();
   }, []);
 
+  useEffect(() => {
+    if (heroImages.length > 1) {
+      sliderInterval.current = setInterval(() => {
+        setCurrentHero(prev => (prev + 1) % heroImages.length);
+      }, 3500);
+      return () => clearInterval(sliderInterval.current);
+    }
+  }, [heroImages]);
+
+  const heroBg = heroImages[currentHero] || "";
+
+  // Desktop hero height override (optional, adjust as needed)
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @media (min-width: 992px) {
+        .sophisticated-hero,
+        .hero-background-gradient {
+          min-height: 540px !important;
+          height: 540px !important;
+          max-height: 540px !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   return (
     <div className="competition-page-sophisticated">
       {/* Sophisticated Hero Section */}
-      <section className="sophisticated-hero">
-        <div className="hero-background-gradient">
-          <div className="gradient-overlay"></div>
+      <section className="sophisticated-hero" style={{ position: "relative" }}>
+        <div
+          className="hero-background-gradient"
+          style={{
+            background: heroBg
+              ? `linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.65) 100%), url('${heroBg}') center/cover no-repeat`
+              : undefined,
+            transition: "background-image 0.8s cubic-bezier(.4,0,.2,1)"
+          }}
+        >
+          {/* Removed overlay */}
         </div>
         <Container>
           <div className="hero-content-sophisticated">
@@ -48,6 +95,28 @@ const StateLevelCompetition2025 = () => {
             </p>
           </div>
         </Container>
+        {/* Slider indicators */}
+        {heroImages.length > 1 && (
+          <div className="hero-slider-indicators" style={{ position: "absolute", bottom: 24, left: "50%", transform: "translateX(-50%)", zIndex: 2 }}>
+            {heroImages.map((_, idx) => (
+              <span
+                key={idx}
+                style={{
+                  display: "inline-block",
+                  width: 12,
+                  height: 12,
+                  margin: "0 6px",
+                  borderRadius: "50%",
+                  background: idx === currentHero ? "#fd7e14" : "#fff",
+                  opacity: idx === currentHero ? 1 : 0.5,
+                  border: "2px solid #fd7e14",
+                  cursor: "pointer"
+                }}
+                onClick={() => setCurrentHero(idx)}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Gallery Section */}
@@ -56,13 +125,16 @@ const StateLevelCompetition2025 = () => {
           <div className="gallery-header-sophisticated">
             <div className="section-tag">
               <FaStar className="tag-icon" />
-              Memory Gallery
+              Award Moments Gallery
             </div>
             <h2 className="gallery-title-sophisticated">
-              Moments of <span className="text-gradient">Excellence</span>
+              Honoring <span className="text-gradient">Achievement</span> & <span className="text-gradient">Joy</span>
             </h2>
             <p className="gallery-subtitle-sophisticated">
-              Relive the inspiring journey of talent, achievement, and celebration
+              Explore the proud smiles and unforgettable moments as students receive their awards.<br />
+              <span style={{ color: "#fd7e14", fontWeight: 600 }}>
+                Every photo tells a story of success and celebration!
+              </span>
             </p>
           </div>
           <Row className="gallery-grid-sophisticated">
