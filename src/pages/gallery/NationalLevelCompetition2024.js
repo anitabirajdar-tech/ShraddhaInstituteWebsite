@@ -26,7 +26,8 @@ const NationalLevelCompetition2024 = () => {
       {/* Sophisticated Hero Section */}
       <section className="sophisticated-hero">
         <div className="hero-background-gradient">
-          <div className="gradient-overlay"></div>
+          {/* Removed overlay */}
+          {/* <div className="gradient-overlay"></div> */}
         </div>
         <Container>
           <div className="hero-content-sophisticated">
