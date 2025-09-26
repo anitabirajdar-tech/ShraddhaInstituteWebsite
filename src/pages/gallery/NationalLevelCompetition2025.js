@@ -67,9 +67,7 @@ const NationalLevelCompetition2025 = () => {
         <div
           className="hero-background-gradient"
           style={{
-            background: heroBg
-              ? `linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.65) 100%), url('${heroBg}') center/cover no-repeat`
-              : undefined,
+            background: "linear-gradient(180deg,rgba(253,126,20,0.18) 0%,rgba(253,126,20,0.32) 100%)",
             transition: "background-image 0.8s cubic-bezier(.4,0,.2,1)"
           }}
         >
@@ -101,28 +99,7 @@ const NationalLevelCompetition2025 = () => {
             </p>
           </div>
         </Container>
-        {/* Slider indicators */}
-        {heroImages.length > 1 && (
-          <div className="hero-slider-indicators" style={{ position: "absolute", bottom: 24, left: "50%", transform: "translateX(-50%)", zIndex: 2 }}>
-            {heroImages.map((_, idx) => (
-              <span
-                key={idx}
-                style={{
-                  display: "inline-block",
-                  width: 12,
-                  height: 12,
-                  margin: "0 6px",
-                  borderRadius: "50%",
-                  background: idx === currentHero ? "#fd7e14" : "#fff",
-                  opacity: idx === currentHero ? 1 : 0.5,
-                  border: "2px solid #fd7e14",
-                  cursor: "pointer"
-                }}
-                onClick={() => setCurrentHero(idx)}
-              />
-            ))}
-          </div>
-        )}
+        {/* Remove slider indicators */}
       </section>
 
       {/* Gallery Section */}

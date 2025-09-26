@@ -78,10 +78,30 @@ const Training = () => {
               {/* Benefits - 2x2 Grid */}
               <div className="benefits-grid">
                 {[
-                  { icon: '🧮', title: 'Abacus Training', desc: 'Master all 8 levels of abacus techniques' },
-                  { icon: '🔢', title: 'Vedic Math', desc: 'Learn 16 core sutras & applications' },
-                  { icon: '👩‍🏫', title: 'Teaching Methods', desc: 'Proven pedagogical approaches' },
-                  { icon: '🏫', title: 'Center Setup', desc: 'Guidance for starting your own center' }
+                  { 
+  icon: '🎯', 
+  title: 'Zero to Abacus Expert', 
+  desc: 'Master 8 levels from basic beads to lightning-fast mental math',
+  tagline: 'From Beginner to Pro in 6 Weeks'
+},
+{ 
+  icon: '⚡', 
+  title: 'Vedic Math Secrets', 
+  desc: 'Unlock 16 ancient sutras that make math magical & effortless',
+  tagline: 'Calculate 10x Faster'
+},
+{ 
+  icon: '🌟', 
+  title: 'Super Teacher Formula', 
+  desc: 'Proven methods to make learning fun & create star students',
+  tagline: 'Transform How You Teach'
+},
+{ 
+  icon: '🚀', 
+  title: 'Launch Your Center', 
+  desc: 'Complete blueprint to start & scale your successful learning business',
+  tagline: 'Be Your Own Boss'
+}
                 ].map((benefit, index) => (
                   <div key={index} className="benefit-card">
                     <div className="benefit-icon">{benefit.icon}</div>

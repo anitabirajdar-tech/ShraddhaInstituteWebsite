@@ -226,7 +226,7 @@ const Header = () => {
                           <Link to="/programs/franchise-teacher-training" className="dropdown-item program-item" onClick={closeMenu}>
                             <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2 text-orange" />
                             <div>
-                              <div className="program-title">Franchise Teacher Training</div>
+                              <div className="program-title">Teacher Training Program</div>
                               <div className="program-desc">Specialized Teacher Franchise Program</div>
                             </div>
                           </Link>
