@@ -83,10 +83,15 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul className="footer-links">
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/programs">Our Courses</Link></li>
-            <li><Link to="/testimonials">Testimonials</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
+  <li><Link to="/contact">Contact</Link></li>
+  <li>
+    <Link to="/courses">Our Courses</Link>
+  </li>
+  <li>
+    <Link to="/testimonials">Testimonials</Link>
+  </li>
+  
+</ul>
         </motion.div>
 
         {/* Column 3: Contact */}

@@ -136,28 +136,34 @@ function App() {
           <Route path="/book-demo" element={<><BookDemoPage /><Footer /><WhatsAppButton /></>} />
 
           {/* Admin Dashboard Route */}
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin" element={<><AdminDashboard /><Footer /><WhatsAppButton /></>} />
 
          
 
           {/* New Gallery 2022 Pages */}
-          <Route path="/gallery/2022/state-level-competition" element={<StateLevelCompetition2022 />} />
-          <Route path="/gallery/2022/national-level-competition" element={<NationalLevelCompetition2022 />} />
+          <Route path="/gallery/2022/state-level-competition" element={<><StateLevelCompetition2022 /><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery/2022/national-level-competition" element={<><NationalLevelCompetition2022 /><Footer /><WhatsAppButton /></>} />
 
           {/* New Gallery 2023 Pages */}
-          <Route path="/gallery/2023/state-level-competition" element={<StateLevelCompetition2023 />} />
-          <Route path="/gallery/2023/national-level-competition" element={<NationalLevelCompetition2023 />} />
-          <Route path="/gallery/2023/annual-meet" element={<AnnualMeet2023 />} />
+          <Route path="/gallery/2023/state-level-competition" element={<><StateLevelCompetition2023 /><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery/2023/national-level-competition" element={<><NationalLevelCompetition2023 /><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery/2023/annual-meet" element={<><AnnualMeet2023 /><Footer /><WhatsAppButton /></>} />
 
           {/* Gallery 2024 Pages */}
-          <Route path="/gallery/2024/state-level-competition" element={<StateLevelCompetition2024 />} />
-          <Route path="/gallery/2024/national-level-competition" element={<NationalLevelCompetition2024 />} />
-          <Route path="/gallery/2024/annual-meet" element={<AnnualMeet2024 />} />
+          <Route path="/gallery/2024/state-level-competition" element={<><StateLevelCompetition2024 /><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery/2024/national-level-competition" element={<><NationalLevelCompetition2024 /><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery/2024/annual-meet" element={<><AnnualMeet2024 /><Footer /><WhatsAppButton /></>} />
 
           {/* Gallery 2025 Pages */}
-          <Route path="/gallery/2025/state-level-competition" element={<StateLevelCompetition2025 />} />
-          <Route path="/gallery/2025/national-level-competition" element={<NationalLevelCompetition2025 />} />
-          <Route path="/gallery/2025/annual-meet" element={<AnnualMeet2025 />} />
+          <Route path="/gallery/2025/state-level-competition" element={<><StateLevelCompetition2025 /><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery/2025/national-level-competition" element={<><NationalLevelCompetition2025 /><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery/2025/annual-meet" element={<><AnnualMeet2025 /><Footer /><WhatsAppButton /></>} />
+
+
+
+          {/* footer link */}
+
+<Route path="/courses" element={<><FranchiseTeacherTrainingPage /><Footer /><WhatsAppButton /></>} />
         </Routes>
         
       </div>
