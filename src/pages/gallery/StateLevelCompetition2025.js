@@ -39,7 +39,8 @@ const StateLevelCompetition2025 = () => {
     }
   }, [heroImages]);
 
-  const heroBg = heroImages[currentHero] || "";
+  // Remove unused heroBg
+  // const heroBg = heroImages[currentHero] || "";
 
   // Desktop hero height override (optional, adjust as needed)
   useEffect(() => {

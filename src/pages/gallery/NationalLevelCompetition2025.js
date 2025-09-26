@@ -39,8 +39,6 @@ const NationalLevelCompetition2025 = () => {
     }
   }, [heroImages]);
 
-  const heroBg = heroImages[currentHero] || "";
-
   // Desktop hero height override
   useEffect(() => {
     const style = document.createElement("style");
