@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import { GraphUp, ClockFill, StarFill, PeopleFill, CashCoin, GearFill,  CheckCircleFill } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
 import './FranchiseTeacherTrainingPage.css';
