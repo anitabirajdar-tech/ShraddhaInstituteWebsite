@@ -82,7 +82,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`main-header ${scrolled ? 'scrolled' : ''}`} style={{ position: "sticky", top: 0, zIndex: 1100, width: "100%" }}>
       {/* Top Announcement Bar */}
       <div className="announcement-bar">
         <div className="container d-flex justify-content-between align-items-center">
@@ -129,8 +129,12 @@ const Header = () => {
       )}
 
       {/* Main Navigation */}
-      <nav className={`navbar navbar-expand-lg ${scrolled ? 'navbar-scrolled shadow-sm' : 'navbar-light bg-white'} py-2 py-lg-1`}
-        style={isOpen ? { position: "fixed", top: 0, left: 0, width: "100vw", zIndex: 1050 } : {}}
+      <nav
+        className={`navbar navbar-expand-lg ${scrolled ? 'navbar-scrolled shadow-sm' : 'navbar-light bg-white'} py-2 py-lg-1`}
+        style={{
+          ...(isOpen ? { position: "fixed", top: 0, left: 0, width: "100vw", zIndex: 1050 } : {}),
+          background: "inherit"
+        }}
       >
         <div className="container">
           <Link to="/" className="navbar-brand" onClick={closeMenu}>
