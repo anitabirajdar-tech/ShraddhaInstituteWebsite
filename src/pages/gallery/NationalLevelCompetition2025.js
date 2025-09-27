@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -7,8 +7,6 @@ import "./NationalLevelCompetition2022.css"; // Use the same CSS as 2024
 
 const NationalLevelCompetition2025 = () => {
   const [images, setImages] = useState([]);
-  const [heroImages, setHeroImages] = useState([]);
-  const sliderInterval = useRef(null);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -16,45 +14,11 @@ const NationalLevelCompetition2025 = () => {
         const snapshot = await getDocs(collection(db, "gallery2025NationalLevel"));
         const data = snapshot.docs.map(doc => doc.data());
         setImages(data);
-
-        // Select images 1, 17, 22 (indexes 0, 16, 21)
-        const selected = [0, 16, 21]
-          .map(idx => data[idx]?.url)
-          .filter(Boolean);
-        setHeroImages(selected);
       } catch (error) {
         console.error("Error fetching images:", error.message);
       }
     };
     fetchImages();
-  }, []);
-
-  useEffect(() => {
-    if (heroImages.length > 1) {
-      sliderInterval.current = setInterval(() => {
-        setCurrentHero(prev => (prev + 1) % heroImages.length);
-      }, 3500);
-      return () => clearInterval(sliderInterval.current);
-    }
-  }, [heroImages]);
-
-  // Desktop hero height override
-  useEffect(() => {
-    const style = document.createElement("style");
-    style.innerHTML = `
-      @media (min-width: 992px) {
-        .sophisticated-hero,
-        .hero-background-gradient {
-          min-height: 680px !important;
-          height: 680px !important;
-          max-height: 680px !important;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-    return () => {
-      document.head.removeChild(style);
-    };
   }, []);
 
   return (
