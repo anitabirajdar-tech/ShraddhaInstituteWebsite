@@ -130,7 +130,7 @@ const FranchiseTeacherTrainingPage = () => {
             <Col lg={10}>
               <Badge bg="light" text="dark" className="hero-badge mb-3">
                 <i className="bi bi-trophy-fill me-2"></i>
-                #1 Franchise Opportunity for Teachers
+                 Franchise Opportunity for Teachers
               </Badge>
               <h1 className="hero-title">
                 Transform Your Teaching Career Into a Thriving Business
@@ -139,7 +139,7 @@ const FranchiseTeacherTrainingPage = () => {
               {/* Stats in one line, responsive scroll on mobile */}
               <div className="hero-stats-row d-flex justify-content-center flex-wrap gap-4 mt-4">
                 <div className="stat-item text-center">
-                  <div className="stat-number">50+</div>
+                  <div className="stat-number">600+</div>
                   <div className="stat-label">Successful Teachers</div>
                 </div>
                 <div className="stat-item text-center">
@@ -402,18 +402,8 @@ const FranchiseTeacherTrainingPage = () => {
                 </div>
               </div>
               
-              <div className="cta-buttons d-flex flex-wrap justify-content-center gap-3 mb-4">
-                <Link to="/contact" className="btn btn-primary btn-lg px-5 py-3 fw-bold">
-                  Apply Now – Start Your Franchise
-                </Link>
-                <Link to="/contact" className="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
-                  Talk to a Franchise Advisor
-                </Link>
-              </div>
               
-              <div className="cta-note">
-                Limited spots available in each region – Apply today to secure your territory
-              </div>
+              
             </Col>
           </Row>
         </Container>

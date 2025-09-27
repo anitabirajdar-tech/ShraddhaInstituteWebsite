@@ -29,17 +29,17 @@ const VedicMathPage = () => {
     {
       title: "Trick-Based Learning",
       description: "Master 16 Vedic sutras that dramatically reduce calculation time for complex problems.",
-      icon: <LightningFill className="text-warning" size={24} />
+      icon: <LightningFill size={24} color="#fd7e14" />
     },
     {
       title: "Improved Accuracy",
       description: "Reduce errors by 70% in school exams and competitive tests with systematic approaches.",
-      icon: <AwardFill className="text-primary" size={24} />
+      icon: <AwardFill size={24} color="#fd7e14" />
     },
     {
       title: "Mental Agility",
       description: "Develop lightning-fast mental math skills that last a lifetime.",
-      icon: <ClockFill className="text-success" size={24} />
+      icon: <ClockFill size={24} color="#fd7e14" />
     }
   ];
 
@@ -65,9 +65,9 @@ const VedicMathPage = () => {
   ];
 
   const stats = [
-    { value: "10x", label: "Faster Calculations", icon: <GraphUp size={32} /> },
-    { value: "94%", label: "Accuracy Improvement", icon: <AwardFill size={32} /> },
-    { value: "900+", label: "Happy Students", icon: <LightningFill size={32} /> }
+    { value: "10x", label: "Faster Calculations", icon: <GraphUp size={32} color="#fd7e14" /> },
+    { value: "94%", label: "Accuracy Improvement", icon: <AwardFill size={32} color="#fd7e14" /> },
+    { value: "900+", label: "Happy Students", icon: <LightningFill size={32} color="#fd7e14" /> }
   ];
 
   // ✅ Continuous auto-scroll (marquee effect for both desktop and mobile)
@@ -278,4 +278,3 @@ const VedicMathPage = () => {
 };
 
 export default VedicMathPage;
-    

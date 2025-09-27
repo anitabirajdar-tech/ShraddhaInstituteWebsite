@@ -143,7 +143,7 @@ const Hero = () => {
                       <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
                   </div>
-                  <span className="trust-text">600+ Certified Instructors</span>
+                  <span className="trust-text">600+ Certified Teachers</span>
                 </div>
                 <div className="trust-badge-item">
                   <div className="trust-icon">

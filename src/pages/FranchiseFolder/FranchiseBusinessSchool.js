@@ -116,7 +116,7 @@ const FranchiseBusinessSchool = () => {
           style={{
             background: 'linear-gradient(135deg, #ea580c 0%, #f97316 50%, #dc2626 100%)',
             color: 'white',
-            minHeight: '90vh',
+            minHeight: '56vh',
             display: 'flex',
             alignItems: 'center'
           }}
@@ -134,61 +134,46 @@ const FranchiseBusinessSchool = () => {
             <Row className="align-items-center justify-content-center text-center">
               <Col lg={10} xl={8} className="mx-auto">
                 {/* Trust Badges */}
-                <div className="mb-4">
-                  <span className="hero-badge me-3">
-                    <FaStar className="me-2" />
-                    Trusted by 200+ Schools
+                <div className="mb-3">
+                  <span className="hero-badge me-2">
+                    <FaStar className="me-1" />
+                    200+ Schools
                   </span>
                   <span className="hero-badge">
-                    <IoIosTrendingUp className="me-2" />
+                    <IoIosTrendingUp className="me-1" />
                     Since 2013
                   </span>
                 </div>
 
-                {/* Main Headline with Emotional Hook */}
-                <h1 className="hero-title mb-4 display-3 fw-bold">
-                  Transform Your School Into The{' '}
-                  <span className="text-warning">Most Sought-After</span>{' '}
-                  Educational Institution in Your Area
+                {/* Short, Attractive Headline */}
+                <h1 className="hero-title mb-3 fw-bold" style={{ fontSize: "2.2rem", marginTop:"-2rem" }}>
+                  <span style={{ color: "#fff" }}>
+                    Boost Admissions. Build Reputation.
+                  </span>
+                  <br />
+                  <span className="text-warning" style={{ fontWeight: 800 }}>
+                    Abacus & Vedic Math for Schools
+                  </span>
                 </h1>
-                
+                <p className="lead mt-2 mb-3" style={{ fontSize: "1.15rem", color: "#fff", fontWeight: 500 }}>
+                  <span style={{ color: "#ffd700", fontWeight: 700 }}>
+                    Easy to start. Loved by parents. Proven results.
+                  </span>
+                </p>
 
                 {/* Value Proposition Highlights */}
-                <Row className="g-4 mb-5">
-                  <Col md={4}>
-                    <div className="text-center">
-                      <FaChartLine size={32} className="text-warning mb-2" />
-                      <h5 className="text-white">40%+ Revenue Growth</h5>
-                      <small className="text-white-80">Average partner increase</small>
-                    </div>
-                  </Col>
-                  <Col md={4}>
-                    <div className="text-center">
-                      <FaUsers size={32} className="text-warning mb-2" />
-                      <h5 className="text-white">300% Enrollment Boost</h5>
-                      <small className="text-white-80">Documented case studies</small>
-                    </div>
-                  </Col>
-                  <Col md={4}>
-                    <div className="text-center">
-                      <FaAward size={32} className="text-warning mb-2" />
-                      <h5 className="text-white">Zero Risk Model</h5>
-                      <small className="text-white-80">Proven success system</small>
-                    </div>
-                  </Col>
-                </Row>
-
-                
-
-                {/* Social Proof */}
-                <div className="mt-5">
-                  <p className="text-white-80 mb-2">
-                    <strong>Recently transformed schools:</strong>
-                  </p>
-                  <div className="d-flex justify-content-center flex-wrap gap-3">
-                    <span className="text-white">St. Mary's Convent (+300 students)</span>
-                    <span className="text-white">Bright Future Academy (+₹50L revenue)</span>
-                    <span className="text-white">Global Kids (National recognition)</span>
+                <div className="hero-stats-row">
+                  <div className="stat-item text-center">
+                    <FaChartLine size={38} className="text-warning mb-1" />
+                    <h6 className="text-white mb-0">+40% Revenue</h6>
+                  </div>
+                  <div className="stat-item text-center">
+                    <FaUsers size={38} className="text-warning mb-1" />
+                    <h6 className="text-white mb-0">+300% Admissions</h6>
+                  </div>
+                  <div className="stat-item text-center">
+                    <FaAward size={38} className="text-warning mb-1" />
+                    <h6 className="text-white mb-0">Zero Risk</h6>
                   </div>
                 </div>
               </Col>
@@ -219,7 +204,7 @@ const FranchiseBusinessSchool = () => {
                         </div>
                         <div className="flex-grow-1 ms-3">
                           <h5 className="text-orange">{item.problem}</h5>
-                          <p className="text-dark fw-bold mb-0">{item.solution}</p>
+                          <p className="text-dark  mb-0">{item.solution}</p>
                         </div>
                       </div>
                     </Card.Body>
@@ -252,7 +237,7 @@ const FranchiseBusinessSchool = () => {
                         {benefit.icon}
                       </div>
                       <h4 className="fw-bold mb-3 text-center text-orange">{benefit.title}</h4>
-                      <p className="text-muted mb-4 fs-5">{benefit.text}</p>
+                      <p className="text-muted mb-4" style={{ fontSize: "1rem" }}>{benefit.text}</p>
                       
                       <div className="bg-orange-soft rounded p-3 mb-4">
                         <div className="text-center">

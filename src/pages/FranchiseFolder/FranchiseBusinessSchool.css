@@ -68,6 +68,15 @@
   border-radius: 10px;
 }
 
+.features-list span.fw-medium {
+  font-weight: 500 !important;
+}
+
+/* If you want even lighter, use 400: */
+.features-list span.fw-medium {
+  font-weight: 400 !important;
+}
+
 /* Text Utilities */
 .text-white-80 {
   color: rgba(255, 255, 255, 0.8) !important;
@@ -139,6 +148,15 @@
   .d-flex.align-items-start .flex-grow-1 {
     margin-left: 0 !important;
   }
+  
+  .hero-stats-row {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+  .hero-stats-row .stat-item {
+    min-width: 80px;
+    padding: 0 2px;
+  }
 }
 
 /* Gradient Text */
@@ -163,4 +181,66 @@
 
 .pulse {
   animation: pulse 2s infinite;
+}
+
+.hero-stats-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.2rem;
+  margin-top: 2.5rem;
+  flex-wrap: nowrap;
+}
+
+.hero-stats-row .stat-item {
+  min-width: 90px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Prevent text overlap */
+  word-break: break-word;
+  white-space: normal;
+}
+
+.hero-stats-row h6 {
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Mobile: icon above, text below, prevent overlap */
+@media (max-width: 768px) {
+  .hero-stats-row {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+  .hero-stats-row .stat-item {
+    min-width: 0;
+    flex: 1 1 0;
+    padding: 0 2px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 110px;
+  }
+  .hero-stats-row .stat-item svg {
+    margin-right: 0;
+    margin-bottom: 4px !important;
+    display: block;
+    max-width: 38px;
+    height: auto;
+  }
+  .hero-stats-row h6 {
+    margin-top: 0;
+    font-size: 0.98rem;
+    display: block;
+   
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 100px;
+  }
 }

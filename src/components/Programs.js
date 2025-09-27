@@ -12,7 +12,7 @@ const Programs = () => {
   const programs = [
     {
       name: "Abacus Program",
-      description: "Mental math mastery using colorful beads – perfect for kids aged 4–14.",
+      description: "Mental math mastery using colorful beads – perfect for kids aged 5–15.",
       features: [
         "8 Fun Learning Levels",
         "Online & Offline Classes",
