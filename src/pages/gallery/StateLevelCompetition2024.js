@@ -8,7 +8,6 @@ import "./NationalLevelCompetition2022.css"; // Use the same CSS as 2022
 const StateLevelCompetition2024 = () => {
   const [images, setImages] = useState([]);
   const [heroImages, setHeroImages] = useState([]);
-  const [currentHero, setCurrentHero] = useState(0);
   const sliderInterval = useRef(null);
 
   useEffect(() => {

@@ -8,7 +8,6 @@ import "./NationalLevelCompetition2022.css"; // Use the same CSS as AnnualMeet20
 const StateLevelCompetition2025 = () => {
   const [images, setImages] = useState([]);
   const [heroImages, setHeroImages] = useState([]);
-  const [currentHero, setCurrentHero] = useState(0);
   const sliderInterval = useRef(null);
 
   useEffect(() => {
