@@ -30,7 +30,8 @@
 /* ANNOUNCEMENT BAR */
 /* ================== */
 .announcement-bar {
-  background: linear-gradient(175deg, #fff9f2 0%, #ffffff 100%);
+  background: linear-gradient(120deg, #fff9f2 0%, #ffffff 100%);
+  border-bottom: 1px solid rgba(253,126,20,0.1);
   font-size: 1rem;
   padding: 0.8rem 1rem;
   color: orange;
@@ -251,6 +252,7 @@
   min-width: 220px;
   border: 1px solid rgba(253, 126, 20, 0.1);
   border-top: none;
+  font-size: 0.95rem !important;
 }
 
 .dropdown-item {
@@ -513,4 +515,595 @@
   font-weight: 500; /* or normal */
 }
 
+/* Header.css - Add these styles */
 
+/* --- Events & Gallery Dropdown: Modern Compact Styles --- */
+
+/* Dropdown container */
+.mega-dropdown {
+  min-width: 340px !important;
+  max-width: 420px;
+  padding: 1rem 0.8rem !important;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(253,126,20,0.13);
+  background: #fff;
+}
+
+/* Section titles */
+.section-title,
+.events-gallery-section .section-title {
+  font-size: 1.18rem !important;
+  font-weight: 800;
+  color: #fd7e14;
+  letter-spacing: 0.01em;
+}
+
+/* "View All" link */
+.view-all-link {
+  font-size: 1.08rem !important;
+  font-weight: 700;
+}
+
+/* Upcoming Event Card */
+.upcoming-event-card {
+  font-size: 1.08rem !important;
+  min-width: 180px;
+  max-width: 240px;
+  height: 44px;
+  padding: 0.32rem 1.1rem 0.32rem 0.7rem;
+}
+.upcoming-event-card .event-title {
+  font-size: 1.08rem !important;
+  font-weight: 700;
+}
+.upcoming-event-card .event-meta,
+.upcoming-event-card .event-location,
+.upcoming-event-card .event-type-badge {
+  font-size: 0.98rem !important;
+}
+.event-date-circle {
+  width: 28px;
+  height: 28px;
+  font-size: 1.02rem;
+  margin-right: 10px;
+}
+.coming-soon-badge {
+  font-size: 0.98rem !important;
+  padding: 0.08rem 0.7rem !important;
+}
+
+/* Events & Competitions year and event count */
+.year-dropdown-header {
+  font-size: 1.08rem !important;
+  font-weight: 700;
+  padding: 0.38rem 1.1rem;
+}
+.year-title {
+  font-size: 1.08rem !important;
+}
+.event-count {
+  font-size: 1.02rem !important;
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+/* Event type header */
+.event-type-header {
+  font-size: 1.02rem !important;
+  font-weight: 600;
+  padding: 0.28rem 1.1rem 0.28rem 1.7rem;
+}
+
+/* Past event items */
+.past-event-item,
+.past-event-item.nested-event {
+  font-size: 0.98rem !important;
+  padding: 0.18rem 1.1rem 0.18rem 2.2rem;
+}
+
+/* Responsive: still larger on mobile */
+@media (max-width: 991px) {
+  .section-title,
+  .events-gallery-section .section-title {
+    font-size: 1.05rem !important;
+  }
+  .view-all-link {
+    font-size: 0.98rem !important;
+  }
+  .upcoming-event-card {
+    font-size: 0.98rem !important;
+    min-width: 120px;
+    max-width: 100%;
+    height: 38px;
+    padding: 0.22rem 0.7rem 0.22rem 0.5rem;
+  }
+  .upcoming-event-card .event-title {
+    font-size: 0.98rem !important;
+  }
+  .upcoming-event-card .event-meta,
+  .upcoming-event-card .event-location,
+  .upcoming-event-card .event-type-badge {
+    font-size: 0.92rem !important;
+  }
+  .event-date-circle {
+    width: 20px;
+    height: 20px;
+    font-size: 0.85rem;
+    margin-right: 6px;
+  }
+  .coming-soon-badge {
+    font-size: 0.92rem !important;
+    padding: 0.06rem 0.5rem !important;
+  }
+  .year-dropdown-header {
+    font-size: 0.98rem !important;
+    padding: 0.28rem 0.7rem;
+  }
+  .year-title {
+    font-size: 0.98rem !important;
+  }
+  .event-count {
+    font-size: 0.92rem !important;
+    margin-left: 7px;
+  }
+  .event-type-header {
+    font-size: 0.92rem !important;
+    padding: 0.18rem 0.7rem 0.18rem 1.2rem;
+  }
+  .past-event-item,
+  .past-event-item.nested-event {
+    font-size: 0.92rem !important;
+    padding: 0.13rem 0.7rem 0.13rem 1.7rem;
+  }
+}
+
+/* --- Make Upcoming Event and Events & Competitions content larger --- */
+
+/* Section titles */
+.section-title,
+.events-gallery-section .section-title {
+  font-size: 1.18rem !important;
+  font-weight: 800;
+  color: #fd7e14;
+  letter-spacing: 0.01em;
+}
+
+/* "View All" link */
+.view-all-link {
+  font-size: 1.08rem !important;
+  font-weight: 700;
+}
+
+/* Upcoming Event Card */
+.upcoming-event-card {
+  font-size: 1.08rem !important;
+  min-width: 180px;
+  max-width: 240px;
+  height: 44px;
+  padding: 0.32rem 1.1rem 0.32rem 0.7rem;
+}
+.upcoming-event-card .event-title {
+  font-size: 1.08rem !important;
+  font-weight: 700;
+}
+.upcoming-event-card .event-meta,
+.upcoming-event-card .event-location,
+.upcoming-event-card .event-type-badge {
+  font-size: 0.98rem !important;
+}
+.event-date-circle {
+  width: 28px;
+  height: 28px;
+  font-size: 1.02rem;
+  margin-right: 10px;
+}
+.coming-soon-badge {
+  font-size: 0.98rem !important;
+  padding: 0.08rem 0.7rem !important;
+}
+
+/* Events & Competitions year and event count */
+.year-dropdown-header {
+  font-size: 1.08rem !important;
+  font-weight: 700;
+  padding: 0.38rem 1.1rem;
+}
+.year-title {
+  font-size: 1.08rem !important;
+}
+.event-count {
+  font-size: 1.02rem !important;
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+/* Event type header */
+.event-type-header {
+  font-size: 1.02rem !important;
+  font-weight: 600;
+  padding: 0.28rem 1.1rem 0.28rem 1.7rem;
+}
+
+/* Past event items */
+.past-event-item,
+.past-event-item.nested-event {
+  font-size: 0.98rem !important;
+  padding: 0.18rem 1.1rem 0.18rem 2.2rem;
+}
+
+/* Responsive: still larger on mobile */
+@media (max-width: 991px) {
+  .section-title,
+  .events-gallery-section .section-title {
+    font-size: 1.05rem !important;
+  }
+  .view-all-link {
+    font-size: 0.98rem !important;
+  }
+  .upcoming-event-card {
+    font-size: 0.98rem !important;
+    min-width: 120px;
+    max-width: 100%;
+    height: 38px;
+    padding: 0.22rem 0.7rem 0.22rem 0.5rem;
+  }
+  .upcoming-event-card .event-title {
+    font-size: 0.98rem !important;
+  }
+  .upcoming-event-card .event-meta,
+  .upcoming-event-card .event-location,
+  .upcoming-event-card .event-type-badge {
+    font-size: 0.92rem !important;
+  }
+  .event-date-circle {
+    width: 20px;
+    height: 20px;
+    font-size: 0.85rem;
+    margin-right: 6px;
+  }
+  .coming-soon-badge {
+    font-size: 0.92rem !important;
+    padding: 0.06rem 0.5rem !important;
+  }
+  .year-dropdown-header {
+    font-size: 0.98rem !important;
+    padding: 0.28rem 0.7rem;
+  }
+  .year-title {
+    font-size: 0.98rem !important;
+  }
+  .event-count {
+    font-size: 0.92rem !important;
+    margin-left: 7px;
+  }
+  .event-type-header {
+    font-size: 0.92rem !important;
+    padding: 0.18rem 0.7rem 0.18rem 1.2rem;
+  }
+  .past-event-item,
+  .past-event-item.nested-event {
+    font-size: 0.92rem !important;
+    padding: 0.13rem 0.7rem 0.13rem 1.7rem;
+  }
+}
+
+/* Events Dropdown - Compact Initial State */
+.events-gallery-dropdown {
+  min-width: 380px !important;
+  max-width: 420px;
+  padding: 1rem !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(253,126,20,0.15);
+}
+
+/* Past Events Section - Initially Compact */
+.past-events-section {
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.past-events-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.past-events-section::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.past-events-section::-webkit-scrollbar-thumb {
+  background: #fd7e14;
+  border-radius: 10px;
+}
+
+/* Year Dropdown - Initially Collapsed */
+.year-dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.year-dropdown-content.expanded {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+
+/* Event Type Content - Initially Collapsed */
+.event-type-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.event-type-content.expanded {
+  max-height: 200px;
+  transition: max-height 0.4s ease-in;
+}
+
+/* Improved Styling for Headers */
+.year-header {
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 1rem;
+  background: #f8fafc;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.year-header:hover {
+  background: #f1f5f9;
+}
+
+.event-type-header {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.event-count {
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: 0.5rem;
+}
+
+/* Event Links */
+.event-link {
+  padding: 0.4rem 1rem 0.4rem 2rem;
+  color: #666;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.event-link:hover {
+  background: #f8fafc;
+  color: #fd7e14;
+  padding-left: 2.2rem;
+}
+
+/* Upcoming Event Announcement Styles */
+.upcoming-event-announcement {
+  background: rgba(253,126,20,0.08);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-marquee {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+  color: #333;
+}
+
+.event-marquee:hover {
+  animation-play-state: paused;
+}
+
+.event-marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-date-pill {
+  background: #fd7e14;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-title-text {
+  font-weight: 600;
+  color: #333;
+  margin-left: 8px;
+}
+
+.coming-soon-tag {
+  background: rgba(253,126,20,0.1);
+  color: #fd7e14;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Fix Courses Dropdown Width and Positioning */
+.courses-dropdown {
+  min-width: 800px !important;
+  max-width: none !important;
+  width: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  padding: 2rem !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(253,126,20,0.15) !important;
+}
+
+/* Ensure dropdown is always visible */
+.mega-menu .dropdown-menu.show {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin-top: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .courses-dropdown {
+    min-width: 100% !important;
+    width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+    padding: 1rem !important;
+  }
+}
+
+/* Mobile Responsive Fixes for Courses & Events */
+@media (max-width: 991.98px) {
+  /* Fix navbar collapse */
+  .navbar-collapse {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    z-index: 1050;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  /* Full width dropdowns */
+  .dropdown-menu,
+  .mega-menu .dropdown-menu,
+  .courses-dropdown,
+  .events-gallery-dropdown {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: auto !important;
+    margin: 0.5rem 0 !important;
+    padding: 1rem !important;
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(253,126,20,0.1) !important;
+    border-radius: 8px !important;
+    background: white !important;
+  }
+
+  /* Improve dropdown content layout */
+  .courses-dropdown .row,
+  .events-gallery-dropdown .row {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    margin: 0 !important;
+  }
+
+  .courses-dropdown .col-md-6,
+  .events-gallery-dropdown .col-12,
+  .events-gallery-dropdown .col-md-6 {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Remove border between columns */
+  .courses-dropdown .border-end {
+    border: none !important;
+    padding-right: 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Improve program items */
+  .program-item {
+    padding: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+  }
+
+  .program-item .program-title {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .program-item .program-desc {
+    font-size: 0.85rem !important;
+    margin-top: 0.25rem !important;
+  }
+
+  /* Events section improvements */
+  .events-gallery-dropdown .past-events-section {
+    max-height: 50vh !important;
+    overflow-y: auto !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .event-type-header,
+  .year-header {
+    padding: 0.75rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Upcoming event card */
+  .upcoming-event-card {
+    height: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 0.75rem !important;
+  }
+
+  /* Fix scroll behavior */
+  .navbar-collapse::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .navbar-collapse::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .navbar-collapse::-webkit-scrollbar-thumb {
+    background: #fd7e14;
+    border-radius: 10px;
+  }
+}
+
+/* Mobile: Always white header background */
+@media (max-width: 991.98px) {
+  .main-header {
+    background: #fff !important;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+  }
+  .navbar {
+    background: #fff !important;
+  }
+  .navbar-scrolled {
+    background: #fff !important;
+  }
+}

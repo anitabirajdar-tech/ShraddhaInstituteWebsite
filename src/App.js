@@ -158,6 +158,7 @@ function App() {
           <Route path="/gallery/2025/state-level-competition" element={<><StateLevelCompetition2025 /><Footer /><WhatsAppButton /></>} />
           <Route path="/gallery/2025/national-level-competition" element={<><NationalLevelCompetition2025 /><Footer /><WhatsAppButton /></>} />
           <Route path="/gallery/2025/annual-meet" element={<><AnnualMeet2025 /><Footer /><WhatsAppButton /></>} />
+          <Route path="/gallery/StateLevelCompetition2025" element={<><StateLevelCompetition2025 /><Footer /><WhatsAppButton /></>} />
 
 
 
@@ -172,5 +173,5 @@ function App() {
 }
 
 export default App;
-        
-   
+
+
