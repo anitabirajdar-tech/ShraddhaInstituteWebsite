@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './Header.css';
-import { getFirestore, doc, getDoc, collection, getDocs, query, where, orderBy } from "firebase/firestore";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import firebaseApp from "../firebase";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -16,7 +16,6 @@ import {
   faChevronDown,
   faCalendarAlt,
   faTrophy,
-  faImages,
   faAngleDown,
   faAngleRight,
   faChevronRight,
@@ -32,8 +31,6 @@ const Header = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [expandedYears, setExpandedYears] = useState([]);
   const [expandedEventTypes, setExpandedEventTypes] = useState({});
-  const [flashIndex, setFlashIndex] = useState(0);
-  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -73,15 +70,6 @@ const Header = () => {
 
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  useEffect(() => {
-    if (upcomingEvents.length > 1) {
-      const interval = setInterval(() => {
-        setFlashIndex((prev) => (prev + 1) % upcomingEvents.length);
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [upcomingEvents.length]);
 
   const formatEventDate = (date) => {
     if (!date) return 'Date TBA';
