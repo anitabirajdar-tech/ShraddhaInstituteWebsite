@@ -31,6 +31,8 @@ const Header = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [expandedYears, setExpandedYears] = useState([]);
   const [expandedEventTypes, setExpandedEventTypes] = useState({});
+  // Add openDropdown state
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const onScroll = () => {
