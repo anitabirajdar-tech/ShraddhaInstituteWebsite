@@ -56,13 +56,14 @@ const StateLevelCompetition2025 = () => {
             </div>
             {/* Main Title */}
             <h1 className="sophisticated-title gradient-text" style={{ marginBottom: "1.2rem", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>
-              <span className="title-primary" style={{ fontWeight: 800, letterSpacing: "2px", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>State Level</span>
-              <span className="title-accent" style={{ fontWeight: 800, fontSize: "3.2rem", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>Competition 2025</span>
+              <span className="title-primary" style={{ fontWeight: 800, letterSpacing: "2px", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>
+                State Level Competition 2025
+              </span>
             </h1>
             {/* Description */}
-            <p className="sophisticated-description" style={{ fontSize: "1.35rem", fontWeight: 500, color: "#fff", textShadow: "0 2px 8px #fd7e14" }}>
-              A celebration of young minds & achievements<br />
-              <span style={{ color: "#fff", fontWeight: 700 }}>Relive the excitement and joy!</span>
+            <p className="sophisticated-description" style={{ fontSize: "1.15rem", fontWeight: 500, color: "#fff", textShadow: "0 2px 8px #fd7e14" }}>
+              Proud moments. Bright futures.<br />
+              <span style={{ color: "#fff", fontWeight: 700 }}>Congratulations to all achievers!</span>
             </p>
           </div>
         </Container>
@@ -75,16 +76,13 @@ const StateLevelCompetition2025 = () => {
           <div className="gallery-header-sophisticated">
             <div className="section-tag">
               <FaStar className="tag-icon" />
-              Award Moments Gallery
+               Memory Gallery
             </div>
-            <h2 className="gallery-title-sophisticated">
-              Honoring <span className="text-gradient">Achievement</span> & <span className="text-gradient">Joy</span>
+             <h2 className="gallery-title-sophisticated">
+              Moments of <span className="text-gradient">Excellence</span>
             </h2>
             <p className="gallery-subtitle-sophisticated">
-              Explore the proud smiles and unforgettable moments as students receive their awards.<br />
-              <span style={{ color: "#fd7e14", fontWeight: 600 }}>
-                Every photo tells a story of success and celebration!
-              </span>
+              Relive the inspiring journey of talent, achievement, and celebration
             </p>
           </div>
           <Row className="gallery-grid-sophisticated">
@@ -149,3 +147,4 @@ const StateLevelCompetition2025 = () => {
 };
 
 export default StateLevelCompetition2025;
+

@@ -258,9 +258,15 @@ const Header = () => {
                 src={logoUrl || "https://via.placeholder.com/150"} 
                 alt="Shraddha Institute Logo" 
                 className="main-logo pulse-effect"
-                width="180"  // Add width attribute
-                height="50"  // Add height attribute
-                style={{ objectFit: "contain" }}  // Maintain aspect ratio
+                width="180"
+                height="50"
+                style={{ objectFit: "contain" }}
+                srcSet="
+                  https://i.ibb.co/1fTC665J/logo3-100.png 100w,
+                  https://i.ibb.co/1fTC665J/logo3-180.png 180w,
+                  https://i.ibb.co/1fTC665J/logo3.png 360w
+                "
+                sizes="(max-width: 600px) 100px, (max-width: 1200px) 180px, 360px"
               />
             </div>
           </Link>

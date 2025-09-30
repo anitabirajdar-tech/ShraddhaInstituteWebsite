@@ -397,7 +397,36 @@ const FranchiseTeacherParent = () => {
           </Container>
         </section>
 
-        
+        {/* Student Image Example */}
+        <section className="student-image-section">
+          <Container>
+            <Row className="text-center mb-5">
+              <Col lg={8} className="mx-auto">
+                <h2 className="section-title">See Our Students in Action</h2>
+                <p className="section-subtitle">Happy learners at our franchise centers</p>
+              </Col>
+            </Row>
+
+            <Row className="justify-content-center">
+              <Col lg={8} className="text-center">
+                <img
+                  src="https://i.ibb.co/9HNMjkTd/student.png"
+                  alt="Happy students learning"
+                  width="400"
+                  height="250"
+                  loading="lazy"
+                  srcSet="
+                    https://i.ibb.co/9HNMjkTd/student-200.png 200w,
+                    https://i.ibb.co/9HNMjkTd/student-400.png 400w,
+                    https://i.ibb.co/9HNMjkTd/student.png 800w
+                  "
+                  sizes="(max-width: 600px) 200px, (max-width: 1200px) 400px, 800px"
+                  className="img-fluid rounded"
+                />
+              </Col>
+            </Row>
+          </Container>
+        </section>
 
         {/* Final CTA */}
         <section className="cta-section">

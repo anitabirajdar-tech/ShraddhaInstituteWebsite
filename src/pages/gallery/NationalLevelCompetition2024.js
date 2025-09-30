@@ -47,17 +47,18 @@ const NationalLevelCompetition2024 = () => {
             <div className="elegant-badge pulse">
               <span className="badge-accent"></span>
               <FaTrophy className="badge-icon" />
-              <span>National Event 2024</span>
+              <span>National Level  Event 2024</span>
             </div>
             {/* Main Title */}
             <h1 className="sophisticated-title gradient-text" style={{ marginBottom: "1.2rem", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>
-              <span className="title-primary" style={{ fontWeight: 800, letterSpacing: "2px", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>National Level</span>
-              <span className="title-accent" style={{ fontWeight: 800, fontSize: "3.2rem", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>Competition 2024</span>
+              <span className="title-primary" style={{ fontWeight: 800, letterSpacing: "2px", color: "#fff", WebkitTextFillColor: "#fff", background: "none" }}>
+                National Level Competition 2024
+              </span>
             </h1>
             {/* Description */}
-            <p className="sophisticated-description" style={{ fontSize: "1.35rem", fontWeight: 500, color: "#fff", textShadow: "0 2px 8px #fd7e14" }}>
-              A prestigious gathering of young talents <br />
-              <span style={{ color: "#fff", fontWeight: 700 }}>Celebrating Excellence & Creating Memories</span>
+            <p className="sophisticated-description" style={{ fontSize: "1.15rem", fontWeight: 500, color: "#fff", textShadow: "0 2px 8px #fd7e14" }}>
+              Proud moments. Bright futures.<br />
+              <span style={{ color: "#fff", fontWeight: 700 }}>Congratulations to all achievers!</span>
             </p>
           </div>
         </Container>
