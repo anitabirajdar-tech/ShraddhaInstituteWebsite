@@ -32,14 +32,18 @@ const Hero = () => {
 
   useEffect(() => {
     if (images.length === 0) return;
+    // Only set firstImageLoaded true for the first image
     const img = new window.Image();
     img.onload = () => setFirstImageLoaded(true);
     img.onerror = () => setFirstImageLoaded(true);
     img.src = images[0];
-    images.slice(1).forEach((src) => {
-      const preloadImg = new window.Image();
-      preloadImg.src = src;
-    });
+    // Lazy-load the rest after first image is shown
+    setTimeout(() => {
+      images.slice(1).forEach((src) => {
+        const preloadImg = new window.Image();
+        preloadImg.src = src;
+      });
+    }, 1000);
   }, [images]);
 
   useEffect(() => {

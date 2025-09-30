@@ -36,7 +36,7 @@ const NationalLevelCompetition2025 = () => {
   return (
     <div className="competition-page-sophisticated">
       {/* Sophisticated Hero Section */}
-      <section className="sophisticated-hero" style={{ position: "relative" }}>
+      <section className="sophisticated-hero" style={{ position: "relative", padding: "32px 0 20px 0", minHeight: "unset" }}>
         <div
           className="hero-background-gradient"
           style={{
@@ -47,7 +47,7 @@ const NationalLevelCompetition2025 = () => {
           <div className="gradient-overlay"></div>
         </div>
         <Container>
-          <div className="hero-content-sophisticated">
+          <div className="hero-content-sophisticated" style={{ padding: "0", margin: "0" }}>
             {/* Elegant Badge */}
             <div className="elegant-badge pulse">
               <span className="badge-accent"></span>

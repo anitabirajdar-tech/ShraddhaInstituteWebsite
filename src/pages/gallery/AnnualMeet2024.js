@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Modal } from "react-bootstrap";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
 import { FaTrophy, FaStar, FaHeart } from "react-icons/fa";
@@ -7,6 +7,8 @@ import "./NationalLevelCompetition2022.css"; // Use the same CSS as 2022
 
 const AnnualMeet2024 = () => {
   const [images, setImages] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImg, setModalImg] = useState(null);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -21,15 +23,25 @@ const AnnualMeet2024 = () => {
     fetchImages();
   }, []);
 
+  const handleImageClick = (img) => {
+    setModalImg(img);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setModalImg(null);
+  };
+
   return (
     <div className="competition-page-sophisticated">
       {/* Sophisticated Hero Section */}
-      <section className="sophisticated-hero">
+      <section className="sophisticated-hero" style={{ position: "relative", padding: "32px 0 20px 0", minHeight: "unset" }}>
         <div className="hero-background-gradient">
           <div className="gradient-overlay"></div>
         </div>
         <Container>
-          <div className="hero-content-sophisticated">
+          <div className="hero-content-sophisticated" style={{ padding: "0", margin: "0" }}>
             {/* Elegant Badge */}
             <div className="elegant-badge pulse">
               <span className="badge-accent"></span>
@@ -69,7 +81,11 @@ const AnnualMeet2024 = () => {
             {images.map((img, idx) => (
               <Col key={idx} xs={12} sm={6} md={4} lg={4} className="gallery-col">
                 <Card className="gallery-card-sophisticated h-100">
-                  <div className="card-image-wrapper">
+                  <div
+                    className="card-image-wrapper"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handleImageClick(img)}
+                  >
                     <Card.Img
                       variant="top"
                       src={img.url}
@@ -100,6 +116,21 @@ const AnnualMeet2024 = () => {
           </Row>
         </Container>
       </section>
+      {/* Modal for big image */}
+      <Modal show={showModal} onHide={handleClose} centered size="lg">
+        <Modal.Body style={{ padding: 0, background: "#222" }}>
+          {modalImg && (
+            <img
+              src={modalImg.url}
+              alt={modalImg.caption || "Gallery"}
+              style={{ width: "100%", height: "auto", display: "block", maxHeight: "80vh", objectFit: "contain", background: "#222" }}
+            />
+          )}
+        </Modal.Body>
+        <Modal.Footer style={{ justifyContent: "center", background: "#222" }}>
+          <button className="btn btn-outline-light" onClick={handleClose}>Close</button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
