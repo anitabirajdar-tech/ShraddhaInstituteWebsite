@@ -101,10 +101,13 @@ const StateLevelCompetition2025 = () => {
                       src={img.url}
                       alt={img.caption || `Competition Memory ${idx + 1}`}
                       className="gallery-image-sophisticated"
+                      width="100%"
+                      height="240"
                       style={{
                         boxShadow: "0 8px 32px rgba(139,92,246,0.10)",
                         border: "4px solid #f1f5f9",
-                        transition: "transform 0.3s, box-shadow 0.3s"
+                        transition: "transform 0.3s, box-shadow 0.3s",
+                        objectFit: "cover"
                       }}
                     />
                     <div className="card-overlay-sophisticated">

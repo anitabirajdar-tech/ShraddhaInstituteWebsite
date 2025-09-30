@@ -32,18 +32,27 @@ const Hero = () => {
 
   useEffect(() => {
     if (images.length === 0) return;
-    // Only set firstImageLoaded true for the first image
+    
+    // Critical: Load first image immediately
     const img = new window.Image();
     img.onload = () => setFirstImageLoaded(true);
     img.onerror = () => setFirstImageLoaded(true);
     img.src = images[0];
-    // Lazy-load the rest after first image is shown
-    setTimeout(() => {
+    
+    // Non-critical: Use requestIdleCallback for preloading remaining images
+    const preloadRemainingImages = () => {
       images.slice(1).forEach((src) => {
         const preloadImg = new window.Image();
         preloadImg.src = src;
       });
-    }, 1000);
+    };
+    
+    // Use requestIdleCallback or setTimeout fallback
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => preloadRemainingImages(), { timeout: 2000 });
+    } else {
+      setTimeout(preloadRemainingImages, 1000);
+    }
   }, [images]);
 
   useEffect(() => {
@@ -54,6 +63,12 @@ const Hero = () => {
       return () => clearInterval(interval);
     }
   }, [images]);
+
+  // Add this function
+  const handleImageError = (e) => {
+    console.log("Image failed to load:", e.target.src);
+    e.target.src = "/images/fallback-image.jpg"; // Replace with your fallback image
+  };
 
   return (
     <header className="hero-section" id="hero" role="banner">
