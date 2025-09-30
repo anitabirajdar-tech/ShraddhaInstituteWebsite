@@ -575,5 +575,13 @@
   .stat-label-mobile {
     font-size: 1.05rem;
   }
+
+  
+  .stat-number-mobile {
+    font-size: 2rem;
+  }
+  .stat-label-mobile {
+    font-size: 1.05rem;
+  }
 }
 

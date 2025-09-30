@@ -213,23 +213,22 @@ const FranchiseTeacherParent = () => {
 
                 <div className="hero-stats hero-stats-sm">
                   <div className="stat-item">
-                    <div className="stat-number">
+                    <div className="stat-number hero-stat-white">
                       Flexible Hours
                     </div>
-                    <div className="stat-label">Teach when you want, fit your lifestyle</div>
+                    <div className="stat-label hero-stat-white">Teach when you want, fit your lifestyle</div>
                   </div>
                   <div className="stat-item">
-                    <div className="stat-number">
+                    <div className="stat-number hero-stat-white">
                       Complete Training
                     </div>
-                    <div className="stat-label">Get certified & start with confidence</div>
+                    <div className="stat-label hero-stat-white">Get certified & start with confidence</div>
                   </div>
                   <div className="stat-item">
-                    <div className="stat-number">
+                    <div className="stat-number hero-stat-white">
                       Work From Home
-                     
                     </div>
-                    <div className="stat-label">No commute, earn from your own space</div>
+                    <div className="stat-label hero-stat-white">No commute, earn from your own space</div>
                   </div>
                 </div>
 

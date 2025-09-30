@@ -138,16 +138,16 @@ const FranchiseTeacherTrainingPage = () => {
               {/* Stats in one line, responsive scroll on mobile */}
               <div className="hero-stats-row d-flex justify-content-center flex-wrap gap-4 mt-4">
                 <div className="stat-item text-center">
-                  <div className="stat-number">600+</div>
-                  <div className="stat-label">Successful Teachers</div>
+                  <div className="stat-number small-hero-stat-number">600+</div>
+                  <div className="stat-label small-hero-stat-label">Successful Teachers</div>
                 </div>
                 <div className="stat-item text-center">
-                  <div className="stat-number">95%</div>
-                  <div className="stat-label">Retention Rate</div>
+                  <div className="stat-number small-hero-stat-number">95%</div>
+                  <div className="stat-label small-hero-stat-label">Retention Rate</div>
                 </div>
                 <div className="stat-item text-center">
-                  <div className="stat-number">2-3x</div>
-                  <div className="stat-label">Income Increase</div>
+                  <div className="stat-number small-hero-stat-number">2-3x</div>
+                  <div className="stat-label small-hero-stat-label">Income Increase</div>
                 </div>
               </div>
               
