@@ -64,12 +64,6 @@ const Hero = () => {
     }
   }, [images]);
 
-  // Add this function
-  const handleImageError = (e) => {
-    console.log("Image failed to load:", e.target.src);
-    e.target.src = "/images/fallback-image.jpg"; // Replace with your fallback image
-  };
-
   return (
     <header className="hero-section" id="hero" role="banner">
       {/* Background Slider */}
