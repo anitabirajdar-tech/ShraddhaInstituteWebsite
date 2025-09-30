@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import 'aos/dist/aos.css';
+import { loadCSS } from './utils/loadCSS';
 
 // Components
 import Header from "./components/Header";
@@ -58,6 +59,12 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => setShowWelcome(false), 4000);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Load non-critical CSS after component mounts
+    loadCSS('/static/css/animations.css');
+    loadCSS('/static/css/responsive.css');
   }, []);
 
   if (showWelcome) return <WelcomeScreen onSkip={() => setShowWelcome(false)} />;

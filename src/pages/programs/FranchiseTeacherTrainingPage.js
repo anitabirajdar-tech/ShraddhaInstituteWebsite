@@ -123,7 +123,7 @@ const FranchiseTeacherTrainingPage = () => {
       </div>
 
       {/* HERO SECTION */}
-      <section className="hero-section">
+      <section className="hero-section" style={{ padding: "50px 0" }}>
         <Container>
           <Row className="align-items-center justify-content-center text-center">
             <Col lg={10}>
