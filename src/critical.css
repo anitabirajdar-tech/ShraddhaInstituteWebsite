@@ -1,0 +1,35 @@
+/* Only critical above-the-fold styles */
+:root {
+  --primary: #fd7e14;
+  --secondary: #ff9f43;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Critical header styles */
+.main-header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  padding: 1rem 0;
+  transition: all 0.3s;
+}
+
+/* Critical hero styles */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}

@@ -209,7 +209,12 @@ const FranchiseTeacherParent = () => {
                   Start Your Learning Center from <span className="highlight">Home</span>
                 </h1>
                 
-               
+                <img
+                  src={heroImage}
+                  alt="Franchise Hero"
+                  style={{ display: "none" }}
+                  loading="eager" // If you have a visible hero image, use eager (or remove loading attr)
+                />
 
                 <div className="hero-stats hero-stats-sm">
                   <div className="stat-item">

@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './critical.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // 👈 enables collapse/hamburger
 
+// Defer non-critical CSS
+const loadStyles = () => {
+  const stylesheet = document.createElement('link');
+  stylesheet.href = '/static/css/main.967c434f.css';
+  stylesheet.rel = 'stylesheet';
+  document.head.appendChild(stylesheet);
+};
 
-
-AOS.init();
+// Load non-critical CSS during idle time
+if (window.requestIdleCallback) {
+  window.requestIdleCallback(loadStyles);
+} else {
+  window.setTimeout(loadStyles, 0);
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +26,5 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Performance monitoring
 reportWebVitals();
